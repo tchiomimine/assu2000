@@ -1,0 +1,67 @@
+/**
+ * Created by MMC on 11/12/2015.
+ */
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1,c.length);
+    }
+    
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  
+  return null;
+}
+
+function setCookie(name, value, days) {
+  if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      var expires = "; expires=" + date.toGMTString();
+  }
+  else{
+    var expires = "";
+  }
+  
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+(function ($) {
+  $( document ).ready(function() {  
+	var loc2 = window.location.pathname;
+    var result2 = loc2.indexOf('validerConnexion.do');
+
+    if (readCookie('utilisateurConnecte') == 'yes' || result2 > 0) {
+      var loc = window.location.pathname;
+      var result = loc.indexOf('Proximeo');
+      $('a[title="Espace personnel"]').attr('href','/espace-personnel-accueil.html');
+
+      if (readCookie('utilisateurConnecte') == 'yes' && result > 0) {
+        $('#site-header > ul > li:nth-child(2) > a, #site-navigation > ul.list-unstyled.site-header-actions > li:nth-child(2) > a').attr({'title':'Se déconnecter', 'href':'/Proximeo/deconnexion.do'});
+        $('#site-header > ul > li:nth-child(2) > a > button > span, #site-navigation > ul.list-unstyled.site-header-actions > li:nth-child(2) > a > button').text('Se déconnecter');
+        $('#site-navigation > ul.list-unstyled.site-header-actions > li:nth-child(2) > a > button').prepend('<i class="icon-Picto_Buste icon-as"></i>');
+        $(".popup-callback").colorbox({iframe:true, width:"400", height:"396"});
+      } else if(readCookie('utilisateurConnecte') == 'yes' && result == -1) {
+        $('#site-header > ul > li:nth-child(2) > a, #site-navigation > ul.list-unstyled.site-header-actions > li:nth-child(2) > a').attr({'title':'Mon espace client', 'href':'/Proximeo/gestionSouscripteur.do'});
+        $('#site-header > ul > li:nth-child(2) > a > button > span, #site-navigation > ul.list-unstyled.site-header-actions > li:nth-child(2) > a > button').text('Mon espace client');
+        $('#site-navigation > ul.list-unstyled.site-header-actions > li:nth-child(2) > a > button').prepend('<i class="icon-Picto_Buste icon-as"></i>');
+      }
+    }
+    else {
+      $('a[title="Espace personnel"]').attr('href','/espace-personnel.html');
+    }
+
+    if($('#workWindow').length > 0) {
+      $('.espaceClientContenuHome').parents('.col-2').remove();
+      $('#menu.menuTemplate').show();
+      $('.message').remove();
+      $('.col-1').css('width', '100%');
+      $('#corps').css('float', 'left');
+    }
+  });
+})(jQuery);

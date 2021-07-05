@@ -1,0 +1,869 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Functions
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * Images Loaded
+ */
+function LADI() {
+    // IMG FADE LOADING
+    if ($().imagesLoaded) {
+        $('img.fade-img').each(function () {
+            var $this     = $(this);
+            var className = $(this).attr('class').split(" ");
+
+            if ($this.attr('class').indexOf("opacity") > -1) {
+                $.each(className, function (i) {
+                    if (className[i].match("^opacity")) {
+                        var opacityValues = className[i].split("-");
+                        var opacityValue  = opacityValues[1];
+
+                        $this.one("load", function () {
+                            $(this).velocity({opacity: '.' + opacityValue}, {duration: 500});
+                        }).each(function () {
+                            if (this.complete) $(this).trigger("load");
+                        });
+                    }
+                });
+            } else {
+                $this.one("load", function () {
+                    $(this).velocity({opacity: 1}, {duration: 500});
+                }).each(function () {
+                    if (this.complete) $(this).trigger("load");
+                });
+            }
+        });
+    }
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Document Ready
+ * ----------------------------------------------------------------------------
+ */
+$(document).ready(function () {
+
+    var body = $('body');
+
+    /**
+     * Overlay
+     */
+    var closeOverlayBTN = $('.close-overlay');
+    closeOverlayBTN.on('click', function (event) {
+        event.preventDefault();
+        $(this).closest('.overlay').stop(true, true).velocity('transition.fadeOut');
+    });
+
+    /**
+     * Call Back Overlay
+     */
+    $('.open-callback').on('click', function (event) {
+        event.preventDefault();
+        if ($(this).hasClass('active')) {
+            closeOverlayBTN.trigger("click");
+        }
+        else {
+            $('.open-callback').addClass('active');
+            $('.overlay-call-back').stop(true, true).velocity('transition.fadeIn', {duration: 400});
+        }
+    });
+    closeOverlayBTN.on('click', function (event) {
+        event.preventDefault();
+        $('.open-callback').removeClass('active');
+    });
+
+    /**
+     * Formules
+     */
+    $(".formule").find("label, .formule-price").on('click', function () {
+        $(".formule").removeClass('active');
+        $(this).closest(".formule").addClass('active').find("input").prop('checked', true);
+    });
+
+    $(".formule .view-more button").on("click", function () {
+        $(this).toggleClass("active").closest(".formule").find(".view-more-box").slideToggle();
+    });
+
+    /**
+     * Sidebar
+     */
+    var formSidebar = $("#site-form-sidebar");
+    formSidebar.stick_in_parent({
+        parent    : body,
+        offset_top: 90,
+        spacer    : false
+    });
+    $("#toggle-sidebar").on("click", function () {
+        if (!formSidebar.is(":visible")) {
+            body.addClass("menu-show");
+            formSidebar.addClass("active").velocity("fadeIn");
+        } else {
+            body.removeClass("menu-show");
+            formSidebar.removeClass("active").velocity("fadeOut");
+        }
+    });
+    $(".expand-infos").on("click", function () {
+        $(this).toggleClass("active").closest(".sidebar-widget").find(".expand-infos-content").slideToggle(400, function () {
+            formSidebar.trigger("sticky_kit:recalc");
+        });
+    });
+
+    /**
+     * Confirmation souscription
+     */
+    $("#confirmation-souscription").change(function () {
+        if ($(this).is(':checked')) {
+            $("#confirmation-souscription-label").popover("hide");
+            $(".confirmation-souscription").css('margin-top', 0).removeClass('done');
+            $(".error-cond").remove();
+        } else {
+            $("#confirmation-souscription-label").popover("show");
+        }
+    });
+    $("#confirmation-souscription-label").popover({
+        html     : true,
+        viewport : 'body',
+        container: '.confirmation-souscription',
+        trigger  : 'manual',
+        template : '<div class="popover popover-confirmation-souscription" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+    });
+    
+    $(".check-cond").on("click", function (event) {	
+    	if (!$("#confirmation-souscription").is(':checked')) {
+    		$(".error-cond").remove();
+    		$(".confirmation-souscription").append("<p class='error-cond text-highlight'><strong>Vous devez accepter le récapitulatif de vos informations de souscription.</br> Si ces informations vous semblent incorrectes, vous devez<button class='text-underline text-highlight' id='edit-edit-conditions' name='op' value='Modifier' type='submit'>modifier ces informations.</button></strong></p>");
+    		$("html, body").animate({ scrollTop: 100 }, "slow");
+    		event.preventDefault();
+    		return;
+    	}
+    });
+
+    /**
+     * Disable form-control of data-value element
+     */
+    body.find("[data-value]").find("input, select, textarea").prop('disabled', true);
+
+    // Enable checked data-target
+    $("[data-target]").each(function () {
+        if ($(this).prop("checked")) {
+            var target = $(this).data('target');
+            $("[data-value='" + target + "']").find(".form-control").prop('disabled', false);
+            $(this).addClass("active");
+        }
+    });
+
+    $("[data-target]").on("click", function () {
+        var $this          = $(this);
+        var target         = $(this).data('target');
+        var brothersValue       = $(this).data('brothers');
+        var brothers       = $("[data-brothers='" + brothersValue + "']").not($(this));
+        var brothersTarget = brothers.data('target');
+        body.find("[data-value='" + brothersTarget + "']").velocity("transition.slideLeftBigOut", {
+            duration: 400,
+            complete: function () {
+                $(this).find("input, select, textarea").prop('disabled', true);
+                brothers.removeClass("active");
+            }
+        });
+        if (!$this.hasClass("active")) {
+            body.find("[data-value='" + target + "']").velocity("transition.slideLeftBigIn", {
+                duration: 400,
+                complete: function () {
+                    $(this).find("input, select, textarea").prop('disabled', false);
+                }
+            });
+        }
+        $this.addClass("active");
+    });
+
+
+    /**
+     * Forms Validator
+     * Todo: Don't use if the check is on the server side
+     */
+    /**
+     * Forms Validator Methods
+     */
+    $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+        return arg != value;
+    }, "Value must not equal arg.");
+    $.validator.addMethod('customphone', function (value, element) {
+        return this.optional(element) || /^\d{3}-\d{3}-\d{4}$/.test(value);
+    }, "Please enter a valid phone number");
+    $.validator.addMethod(
+        "frenchDate",
+        function (value) {
+            return value.match(/^\d\d?\/\d\d?\/\d\d\d\d$/);
+        },
+        "Please enter a date in the format dd/mm/yyyy."
+    );
+
+    /**
+     * Forms Validator Settings
+     */
+    var $validateSettings = {
+        highlight  : function (element) {
+            $(element).closest('.field-container').addClass('error').removeClass('success');
+        },
+        unhighlight: function (element) {
+            $(element).closest('.field-container').removeClass('error').addClass('success');
+        },
+        onfocusin  : function (element) {
+            $(element).valid();
+        },
+        rules      : {
+            // IMMATRICULATION
+            immatriculation: {
+                required : true,
+                minlength: 3
+            },
+            // SELECT MARQUE
+            select         : {
+                required      : true,
+                valueNotEquals: "default"
+            },
+            // NOM & PRENOM
+            lastName       : {
+                required : true,
+                minlength: 2
+            },
+            firstName      : {
+                required : true,
+                minlength: 2
+            },
+            // TELEPHONE
+            phoneNumber    : {
+                required: true,
+                number  : true
+            },
+            //DATE
+            dateInput      : {
+                required  : true,
+                frenchDate: true
+            },
+            // NUMERO DE VOIE
+            numero_nom_voie: {
+                required : true,
+                minlength: 2
+            },
+            // CODE POSTAL
+            number         : {
+                required: true,
+                number  : true
+            },
+            // EMAIL
+            email          : {
+                required: true,
+                email   : true
+            }
+        },
+        messages   : {
+            select: {
+                valueNotEquals: "Ce champ ne peut pas être vide"
+            }
+        }
+    };
+
+    /**
+     * Forms Validator Init
+     */
+    $(".form-toValidate").each(function () {
+        $(this).validate($validateSettings);
+    });
+
+    /**
+     *  DatePicker (Forms)
+     */
+    var d = new Date();
+    var n = d.getFullYear() - 18;
+    var m = d.getMonth();
+    var y = d.getDate();
+
+    /**
+     *  Mobiscroll Calendar initialization (Default)
+     */
+    $(function () {
+        $(".input-datepicker").each(function () {
+            $(this).mobiscroll().calendar({
+                lang      : 'fr',
+                display   : 'bubble',
+                mode      : 'mixed',
+                scrollLock: false,
+                readonly  : false,
+                onClosed  : function () {
+                    $(this).valid();
+                }
+            });
+        });
+    });
+    /**
+     *  Mobiscroll Calendar initialization (n - 18)
+     */
+    $(function () {
+        $(".input-datepicker-birth").each(function () {
+            $(this).mobiscroll().calendar({
+                lang        : 'fr',
+                display     : 'bubble',
+                mode        : 'mixed',
+                scrollLock  : false,
+                readonly    : false,
+                defaultValue: new Date(n, m, y),
+                onClosed    : function () {
+                    $(this).valid();
+                }
+            });
+        });
+    });
+    $('.input-group-addon').click(function () {
+        $(this).parent().find('input').mobiscroll('show');
+        return false;
+    });
+
+    /**
+     * IBAN
+     */
+    $(".iban_multipart input").keyup(function () {
+        if (this.value.length == this.maxLength) {
+            $(this).parent().parent().next().find('input').focus();
+        }
+    });
+
+    /**
+     * Risques aggravés
+     */
+    $('#risques-aggraves label').click(function () {
+        var rsponse = $(this).data('ra');
+        if (rsponse == "oui") {
+            $(this).closest('.form-toValidate').attr("action", raYesAnwser);
+        } else {
+            $(this).closest('.form-toValidate').attr("action", raNoAnwser);
+        }
+    });
+
+    /**
+     * Bonus / Malus
+     */
+    var bonusMalusMore = $("#bonus-malus-more");
+    $("#select-bonus-malus").change(function () {
+        if (!$(this).find("option[value='0']").is(':checked')) {
+            bonusMalusMore.velocity("slideDown");
+        } else {
+            bonusMalusMore.velocity("slideUp");
+        }
+    });
+
+
+    /**
+     * Suspension ou annulation
+     */
+    $("#select-suspension-annulation").change(function () {
+        if ($(this).find("option[value='oui']").is(':checked')) {
+            $(this).closest(".form-toValidate").attr("action", scYesAnwser);
+        } else {
+            $(this).closest(".form-toValidate").attr("action", scNoAnwser);
+        }
+    });
+
+    /**
+     * Condamnation
+     */
+    $("#select-condamnation").change(function () {
+        if ($(this).find("option[value='oui']").is(':checked')) {
+            $(this).closest(".form-toValidate").find(".validate-btn .btn-as").attr("type", "button").attr('id', 'btn-callback-error');
+            /**
+             * -------------------------------------------
+             * Call Back Error Overlay
+             * -------------------------------------------
+             */
+            $('#btn-callback-error').on('click', function (event) {
+                event.preventDefault();
+                if ($(this).hasClass('active')) {
+                    $(".close-overlay").trigger("click");
+                    $('.open-callback').removeClass('active');
+                }
+                else {
+                    $(this).addClass('active');
+                    $('#overlay-callback-error').stop(true, true).velocity('transition.fadeIn', {duration: 400});
+                }
+                $(this).addClass('active');
+            });
+            closeOverlayBTN.on('click', function (event) {
+                event.preventDefault();
+                $('.open-callback').removeClass('active');
+            });
+        } else {
+            $(this).closest(".form-toValidate").find(".validate-btn .btn-as").attr("type", "submit").attr('id', '');
+        }
+    });
+
+    /**
+     * -------------------------------------------
+     * Toggle System
+     * -------------------------------------------
+     */
+    var toggleSysHeader = $(".toggle-sys");
+    $(".toggle-sys .toggle-sys-header-el").on('click', function (e) {
+        e.preventDefault();
+        if ($(this).closest('.toggle-sys').hasClass('active')) {
+            toggleSysHeader.removeClass('active');
+            toggleSysHeader.find('.toggle-sys-content').slideUp();
+            $(this).closest('.toggle-sys').removeClass('active');
+        }
+        else {
+            toggleSysHeader.removeClass('active');
+            toggleSysHeader.find('.toggle-sys-content').slideUp();
+            $(this).closest('.toggle-sys').find('.toggle-sys-content').slideDown();
+            $(this).closest('.toggle-sys').addClass('active');
+        }
+    });
+
+    $("#select-children").on("change", function () {
+
+        var value = $(this).find('option:selected').attr("value");
+
+        $("#list-children").empty();
+
+        for (var i = 1; i <= value; i++) {
+
+            var child = '<div class="child-1">';
+            child += '<div class="form-group text-center list-gender highlighted">';
+            child += '<label class="radio-inline">';
+            child += ' <input type="radio" name="inlineRadioOptions-' + i + '" id="inlineRadio1-' + i + '" value="option1" class="male">';
+            child += '<i class="icon-male icon-as"></i>';
+            child += ' </label>';
+            child += '<label class="radio-inline">';
+            child += '<input type="radio" name="inlineRadioOptions-' + i + '" id="inlineRadio2-' + i + '" value="option2" class="female">';
+            child += '<i class="icon-female icon-as"></i>';
+            child += ' </label>';
+            child += '</div>';
+            child += ' <div class="form-group highlighted">';
+            child += '<label for="nom-' + i + '">';
+            child += 'Nom';
+            child += '</label>';
+            child += '<div class="field-container">';
+            child += '<button type="button" class="infos-tooltip" data-placement="left auto" data-toggle="popover" data-content="Texte"></button>';
+            child += '<input type="text" class="form-control" id="nom-' + i + '" name="lastName">';
+            child += '</div>';
+            child += '</div>';
+            child += '<div class="form-group highlighted">';
+            child += '<label for="lastName-' + i + '">';
+            child += 'Prénom';
+            child += '</label>';
+            child += '<div class="field-container">';
+            child += '<button type="button" class="infos-tooltip" data-placement="left auto" data-toggle="popover" data-content="Texte"></button>';
+            child += '<input type="text" class="form-control" id="lastName-' + i + '" name="lastName">';
+            child += '</div>';
+            child += '</div>';
+            child += '<div class="form-group highlighted">';
+            child += '<label for="birthday-' + i + '" class="sr-only">';
+            child += 'Date de naissance';
+            child += '</label>';
+            child += '<div class="field-container datepicker">';
+            child += '<input type="text" class="form-control input-datepicker" placeholder="JJ/MM/AAAA" name="dateInput" id="birthday-' + i + '">';
+            child += '<span class="input-group-addon"><i class="icon-Picto_Calendar_as icon-as"></i></span>';
+            child += '</div>';
+            child += '</div>';
+            child += '</div>';
+
+            $("#list-children").append(child);
+
+            /**
+             *  Mobiscroll Calendar initialization (Default)
+             */
+            $(".input-datepicker").mobiscroll().calendar({
+                lang      : 'fr',
+                display   : 'bubble',
+                mode      : 'mixed',
+                scrollLock: false,
+                readonly  : false,
+                onClosed  : function () {
+                    $(this).valid();
+                }
+            });
+
+
+        }
+    });
+
+    /**
+     * -------------------------------------------
+     * Confirm Us checkboxes
+     * -------------------------------------------
+     */
+    $(".confirm-us .checkbox").on('click', function () {
+        if ($(".required-1").prop('checked') == true && $(".required-2").prop('checked') == true) {
+            $(".confirm-us .btn-as.primary").prop("disabled", false);
+        }
+        else {
+            $(".confirm-us .btn-as.primary").prop("disabled", true);
+        }
+    });
+
+    /**
+     * -------------------------------------------
+     * Système pour le menu de navigation
+     * -------------------------------------------
+     */
+    var siteCache          = $('#site-cache');
+    var siteBtnMenu        = $('#site-btn-navigation');
+    var siteMainHeader     = $('#site-header');
+    var siteMainNav        = $('#site-navigation');
+    var siteMainWrapper    = $('#site-wrapper');
+    var siteMainPreFooter  = $('#site-prefooter');
+    var siteMainFooter     = $('#site-footer');
+    var siteFooterContact  = $('#contact-footer');
+    var animationArray     = [siteMainHeader, siteMainWrapper, siteMainPreFooter, siteMainFooter, siteFooterContact];
+    var navAnimateDuration = 300;
+
+    var waitForFinalEvent = (function () {
+        var timers = {};
+        return function (callback, ms, uniqueId) {
+            if (!uniqueId) {
+                uniqueId = "Don't call this twice without a uniqueId";
+            }
+            if (timers[uniqueId]) {
+                clearTimeout(timers[uniqueId]);
+            }
+            timers[uniqueId] = setTimeout(callback, ms);
+        };
+    })();
+
+    siteBtnMenu.on('click', function () {
+
+        var siteMainNavW = siteMainNav.innerWidth();
+        if (body.hasClass('menu-show')) {
+            siteMainNav.velocity({
+                left: -siteMainNavW
+            }, {
+                duration: navAnimateDuration
+            });
+            $.each(animationArray, function (index, value) {
+                value.velocity({
+                    left: 0
+                }, {
+                    duration: navAnimateDuration
+                });
+            });
+            siteCache.velocity('fadeOut', {
+                duration: navAnimateDuration,
+                complete: function () {
+                    body.removeClass('menu-show');
+                }
+            });
+        } else {
+            body.addClass('menu-show');
+            siteMainNav.velocity({
+                left: 0
+            }, {
+                duration: navAnimateDuration
+            });
+            $.each(animationArray, function (index, value) {
+                value.velocity({
+                    left: siteMainNavW
+                }, {
+                    duration: navAnimateDuration
+                });
+            });
+            siteCache.velocity('fadeIn', {
+                duration: navAnimateDuration
+            });
+        }
+    });
+    siteCache.on('click', function () {
+        siteBtnMenu.trigger('click');
+    });
+
+    $(window).resize(function () {
+        var siteMainNavW = siteMainNav.innerWidth();
+        waitForFinalEvent(function () {
+            if (body.hasClass('menu-show')) {
+                siteMainWrapper.velocity({
+                    left: siteMainNavW
+                }, {
+                    duration: navAnimateDuration
+                });
+                siteMainHeader.velocity({
+                    left: siteMainNavW
+                }, {
+                    duration: navAnimateDuration
+                });
+            } else {
+                siteMainNav.velocity({
+                    left: -siteMainNavW
+                }, {
+                    duration: navAnimateDuration
+                });
+            }
+        }, navAnimateDuration, "some unique string");
+    });
+
+    $("#expand-sidebar").on("click", function () {
+        if (!$(this).hasClass("active")) {
+            $(this).closest("#site-form-sidebar").find(".to-minify").velocity("transition.slideDownIn");
+        } else {
+            $(this).closest("#site-form-sidebar").find(".to-minify").velocity("transition.slideUpOut");
+        }
+        $(this).toggleClass("active");
+    });
+
+    /**
+     * -------------------------------------------
+     * Exe
+     * -------------------------------------------
+     */
+    LADI();
+
+    var matchHeightArray = [
+        $('.sendfiles-box li .box-inner')
+    ];
+
+    WebFont.load({
+        custom: {
+            families: ['Asap', 'Oxygen']
+        },
+        active: function () {
+
+            /**
+             * -------------------------------------------
+             * Match Height System
+             * @Source https://github.com/liabru/jquery-match-height
+             * -------------------------------------------
+             */
+            $.each(matchHeightArray, function (index, value) {
+                value.matchHeight();
+            });
+
+            /**
+             * -------------------------------------------
+             * Confirmation souscription
+             * -------------------------------------------
+             */
+            var confirmationSouscriptionLabel = $("#confirmation-souscription-label");
+            confirmationSouscriptionLabel.popover("show");
+            confirmationSouscriptionLabel.on('shown.bs.popover', function () {
+                var spacerNeeded = $(".popover-confirmation-souscription").height();
+
+                $(".confirmation-souscription").css('margin-top', spacerNeeded + 30).promise().done(function () {
+                    setTimeout(function () {
+                        $(".confirmation-souscription").addClass('done');
+                    }, 700);
+                });
+            })
+        }
+    });
+
+    $("#edit-marq-immat-auto1").on('click', function () {
+    	$("#dependent-car-marque-list, " +
+    	  "#dependent-date-circulation, " +
+          "#dependent-car-models-list, " +
+    	  "#dependent-car-engine-list, " +
+    	  "#dependent-car-engine2-list").show();
+
+    });
+    
+    $("#edit-marq-immat-auto2").on('click', function () {
+    	$("#dependent-car-marque-list, " +
+    	  "#dependent-date-circulation, " +
+    	  "#dependent-car-models-list, " +
+    	  "#dependent-car-engine-list, " +
+    	  "#dependent-car-engine2-list").hide();
+    });
+
+    $('#site-header-path .cheminement li.active:last a:last').addClass('activeTab');
+    $('#site-header-path .cheminement li.active:last a:last').css('cursor', 'not-allowed');
+    $('#site-header-path .cheminement li.active:last a:last').on('click', function(){
+        return false;
+    });
+
+
+    if($('#site-header-path .cheminement li.active a').length == 0) {
+        $('#site-header-path .cheminement li.active span').addClass('activeTab');
+    }
+
+    $('.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content #edit-mrh-typelogement li input').on('click', function () {
+        $("html, body").stop().animate({scrollTop:620}, 500, 'swing');
+    });
+
+    if(!$('.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-s, .page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-c').is(':checked')) {
+        $('.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li input').on('click', function () {
+            $("html, body").stop().animate({scrollTop:880}, 500, 'swing');
+        });
+    } else {
+        $('.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li input').on('click', function () {
+            $("html, body").stop().animate({scrollTop:620}, 500, 'swing');
+        });
+
+        $('.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li:first-child').on('click', function () {
+            $("html, body").stop().animate({scrollTop:880}, 500, 'swing');
+        });
+    }
+
+    $('.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li').on('click', function() {
+        if(!$('.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-s, .page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-c').is(':checked')) {
+            $('.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li input').on('click', function () {
+                $("html, body").stop().animate({scrollTop:880}, 500, 'swing');
+            });
+        } else {
+            $('.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li input').on('click', function () {
+                $("html, body").stop().animate({scrollTop:620}, 500, 'swing');
+            });
+
+            $('.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li:first-child').on('click', function () {
+                $("html, body").stop().animate({scrollTop:880}, 500, 'swing');
+            });
+        }
+    });
+
+    $('.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-postal-city-wrapper input').focusout(function () {
+        $("html, body").stop().animate({scrollTop:1180}, 500, 'swing');
+    });
+
+    $('.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-nom').focusout(function () {
+        $("html, body").stop().animate({scrollTop:1520}, 500, 'swing');
+    });
+
+    //Put our input DOM element into a jQuery Object
+    var $jqDate = 'input[name="auto_mec"], input[name="auto_dpermis"], input[name="auto_dachat"], input[name="auto_dnaissance"], input[name="auto_ddebut"], input[name="auto_resil"], input[name="auto_resil2"], input[name*="accidents"]';
+
+    //Bind keyup/keydown to the input
+    $(document).on('keyup keydown', $jqDate, function(e){
+
+        //To accommodate for backspacing, we detect which key was pressed - if backspace, do nothing:
+        if(e.which !== 8) {
+            var numChars = jQuery(this).val().length;
+            if(numChars === 2 || numChars === 5){
+                var thisVal = jQuery(this).val();
+                thisVal += '/';
+                jQuery(this).val(thisVal);
+            }
+        }
+    });
+
+    let inputNames = "#edit-auto-mail, #edit-vsp-mail, #edit-mrh-mail, #edit-moto-mail, #edit-cyclo-mail";
+
+    $(inputNames).on({
+        keydown: function (e) {
+            if (e.which === 32)
+                return false;
+        },
+        change: function () {
+            this.value = this.value.replace(/\s/g, "");
+        }
+    });
+
+    $("#amae-checkout-progress-product-auto-automail-form").submit(function () {
+        $(inputNames).attr('value', $(inputNames).attr('value').trim());
+    });
+
+    jQuery.extend(jQuery.validator.messages, {
+        pattern: "Merci de vérifier le format de ce champ"
+    });
+
+    $('#amae-checkout-progress-product-auto-automail-form button#edit-next, ' +
+      '#amae-checkout-progress-product-moto-motomail-form button#edit-next, ' +
+      '#amae-checkout-progress-product-cyclo-cyclomail-form button#edit-next, ' +
+      '#amae-checkout-progress-product-vsp-vspmail-form button#edit-next').html('obtenir mon tarif');
+});
+
+/**
+ * fieldDateAccepChar(evt)
+ *
+ * @param evt
+ * @returns {boolean}
+ */
+function fieldAccepChar(evt) {
+    var keyCode = evt.which ? evt.which : evt.keyCode;
+    var accept = '0123456789';
+    if ( (accept.indexOf(String.fromCharCode(keyCode)) >= 0) || keyCode == 8  ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Prevent multi form submit
+(function ($) {
+  Drupal.behaviors.prevntmltclick = {
+    attach: function (context, settings) {
+      var btn = $('form.prevnt-mlt-click .form-submit');
+      btn.click(function(){
+        btn = $(this);
+        window.addEventListener("beforeunload", function (event) {
+          btn.attr('disabled','disabled');
+        });
+      });
+    }
+  };
+}(jQuery));
+
+/**
+ * Popover
+ */
+(function ($) {
+    Drupal.behaviors.tooltip = {
+        attach: function (context, settings) {
+            $.fn.popover.Constructor.prototype.reposition = function () {
+
+                var $tip = this.tip();
+
+                var placement = typeof this.options.placement === 'function' ? this.options.placement.call(this, $tip[0], this.$element[0]) : this.options.placement;
+
+                var pos = this.getPosition();
+                var actualWidth = $tip[0].offsetWidth;
+                var actualHeight = $tip[0].offsetHeight;
+
+                var orgPlacement = placement;
+                var viewportDim = this.getPosition(this.$viewport);
+
+                placement = placement === 'right' &&
+                pos.top + actualHeight > viewportDim.top ? 'bottom' : placement === 'bottom' &&
+                pos.bottom - actualHeight < viewportDim.bottom ? 'top' : placement === 'top' &&
+                pos.right + actualWidth > viewportDim.right  ? 'left' : placement === 'left' &&
+                pos.left - actualWidth < viewportDim.left ? 'right' : placement;
+
+                $tip
+                    .removeClass(orgPlacement)
+                    .addClass(placement);
+
+                var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight);
+
+                this.applyPlacement(calculatedOffset, placement)
+            };
+
+          $('.position-tooltip').click(function (){
+            $(this).popover('toggle');
+          });
+
+            // Initialize Popover with minimal Content
+          $('.position-tooltip').popover({
+                html:true,
+                trigger:'click',
+                template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><button class="close" type="button"><i class="icon-Menu_Cross icon-as"></i></button><div class="popover-content"></div></div>',
+                placement: 'left'
+            }).click(function (){
+                $(this).popover('toggle')
+            });
+
+            // Dyanmically change the popover content and reposition it
+          $('.position-tooltip').on('shown.bs.popover', function () {
+                $('div.popover .close').on('click', function () {
+                  $('.position-tooltip').popover('hide');
+                });
+                setTimeout(function () {
+                    $('.popover-content').html();
+                  $('.position-tooltip').popover('reposition')
+                },0)
+            });
+            $('#site-wrapper > section').on('click', function (e) {
+              $('.position-tooltip').each(function () {
+                    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                        /*event.stopPropagation(e);*/
+                        $(this).popover('hide');
+                    }
+                });
+            });
+        }
+    };
+}(jQuery));

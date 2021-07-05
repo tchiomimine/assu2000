@@ -1,0 +1,369 @@
+@font-face {
+  font-family: 'iconfp';
+  src: url("../fonts/iconfp.eot") format("embedded-opentype"), url("../fonts/iconfp.ttf") format("truetype"), url("../fonts/iconfp.woff") format("woff"), url("../fonts/iconfp.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+p, strong {
+  font-size: 16px;
+}
+
+a {
+  cursor: pointer;
+}
+
+#amae-checkout-progress-product-auto-autofq10-form .recherche_immat,
+#amae-checkout-progress-product-auto-autofq10-form .recherche_marque {
+  display: none;
+}
+
+#amae-checkout-progress-product-auto-autofq10-form .modal-dialog {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 60px 0 0 0;
+  background-color: #F1F1F1 !important;
+  border: none;
+  border-radius: 0;
+}
+
+#amae-checkout-progress-product-auto-autofq10-form .modal-content {
+  height: auto;
+  min-height: 100%;
+  border: none;
+  background-color: #F1F1F1 !important;
+  border-radius: 0;
+}
+
+.search_result_immat h2 {
+  font-size: 21px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#amae-checkout-progress-product-auto-autofq10-form .well {
+  background-color: #FFFFFF;
+}
+
+#immat_query {
+  text-align: center;
+  display: block;
+  font-size: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#your-car {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 15px;
+}
+
+#car-brand, #car-model {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.recap.well p {
+  margin-bottom: 0.3em;
+}
+
+.car-details {
+  font-size: 14px;
+}
+
+#confirm-version, #next-step {
+  background-color: #89AB1C;
+  border-radius: 6px;
+  height: 50px;
+  color: #FFF;
+  padding: 15px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.navigation a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #89AB1C;
+  text-decoration: underline;
+  font-size: 15px;
+  margin-left: 6px;
+}
+
+[data-icon]:before {
+  font-family: 'iconfp';
+  content: attr(data-icon);
+  speak: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.arrow-left[data-icon]:before {
+  font-family: 'iconfp';
+  content: attr(data-icon);
+  speak: none;
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.arrow-left {
+  font-weight: bolder;
+}
+
+.navigation .arrow-left {
+  color: #89AB1C;
+}
+
+#back-link {
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+#clonable-container label[for="edit-auto-version"], #clonable-container-last label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#clonable-container select, #clonable-container-last select {
+  border: 1px #DDDDDD solid;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10, .form.auto {
+  background-image: none !important;
+  background-color: #F1F1F1 !important;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 h1, body.page-devis-assurance-auto-fastquote-autofq10 h1 strong {
+  font-size: 28px;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat li label {
+  border-radius: 6px !important;
+  background-color: #FFFFFF !important;
+  display: block !important;
+  border: 1px solid #DDDDDD !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  padding: 10px;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat {
+  margin-left: -40px;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio {
+  display: flex !important;
+  width: 44.4% !important;
+  margin: 8px;
+  margin-bottom: 30px;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio input[type="radio"]:hover + label,
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio input[type="radio"]:checked + label {
+  border: 1px solid #89AB1C !important;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio input[type="radio"]:checked + label,
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio input[type="radio"]:hover + label,
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio input[type="radio"]:checked + label strong,
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio input[type="radio"]:hover + label strong,
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio input[type="radio"]:checked + label span,
+body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio input[type="radio"]:hover + label span {
+  color: #89AB1C !important;
+}
+
+.vsp_link p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.vsp_link p a {
+  text-decoration: underline;
+}
+
+.field-container.immatriculation {
+  max-width: 100% !important;
+  padding: 0 10px !important;
+}
+
+div.recherche_par_immatriculation {
+  display: block;
+  background-color: #FFFFFF;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+  border-radius: 6px;
+  border: 1px solid #DDDDDD;
+}
+
+div.recherche_par_immatriculation #edit-auto-immattarif {
+  border: #DDDDDD 1px solid;
+  border-radius: 0 6px 6px 0;
+  width: 85%;
+  height: 40px;
+  font-size: 15px;
+  margin-left: 33px;
+  text-transform: uppercase;
+}
+
+div.recherche_par_immatriculation label[for="edit-auto-immattarif"] {
+  position: relative;
+  top: 0;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.field-container.immatriculation .btn-plaque {
+  top: 46px !important;
+  left: 21px !important;
+}
+
+div.recherche_par_immatriculation .infos-tooltip {
+  top: 1.5rem;
+  left: 30.5rem;
+}
+
+div.recherche_par_immatriculation button.search-car {
+  border-radius: 6px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 #site-form-content .form-group.recherche_marque {
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 .field-container.success .form-control {
+  border-bottom: 4px solid #a1c936 !important;
+}
+
+.form-immatriculation label.error {
+  color: #DC6060;
+  font-size: 14px;
+  position: relative;
+  top: 0 !important;
+  margin-left: 5px;
+}
+
+#back-link-confirmation {
+  font-size: 15px;
+  color: #89AB1C;
+  padding: 8px;
+  text-decoration: underline;
+}
+
+.well.recap .arrow-left {
+  color: #89AB1C;
+  margin-left: 15px;
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 .modal-content {
+  box-shadow: none;
+}
+body.page-devis-assurance-auto-fastquote-autofq10 .form-group {
+  margin-bottom: 1em;
+}
+
+#edit-marq-immat .a2-icon {
+  display: block;
+  font-size: 35px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  color: #333333;
+  font-weight: normal !important;
+}
+
+#edit-marq-immat .form-type-radio input[type="radio"] + label strong {
+  font-size: 13px;
+  color: #333333;
+  margin-top: 2px;
+  display: inline-block;
+  font-weight: normal;
+}
+
+#edit-marq-immat .form-type-radio input[type="radio"] + label {
+  height: 138px !important;
+  color: #333333 !important;
+  font-weight: bold !important;
+}
+
+.form-immatriculation .a2-icon.immatriculation-icon {
+  top: 35px;
+  position: absolute;
+  font-size: 36px;
+  left: 19px;
+  color: #2F62C9;
+}
+
+.car-infos-container {
+  padding-left: 5px !important;
+}
+
+
+
+@media (max-width: 374px) {
+  div.recherche_par_immatriculation label[for="edit-auto-immattarif"] {
+    font-size: 14px;
+  }
+
+  .form-immatriculation .a2-icon.immatriculation-icon {
+    top: 33px;
+  }
+
+  div.recherche_par_immatriculation .infos-tooltip {
+    left: 27rem;
+  }
+
+}
+
+.update-car-version-container {
+  padding-top: 10px;
+}
+
+@media (min-width: 415px) {
+  body.page-devis-assurance-auto-fastquote-autofq10 .modal-body {
+    margin: auto;
+    width: 42%;
+    padding-top: 70px;
+    padding-right: 13%;
+  }
+  body.page-devis-assurance-auto-fastquote-autofq10 .form-group {
+    padding: 0;
+  }
+
+  #edit-marq-immat .form-type-radio input[type="radio"] + label {
+    width: 100% !important;
+  }
+
+  body.page-devis-assurance-auto-fastquote-autofq10 ul#edit-marq-immat .form-type-radio {
+    width: 45% !important;
+  }
+}
+
+body.page-devis-assurance-auto-fastquote-autofq10 .btn, body.page-devis-assurance-auto-fastquote-autofq10 .btn-as {
+  text-transform: uppercase;
+}
+
+#clonable-container div {
+  display: block !important;
+}
+
+.sidebar-widget.recap-widget {
+  display: none;
+}

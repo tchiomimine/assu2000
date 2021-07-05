@@ -1,0 +1,19 @@
+(function ($) {
+  $(document).ready(function () {
+    // Add loader in dom
+    var progress_markup = '<div class="loader-page"><div class="loader-spinner"></div></div>';
+    $('body').prepend(progress_markup);
+
+    // Trigger loader when form submit
+    $('.submit-loader').submit(function () {
+      var optin = $("[id$=-optin-true]").is(':checked');
+      var mail = $("[id$=-mail]").val();
+      if ($(this).valid()) {
+        if (optin == false || (optin == true && mail != '')) {
+          var progress_class = 'overlay-loader-show';
+          $('body').addClass(progress_class);
+        }
+      }
+    });
+  });
+})(jQuery);

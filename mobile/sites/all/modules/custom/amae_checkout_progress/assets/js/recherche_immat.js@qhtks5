@@ -1,0 +1,303 @@
+(function ($) {
+  Drupal.behaviors.search_auto = {
+    attach: function (context, settings) {
+
+      document.onmouseover = function () {
+        window.innerDocClick = true;
+      };
+
+      document.onmouseleave = function () {
+        window.innerDocClick = false;
+      };
+
+      window.onhashchange = function () {
+        if (typeof tC !== 'undefined') {
+          var page_code = window.location.hash.slice(1);
+          tc_vars.conversion_block_name = page_code;
+          tC.container.reload({ events: { pageview: [{}, {}] } });
+        }
+        if (window.innerDocClick === false) {
+          switch (window.location.hash) {
+            case '#recherche_par_immat':
+              searchByImmat();
+              searchModal.modal('hide');
+              break;
+            case '#recherche_par_marque':
+              searchByBrand();
+              searchModal.modal('hide');
+              break;
+          }
+        }
+        if (window.location.hash === '#version_unique_confirmation' || window.location.hash === '#versions_multiple_confirmation') {
+          $('.update-car-version').removeClass('hidden');
+          $('.back-link-immat').addClass('hidden');
+          $('.immat-search-result-title').addClass('hidden');
+          $('.modal-content .navigation').addClass('hidden');
+        }
+      };
+
+      var checkSearchImmatSelected = setInterval(function () {
+        if ($('#edit-marq-immat-recherche-par-immat').length && (window.location.hash !== '#version_unique' && window.location.hash !== '#versions_multiple' && window.location.hash !== '#version_unique_confirmation' && window.location.hash !== '#versions_multiple_confirmation')) {
+          if ($('#edit-marq-immat-recherche-par-immat').prop('checked') ) {
+            window.location.hash = 'recherche_par_immat';
+            searchByImmat();
+          }
+          clearInterval(checkSearchImmatSelected);
+        }
+      }, 100);
+
+      var checkSearchBrandSelected = setInterval(function () {
+        if ($('#edit-marq-immat-recherche-par-marque').length && (window.location.hash !== '#version_unique' && window.location.hash !== '#versions_multiple' && window.location.hash !== '#version_unique_confirmation' && window.location.hash !== '#versions_multiple_confirmation')) {
+          if ($('#edit-marq-immat-recherche-par-marque').prop('checked') ) {
+            window.location.hash = 'recherche_par_marque';
+            $('#amae-checkout-progress-product-auto-autofq10-form .recherche_immat').css('display', 'none');
+            $('#amae-checkout-progress-product-auto-autofq10-form .recherche_marque').css('display', 'block');
+          }
+          clearInterval(checkSearchBrandSelected);
+        }
+      }, 100);
+
+      // If the car brand search is active force display of some fields.
+      if ($('#edit-marq-immat-recherche-par-marque').prop('checked')) {
+        $('#amae-checkout-progress-product-auto-autofq10-form .recherche_immat').css('display', 'none');
+        $('#amae-checkout-progress-product-auto-autofq10-form .recherche_marque').css('display', 'block');
+      }
+      // Dear futur developer, I'm not proud of this script, don't judge me.
+      // Show the right form inputs based on the client choice.
+      $('input[name="marq_immat"]').once().click(function (e) {
+        window.location.hash = $(this).val();
+        if ($(this).val() == 'recherche_par_marque') {
+          searchByBrand();
+        } else {
+          searchByImmat();
+        }
+      });
+
+      // Search by car brand, model, etc..
+      function searchByBrand() {
+        $('#amae-checkout-progress-product-auto-autofq10-form')[0].reset();
+        $('input[value="recherche_par_marque"]').prop('checked', true);
+        $('#amae-checkout-progress-product-auto-autofq10-form .recherche_immat').css('display', 'none');
+        $('#amae-checkout-progress-product-auto-autofq10-form .recherche_marque').css('display', 'block');
+        $('.modal-content .navigation').removeClass('hidden');
+        forceResetForm();
+      }
+
+      // Search by immat
+      function searchByImmat() {
+        $('#amae-checkout-progress-product-auto-autofq10-form')[0].reset();
+        $('input[value="recherche_par_immat"]').prop('checked', true);
+        $('#amae-checkout-progress-product-auto-autofq10-form .recherche_immat').css('display', 'block');
+        $('#amae-checkout-progress-product-auto-autofq10-form .recherche_marque').css('display', 'none');
+        $('.modal-content .navigation').removeClass('hidden');
+      }
+
+      // Some form inputs don't reset because they were injected in the DOM later by drupal ajax.
+      function forceResetForm() {
+        // We force the reset.
+        $('#amae-checkout-progress-product-auto-autofq10-form select').val(null);
+        $('#amae-checkout-progress-product-auto-autofq10-form select[name=auto_modele]').empty().append('<option value="0" disabled selected>Veuillez sélectionner</option>');
+        $('#amae-checkout-progress-product-auto-autofq10-form select[name=auto_puissance]').empty().append('<option value="0" disabled selected>Veuillez sélectionner</option>');
+        $('#amae-checkout-progress-product-auto-autofq10-form select[name=auto_version]').empty().append('<option value="0" disabled selected>Veuillez sélectionner</option>');
+        $('#amae-checkout-progress-product-auto-autofq10-form input[type="text"]:not([type=hidden])').val(null);
+        $('#amae-checkout-progress-product-auto-autofq10-form input[type="tel"]:not([type=hidden])').val(null);
+        $('.error').text('');
+      }
+
+      // Confirm car version.
+      $('#confirm-version', context).once().on('click', function (e) {
+        if ($('#clonable-container select[name="auto_version"] option:selected').val() !== "-1") {
+          var hash = window.location.hash;
+          if (hash === '#versions_multiple') {
+            window.location.hash = 'versions_multiple_confirmation';
+
+            $('.update-car-version').removeClass('hidden');
+            $('.back-link-immat').addClass('hidden');
+          } else {
+
+            window.location.hash = 'version_unique_confirmation';
+            $('.update-car-version').addClass('hidden');
+            $('.back-link-immat').removeClass('hidden');
+          }
+          displayExtraFields();
+        } else {
+          $('#auto_version-error').remove();
+          $('#clonable-container select[name="auto_version"]').after('<label id="auto_version-error" class="error" for="auto_version">Ce champ est obligatoire.</label>');
+        }
+        e.preventDefault();
+      });
+
+      $('#back-link-confirmation').once().on('click', function (e) {
+        $('#back-link').trigger('click');
+      });
+
+      // Fill all form inputs (hidden ones too) and submit.
+      $('#next-step').on('click', function (e) {
+        e.preventDefault();
+        var forfaitKilometrique = $('#clonable-container-last input[name="auto_forfaitKilometrique_clone"]:checked').val();
+        $('#edit-auto-usage').val($('#clonable-container-last select[name="auto_usage"]').val());
+        $('#edit-auto-dachat').val($('#clonable-container-last input[name="auto_dachat"]').val());
+        $("input[name='auto_forfaitKilometrique'][value='" + forfaitKilometrique + "']").prop('checked', true);
+        $('#edit-next').trigger('click');
+      });
+
+      // Display fields based on auto search results.
+      function displayExtraFields() {
+        $('#clonable-container-last').html('');
+        var clonable_fields = $('.clonable').clone();
+        $('#clonable-container-last').append(clonable_fields);
+        $('#clonable-container-last .clonable input, #clonable-container-last .clonable div, #clonable-container-last .clonable select').removeAttr('id');
+        $('#clonable-container-last input[name="auto_forfaitKilometrique"]').attr('name', 'auto_forfaitKilometrique_clone');
+        $('#next-step').removeClass('hidden');
+        $('#confirm-version').addClass('hidden');
+        $('#clonable-container').addClass('hidden');
+        $('#clonable-container-last').removeClass('hidden');
+        $('#clonable-container-last .clonable').css('display', 'block');
+        if (window.location.hash !== '#version_unique_confirmation') {
+          $('#car-version').text($('#clonable-container select[name="auto_version"] option:selected').text());
+        }
+        $('input[name="auto_version"]').val($('#clonable-container select[name="auto_version"] option:selected').val());
+
+        $('#clonable-container-last ul#edit-auto-forfaitkilometrique label').on('click', function (e) {
+          $(this).siblings('input').prop('checked', true);
+        });
+        $('#clonable-container-last').css('display', 'block');
+      }
+
+      // Update immat and search again.
+      $('#update-query-immat').on('click', function (e) {
+        e.preventDefault();
+        searchByImmat();
+        searchModal.modal('hide');
+      });
+      // Display search by brand form and reset filled inputs.
+      $('#goto-search-by-brand').on('click', function (e) {
+        e.preventDefault();
+        searchByBrand();
+        forceResetForm();
+        $('label[for="edit-marq-immat-recherche-par-marque"]').trigger('click');
+        searchModal.modal('hide');
+      });
+      // Immat search after back link click.
+      $('#back-link').on('click', function (e) {
+        e.preventDefault();
+        window.location.hash = 'recherche_par_immat';
+        searchByImmat();
+        searchModal.modal('hide');
+        $('#edit-auto-immattarif').focus();
+      });
+      // Validate the immat format.
+      $('#edit-auto-immattarif').on('blur', function (e) {
+        var immat = $(this).val();
+        immat = immat.replace(/\s/g, '');
+        var patternFNI = /^\d{1,4}[\-]?[a-zA-Z]{1,3}[\-]?\d{1,2}$/;
+        var patternSIV = /^[a-zA-Z]{1,2}[\-]?\d{1,3}[\-]?[a-zA-Z]{1,2}$/;
+        // Two formats exist: FNI ad SIV.
+        var resultFNI = patternFNI.exec(immat);
+        var resultSIV = patternSIV.exec(immat);
+        // IF both are not matched we show an error.
+        if (resultFNI == null && resultSIV == null) {
+          if (typeof tC !== 'undefined') {
+            var page_code = window.location.hash.slice(1);
+            tc_vars.conversion_block_name = page_code + '.ERROR Format d\'immatriculation invalide';
+            tC.container.reload({ events: { pageview: [{}, {}] } });
+          }
+          $('#sidexa-msg').remove();
+          $('.form-immatriculation ').append('<label id="sidexa-msg" class="error">Merci de renseigner une immatriculation valide.</label>');
+        } else {
+          $('#sidexa-msg').remove();
+        }
+      });
+
+      // Disable backspace key.
+      var rx = /INPUT|SELECT|TEXTAREA/i;
+      // The back/cancel key will not affect navigation.
+      $(document).bind("keydown keypress", function (e) {
+        if (e.which == 8) { // 8 == backspace
+          if (!rx.test(e.target.tagName) || e.target.disabled || e.target.readOnly) {
+            e.preventDefault();
+          }
+        }
+      });
+    }
+  };
+}(jQuery));
+
+// Method called by Drupal after a success result.
+jQuery.fn.displayAutoSearchResponse = function (data, codes) {
+  $('select[name="auto_marque"]').val(codes.auto_marque);
+  $('input[name="auto_mec"]').val(codes.auto_mec);
+  $('input[name="auto_modele"]').val(codes.auto_modele);
+  $('input[name="auto_puissance"]').val(codes.auto_puissance);
+
+  $('#immat_query').text(data.immat);
+  $('#car-brand').text(data.marque);
+  $('#car-model').text(data.modele);
+  $('#car-energy').text(data.energie);
+  $('#horse-power').text(data.puissance);
+  $('#gearbox').text(data.boite_de_vitesse);
+  $('#date-mise-en-circulation').text(data.date_mec);
+  $('#car-brand-logo').attr('src', '/' + data.car_brand_logo);
+  if (data.car_brand_logo != null) {
+    $('#car-brand-logo').attr('alt', data.marque.toUpperCase());
+  } else {
+    $('#car-brand-logo').attr('alt', 'Marque');
+  }
+
+  if (data.versions instanceof Object && Object.keys(data.versions).length > 1) {
+    window.location.hash = 'versions_multiple';
+    $('#car-version').text('');
+    var clone = $('#dependent-car-engine2-list').clone();
+    $('#clonable-container').html('');
+    $('#clonable-container').append(clone);
+    $('#clonable-container #dependent-car-engine2-list div, #clonable-container #dependent-car-engine2-list select').removeAttr('id');
+    $('label[for="edit-auto-version"]').text('Sélectionnez la version du véhicule');
+    $('#clonable-container #dependent-car-engine2-list').css('display', 'block');
+    $('#clonable-container').css('display', 'block');
+  } else if (data.versions instanceof Object && Object.keys(data.versions).length === 1) {
+    $('#clonable-container').css('display', 'none');
+    window.location.hash = 'version_unique';
+    var key = Object.keys(data.versions);
+    $('#car-version').text(data.versions[key]);
+    $('select[name="auto_version"]')
+        .append($("<option selected></option>")
+            .attr("value", key)
+            .text(data.versions[key]));
+  } else {
+    $('body.overlay-loader-show .loader-page').css('display', 'none');
+    return false;
+  }
+  $('#clonable-container select[name="auto_version"]').html('');
+  $('#clonable-container select[name="auto_version"]')
+      .append($("<option disabled selected></option>")
+          .attr("value", '-1')
+          .text('Veuillez sélectionner'));
+  $.each(data.versions, function (key, value) {
+    $('#clonable-container select[name="auto_version"]')
+        .append($("<option></option>")
+            .attr("value", key)
+            .text(value));
+  });
+
+  $('.update-car-version').addClass('hidden');
+  $('.back-link-immat').removeClass('hidden');
+  $('#clonable-container').removeClass('hidden');
+  $('#clonable-container-last').addClass('hidden');
+  $('#next-step').addClass('hidden');
+  $('#confirm-version').removeClass('hidden');
+
+  $('.immat-search-result-title').removeClass('hidden');
+
+  window.searchModal = $('#search_auto_result').modal('show');
+  $('.modal-backdrop').addClass('hidden');
+};
+
+jQuery.fn.displayErrorMessage = function (message) {
+  if (typeof tC !== 'undefined') {
+    var page_code = window.location.hash.slice(1);
+    tc_vars.conversion_block_name = page_code + '.ERROR erreur de recherche par immatriculation';
+    tC.container.reload({ events: { pageview: [{}, {}] } });
+  }
+  $('#sidexa-msg').remove();
+  $('.form-immatriculation ').append('<label id="sidexa-msg" class="error">' + message + '</label>');
+};

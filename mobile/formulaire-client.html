@@ -1,0 +1,142 @@
+<!-- ***************************************************** -->
+<!-- redirection.jsp		   	                21/10/2003 -->
+<!--                                                       -->
+<!-- AUTEUR : 								     		   -->
+<!-- ***************************************************** -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="./errorHandler/javascript/logger.js"></script>
+<script type="text/javascript" src="./errorHandler/javascript/handler.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/jquery.min.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/jquery.media.js"></script>
+	<script type="text/javascript" src="./javascript/ajax.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/util.js"></script>
+	<script type="text/javascript" src="./javascript/util_IDA.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/format.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/formatValidateTelephone.js"></script>
+	<script type="text/javascript" src="./javascript/popup.js"></script>
+	<script type="text/javascript" src="./javascript/submit.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/cache_page.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/menu.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/input_date.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Txt/javascript/TraitementDeTexte.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/layout/javascript/layout.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/WindNet/mdiWindNet.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/WindNet/windNet.js"></script>
+	<script type="text/javascript" src="./geid/javascript/mdiWorkspace.js"></script>
+	<script type="text/javascript" src="./javascript/workspace.js"></script>
+	<script type="text/javascript" src="./geid/javascript/container.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/WindNet/divers/properties.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/WindNet/action/select.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/WindNet/divers/rectangle.js"></script>
+	<script type="text/javascript" src="./javascript/EditInPlace.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/compatibleJS.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/calpopup.js"></script>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/util/XmlHttp.js"></script>
+	<script type="text/javascript" src="./javascript/autosuggest.js"></script>
+	<script type="text/javascript" src="./javascript/autocompleteText.js"></script>
+  	<script type="text/javascript" src="./resource/framework.core.Web/javascript/fiche_client.js"></script>
+  	<script type="text/javascript" src="./javascript/uuid.core.js"></script>
+	<script type="text/javascript" src="./javascript/mdiWindnetContrat.js"></script>
+	<script type="text/javascript" src="./javascript/mdiWindnetTiers.js"></script>
+	<script type="text/javascript" src="./core.sgp/javascript/mdiWindnetSuiviPanier.js"></script>
+	<script type="text/javascript" src="./javascript/clientMessagePopup.js"></script>
+	
+		<link href="./resource/framework.core.Web/javascript/dynatree/src/skin/ui.dynatree.css" rel="stylesheet" type="text/css">
+        <script src="./resource/framework.core.Web/javascript/dynatree/jquery/jquery-ui.custom.js" type="text/javascript"></script>
+        <script src="./resource/framework.core.Web/javascript/dynatree/jquery/jquery.cookie.js" type="text/javascript"></script>
+        <script src="./resource/framework.core.Web/javascript/dynatree/src/jquery.dynatree.js" type="text/javascript"></script>
+
+        <!-- dropdownchecklist -->
+        <link href="./resource/framework.core.Web/javascript/dynatree/dropdownchecklist/css/ui.dropdownchecklist.standalone.css" rel="stylesheet" type="text/css">
+        <link href="./resource/framework.core.Web/javascript/dynatree/dropdownchecklist/css/ui.dropdownchecklist.themeroller.css" rel="stylesheet" type="text/css">
+        <!-- link href="./resource/framework.core.Web/javascript/dynatree/dropdownchecklist/css/smoothness-1.8.13/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css" -->
+        <link href="./resource/framework.core.Web/javascript/dynatree/dropdownchecklist/css/jquery-ui-1.8.13.custom.min.js" type="text/javascript"></script>
+        <script src="./resource/framework.core.Web/javascript/dynatree/dropdownchecklist/ui.dropdownchecklist-1.4-min.js" type="text/javascript"></script>
+        <script src="./resource/framework.core.Web/javascript/dynatree/amaeTreeTag.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+		try{
+			if(logger){
+				logger.logLevel = 'ERROR';
+				logger.activate = true;
+			}
+		}catch(e){}
+		messageWaitInfo = 'Veuillez patienter';
+		messageChargement = 'Chargement...';
+		messageChargementEnCours = 'Chargement en cours...';
+
+		
+
+		
+				function generatePageId(pagename){
+					var input = document.createElement("input");
+					input.setAttribute("type", "hidden");
+					input.setAttribute("id", "pageId");
+					input.setAttribute("name", "pageId");
+					input.setAttribute("value", pagename);
+					document.body.appendChild(input);
+				};
+		
+		if(typeof $ === 'undefined' || !$){
+			var scripts;
+			if(typeof document.head !=='undefined' && document.head){
+				scripts = document.head.getElementsByTagName("script");
+			}else{
+				scripts = document.getElementsByTagName("script");
+			}
+  			var listScript = "\nListe des javascript chargé : ";
+  			for(var i=0; i<scripts.length; i++){
+  				script = scripts[i];
+  				if(typeof script.src !== 'undefined' && script.src != null && script.src != ""){
+  					listScript += "\n\t"+script.src;
+  				}
+  			}
+  			listScript += "\n";
+  			throw new Error("La librairie JQuery.js n'est pas chargée correctement." + listScript);
+		}
+
+	</script>
+<HEAD>
+	<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	
+	<TITLE>redirection.jsp</TITLE>
+	<script type="text/javascript" src="./resource/framework.core.Web/javascript/dynatree/jquery/jquery.cookie.js"></script>
+	<script type="text/javascript" src="./themes/client/script/deleteCookie.js"></script>
+</HEAD>
+<BODY>
+	<form name="LoginForm" method="post" action="/Proximeo/deconnexion.max" accept-charset="ISO-8859-1"><input type="hidden" name="com.assu2000.framework.struts.action.MW_TOKEN" value="MW_TOKEN_DISABLED">
+		
+		
+		
+			<P>Merci de vous (re-)connecter.</P>
+		
+	</form><SCRIPT language="javascript">InitFocus('LoginForm');</SCRIPT>
+	
+</BODY>
+</HTML>

@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <ReadSkillsetByName xmlns="http://webservices.ci.ccmm.applications.nortel.com">
+            <!--Optional:-->
+            <skillsetName>!__skillsetName__!</skillsetName>
+            <!--Optional:-->
+            <sessionKey>!__sessionkey__!</sessionKey>
+        </ReadSkillsetByName>
+    </soapenv:Body>
+</soapenv:Envelope>

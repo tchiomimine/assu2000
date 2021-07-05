@@ -1,0 +1,51 @@
+(function ($) {
+  Drupal.behaviors.amae_checkout_progress_mrh_rooms = {
+    attach: function (context, settings) {
+
+      var logement = $('input[name="mrh_typelogement"]');
+      var default_logement = $('input[name="mrh_typelogement"]:checked');
+      var default_piece = $('input[name="mrh_piece"]:checked');
+      var pieces = $('input[name="mrh_piece"] + label');
+      var radios = $('#edit-mrh-piece input:radio');
+      var original_bg_color = radios.css('background-color');
+
+      // Execute only on document context (page load).
+      if (context == document) {
+        manage_rooms(default_logement, original_bg_color);
+      }
+
+      // Force activation style on form error.
+      $(default_piece).next('label').addClass('piece-active');
+
+      // Remove active class from old option.
+      $(pieces).on('click', function(e) {
+        if ($(this).prev('.form-radio').prop('disabled')) {
+          e.preventDefault();
+        } else {
+          $(pieces).removeClass('piece-active');
+          $(this).addClass('piece-active');
+        }
+      });
+
+      logement.on('change', function () {
+        $(pieces).removeClass('piece-active');
+        manage_rooms($(this), original_bg_color);
+      });
+
+      function manage_rooms(logement, bg_color) {
+        var type_logement = logement.val();
+        if (type_logement === 'S' || type_logement === 'C') {
+          radios.prop('checked', false);
+          radios.filter(function (index) {
+            return index > 0 ? 1 : 0;
+          }).attr('disabled', true).next('label').css('background-color', 'rgba(0,0,0,0.05)');
+          $('#edit-mrh-piece input[value="1"]').prop('checked', true);
+        }
+        else {
+          radios.prop('checked', false).attr('disabled', false).next('label').css('background-color', bg_color);
+        }
+      }
+
+    }
+  };
+}(jQuery));

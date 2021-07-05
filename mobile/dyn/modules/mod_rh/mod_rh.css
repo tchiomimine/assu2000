@@ -1,0 +1,133 @@
+/*****
+FORMULAIRE
+***/
+#human-form-apply{font-family:Arial, Helvetica, sans-serif}
+#human-form-apply *{font-size:12px !important}
+#human-form-apply input[type="text"], #human-form-apply select, #human-form-apply input[type="file"] {background:#fff;border:1px solid #B9BBBC}
+
+/***
+APPARANCE DES OFFRES
+***/
+.h-main-title, .h-main-content, .h-filter-bar{}
+.h-main-content ul, .h-main-content ul{list-style:none}
+
+.h-main-content p small{font-size:11px;color:#999999}
+.lead{margin-bottom:18px;font-size:20px;font-weight:200;line-height:27px}
+h1.h-main-title, .h-main-content h1.h-title,
+h2.h-main-title, .h-main-content h2.h-title,
+h3.h-main-title, .h-main-content h3.h-title{color:#333;margin:0;font-weight:bold;text-rendering:optimizelegibility}
+h1.h-main-title small,
+h2.h-main-title small,
+h3.h-main-title small,
+.h-main-content h1.h-title small,
+.h-main-content h2.h-title small,
+.h-main-content h3.h-title small{/*font-weight:normal;*/
+  color:#999999}
+h1.h-main-title, .h-main-content h1.h-title{font-size:30px;line-height:36px}
+h1.h-main-title small, .h-main-content h1.h-title small{font-size:16px}
+h2.h-main-title, .h-main-content h2.h-title{/* font-size:24px;line-height:36px;*/
+  margin-bottom:10px}
+h2.h-main-title small, .h-main-content h2.h-title small{font-size:16px}
+h3.h-main-title, .h-main-content h3.h-title{font-size:16px;line-height:27px}
+h3.h-main-title small, .h-main-content h3.h-title small{font-size:14px}
+.page-header{padding-bottom:17px;margin:18px 0;border-bottom:1px solid #eeeeee}
+.page-header h1{line-height:1}
+.h-filter-bar ul li, .h-tools li {display:inline}
+.h-filter-bar a, .h-tools li a, .h-filter-bar .btn{display:inline-block;*display:inline;text-decoration:none;/* IE7 inline-block hack */
+
+    *zoom:1;padding:4px 10px 4px;margin-bottom:0;font-size:13px;line-height:18px;*line-height:20px;text-align:center;vertical-align:middle;cursor:pointer;border:1px solid #cccccc;border-bottom-color:#b3b3b3;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;*margin-left:.3em;background:#fff;color:#5C5C5C;/*text-transform:capitalize;*/
+}
+
+.h-filter-bar a:hover, .h-tools li a:hover, .h-filter-bar .btn:hover{background:#fff;border:1px solid #5C5C5C;color:#000}
+
+.h-filter-bar ul{padding-left:20px}
+
+ul.h-filter-search{position:relative;width:100%;padding-left:0px}
+ul.h-filter-search li{margin-left:20px}
+
+ul.h-filter-search li label{display:block;float:left;width:35%;font-size:.8em;text-align:right;padding-right:10px}
+ul.h-filter-search li select{width:50%;font-size:1em}
+ul.h-filter-search li .btn{position:relative;right:0;margin-left:auto}
+
+.h-filter-bar > ul.h-filter-search li{display:block;margin-bottom:4px}
+
+.h-filter-bar > ul.h-filter-search li label{/*display:inline;float:none;*/
+  font-size:14px;line-height:20px;width:110px}
+
+.h-filter-bar > ul.h-filter-search li select{margin:0;float:none;width:140px}
+
+.h-main-content h2.h-title a{text-decoration:none;/* color:#333;*/
+}
+.h-list .h-title{padding-top:20px}
+.h-list .h-reference, .h-details .h-reference{float:right;position:relative}
+.h-job span, .h-details span{font-style:italic;/*color:#999;*/
+    padding-right:10px}
+.h-summary{padding-top:5px;margin-top:5px;border-top :1px solid #EEE}
+
+.h-details{margin-top:10px}
+.h-details div h2{margin:10px 50px}
+
+.h-details .h-company , .h-details .h-contract , .h-details .h-country , .h-details .h-country-intl , .h-details .h-regions , .h-details .h-city , .h-details .h-city-intl , .h-details .h-education-level , .h-details .h-experience-level , .h-details .h-jobstart , .h-details .h-jobend , .h-details .h-working-time , .h-details .h-salary{margin:0 0 20px}
+
+.h-details .h-contract h2, .h-details .h-country h2, .h-details .h-country-intl h2, .h-details .h-regions h2, .h-details .h-city h2, .h-details .h-city-intl h2, .h-details .h-education-level h2, .h-details .h-experience-level h2, .h-details .h-jobstart h2, .h-details .h-jobend h2, .h-details .h-working-time h2, .h-details .h-salary h2,
+.h-details .h-working-time p,   .h-details .h-contract p, .h-details .h-country p, .h-details .h-country-intl p, .h-details .h-regions p, .h-details .h-city p, .h-details .h-city-intl p, .h-details .h-education-level p, .h-details .h-experience-level p, .h-details .h-jobstart p, .h-details .h-jobend p, .h-details .h-salary p{display:inline}
+ .h-details .h-contract h2, .h-details .h-country h2, .h-details .h-country-intl h2, .h-details .h-regions h2, .h-details .h-city h2, .h-details .h-city-intl h2, .h-details .h-education-level h2, .h-details .h-experience-level h2, .h-details .h-jobstart h2, .h-details .h-jobend h2, .h-details .h-working-time h2, .h-details .h-salary h2{display:inline-block;margin:0 0 0 50px;padding:0;width:140px;font-size:14px; font-family:Arial, Helvetica, sans-serif;font-weight:bold}
+.emploi li.h-tools-apply{margin:10px 0}
+li.h-tools-apply a, li.h-tools-apply a:hover{background:#333;border:1px solid #FFF;color:#fff;font-weight:bold;border-radius: 0px;font-size:18px; padding: 10px 30px}
+.h-tools-home{float:right}
+.h-pagination{text-align:center}
+.h-pagination ul li{display:inline;margin:0 4px !important}
+.h-pagination ul li a{color:#979797;font-weight:bold}
+.h-pagination ul li a.page.current{font-weight:bold;color:#000000}
+.h-pagination ul li.disabled{display:none;color:#000000}
+
+.emploi ul{margin:0}
+.emploi ul li{background:none}
+
+/****
+FORMULAIRE DE RECHERCHE :.search-jobs-form
+ASSU 2000
+*****/
+.emploi select , .emploi input[type="text"]{background:#fff;border:1px solid #B9BBBC}
+
+.h-filter-bar{margin:0 30px}
+
+ul.h-filter-nav{float:right}
+
+ul.h-filter-nav, ul.h-filter-search{border:1px solid #E6E6E6;padding:15px 15px;display:block;width:260px;height:128px;background:#F4F4F4;/* Old browsers */
+background:-moz-linear-gradient(top,  #F4F4F4 0%, #ffffff 50%, #ffffff 100%);/* FF3.6+ */
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#F4F4F4), color-stop(50%,#ffffff), color-stop(100%,#ffffff));/* Chrome,Safari4+ */
+background:-webkit-linear-gradient(top,  #F4F4F4 0%,#ffffff 50%,#ffffff 100%);/* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(top,  #F4F4F4 0%,#ffffff 50%,#ffffff 100%);/* Opera 11.10+ */
+background:-ms-linear-gradient(top,  #F4F4F4 0%,#ffffff 50%,#ffffff 100%);/* IE10+ */
+background:linear-gradient(to bottom,  #F4F4F4 0%,#ffffff 50%,#ffffff 100%);/* W3C */
+
+-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-moz-box-shadow:5px 5px 10px 0px #cfcfcf;-webkit-box-shadow:5px 5px 10px 0px #cfcfcf;-o-box-shadow:5px 5px 10px 0px #cfcfcf;box-shadow:5px 5px 10px 0px #cfcfcf;filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#F4F4F4', endColorstr='#ffffff',GradientType=0 ),
+progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=134, Strength=10)}
+
+ul.h-filter-nav li, ul.h-filter-search li{text-align:center}
+
+ul.h-filter-nav li{display:block}
+
+.h-filter-bar > ul.h-filter-search li{margin:0 auto 10px}
+.h-filter-bar > ul.h-filter-search li label{font-size:12px}
+
+ul.h-filter-nav li.h-job-filter{margin-top:25px;*margin-top:35px}
+ul.h-filter-nav li .btn{width:160px}
+
+.h-list-datas td{border-bottom:1px solid #F4F4F4;font-size:12px;line-height:1.3em;padding:10px !important}
+.h-list-datas td a{color:#083188}
+.h-list-datas td a:hover{text-decoration:underline}
+.h-list-jobs .h-contract-type{width:30px}
+.h-list-jobs .h-title{width:180px}
+.h-list-titles th.h-reference, .h-list-datas td.h-reference{display:none}
+
+table.h-list-jobs{width:660px;margin:20px 15px 0 50px}
+table.h-list-jobs td, table.h-list-jobs th{padding:10px;vertical-align:top;font-size:12px}
+
+.h-list-titles th{background:#F4F4F4;border-right:1px solid #FFFFFF;font-weight:bold;line-height:1.3em}
+.h-route-jobs h1{ display:none}
+button#h-search {margin-left:30%}
+.item-page.old ul.h-filter-search li, .item-page.old  ul.h-filter-nav li{list-style-type:none;}
+.item-page.old ul.h-filter-nav li{margin:15px 40px;}
+.item-page.old   ul.h-filter-search , .item-page.old  ul.h-filter-nav {margin:0 10px}

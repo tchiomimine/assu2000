@@ -1,0 +1,31 @@
+/**
+ * Created by makenson.joseph.tmp on 06/04/2017.
+ */
+
+(function ($) {
+  $(document).ready(function() {
+    $('.field_date').bind('keyup','keydown', function(event) {
+      var inputLength = event.target.value.length;
+      if (event.keyCode != 8){
+        if(inputLength === 2 || inputLength === 5){
+          var thisVal = event.target.value;
+          thisVal += '/';
+          $(event.target).val(thisVal);
+        }
+      }
+    });
+  });
+  
+  $(document).ajaxComplete(function() {
+    $('.field_date').bind('keyup','keydown', function(event) {
+      var inputLength = event.target.value.length;
+      if (event.keyCode != 8){
+        if(inputLength === 2 || inputLength === 5){
+          var thisVal = event.target.value;
+          thisVal += '/';
+          $(event.target).val(thisVal);
+        }
+      }
+    });
+  });
+})(jQuery);

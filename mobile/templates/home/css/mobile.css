@@ -1,0 +1,931 @@
+@charset "UTF-8";
+#page{overflow:hidden}
+#page,.content .home,.old .item-page, .blog, .item-page.cest, .item-page.contact, .item-page.garages, .landingpromomoto .item-page, .landing .ligne,.timeline .item-page, .agencedep .item-page, 
+.agencedep .category-desc, .item-page.tempo .contenu {width:auto}
+.span-16, .col2, .contentpane{width:100%}
+
+#logosite img, .home .items-leading img, .visuel_prod, .contenu_prod {max-width:100%;height:auto}
+ .old img, .agencedep .category-desc img{height:auto; max-width:230px; margin:5px !important; float:none !important}
+.home .items-leading h1, .col2, .resume, .offre .item-page p, .col-description h3, .menu_services, .offre #options ul.contenu, .offre .assupro ul.avantages {font-size:0.8em}
+ th.col-formule strong{display: inline-block; font-size: 1em !important; padding: 0 !important; width: 100% !important}
+#tableau .details td{font-size:0.7em !important}
+#tableau .details td span{display:none}
+.puce, .details td strong{background-image:url(../images/puces_mobile.png) !important}
+
+/*header*/
+.home .headerbis {height: 55px; width: 100%; margin-left: 0; border-bottom: 1px solid #c0c0c0; background: #fff; position: fixed; z-index: 9999;}
+.home .header{margin:0;height:auto;width:auto}
+.home .headerbis #logosite {padding: 0; width: 55px; top: 0; left: 0; position: relative; float: right;}
+.headerbis .menu_haut{float:left;margin:0px;padding:0;position:absolute;border-right: 1px solid #6b6b6b;}
+.headerbis .menu_haut > li > .separator{display:none}
+.headerbis .menu_haut > li > .div_inter{/*background:url(/images/menu_mobile.png) no-repeat 1px 3px;*/cursor:pointer;float:left;height:33px;left:0px;padding:11px}
+.headerbis .menu_haut > li > .div_inter img{width:32px}
+.menumobile{background:#eee; width: auto;padding:10px}
+.content > .right{height:100%;}
+.content > .menumobile{left:-272px;top:0px;position:absolute;float: left; margin: 0 0 6px;}
+.content > .menumobile > ul{background:#222A33;display:block;width:250px; text-align:right}
+.content > .menumobile .menu_haut li{display:block;border-top:1px solid #999}
+.content > .menumobile .menu_haut li a{color:#FFF;padding:6px 20px;display:block}
+.content > .menumobile .menu_haut li > .separator{display:block;height:1px}
+.content > .menumobile .menu_haut > li.first a{background:#222A33 url(../images/puces_mobile.png) no-repeat 225px -80px ;position:relative;padding-right:30px}
+.home .content{margin-left:0px;padding-top:55px}
+.menu_services{width:auto; margin-left:55px}
+.menu_services li{float:left;border-right: 1px solid #c0c0c0; width:23%}
+.menu_services li a{width:35px;height: 35px;text-align:center;display:block;margin:0 !important; padding:10px 5px;}
+/*.menu_services .contact {padding-top:8px; height:35px}*/
+.menu_services .contact img{width:25px;}
+.menu_services .espaceperso img{width: 33px;}
+.menu_services .getgeoloc img {width: 22px;}
+#form_box_locator .lf_geoloc{/*background:url(/images/trouver-agence.png) no-repeat 10px 5px;*/ text-indent:-2000em;width:55px;height:55px;display:block;position:fixed;top:0;z-index:9999;left:58%;}
+.header .menu{height:auto;position:relative;border-bottom:none}
+.header .menu li{border-bottom:1px solid #6A6B6D;border-left:1px solid #6A6B6D;border-right:1px solid #6A6B6D;float:none}
+.header .menu > li{padding:0 /*17%*/;min-height:64px}
+.header .menu > li:hover{padding:0 /*17%*/;min-height:64px;border-color:#6A6B6D !important;margin:0 !important}
+.header .menu > li:hover > a, .header .menu > li > a:hover{padding:20px 73px 0 5px;text-transform:none;font-size:100%;background:none !important;height:44px;width:62px;text-align:left;border-left:none;border-right:none;font-size:1.4em;line-height:1em}
+
+.header .menu > li:hover > a.ligne1, .header .menu > li > a:hover.ligne1{line-height:28px}
+.header .menu > li > a{border-left:none;border-right:none;float:left;padding-left:5px;padding-right:73px;height:44px;font-size:1.4em;width:62px;margin-left:15%}
+.header .menu > li > a:hover .image-sprite,.header .menu > li:hover > a > .image-sprite{display:block}
+.header .menu > li > a .image-sprite{right:5px}
+.header .menu > li > ul{display:none;position:relative;left:0;background:none #909090;margin-top:0;width:auto;min-height:40px;clear:both;border:none;opacity:1}
+.header .menu > li > ul > li{width:100%;border-top:1px solid #6A6B6D;height:38px;position:relative;opacity:1}
+.header .menu > li > ul > li:hover, .header .menu > li > ul > li.selected{background:none}
+.header .menu > li > ul > li > a{text-transform:capitalize;font-size:1.4em;font-weight:700 !important;color:#FFFFFF;padding:8px;margin-left:15%;line-height:20px;opacity:1}
+.header .menu ul > li > a.ligne1 .text-sprite{line-height:20px}
+.header .menu > li > ul > li > a > .image-sprite{display:none}
+.header .menu > li:hover, .header .menu > li > ul > li.selected{background:none !important}
+/*.header .menu > li > ul, .header .menu li:hover > ul, .header .menu li:hover > div,*/ .header .menu > li:hover > ul, #espace ul, .ico{display:none}
+.header .menu > li > div, .header .menu > li:hover > div, .header .menu > li.sfhover > div{width:40px;height:20px;background:url(../images/fleche_bas.png) no-repeat 10px -20px;position:relative;left:10px;top:24px;float:left;cursor:pointer;opacity:1}
+.header .menu > li.onselect > div{background-position:10px 2px}
+.header .menu > li > ul > li.first > ul, .header .menu > li > ul > li > ul, .header .menu > li > ul > li:hover > ul{display:none;background-color:transparent;height:100%;left:45%;opacity:1;top:0;width:51%}
+.header .menu ul li ul li{width:100%}
+.header .menu ul li ul li.first{margin:5px 0}
+.header .menu > li > ul > li > ul > li a{font-size:14px;margin:0;padding:3px;width:auto}
+.header .menu > li > ul > li > ul > li.last{display:none}
+.header .item464 a{padding-left:11px}
+
+/*header v2*/
+.home_v2 .headerbis{height:44px;width:100%;margin-left:0;padding:4px; background:#fff; position:fixed;z-index:9999}
+.home_v2 .header{margin:0;height:auto;width:auto}
+.home_v2 .headerbis #logosite{padding:0 4% 0 0;width:42px;top:0;left:0;position:relative;float:right}
+.headerbis .menu_hautv2{float:left;margin-left: 0px; margin-top: 6px; position: absolute; text-transform:none}
+.headerbis .menu_hautv2 li{background: url(../images/picto_menu.svg) no-repeat 14px 0px; display: block; height: 21px;}
+.headerbis .menu_hautv2 li.active{background: url(../images/picto_croix.svg) no-repeat 14px 0px; display: block; height: 21px;}
+.headerbis .menu_hautv2 .separator{margin: 0px; padding: 25px 8px 0 8px; text-align: center; font-size: 8px; width: 38px; float: left;}
+.home_v2 .headerbis ul > li > .div_inter{    border-left: 1px solid #ccc; width: 1px; height: 100%; margin: 2px 0; padding: 2px 0; float: left;}
+.menumobilev2{background:#eee; width: auto;padding:10px}
+.content > .right{height:100%;}
+.home_v2 .content > .menumobile > ul{background:#ededed;display:block;width:220px; padding-right:12px; text-align:left}
+
+.home_v2 .content > .menumobile .menu li a{padding:14px 20px;display:block}
+/*.home_v2 .content > .menumobile .menu li > .separator{display: block; height: 1px;}
+.home_v2 .content > .menumobile .menu > li.first a{background:#222A33 url(../images/puces_mobile.png) no-repeat 225px -80px ;position:relative;padding-right:30px}*/
+.home_v2 .content{margin-left:0px;padding-top:45px}
+.menu_servicesv2{width:auto; font-size: 8px; margin-left:55px; margin-top: 6px; float: left;}
+.menu_servicesv2 li{float:left; height: 21px;}
+.menu_servicesv2 li a{float: left; text-align: center; display: block; margin: 0 !important; padding: 25px 15px 0;}
+.menu_servicesv2 .contact {background: url(../images/picto_phone.svg) no-repeat center 0px; background-size: 21px;}
+.menu_servicesv2 .espaceperso {background: url(../images/picto_espace_perso.svg) no-repeat center 0px; background-size: 21px;}
+.menu_servicesv2 .contact img{height:25px;}
+.menu_servicesv2 .espaceperso img{width: 33px;}
+.menu_servicesv2 .getgeoloc img {width: 22px;}
+#form_box_locator .lf_geoloc{/*background:url(/images/trouver-agence.png) no-repeat 10px 5px;*/ text-indent:-2000em;width:55px;height:55px;display:block;position:fixed;top:0;z-index:9999;left:58%;}
+
+.home_v2 #headerv2 li {float:left; height: 42px; width:17%; margin:21px 0px; padding:10px; font-size:0.9em; border-right: 1px solid #ccc}
+.home_v2 #headerv2 li a{font-family: 'Open Sans Condensed'; font-weight:bold; padding-bottom:35px; display: block; text-align: center}
+.home_v2 #headerv2 li .auto{background: url(../images/picto_auto.svg) no-repeat center bottom;}
+.home_v2 #headerv2 li .moto{background: url(../images/picto_moto.svg) no-repeat center bottom;}
+.home_v2 #headerv2 li .mrh{background: url(../images/picto_habitation.svg) no-repeat center 12px; background-size:35px}
+.home_v2 #headerv2 li.last .separator{background: url(../images/picto_autres.svg) no-repeat center 22px; background-size:20px; font-family: 'Open Sans Condensed'; font-weight:bold; display: block; padding-bottom:35px; text-align: center}
+.home_v2 #headerv2 li.last {border-right:none}
+
+.home_v2 .content > .menumobile .menu{height:auto;position:relative;border-bottom:none}
+
+.home_v2 .content > .menumobile {left: 0; top: 52px; opacity: 0; transition: all 0.5s ease-in-out; z-index: 9999; overflow: hidden; max-height: 0; margin-top: 0; margin-bottom: 0; padding: 0; width: 100%; padding-right: 20px; background: #000c;}
+.home_v2 .content > .menumobile.show{opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+	max-height:  100%; height: 100%; left: 0; overflow-y: scroll; position:fixed;
+}
+.home_v2 .content > .menumobile .menu li{/*padding-right:10px;border-left:1px solid #6A6B6D;border-right:1px solid #6A6B6D;float:none*/}
+.home_v2 .content > .menumobile .menu > li{/*padding:0 17%*/;min-height:44px; border-bottom:1px solid #fff;}
+.home_v2 .content > .menumobile .menu > li:hover{/*padding:0 17%*/;min-height:44px;border-color:#fff !important;margin:0 !important}
+.home_v2 .content > .menumobile .menu > li:hover > a, .home_v2 .content > .menumobile .menu > li > a:hover{background:none !important;}
+
+.home_v2 .content > .menumobile .menu > li:hover > a.ligne1, .home_v2 .content > .menumobile .menu > li > a:hover.ligne1{/*line-height:28px*/}
+.home_v2 .content > .menumobile .menu > li > a{border-left:none;border-right:none;float:left;padding-left:5px;padding-right:23px;height:16px;font-size:1.1em;width:60%;margin-left:8%}
+.home_v2 .content > .menumobile .menu > li > a:hover .image-sprite,.home_v2 .content > .menumobile .menu > li:hover > a > .image-sprite{display:block}
+.home_v2 .content > .menumobile .menu > li > a .image-sprite{right:5px}
+.home_v2 .content > .menumobile .menu > li > ul{display:none;position:relative;left:0;background:none #f8f8f8; width: 105% !important;margin-top:0;width:auto;min-height:44px;clear:both;border:none;opacity:1}
+.home_v2 .content > .menumobile .menu > li > ul > li{border-top:1px solid #ededed; margin-right: 5%;height:38px;position:relative;opacity:1}
+.home_v2 .content > .menumobile .menu > li > ul > li:hover, .home_v2 .content > .menumobile .menu > li > ul > li.selected{background:none}
+.home_v2 .content > .menumobile .menu > li > ul > li > a{font-size:0.9em;padding:8px;margin-left:7%;line-height:20px;opacity:1}
+.home_v2 .content > .menumobile .menu ul > li > a.ligne1 .text-sprite{line-height:20px}
+.home_v2 .content > .menumobile .menu > li > ul > li > a > .image-sprite{display:none}
+.home_v2 .content > .menumobile .menu > li:hover, .home_v2 .content > .menumobile .menu > li > ul > li.selected{background:none !important}
+/*.header .menu > li > ul, .header .menu li:hover > ul, .header .menu li:hover > div,*/ .home_v2 .content > .menumobile .menu > li:hover > ul, #espace ul, .ico{display:none}
+.home_v2 .content > .menumobile .menu > li > div, .home_v2 .content > .menumobile .menu > li:hover > div, .home_v2 .content > .menumobile .menu > li.sfhover > div{width:20px;height:20px;background:url(../images/move-to-next.svg) no-repeat 10px;position:relative;left:10px;top:12px;float:left;cursor:pointer;opacity:1}
+.home_v2 .content > .menumobile .menu > li.onselect > div{top:9px; transform: rotate(90deg); left:12px;}
+.home_v2 .content > .menumobile .menu > li > ul > li.first > ul, .home_v2 .content > .menumobile .menu > li > ul > li > ul, .home_v2 .content > .menumobile .menu > li > ul > li:hover > ul{display:none;background-color:transparent;height:100%;left:45%;opacity:1;top:0;width:51%}
+.home_v2 .content > .menumobile .menu ul li ul li{width:100%}
+.home_v2 .content > .menumobile .menu ul li ul li.first{margin:5px 0}
+.home_v2 .content > .menumobile .menu > li > ul > li > ul > li a{font-size:14px;margin:0;padding:3px;width:auto}
+.home_v2 .content > .menumobile .menu > li > ul > li > ul > li.last{display:none}
+.header .item464 a{padding-left:11px}
+
+/* modules */
+.right .moduletable, .moduletable.col3{width:auto;padding:10px}
+#espace{margin:0;width:auto;float:left;border:none;border-radius:0}
+#espace .titre-h3 a{float:none}
+#espace #bt-espaceperso{display:none}
+.callback, .lf_storeLocatorWidget{padding:15px 10px !important;clear:both;border:1px solid #E6E6E6 !important}
+.callback{background:#f4f4f4}
+.agences .agencesearch{ position:relative !important; top:inherit !important; background:#DDEFF1 !important}
+.lf_storeLocatorWidget:hover, .callback:hover{background:#fff;-webkit-box-shadow:inset 0px 0px 12px  rgba(0, 0, 0, 0.1);box-shadow:inset 0px 0px 12px  rgba(0, 0, 0, 0.1)}
+#trouveragence, #etrerappele{margin-top:-50px;position:absolute;display:block}
+#resultat {top: 38px}
+.lf_storeLocatorWidget h3{background: url(/images/cible.png) no-repeat scroll 5px 5px transparent; cursor:pointer;margin-right:10px; padding-left:30px}
+.lf_storeLocatorWidget .cible{display:block;margin-bottom:8px;padding:5px}
+/*.lf_storeLocatorWidget #form_box_locator{height:3px;}*/
+.callback h3{cursor:pointer; line-height: 32px !important; color:#333; background: url(../images/icon.png) no-repeat !important; margin:0 10px !important}
+.callback label, .callback fieldset, .lf_storeLocatorWidget > div, .lf_storeLocatorWidget div img, .lf_storeLocatorWidget input{display:none}
+
+/* evenement exceptionnel */
+.intemperies .content {background: rgba(0, 0, 0, 0) url("../images/fond-intemperies.png") repeat scroll left top / auto 100%;}
+.intemperies.item-page p {margin: 6px 12px 0;width: auto;padding-bottom: 10px;font-size: 15px;}
+.intemperies .callback {border-radius: 0; margin: 0; position: relative; right: 0; top: 0; width: auto;}
+.intemperies .callback #resultat {top: 0px}
+.intemperies .callback .message.succes {margin-top: 98px; padding: 28px 20px 28px 70px;}
+
+@media only screen and (max-device-width:480px) and (-webkit-min-device-pixel-ratio:2){
+	.button{height:23px;background-position:0 -74px}
+}
+
+/*** accueil ***/ 
+.content .home, .home_v2 .slide{display:none}
+.btoffre{padding:8px}
+sup{font-size:0.5em}
+
+ #visuel_index {position:relative; clear: left;}
+ #visuel_index h1{margin-left: 0;
+    width: 124px;
+    font-size: 11px;
+    line-height: 1em;
+    margin-top: 5%;
+}
+#visuel_index h1 strong:first-child, #visuel_index h1 strong:last-child {
+    font-size: 1em;
+}
+
+#bthome {
+	bottom: 8px;
+    font-size: 0.9em;
+    left: 55px;
+}
+
+#bthome .btoffre {padding: 4px 8px;}
+
+.home-contact {background: #E7F4F6}
+
+.home .zone-bloc-2, .home .zone-bloc-1 {margin:0; padding: 12px 0 0 0;background: #E7F4F6}
+.home .zone-bloc-1 .bloc {margin: 12px; padding:0; font-size:1em; height:auto; border:none}
+.zone-bloc-1 .bloc * {font-size: 14px;}
+.home .zone-bloc-1 .bloc p{line-height: normal; margin: 10px 16px 14px; width: auto; float: none; text-align: center;}
+.zone-bloc-1 .bloc.contact {text-align: center; background-position-y: 20px; background-position-x: center;background-image: url(../images/icon_nous-contacter_mobile.png); margin-top: 0; padding-top: 0; padding-bottom: 1px;}
+.zone-bloc-1 .bloc.contact p {margin: 0 20%; padding-top: 60px;}
+.zone-bloc-1 .bloc.agence p a, .zone-bloc-1 .bloc.sinistre p a {padding:45px 0 0 0}
+.zone-bloc-1 .bloc.agence{background-image: url(../images/icon_agences_mobile.png); width: 43% !important; display: inline-block;margin-top: 0;margin-right: 0;}
+.zone-bloc-1 .bloc.sinistre{background-image: url(../images/assistance_sinistre_mobile.svg); width: 43% !important; display: inline-block;margin-top: 0;}
+.zone-bloc-1 .bloc .contact_tel {float:none;width: 50%; border-radius: 6px; margin: 0 auto 10%;}
+.zone-bloc-1 .bloc .localisation_agence {background-position: 0px 6px;}
+.zone-bloc-1 h2, .zone-bloc-3 h2, .zone-bloc-2 h2, .item-pagehome_v2 h2 {background: url(../images/liseret.png) no-repeat; font-size: 1.5em; margin-left: 0; margin-bottom: 0; padding: 1px 0 18px 25px; background-size: 18px; min-height: 25px;}
+.zone-bloc-2 .bloc_actualite {margin-left: 0; margin-bottom: 12px; width: auto;}
+.home_v2 .zone-bloc-2 img, .bloc-haut-mobile img, .zone-bloc-2 .bloc_actualite img{width: 100%;}
+.categ_actualite {right: 0; padding: 7px 10px !important; font-size: 0.96em !important; font-weight: bold !important; width: 40%;}
+.zone-bloc-2 .bloc_actualite span {font-size: 1em;  font-family: 'Open Sans Condensed'; padding: 5px}
+.home_v2 .zone-bloc-3 {height: auto; padding: 15px; background: #f4f7fa;}
+.zone-bloc-3 div img {position: relative; left: auto; top: auto; height: auto; width: 22%; margin-bottom: 1em;}
+.zone-bloc-3 .ekomi_bloc {text-align:center;} 
+.zone-bloc-3 div .ekomi_text {position: relative; left: auto; top: auto; margin-top: 1em;}
+.evaluation_stars_ekomi {float: none; margin-left: 0; display: inline-block;}
+.evaluation_stars_ekomi li {
+    padding: 10px 5px 12px 12px;
+    background-size: 35px 35px;
+}
+.evaluation_stars_ekomi li.demi_etoile {
+    background-size: 50px 50px;
+}
+.item-pagehome_v2 {margin:12px;padding:0}
+.item-pagehome_v2 p{margin: 0 0 10px 25px; line-height: 1.5em; font-size: 0.8em;}
+
+#reseaux, .col2 div{float:none}
+.zone-bloc-4 #reseaux_sociaux_home, .zone-bloc-4 #newsletter_home, .label_newsletter {width:auto;text-align:center;margin: 0;}
+.zone-bloc-4 #newsletter_home #newsletter_form fieldset{display:block !important; position:relative !important;}
+.zone-bloc-4 #newsletter_home #newsletter{top:0; margin-top:10px;}
+.zone-bloc-4 #newsletter_home #newsletter_form .row2 .inputbouton {float:none}
+.zone-bloc-4 #newsletter_home #newsletter_form .row2 #submitmail, .label_newsletter  {width: 100%;-webkit-appearance: none;
+border-radius: 0;}
+.home_v2 .zone-bloc-4 .modnewsletter #resultat {
+    top: 95px;
+    left: -7px;
+}
+#reseaux_sociaux_home span{padding-bottom:18px;}
+.col2{margin:0px 0 0 0;padding:0}
+.home .moduletable.lf_storeLocatorWidget, .zone-bloc-4 {height: auto}
+.white-popup.voeuxmobile {padding:0}
+.white-popup.voeuxmobile .fermer{display:none;}
+.white-popup.voeuxmobile img{width: 107%;}
+/*sport sante*/
+.evenement img, .garages img{width:100%;height:auto}
+.evenement .titre{font-size:34px; width:180px}
+.evenement .description{clear:both;text-align:center;margin:10px; width:90%}
+.evenement #reseaux{text-align:center}
+/* carousel */
+.evenement div#slider-carrousel figure img { width: 20%; height: auto; float: left; }
+.evenement div#slider-carrousel { width: 100%; max-width: 456px; overflow: hidden }
+@keyframes slidy {
+  0% { left: 0%; }
+  10% { left: 0%; }
+  22% { left: -100%; }
+  30% { left: -100%; }
+  40% { left: -200%; }
+  60% { left: -200%; }
+  70% { left: -100%; }
+  80% { left: -100%; }
+  95% { left: 0%; }
+  100% { left: 0%; }
+}
+.evenement div#slider-carrousel figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  left: 0;
+  text-align: left;
+  animation-name: slidy;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* five star */
+.item-page.garages ul, .item-page.garages ul li {margin:2px !important}
+.item-page.garages ul li {padding-left: 80px}
+
+@media screen and (max-device-width:800px){.header .item464 a{padding-left:0px} }
+
+/* pages produit */ 
+
+.moduletable.similaires {height:120px;}
+.similaires li:before{width:9px; height:9px; margin-right: 3px;}
+.similaires li {width:95%;margin : 4px 6px 6px;}
+.similaires li a{font-size:14px}
+.offre h1,.proxidirect h1, .old h1, .agences h1, .contact h1, .garages h1, .cest h1, .landingpromomoto h1, .offre.auto h1, .offre.deuxroues h1,.landing h1,.timeline h1, .agencedep h1, .pagejaune h1, .landing.multidetention.vsp h1, .offre.auto.moustache h1 {padding:0;text-align:left;width:auto;height:auto;position:inherit;background:none !important;color:#333;font-size:16px;padding:0 !important;min-height:0;margin:5px}
+.item-page.offre, .item-page.cest, .item-page.contact, .item-page.garages, .item-page.offre.auto, .item-page.offre.deuxroues, 
+.item-page.offre.defi, .item-page.pagejaune, .item-page.offre.auto.moustache{background:none !important;margin-bottom:0;padding-top:0px}
+.offre h2, .old h2, .h2, .cest h2, .contact h2, .garages h2, .landingpromomoto h2,.landing h2, .pagejaune h2, .item-page > h3, .agencedep h2, .fichesprat h2.titre{font-size:16px;background:none;min-height:16px;padding:12px 5px 0px; margin-left:0}
+.offre.defi h1 {text-indent: 0}
+.offre.defi iframe,.blogrh .item-page iframe{width:100%; height:auto}
+.offre.defi p{margin:5px !important}
+.offre.defi p img{margin:5px}
+/* pages produits */
+.offre.vsp h1, .offre.mrh h1, .offre.sante h1, .offre.rachat h1{padding-top:0 !important}
+.offre.mrhpno h1, .offre #options h3, #services h3,.landing .item-page h3,.landing .sante #options h3{font-size:1.2em}
+.offre.auto.forfaitkm h1 {height:auto !important;}
+.offre.auto.forfaitkm h1 span {display: inline;}
+
+#zone-devis, .offre.auto #zone-devis, .offre.deuxroues #zone-devis,.landing #zone-devis,.offre.mrh #zone-devis, .pagejaune #zone-devis.multi, .offre.assupro #zone-devis, .offre.auto.moustache #zone-devis {position:relative;float:none;margin:25px auto;left:auto;top:auto;width:145px }
+#zone-devis .btoffre{font-size:16px !important}
+.offre.auto .intro, .offre.credit .intro, .offre.deuxroues > p, .offre.mrh > p, .offre.scolaire .intro {position:relative;width:auto;top:10px}
+#tarifconseil{ padding: 20px 0}
+
+#garanties > p, #tableau, .conditions, #produitbottom .conditions{width:auto}
+.conditions{float:none}
+.conditions ul{background-position: 10px -139px;}
+.prevoyance .conditions > ul{background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important; padding: 0 5px;}
+.conditions li{margin-right:2px}
+.offre .item-page p, .offre .item-page #options p,.landing .item-page p, .agencedep .item-page p, .agencedep .category-desc p, .offre.auto .intro, .offre.scolaire .intro{margin:5px}
+.agencedep .category-desc p+p{display:none}
+.offre .item-page .details p{font-size:0.8em;margin-left:0px;padding-left:2px}
+th.col-description > div, th.col-formule strong{height:25px}
+.col-description{min-width:90px}
+.resume li, .details td strong{line-height:10px !important;background-position:-5px -190px !important;margin-left:0;padding-left:10px !important;font-size:1em !important}
+th.formule1 strong{border-top:5px solid}
+th.formule2 strong{border-top:10px solid}
+th.formule3 strong{border-top:16px solid}
+th.formule4 strong{border-top:22px solid}
+.auto .inclus,.deuxroues .inclus,.mrh .inclus,.scolaire .inclus, .assupro .puce.inclus{background-position:0 -242px;height:20px;width:20px;margin:0 auto}
+.listeformule .col-formule strong{font-size:10px;height:20px;padding:0 2px}
+.offre .option, .conditions, 
+.offre.auto .conditions, .offre.deuxroues .conditions, .offre.mrh .conditions, .landing .conditions, .landing .sante .option{overflow:auto;padding:10px 0 10px 5px !important}
+.chienchat .conditions{min-height:0}
+.offre.auto #produitbottom, .offre.deuxroues #produitbottom, .offre.mrh #produitbottom, .landing #produitbottom {height:auto !important}
+.offre .option img, .item-page.offre .contact .lf_storeLocatorWidget, .item-page.offre.auto .contact .moduletable.promo.auto, .landing.sante #options img{display:none}
+.offre #options h3,.landing .item-page h3, .landing #options h3, .landing .sante #options h3{background:none !important;line-height:normal;margin-bottom:10px;padding-left:0px;padding-right:65px;margin-left:0}
+.offre #options h4{margin:0px;display:block;width:64%;font-size:1em}
+.offre #options ul.contenu{margin:5px 15px}
+.listeformule{margin-top:-30px;line-height:1em !important}
+.listeformule li{float:none;margin-left:8px}
+.listeformule .col-formule{margin-top:2px}
+.listeformule .formule1 strong{border-top-width:5px}
+.listeformule .formule2 strong{border-top-width:10px}
+.listeformule .formule3 strong{border-top-width:16px}
+.listeformule .formule4 strong{border-top-width:22px}
+/*.conditions a{display:inline-block}*/
+#tableau2 th {font-size: 24px; height:40px}
+#tableau2 .opt {font-size: 10px}
+#tableau2 .col-description h3 {margin:10px 0}
+/* page moto*/
+th.col-formule, td.col-formule {width: 42px}
+#garanties .onglet{display:none}
+#garanties .onglet.mobile{display:block}
+#garanties .onglet {border:none; width:auto; margin:0 0 10px 5px;box-shadow:none}
+#garanties .onglet li {width:45%; height:18px; border-bottom:1px solid #555; font-size:10px; margin: 5px 5px 0 0; padding:2px;box-shadow:none; text-align:center}
+#tableau .lexique {width:auto}
+.titretableau{/*font-size: 10px; padding: 10px 2px; width: 37%;*/ visibility:hidden}
+.unslider-arrow {font-size: 14px; padding: 5px}
+.moto #tableau{width:95% !important; margin-left:5px; padding-top:0; padding-bottom:0}
+.moto .tableau{height:auto !important; margin-bottom: -50px}
+.moto .tableau .resume p {font-size: 10px}
+.moto .resume ul {margin-right:1px}
+.moto #services ul {margin-left:0}
+.moto #services li {margin-right: 20px}
+.moto #tarifconseil{padding:20px !important;clear:both;float:none}
+#tableau .lexique h3 {font-size:18px}
+#tableau .lexique .puce {margin-left: -20px; font-size:11px; background-position: 12px -185px}
+#tableau .lexique p {font-size: 10px !important}
+.offre .moto #options h3{padding-right:0px}
+.offre .moto #options h4{width:auto}
+/*page auto*/
+.offre #recap > div {width: 100% !important; height:auto; margin-top:2px !important}
+.offre #recap h3, .offre #recap #formules li, .offre #recap #formules .ligne1 li, .offre #recap #formules .ligne2 li, 
+.offre.moto #recap #formules li {font-size:1.2em; padding:6px}
+.offre #recap h3 {line-height:36px}
+.offre #recap #optiontab li, .offre #recap #optiontab li.allinone {padding: 12px 0 12px 12px !important; width: 100%!important; float:none; height:20px !important; text-align:left; font-size: 12px}
+.offre #recap #optiontab li span{ display:none !important}
+.offre #recap #services li {width:100% !important; background-image:none !important; height:60px !important; padding:0 !important}
+.offre #recap #services li div{ padding-left: 58px; position: absolute !important;
+ text-align: left; width: 62% !important; position:relative;margin-top:10px}
+.offre #recap #services li > span{ margin-top:10px}
+.offre #recap #services .picto {height:45px;left:0;position:absolute}
+.offre #recap #services .avance {background-position: -15px -10px}
+.offre #recap #services .assistance {background-position: -154px -14px}
+.offre #recap #services .constat {background-position: -216px -14px}
+.offre.auto.moustache #recap #services .constat {background-position-y: -10px;}
+.offre #recap .bottom.left {border-bottom: 1px solid #9BCD83}
+.offre #recap #optiontab h3 { background: #333333 !important; margin-bottom:0 !important}
+.offre #recap .plus,.offre.scolaire #recap .plus{height: 56px;  margin: -10px 0; width: 100%}
+#garanties #nav, #slider {display:none}
+#tableau2{display:block !important}
+#tableau2 .col-description h3 {font-size:1.3em; margin:2px; padding-left:5px}
+#tableau2 .service .col-description p {font-size: 14px; margin:2px 5px}
+#tableau2 .details p {display:none}
+#tableau2 .details strong {background-repeat: no-repeat; margin:2px;font-size: 11px !important}
+#tableau2 .service span{display:none}
+#tableau2 .service .col-formule {height:28px; font-size:11px; padding-left:18px; background: url(../images/tab_fleche_service_inclus_mobile.png) no-repeat scroll 0 0 #D5EACB}
+
+/* page auto temporaire */
+.item-page.tempo img {width: 30%; margin:5px !important}
+.item-page.tempo table {margin-left:2px !important}
+.item-page.tempo table td {width:auto !important; padding:6px 3px; border: 5px solid #dddada}
+.item-page.offre.auto.tempo table li, .item-page.offre.auto.tempo #options li {font-size:11px !important; margin-left: 12px !important}
+.item-page.tempo .contenu h3 {font-size:16px; margin:16px 5px !important}
+.item-page.tempo table td .puce{padding-left:0 !important}
+.item-page.offre.auto.tempo #options{margin-left: 4px}
+.item-page.offre.auto.tempo #options ul {margin:5px}
+.item-page.tempo #options h4 {width:auto; clear: both}
+.item-page.tempo #options img{width:50%; margin:20% !important}
+.item-page.tempo table td strong {font-size: 12px; line-height:normal !important}
+.item-page.offre .contact > div.chiffrecle {width:100%}
+.item-page.offre .contact > div.chiffrecle div {margin:0; padding:5px; width:auto}
+
+/* page assurance moustache */
+
+.offre.auto.moustache .intro {  color: #333; font-size: 12px; margin-left: 5px; width: auto;}
+.offre.auto.moustache #tarifconseil {width:205px;}
+.offre.auto.moustache #tarifconseil a {width:150px;}
+.offre.auto.moustache .puce.inclus {background-position-y: 0;}
+.offre.auto.moustache #tableau2 .service .col-formule {padding-left:25px;}
+.offre.auto.moustache #recap #optiontab li {width: auto !important;border-right:none;} 
+.offre.auto.moustache #recap .bottom.left { border-bottom: 1px solid #a8a8a8;}
+
+/* landing sante */
+.offre.sante .encart, .item-page.offre.sante.general > .right a {width:auto !important}
+.offre.sante .encart > img, .item-page.offre.sante.general > .right {width:100%; height:auto} 
+.offre.sante .encart > img+img{max-width:88px; height:auto}
+.item-page.offre.sante.general #options .bloc{margin:0 0 5px 0 !important; padding:4px !important}
+.item-page.offre.sante.general #options h4{width:auto}
+.item-page.offre.sante.general #options h2{padding-bottom:5px; margin-bottom:5px}
+.item-page.offre.sante.general #options .bloc img{width:20%; height:auto; margin-top:8px !important}
+.item-page.offre.sante.general #options .bloc p{font-size:12px; margin:2px !important}
+.offre.mutuelle #garanties #tarifconseil {width:auto;}
+
+.landing .sante .avantages ul, .assupro .avantages li{background:none !important; padding-left:2px;padding-top: 0px;padding-bottom: 15px;margin-left: 5px;margin-bottom:2px}
+.landing .sante .avantages h3 {width:auto;float:none;text-align:left;}
+.landing .sante .inclus {background-position: 0 -232px;}
+.landing .sante .avantages li {padding-left: 25px;}
+	
+.item-page.offre .contact > div.conditionsfooter, .item-page.offre .contact > div.conditionsfooter .conditions { height:auto; width:auto; padding:0}
+
+.footer{margin-top:0;margin-left:0px;padding:30px 0}
+.home .footer div,.home_v2 .footer div {float:none;display:block;padding-left: 36px;}
+.home .footer div.menu_infoprat, .home_v2 .footer div.menu_infoprat{border-left:none;border-right:none;border-top:1px solid #999999;border-bottom:1px solid #999999;padding:10px 25px;margin:10px; height:auto}
+.home .footer div.menu_offre2, .home_v2 .footer div.menu_offre2{margin-top:0px;padding-left:36px}
+.home .footer div.menu_apropos, .home .footer .menu_assu2000, .home_v2 .footer div.menu_apropos, .home_v2 .footer .menu_assu2000{padding: 10px 25px;margin: 10px;height: auto;}
+.home .footer li, .home_v2 .footer li{margin:4px 0}
+
+
+#deviceview{display:block !important}
+@media screen and (max-device-width:350px){
+  .logofooter img{top: 66px;left: 100px;}
+}
+.footer div.logofooter { border-top: 1px solid #333;
+    margin-top: 40px;
+    padding-right: 0;padding-left: 0;
+    position: relative;
+    width:auto;
+}
+.logofooter #txt_footer { margin-top: 20px;}
+.logofooter img { left: -22px; top: 0px;}
+
+.inputbox{width:87%}
+
+/*page plan du site*/
+#xmap{font-size:12px; width:auto}
+#xmap h2{margin:0 !important}
+.level_0 li {margin-bottom:3px}
+.level_1 {margin: 0 0 0 14px; font-size:10px}
+.level_1 li {margin-bottom:0}
+
+/* anciennes pages */
+.old .item-page p, .old h2, .old .item-page h3, .item-page.cest p, .item-page.garages p , .pagejaune p,.item-page.landingpromomoto p, .item-page.cest h3, .item-page.landingpromomoto h3{margin-left:5px}
+.old .item-page h3, .item-page.contact h3, .item-page.cest h3{font-size:14px; margin-top:0}
+.old .item-page p, .item-page.cest p, .item-page.garages p, .item-page.landingpromomoto p,.item-page.landing p, .pagejaune p{padding-left:5px !important;font-size:12px}
+.item-page.landingpromomoto img{display:none}
+/* pages actus */
+.items-row, .blog .items-leading > div {margin: 4px; padding: 6px 4px}
+.blog p, .blog p span, .readmore a {font-size:10px !important}
+
+.blog .readmore {margin-top: 8px}
+.readmore a {padding: 2px 5px}
+.blog .pagination .pagenav {padding: 0 2px; font-size:10px}
+
+/* pages agence */
+.agences h1 {top:50px; position:absolute; border: none}
+.agences .right {margin-top:0}
+.agences .moduletable, .agences .item-page, #mapbodyagence {float:none !important; width:auto !important; margin-left:0 !important}
+#mapbodyagence{margin:0 4px !important}
+.item-page.agences h2,.carteagence h3 {font-size:16px !important}
+.moduletable div h2, .carteagence h3, .item-page.agences h2{ padding:5px !important}
+.item-page.agences h2 {background:none; min-height:0 !important}
+.agences .item-page, .landingpromomoto .item-page {padding:2px}
+.agences .item-page p {height:inherit; padding-left:4px}
+.agences .item-page .moduletable.promoagence img{width:100%}
+.contactagence {padding: 36px 2px 8px 2px; height:auto}
+.contactagence h2{padding:5px}
+.horaires{padding:16px 10px}
+.carteagence, #listagencesnear h2 {width:auto !important; padding-bottom: 0 !important}
+#listagencesnear div{width:100% !important; margin-left:0 !important; border-bottom:none !important; height:64px !important; padding-top:5px !important}
+#origincalculiti{margin: 0 0 5px 5px}
+.ui-tabs {padding: 0 !important}
+.ui-tabs .ui-tabs-nav {margin:0 !important}
+.content .devisagence{margin:20px auto !important;border:none !important;overflow:unset;text-align:center;width:220px !important}
+.content>.devisagence{clear:both;height:auto !important}
+.content>.devisagence>.devisagence{float:none;height:auto !important}
+
+/* landing page jaune */
+.pagejaune #zone-devis.multi {margin-top:0}
+.pagejaune .devisagence div, .pagejaune .devisagence div:hover,.devisagence div,  .devisagence div:hover{width:218px; margin-bottom:8px}
+.pagejaune a.lienoffre{margin-bottom:7px}
+.pagejaune .devisagence div.auto {background: url("../images/agences_auto.jpg") no-repeat scroll 0 0 #eee !important}
+.pagejaune .devisagence div.moto {background: url("../images/agences_moto.jpg") no-repeat scroll 0 0 #eee !important}
+.pagejaune .devisagence div.habitation {background: url("../images/tarif-habitation.jpg") no-repeat scroll 0 0 #eee !important}
+.item-page.pagejaune #etapedevis li { padding-top: 120px;margin: 10px 0}
+
+#listdepagence {height: auto; width: 99%;margin-bottom:8px}
+
+/* open to dialog */
+.item-page.label .contact p{padding-left:64px !important;margin: 0; line-height:1.1em; padding: 22px 12px}
+.label #ouverture {    background-position: -6px -68px;    margin: 20px 0}
+
+
+/* bloc promo agences et agences departement */
+
+.agences .promo2roues, .agencedep .promo2roues {width:100% !important; clear:left; text-align:center;margin:20px auto !important}
+.agences .promo2roues a, .agencedep .promo2roues a {overflow:hidden}
+
+
+/* landing page moto */
+.landingpromomoto h1{border:none;margin-top: 60px !important;font-size: 18px}
+#datepromo2roues{top: 55px}
+.landingpromomoto #services {height: 290px}
+.landingpromomoto #services h4 { background:none; margin:5px; padding:0; text-align: left;font-size: 14px; width: 100%}
+.landingpromomoto .offre{margin:0 10px; padding-bottom:0}
+.landingpromomoto .offre ul {margin-left:12px;padding-top: 0}
+
+/* page recrutement */
+table.h-list-jobs {width:auto !important; margin:0 !important}
+ul.h-filter-nav{float:none !important}
+.h-filter-bar {margin:0 !important}
+.item-page.old ul.h-filter-search, .item-page.old ul.h-filter-nav {margin: 15px !important}
+ul.h-filter-nav, ul.h-filter-search {width:200px !important; height:auto !important}
+table.h-list-jobs td, table.h-list-jobs th {padding:2px !important;font-size: 10px !important}
+.h-filter-bar > ul.h-filter-search li select {width: 190px !important}
+ul.h-filter-search li label {text-align:left !important}
+.item-page.old ul.h-filter-nav li {margin:10px !important}
+h1.h-main-title, .h-main-content h1.h-title {font-size:16px !important; line-height: 18px !important; margin-left:5px !important}
+.h-details div h2 {margin:6px !important; padding-bottom:0 !important}
+.h-details {margin-top:0 !important}
+.h-tools-home {float:none !important; display:block !important; margin-top:5px !important; text-align:center !important}
+
+.h-details .h-contract h2, .h-details .h-country h2, .h-details .h-country-intl h2, .h-details .h-regions h2, .h-details .h-city h2, .h-details .h-city-intl h2, .h-details .h-education-level h2, .h-details .h-experience-level h2, .h-details .h-jobstart h2, .h-details .h-jobend h2, .h-details .h-working-time h2, .h-details .h-salary h2 {margin: 0 0 0 20px !important;  width: 120px !important}
+
+/* page contact */
+.contact .item-page p{font-size:12px; display:inline-block}
+.contact h3{float:none !important; margin:2px !important}
+.contact .item-page p strong{display: block;}
+.contact .item-page h2+h3+p strong {display: inline}
+.contact #zone-devis {display:none}
+.contact .item-page #tel+div{font-size: 12px !important; padding: 0 0 0 5px !important}
+.item-page.contact .bloc, .contact .moduletable.lf_storeLocatorWidget {height:auto; }
+.item-page.contact .btoffre {display: inline-block;margin-top: -15px;margin-bottom:15px;padding: 6px 18px;}
+.item-page.contact p#ouverture {background-position: 5px -25px; padding-top: 100px !important;}
+.item-page.contact p#tel {background-position: -660px -25px; margin-bottom: 10px !important;}
+.item-page.contact p#email {background-position: -255px -12px;padding-top: 100px !important;margin-bottom: 15px !important;}
+.item-page.contact p#email a{display: block; margin-top: -20px;}
+.item-page.contact p#courrier {background-position: -152px 0; padding-top: 120px !important;}
+ 
+ /* page groupe */
+ .cest .multicanal td.logocol {width:0}
+ .cest .datecle {margin-left: 15px; margin-bottom:15px}
+ .cest .datecle li {padding-left: 35px; margin-right:2px}
+ .cest .datecle li span {font-size: 16px; margin-bottom:0}
+
+/*page parler à un conseiller*/
+.item-page.rechercheagence{display:none}
+
+/* fit challenge */
+.item-page.offre.fit ul[style]{margin-left: 12px !important; font-size: 0.8em !important}
+.item-page.offre.fit ul li > span[style]{width:110px !important; }
+
+/*landing page*/
+.landing .item-page, .item-page.offre.assupro {padding:0 !important; width:auto !important;background:#fff !important}
+.landing.deuxroues h1{background:none !important}
+.landing .item-page h3{padding-right:0;margin:5px}
+.landing #zone-devis{width:200px; left:0 !important; top: 0 !important}
+.landing #produitbottom, .landing #garanties {width: 100% !important}
+.fondgris{padding:5px}
+.fondgris .col2{float:none;width:auto}
+.fondgris .col2 p{text-align:center !important}
+.simple-demande{background-image:none;padding:10px;margin:0 5px 5px;min-height:0;clear:both}
+.simple-demande p{margin:0 5px 5px !important;text-align:left !important}
+.simple-demande.sans-image{width:auto;float:none}
+.bulle-tel{margin-left:0;padding-left:0;background:none}
+.landing .item-page h1{background:none !important;color:#333;font-size:16px;
+    height: auto;
+    margin: 5px !important;
+    min-height: 0;
+    padding: 0 !important;
+    position: inherit;
+    text-align: left;
+    width: auto;position:relative;left:auto}
+.landing .item-page h1 strong{font-size:inherit}
+.multidetention .pins{position:relative;right:auto;top:auto}
+.landing .item-page.unan {background: #fff url("../images/landingpage/assurance-scolaire-1-an-offert-mobile.jpg") no-repeat 0 30px / contain !important;}
+.landing .item-page.taxi {background: #fff url("../images/landingpage/garantie-sos-taxi-mobile.jpg") no-repeat 0 30px / contain !important;}
+.landing.sante.scolaire.unan h1, .landing.sante.scolaire.taxi h1 {color:#333; width: auto; height:auto; margin:10px 10px 210px !important; text-align:left}
+.landing.sante.scolaire .etapes{margin: 0 5px;}
+.landing.sante.scolaire .etapes li, .offre.sante.scolaire .jeu .etapes li {margin: 0 0 12px; width: 95%; padding-left:0; padding-right:0}
+.landing.sante.scolaire ul li .puce.inclus {background-position: 0 -242px;margin-right:0}
+.landing.sante.scolaire ul.avantages {margin-left:5px;}
+.landing.sante.scolaire .conditions ul {width:auto}
+
+
+.landing.sante.scolaire.jeu .lots {width:auto; margin-left:0}
+.landing.sante.scolaire.jeu .lots img {width:25%;}
+.landing.sante.scolaire.jeu .lots h3 {font-size: 2em; padding-bottom: 45px;}
+.landing.sante.scolaire.jeu .lots ul {font-size: 1.2em;}
+.landing.sante.scolaire.jeu .lots li {padding: 0.1em 0;}
+
+.landing.sante.scolaire.jeu #jeu_termine{width: 100%; height:1850px;}
+.landing.sante.scolaire.jeu #jeu_termine img{width: 95%;}
+
+.landing.auto.foot h1 {text-indent: -200em; height: auto;}
+.landing.auto.foot .btoffre.euro{font-size: 1.2em;padding-left:45px; background-size:20px 30px}
+.landing.auto.foot .content img.desktop, .offre.sante.scolaire .content img.desktop{display:none}
+.landing.auto.foot .content img.mobile, .offre.sante.scolaire .content img.mobile{display:block}
+
+/*promo*/
+.avec-hover, .avec-hover a, #couponpromo .avec-hover, #couponpromo .avec-hover a, #couponpromo.pageprod .avec-hover, #couponpromo.pageprod .avec-hover a, .item-page.offre .contact .moduletable.promo.deuxroues, .item-page.offre .contact .moduletable.couponpromo.mrh {width:auto !important;height:auto; margin:10px 5px;position:relative;background:none;float:none}
+.item-page.offre .contact .moduletable.couponpromo.mrh {margin:0}
+.avec-hover-txt{padding:5px}
+#couponpromo.pageprod .avec-hover-txt{line-height: 1.1em; padding: 20px 10px 10px 100px}
+#couponpromo.pageprod .reduction {font-size: 16px; left: 10px; top: 44px}
+#couponpromo.pageprod .reduction strong {font-size: 55px; margin-bottom: 6px}
+#couponpromo.pageprod .avec-hover, #couponpromo.pageprod .avec-hover a {font-size: 16px; margin:5px}
+#couponpromo .avec-hover i {line-height: 1em}
+.avec-hover a, #couponpromo .avec-hover a,.avec-hover a span,
+#couponpromo .download{text-align:center;top:auto  !important;right:auto !important;left:auto !important;opacity:1}
+.avec-hover a span{padding:5px 0;position:relative}
+img.moins8000km{display:none}
+
+.item-page .col3{float:none;margin-left:15px;width:auto}
+.item-page p.attention{height:auto !important;line-height:1.5em !important;text-align:left !important;min-height:15px !important;padding-left:20px !important;background-image:url(../images/landingpage/attention-petit.png) !important}
+
+/*timeline*/
+.category-desc .addthis_native_toolbox{display:none}
+.category-desc{padding:5px;margin-bottom:5px}
+.category-desc,#timeline{width:auto;margin:0 5px}
+#timeline{padding-right:0}
+#timeline-anchor{display:none}
+#timeline-container:before{background:none}
+.ss-left, .ss-right{float:none;width:auto;padding:0;text-align:left}
+.blog .row{padding:0;margin:0;width:auto;float:none}
+.blog .row.mois-annee,.blog .row .item{margin:5px 0;float:none;width:100%}
+#timeline-container .item>div{width:auto;background:#fff}
+.timeline.blog #timeline-container h2,#timeline-container .h2{padding:0;font-size:1em;line-height:1em !important}
+.article-info{font-size:10px !important}
+.blog .row img{max-width:none}
+.blog .item > div.embed{border:none;background:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}
+#timeline-container .item-infos{padding:5px}
+.ss-left .ss-circle-deco:before,.ss-right .ss-circle-deco:before,.ss-right > div,.ss-left .ss-circle-deco:after,.ss-right .ss-circle-deco:after{right:0;left:0;border:none;margin:0}
+
+/*scolaire*/
+.offre.sante.scolaire h1{padding-top:0 !important}
+.offre.sante.scolaire .right .moduletable.promo.sante {height: auto; margin-top: 0;}
+.offre.sante.scolaire .right .moduletable.promo.sante img { width: 100%;}
+.offre.sante.scolaire .content > .right{width: 100%;}
+.offre.sante.scolaire #zone-devis{top:auto;left:auto;height:auto;width:auto;margin:25px 0;text-align:center}
+.offre.sante.scolaire #zone-devis .btoffre{margin:0 auto;display:inline-block}
+.offre.scolaire #recap > div{height:auto}
+#tableau2 .details .col-description > div{margin:5px}
+.sante .asavoir{padding:5px;margin:10px 5px}
+.sante .asavoir p,.contact .moduletable.promo.scolaire p{font-size:1em !important}
+#produitbottom #tarifconseil{float:none;padding:0 0 10px}
+.contact .moduletable.promo.scolaire{width:auto;margin:5px 0;height:auto;padding:5px !important;background-image:none}
+.contact .moduletable.promo.scolaire h3{background-image:none;padding-left:0;height:auto;line-height:1em;margin:0 0 10px !important}
+
+/* jeu scolaire vacances */
+.offre.sante.scolaire .jeu {width:auto; text-align:center}
+.offre.sante.scolaire .jeu img {height: auto; margin: 5px auto; width: 92%;}
+
+.relogement{background-position:-598px -12px}
+.assistance24{background-position:-280px -14px}
+.serrurerie{background-position:-348px -4px}
+.encharge{background-position:-415px -12px}
+#services .col-2 .conseiller2{background-position: -480px -8px}
+
+.blogrh .category-desc,.blogrh .encadre,.blogrh .encadre h2,.blogrh .item-page p{margin:5px;width:auto}
+.blogrh .encadre h2{padding:0;width:auto}
+
+/*hp promo*/
+.header .menu > li.item1436 > a,.header .menu > li.item1436 > a:hover{margin-left:0;background:url(../images/menu-promo2.png) no-repeat 100% -4px !important}
+
+/*page credit*/
+.offre.credit h1{padding:0 !important;height:auto;float:none;width:auto}
+.item-page.credit .intro,
+.bloc,
+.item-page.credit .left,
+.item-page.credit .right,
+.item-page.credit .center,
+.item-page.credit .right,
+.item-page.contact .bloc,
+.item-page.contact .bloc.first {width:auto !important;margin:10px 5px;display:block;float:none !important}
+.item-page.credit .right,.item-page.credit .center{text-align:center}
+.item-page.credit .col2 img, .item-page.credit .simulateurs li {width:100%}
+
+.item-page.credit .intro .left,
+.item-page.credit .intro .right,
+.item-page.credit .center .btoffre.last,
+.item-page.credit .center .btoffre {margin:10px 0}
+.item-page.credit .col2 {padding:2px; width:99%}
+
+.item-page.credit ul{margin:10px 5px;padding:5px 10px}
+.item-page.credit .garanties{margin:10px 5px;padding:0;background:none}
+.item-page.credit .garanties li h3, .item-page.credit h3,
+.item-page.credit li,.item-page.credit .garanties li, .item-page.credit h3{font-size:0.8em;margin:5px auto;background:none;padding:0;min-height:0}
+.item-page.credit .simulateurs a.deux {padding-top:13px}
+.item-page.credit .btoffre {width:210px}
+
+.item-page.credit .garanties .image,
+#frise #timeline,#fin-timeline{display:none}
+#frise,
+#frise .jour,
+#frise .mois,
+#frise .jour .rond,
+#frise .jour .texte,
+#frise .jalon{width:auto !important;position:relative;background:none;height:auto;left:0 !important;top:0 !important;line-height:1em;float:none;text-align:left;font-size:1em;padding:0;margin:5px 0}
+#frise .jour .rond,
+#frise .jour .texte{display:inline-block}
+#frise{margin:15px 5px}
+
+/* page 404 */
+.erreur .item-page > h2, .erreur .item-page > h3, .erreur .item-page > div {width:auto; margin-left: 5px;margin-top: 0}
+.erreur .item-page > ul{margin:0px !important}
+.erreur .item-page li {display:block}
+.erreur .item-page img{display:none}
+.erreur .item-page .btoffre {display: block; margin-left:5px; margin-bottom:16px}
+
+/*le groupe*/
+.item-page.cest p img{width:100%;height:auto}
+
+/*addthis*/
+.addthis_native_toolbox{width:auto;padding:0;margin:10px}
+.addthis_native_toolbox a{margin:5px 10px}
+
+/*application-mobile*/
+.appli-encadre,.appli-texte{margin:5px}
+.appli-texte p{line-height:1.3em}
+
+/*assurance-scolaire-avantages.html*/
+.youtube iframe{height:auto;width:100%}
+.scolaire.avantages .item-page h1{color: #333;height: auto;text-align:left;width:100%;}
+#quiz-scolaire{background:url(/images/scolaire/quiz-entete-mobile.png) no-repeat;padding-right:0;padding-top:125px}
+#quiz-scolaire iframe{display:none}
+#quiz-scolaire a{display:block}
+
+/* fiches pratiques */
+.item-page.fichesprat .fiches {margin: 0 auto; text-align: center;}
+.item-page.fichesprat .fiches li{margin-left:0}
+.item-page.fichesprat ul.round{margin:0 5px 5px;}
+.item-page.fichesprat ul.round li{margin:0 0 5px 5px; font-size:12px}
+
+/* landing assurance pro */
+.item-page.offre.assupro.rcd .blocpromo {display:none;}
+/* Nos engagements */
+.engagements{
+	margin-left:0px;
+}
+.engagements h2{
+    text-align: center;
+    width: auto;
+    height: auto;
+    position: inherit;
+    background: none !important;
+    color: #333;
+    font-size: 16px;
+    padding: 0 !important;
+    min-height: 0;
+    margin: 5px 5px 15px 5px;
+}
+.engagements .slider{
+width: 100%;
+background: url(../images/engagements/page-teamsport/visuel.jpg) no-repeat -263px 0px #fff;
+background-size: cover;
+margin-top: 86px;
+margin-bottom: 0px;
+}
+.engagements .content {height:2416px !important;width:100%; margin-left:0px}
+.engagements .teamsport-logo{
+	position: inherit;
+    width: 175px;
+    margin-top: -352px;
+    margin-left: 46px;
+}
+.engagements .core-eng p{font-size: 14px;line-height: 1.5em;text-align: left;width:100%;width: 90%;}
+.engagements .core-eng{width: 100%;margin: 0px 0px 0px 0px;}
+.engagements .core-eng .intro-engagements{margin-left: 10px;font-size: inherit;}
+.engagements .core-eng .right-rs{margin-top: 15px;}
+.engagements .core-eng .right-rs p{    
+	text-align: right;
+    display: inline-block;
+    margin: 0px 6px 0px 0px;
+    color: #787878;
+    font-size: 6pt;
+    font-weight: bolder;
+    font-stretch: expanded;
+    width: 150px;
+    line-height: 1.85;
+}
+.engagements .core-eng .right-rs #fb{margin-right: 6px;width: 24px;}
+.engagements .core-eng .right-rs #tw{width: 24px; margin-right: 6px;}
+.engagements .core-eng #img1{float: left;margin-top: 15px;margin-right: 0px;width: 100%;}
+.engagements .core-eng #img2{margin-top: 10px;width: 100%;position: absolute;top: 1255px;}
+.engagements .core-eng #labelimg1{margin-left: 0px; margin-top: 294px;height: 400px;}
+.engagements .core-eng #labelimg2{width: 100%;margin-left: 0px;position: absolute;top: 1474px;height: 430px;}
+.engagements .core-eng .labelimg{
+	width: 100%;
+	background-color: #fff;
+	margin-top: 10px;
+	background:url(../images/engagements/page-teamsport/drapeau-small.png) no-repeat 94% 0px #FFF;
+	border-top: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 10px solid #222a62;
+}
+.engagements .core-eng .labelimg .btn{
+	color: #fff;
+    font-size: 18px;
+    background: #222a62;
+    padding: 10px 26px 10px 26px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 40%;
+}
+.engagements .projet {
+    margin-bottom: 0px;
+    position: relative;
+}
+
+.engagements .footer{
+	margin: 1425px 0 0 0 !important;
+	border: none;
+}
+
+.engagements .core-eng .labelimg #btn1{margin: 0px auto; margin-top: 20px;}
+.engagements .core-eng .labelimg #btn2{margin: 0px auto; margin-top: 20px;}
+.engagements .core-eng .labelimg .title1{color:#222a62;margin: 20px 0px 0px 35px;font-size: x-large;font-family: Helvetica,Arial,sans-serif; margin: 10px 0px 0px 10px;}
+.engagements .core-eng .labelimg .title2{color: #222a62;margin: 0px 0px 10px 10px;    font-size: 12px;font-stretch: condensed;font-family: Helvetica,Arial,sans-serif;}
+.engagements .core-eng .labelimg p{margin: 0px 10px 10px 10px;}
+.engagements .core-eng .imgmoment {margin-top: 400px;}
+.engagements .core-eng .footer-engagement{position: absolute;top: 1524px;}
+.engagements .core-eng .footer-engagement div img{float:left;width: 100%; height: 184px; margin-bottom: 20px;}
+.engagements .core-eng .right-footer-engagement{border: 1px solid #e1e1e1;width: 100%;    height: 100% !important;margin-left: 0px; padding-bottom: 20px;}
+.engagements .core-eng .footer-engagement .label-img{
+	width: 75%;
+	height: 45px;
+	background: url(../images/engagements/page-teamsport/drapeau-small.png) no-repeat 10px 0px #FFF;
+	position: absolute;
+	left:25%;
+    top: 10px;
+}
+.engagements .core-eng .footer-engagement .finance{
+	position: absolute;
+	right: 0px;
+	top: 230px;
+	background: url(../images/engagements/page-teamsport/financement.png) no-repeat;
+	background-size: 80px;
+}
+.engagements .core-eng .footer-engagement .label-img p{
+	color: #222a62;
+    margin-top: 15px;
+    margin-left: 38px;
+    font-size: 15px;
+    font-stretch: condensed;
+	 margin-right: 0px;
+    margin-bottom: 0px;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #teo, .engagements .core-eng .footer-engagement .right-footer-engagement #anth, .engagements .core-eng .footer-engagement .right-footer-engagement #geoff, .engagements .core-eng .footer-engagement .right-footer-engagement #max{
+	text-transform: uppercase;
+	color: #222a62;
+    margin: 30px 0px 0px 10px;
+    font-size: 16px;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #project,.engagements .core-eng .footer-engagement .right-footer-engagement .resultat{
+	margin-top: 10px;
+    font-size: 15px;
+    margin-left: 10px;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #piste{
+	    font-size: small;    margin-left: 10px;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #retrouvez{
+	font-style: italic;
+    font-size: 7pt;
+    text-align: center;
+	margin: 0px auto;
+	width: 100%;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #btn3{
+	color: #fff;
+    font-size: 12px;
+    background: #222a62;
+    padding: 0 25px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 126px;
+    margin: 0px auto;
+    height: 35px;
+}
+.engagements .moduletable.lf_storeLocatorWidget
+{
+	position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 24px;position: absolute;
+    bottom: -1425px;
+    width: 100%;
+    height: 24px;
+	    text-align: center;
+}
+.engagements .callback
+{
+	background: #f4f4f4;
+    position: absolute;
+    bottom: -1370px;
+    width: 100%;
+    text-align: center;
+}
+.engagements .callback
+{
+		margin: 0 0px !important;
+}
+
+.divmutuelle {
+	display: block !important;
+}
