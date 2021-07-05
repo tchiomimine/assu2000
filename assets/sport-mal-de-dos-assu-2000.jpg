@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ASSU 2000</title>
+	<link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+
+	<div id="page">
+		<img id="logo" src="img/a2.png" alt="ASSU 2000">
+
+		<content>
+			<p>
+				ASSU 2000 a subi <strong>un acte malveillant (attaque informatique)</strong> qui a nécessité l’arrêt de ses systèmes informatiques et entraînant des difficultés d’accès sur le site assu2000.fr et sur l’ensemble de ses services de gestion. 
+
+			</p>
+			<p>
+				<strong>Nous travaillons à la résolution rapide de cet incident,</strong> dans cet intervalle vos attachés commerciaux se tiennent à votre disposition en agence. 
+			</p>
+			<p >
+				Vous pouvez également <strong>contacter nos conseillers par téléphone au&nbsp;:</strong>
+			</p>
+			<p class="tel">
+				<a href="tel:+0148101500.">01&nbsp;48&nbsp;10&nbsp;15&nbsp;00</a>
+			</p>
+			<p class="signature">
+				<strong>Les équipes ASSU 2000</strong>
+			</p>
+		</content>
+	</div>
+	
+</body>
+</html>

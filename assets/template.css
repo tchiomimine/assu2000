@@ -1,0 +1,2201 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/OpenSans-CondBold.eot'); /* IE9 Compat Modes */
+  src: url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/OpenSans-CondBold.eot#iefix') format('embedded-opentype'),
+  		url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/opensans-condbold.woff') format('woff'),
+  		url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/OpenSans-CondBold.ttf') format('truetype');
+  /*
+  src: local('Open Sans Condensed Bold'), local('OpenSans-CondensedBold'), url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/opensans-condbold.woff) format('woff');*/
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/OpenSans-CondLight.eot'); /* IE9 Compat Modes */
+  src: 	url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/OpenSans-CondLight.eot#iefix') format('embedded-opentype'),
+  		url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/opensans-condlight.woff') format('woff'),
+  		url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/OpenSans-CondensedLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINPro-CondensedBold';
+  src: url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/DINPro-CondBold.eot'); /* IE9 Compat Modes */
+  src: 	url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/DINPro-CondBold.eot#iefix') format('embedded-opentype'),
+  		url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/DINPro-CondBold.woff') format('woff'),
+  		url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/DINPro-CondBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINPro-CondensedBlack';
+  src: url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/DINPro-CondBlack.eot'); /* IE9 Compat Modes */
+  src: 	url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/DINPro-CondBlack.eot#iefix') format('embedded-opentype'),
+  		url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/DINPro-CondBlack.woff') format('woff'),
+  		url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/css/DINPro-CondBlack.ttf') format('truetype');
+}
+
+html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;text-decoration:none;color:#333}
+body{line-height:1;font-family:Helvetica, Arial, sans-serif;font-size:14px}
+h1, h2, h3, h4{font-weight:bold}
+h1{padding:15px 30px 20px;font-size:24px}
+h1, h2,.col-description h3, .option h3, .option h4,.resume li, #tableau .details td strong, .h2,.item-page h3,.bloc-contact strong, #tableau2 h3, #tableau2 th, .landing.scolaire .lots{font-family:'Open Sans Condensed',Helvetica, Arial, sans-serif}
+h2{font-size:1.2em}
+.footer h3{display:inline}
+#page{width:988px;position:relative;margin:0 auto}
+ol, ul{list-style:none}
+table{border-collapse:collapse;border-spacing:0}
+caption, th, td{text-align:left;font-weight:normal;vertical-align:top}
+blockquote:before, blockquote:after, q:before, q:after{content:""}
+blockquote, q{quotes:"" ""}
+abbr, acronym{border:0}
+.clr{clear:both}
+
+.item-separator,.clear{clear:both;height:0;margin:0;padding:0;border:0;line-height:1px;font-size:1px}
+.headerbis{float:left;background:#E3E3E3;width:988px;height:160px}
+.header{position:relative;z-index:999;width:988px;height:74px}
+
+.promo_header{float:left;height:115px;width:528px;background:#f6f6f6}
+
+/**** menu transverse *******/
+.headerbis .menu_haut{float:left;font-size:10px;margin:6px 10px 0 170px;text-transform:uppercase}
+.headerbis .menu_haut li{display:inline}
+.headerbis .menu_haut li a{padding:0 4px 0 0}
+.headerbis .menu_haut li a:hover{text-decoration:underline}
+.headerbis .menu_haut li:before{content:"| "}
+.headerbis .menu_haut li:first-child:before{content:""}
+
+.span-16{float:left}
+p.readmore{text-indent:0;font-size:.9em}
+#logosite{position:absolute;top:30px;left:18px}
+#logosite span{display:none}
+
+#accroche{float:left;background:#fff;margin:52px 0px;font-size:21px;width:400px}
+
+#espace{float:right;background:#fff;margin:10px 4px 0;padding:10px 15px;border:1px solid #56b861;border-radius:3px;width:350px;position:relative}
+#espace p{line-height:1.4em}
+#espace li{background:none}
+#espace a{display:block;text-decoration:none}
+#espace a:hover{text-decoration:underline}
+#espace .titre-h3 a{font-weight:bold;margin-top:8px;margin-bottom:4px}
+#bt-espaceperso{top:12px;right:15px;position:absolute;width:170px}
+#bt-espaceperso a{background:#EEE;padding:6px 10px;border:1px solid #7B7D7B;float:right;font-size:13px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
+#bt-espaceperso a:hover{background:#BDBABD;text-decoration:none;color:#000}
+#espace #menu689, #espace #menu1092{display:none}
+.ico{/*width:140px;*/float:left; margin-top:16px}
+.ico a{padding:0px 2px 1px 6px;margin:3px;font-size:0.8em;float:left}
+#contrats{padding-left:0; margin-left:0}
+#paiement, #docs{border-left:1px solid #333}
+#txtavantages{width:170px;background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/espace_perso.gif) no-repeat -38px top;padding:5px 0 5px 20px}
+#txtavantages:hover{}
+
+/* **************** MENU *****************/
+.header .menu{float:left;z-index:1000;/*width:583px;*/ width:100%;background:#222a33;position:absolute;height:64px;padding-top:0;border-bottom:10px solid #222}
+.header .menu li{float:left;list-style-type:none;margin:0}
+
+.header .menu > .last{border-right:1px solid #6a6b6d}
+.header .menu a{color:#FFF;display:block;text-decoration:none}
+.header .menu > li > a{width:144px;padding-top:48px;text-align:center;border-left:1px solid #6a6b6d;border-right:1px solid #333;position:relative;height:25px}
+.header .menu > li > a .image-sprite, .offre.forfaitkm #recap #optiontab li.col-1 .image-sprite{width:62px;height:50px;display:block;position:absolute;top:0;left:40px;bottom:0;background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/produit.png);background-repeat:no-repeat}
+.header .menu > li > a:hover .image-sprite,.header .menu > li:hover > a > .image-sprite,
+.header .menu > li:hover, .header .menu > li.sfhover{margin-top:-3px !important;margin-bottom:9px !important}
+/*niveau 2*/
+.header .menu ul, .header .menu div{position:absolute;left:-999em;font-size:11px;opacity:0}
+.header .menu div{width:988px;height:10px}
+.header .menu ul li{float:none}
+
+.header .menu ul a{position:relative;padding:8px 90px 8px 8px}
+
+.header .menu > li > ul > li > a{color:#333;cursor:pointer;font-family:'Open Sans Condensed';font-size:1.8em;line-height:23px;text-transform:uppercase;font-weight:normal !important}
+
+.header .menu ul img{float:right}
+.header .menu ul .image-title{display:block;padding:16px 0;width:130px}
+.header .menu ul > li > a.ligne1 .text-sprite{line-height:41px}
+.header .menu > li > ul > li > a > .image-sprite{height:45px;left:137px;top:10px;width:69px;position:absolute}
+
+.btoffre.tarif{background:#6BB52D;display:block; text-align:center}
+.btoffre.tarif:hover{background:#6BB52D;}
+/** auto **/
+.item102 > a .image-sprite{background-position:-5px bottom}
+.item102:hover, .item102:hover > a, .item102 > a:hover, .item102 > a.shover, .item102.sfhover, .item102.sfhover > a{background-color:#025092 !important;border-color:#025092 !important}
+.item102 > ul{border:3px solid #025092}
+.item102 > div{background: #025092; display:block; text-align:center}
+
+.item102 > ul > li > a .image-sprite{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/menu_auto.png)}
+.item126 > a .image-sprite{background-position:252px -9px}
+
+/** auto 3 liens **/
+.header .menu ul li.item126 ul li.first {margin:40px 0 10px}
+.header .menu > li > ul > li > ul > li a.third {font-size: 13px; margin: 26px auto; padding: 6px 5px; width: 164px;}
+.header .menu .item126 a.nosplus1 {margin-top:40px}
+
+/** vsp **/
+.item119 > a .image-sprite{background-position:-90px -9px}
+/** campingcar **/
+.item120 > a .image-sprite{background-position:-5px -9px}
+/** auto temporaire **/
+.item1469 > a .image-sprite{background-position:right -9px}
+/** auto pro **/
+.header .menu > li > ul > li.item1688 > a > .image-sprite {background-position:81px -9px; width: 72px; left: 130px;}
+
+/** moto **/
+.item103 > a .image-sprite{background-position:-100px bottom}
+.item103:hover, .item103:hover > a, .item103 > a:hover, .item103 > a.shover, .item103.sfhover, .item103.sfhover > a{background-color:#025092 !important;border-color:#025092 !important}
+.item103 > ul{border:3px solid #025092}
+.item103 > div{background: #025092; display:block; text-align:center}
+.item103 > ul > li > a .image-sprite, .item1656 .btoffre .image-sprite{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/menu_moto.png)}
+/** moto **/
+.item131 > a .image-sprite{background-position:left -6px}
+/** scooter **/
+.item104 > a .image-sprite{background-position:195px -6px}
+/*cyclo 140*/
+.item140 > a .image-sprite{background-position:-85px -6px}
+/*quad 191*/
+.item191 > a .image-sprite{background-position:-158px -6px}
+/*speedbike 1656*/
+.item1656 > a .image-sprite{background-position:-320px -6px}
+/* new vehicles */
+.header .menu .item1656 a.nosplus1 {margin-top:40px}
+.header .menu .item1656 ul li:not(.last){margin: 15px 0;}
+.item1656 .btoffre.deuxroues{color:#333; background: #E3E3E3; display:block; text-align:left; padding:18px 15px;}
+.item1656 .btoffre.deuxroues:hover{/*border: 1px solid #C0C0C0;*/ background:#C0C0C0; box-shadow:none;}
+.item1658 .btoffre .image-sprite, .item1663 .btoffre .image-sprite {background-position:-320px -6px; background-repeat: no-repeat;height: 45px; right: 7px; top: -1px; width: 69px; position: absolute;}
+.item1659 .btoffre .image-sprite {background-position:-390px -6px; background-repeat: no-repeat;height: 45px; right: 7px; top: 2px; width: 69px; position: absolute;}
+.item1663 .btoffre .image-sprite {top: 4px}
+.item1663 .btoffre .text-sprite {margin-right: 42px;}
+
+/** mrh **/
+.item105 > a{background-position:-151px -60px}
+.item105 > a .image-sprite{background-position:-200px bottom}
+.item105:hover, .item105:hover > a, .item105 > a:hover, .item105 > a.shover , .item105.sfhover, .item105.sfhover > a{background-color:#025092 !important;border-color:#025092 !important}
+.item105 > ul{border:3px solid #025092}
+.item105 > div{background:#025092;display:block; text-align:center}
+.item105 > ul > li > a .image-sprite{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/menu_habitation.png)}
+.header .menu .item105 ul li ul li.first {margin: 30px 0 15px;}
+/* mrh principale */
+.item128 > a .image-sprite{background-position:left -9px}
+/* mrh secondaire */
+.item129 > a .image-sprite{background-position:-170px -10px}
+/* mrh etudiant */
+.item130 > a .image-sprite{background-position:-80px -7px}
+/* mrh PNO */
+.item1238 > a .image-sprite{background-position:-256px -10px}
+/** sante **/
+.item106 > a .image-sprite{background-position:-302px bottom}
+.item106:hover, .item106:hover > a, .item106 > a:hover, .item106 > a.shover , .item106.sfhover, .item106.sfhover > a{background-color:#025092 !important;border-color:#025092 !important}
+.item106 > ul{border:3px solid #025092}
+.item106 > div{background:#025092; display: block; text-align: center;}
+.item106 > ul > li > a .image-sprite{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/menu_sante.png)}
+/** complementaire sante **/
+.item132 > a .image-sprite{background-position:left -10px}
+/** prevoyance **/
+.item122 > a .image-sprite{background-position:225px -10px}
+/** scolaire **/
+.item121 > a .image-sprite{background-position:135px -10px}
+
+/** chien/chat **/
+.item123 > a .image-sprite{background-position:68px -10px}
+/** credit **/
+.header .item117 > a .image-sprite{background-position:-390px bottom}
+.header .item117:hover, .header .item117:hover > a,.header .item117 > a:hover, .header .item117 > a.shover , .header .item117.sfhover, .header .item117.sfhover > a{background-color:#025092 !important;border-color:#025092 !important}
+.header .item117 > ul{border:2px solid #025092}
+.header .item117 > div{background:#025092}
+
+.header .item117 > ul > li > a .image-sprite{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/menu_credit.png)}
+.item1228 > a .image-sprite{background-position:left 55px}
+.item1359 > a .image-sprite{background-position:235px 55px}
+.item1362 > a .image-sprite{background-position:150px 55px}
+.item1438 > a .image-sprite{background-position:70px 55px}
+
+.header .menu > li > ul{transition:opacity 0.2s linear 0s;width:726px;min-height:337px;margin-top:10px;border-top-width:1px;text-align:left;background:#E3E3E3;background:-moz-linear-gradient(left, #E3E3E3 28%, #C0C0C0 30%);/* FF3.6+ */
+background:-webkit-gradient(linear, left top, right top, color-stop(28%,#C0C0C0), color-stop(30%,#e0e0e0));/* Chrome,Safari4+ */
+background:-webkit-linear-gradient(left, #E3E3E3 28%,#C0C0C0 30%);/* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(left, #E3E3E3 28%,#C0C0C0 30%);/* Opera 11.10+ */
+background:-ms-linear-gradient(left, #E3E3E3 28%,#C0C0C0 30%);/* IE10+ */
+background:linear-gradient(to right, #E3E3E3 28%,#C0C0C0 30%);/* W3C */
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#E3E3E3', endColorstr='#C0C0C0',GradientType=1 );/* IE6-9 */}
+/*.header .menu li:hover > ul, .header .menu li:hover > div,*/
+.header .menu li.sfhover > ul, .header .menu li.sfhover > div{left:0px;display:block;opacity :1;-moz-opacity :1;-ms-filter:"alpha(opacity=100)";/* IE 8 */
+  filter :alpha(opacity=100);/* IE < 8 */}
+.header .menu > li > ul > li/*, .header .menu .sfhover > ul > li*/{z-index:999;display:block;border:none;width:29%;height:63px}
+
+/*.header .menu > li > ul > li:hover, */ .header .menu > li > ul > li.selected{background:#fff;/* Old browsers */
+background:-moz-linear-gradient(top, #C0C0C0 0%, #ffffff 8%, #ffffff 92%, #C0C0C0 100%);/* FF3.6+ */
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#C0C0C0), color-stop(8%,#ffffff), color-stop(92%,#ffffff), color-stop(100%,#C0C0C0));/* Chrome,Safari4+ */
+background:-webkit-linear-gradient(top, #C0C0C0 0%,#ffffff 8%,#ffffff 92%,#C0C0C0 100%);/* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(top, #C0C0C0 0%,#ffffff 8%,#ffffff 92%,#C0C0C0 100%);/* Opera 11.10+ */
+background:-ms-linear-gradient(top, #C0C0C0 0%,#ffffff 8%,#ffffff 92%,#C0C0C0 100%);/* IE10+ */
+background:linear-gradient(to bottom, #C0C0C0 0%,#ffffff 8%,#ffffff 92%,#C0C0C0 100%);/* W3C */
+/*filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffffff', endColorstr='#ffe0e0e0',GradientType=0 );*//* IE6-9 */}
+
+.header .menu > li > ul > li.first > ul, .header .menu > li > ul > li.selected > ul{left:29%;width:71%;top:0;height:100%;opacity:1}
+
+.header .menu > li > ul > li.last span, .header .menu > li > ul > li.last a, .header .menu > li > ul > li.last a:hover{transition:none;margin-top:0px !important}
+.header .item141{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_mrh.jpg) no-repeat right top !important}
+.item200{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_mrh2.jpg) no-repeat right top !important}
+.item201{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_mrh-etudiant.jpg) no-repeat right top !important}
+.item1242{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_mrh-pno.jpg) no-repeat right top !important}
+.header .item142{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_vsp.jpg) no-repeat right top !important}
+.header .item143{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_moto.jpg) no-repeat right top !important}
+.header .item144{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_chien.jpg) no-repeat right top !important}
+.item195{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_auto.jpg) no-repeat right top !important}
+.item196{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_cc.jpg) no-repeat right top !important}
+.item197{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_scooter.jpg) no-repeat right top !important}
+.item198{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_cyclo.jpg) no-repeat right top !important}
+.item199{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_quad.jpg) no-repeat right top !important}
+.item1660{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_speedbike.jpg) no-repeat right top !important}
+.item202{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_sante.jpg) no-repeat right top !important}
+.item203{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_prevoyance.jpg) no-repeat right top !important}
+.item204{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_scolaire.png) no-repeat right top !important}
+.item1230{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_credit.jpg) no-repeat right top  !important}
+.item1652{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_emprunteur.jpg) no-repeat right top  !important}
+.item1364{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_rachat.jpg) no-repeat right top  !important}
+.item1440{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_travaux.jpg) no-repeat right top  !important}
+.item1474{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_auto-tempo.jpg) no-repeat right top  !important}
+.item1605{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-RC-D.png) no-repeat right top  !important}
+.item1606{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-MRP.png) no-repeat right top  !important}
+.item1607{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-RC-PRO.jpg) no-repeat right top  !important}
+.item1608{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-flotte-auto.png) no-repeat right top  !important}
+.item1689, .item1696{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-auto-pro.jpg) no-repeat 43px 8px !important}
+
+
+.header .menu ul li ul{background:#FFF}
+.header .menu ul li ul li{line-height:1.3em;font-size:1.2em;width:50%}
+.header .menu ul li ul li.first{margin:50px 0 15px}
+
+.header .menu > li > ul > li > ul > li a, #tarifconseil a{margin:2px auto;width:160px;text-align:center;padding:12px;font-size:18px;font-family:'Open Sans Condensed'}
+.header .menu > li > ul > li > ul > li.last a, .header .menu > li > ul > li > ul > li.last .separator{text-indent:-999em;background:none;display:block;width:100%;height:100%}
+.header .menu > li > ul > li > ul > li.last{position:absolute;right:0;top:0;padding-top:0;height:100%;background:none}
+.header .menu a.nosplus1{position:relative;font-size:17px;color:#222;margin-top:100px;text-align:left;font-weight:700;margin-left:12px;line-height:1em;width:215px;padding-bottom:4px;background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces_mobile.png) no-repeat 19px -187px transparent; margin-bottom:4px}
+.header .menu a.nosplus{font-size:17px;color:#222;text-align:left;padding:0px 2px 2px 35px;font-weight:700;line-height:1em;width:215px;margin-left:12px;background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces_mobile.png) no-repeat 19px -187px transparent}
+.header .menu a.nosplus1 .image-sprite{}
+.header .menu a.nosplus1 .text-sprite{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/nos_plus.png) no-repeat top left;position:absolute;height:62px;width:217px;left:0;top:0;padding:0px 2px 0px 35px}
+
+.produit{display:block;color:#FFF;height:21px;padding:86px 20px 0 0;width:205px;text-decoration:none;font-weight:bold;font-size:13px;text-align:right;letter-spacing:-0.02em}
+
+.offreauto{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/produit_auto.jpg) no-repeat top right}
+.offre2roues{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/produit_moto.jpg) no-repeat top right}
+.offrehabitation{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/produit_habitation.jpg) no-repeat top right}
+.offresante{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/produit_sante.jpg) no-repeat top right}
+
+.random-image{line-height:0}
+.left{float:left}
+.content{font-size:12px;width:988px;position:relative}
+.right{margin:0px 0px 6px 0px;float:right}
+.right .moduletable, .moduletable.col3{background:#eee;width:216px;margin-bottom: 3px;padding:20px;border:1px solid #e6e6e6}
+.right > div.moduletable:hover, .moduletable.col3:hover{-webkit-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.1);box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.1)}
+
+.pro{width:129px;height:75px;float:left}
+
+.liste li{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/chevrons.png) no-repeat left -31px transparent;padding-left:15px}
+.footer .liste li{padding:5px 0 5px 20px}
+ul.actions li{list-style-type:none;float:right;margin-left:10px}
+.item-page{background:#fff;margin-bottom:3em}
+.old .item-page{min-height:555px}
+.item-page p a{color: #000}
+.item-page p a:hover{text-decoration:underline}
+.item-page ul.liste_produit li{float:left;margin-right:3px;margin-bottom:15px;height:111px}
+.old .item-page,.blog{width:715px;padding:0;float:left}
+.blog{background:#e8E8E8}
+.blog p{font-size:16px !important;line-height:1.3em;text-align:justify !important}
+.blog .readmore{margin-top:20px}
+.items-row, .blog .items-leading > div{background:#fff;border:1px solid #ccc;padding:20px;margin:0 30px 15px 50px}
+.moduletable h3, .item107{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon.png);background-repeat:no-repeat;padding:3px 0 6px 35px;margin-bottom:5px;font-family:'Open Sans Condensed';font-size:20px}
+.left .moduletable h3 a{color:#fff;text-decoration:none}
+
+#slogonsite{position: absolute; left: 140px; top: 40px;}
+#slogonsite span.titre_principal{font-size:12pt;}
+#slogonsite span.titre_secondaire{display: block; margin-top: 5px;font-size: 9px;letter-spacing: -0.3px;color: #717070;}
+.mainHeader__logo {
+    background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/Logo_Assu_2000.svg);
+    background-repeat: no-repeat;
+    background-position: -7px -7px;
+    background-size: 104px 104px;
+    width: 85px;
+    height: 85px;
+    display: block;
+    position: relative;
+}
+.a11y {
+    border: 0!important;
+    clip: rect(1px,1px,1px,1px)!important;
+    -webkit-clip-path: inset(50%)!important;
+    clip-path: inset(50%)!important;
+    height: 1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important;
+    white-space: nowrap!important;
+}
+.desc_visuel{
+	position: absolute;
+	top: 232px;
+	left: 50px;
+	color: #38344d;
+	text-align: right;
+	font-size: 32px;
+	line-height: 44px;
+}
+.link_visuel{
+	display: block;
+	background: #0186ac;
+	color: #fff;
+	font-size: 24px;
+	padding: 5px 30px;
+	float: right;
+	margin-top: 35px;
+	font-weight: 600;
+}
+.link_visuel:hover{
+	background: #09647d;
+}
+/** page accueil **/
+
+.blog-featuredhome{position:relative;overflow:hidden;text-align:center}
+sup{font-size:12px}
+#visuel_index h1, .bloc-haut-mobile h1 {padding: 0}
+#visuel_index h1{position: absolute;
+    text-align: right;
+    color: #3c3850;
+    font-size: 32px;
+    font-family: 'DINPro-CondensedBold';
+    margin-top: 38px;
+    line-height: 1.5em;
+    width: 368px;
+    margin-left: 105px;}
+    
+#visuel_index h1 strong {
+    font-family: 'DINPro-CondensedBlack';
+}
+
+#visuel_index h1 strong:first-child, #visuel_index h1 strong:last-child {
+	font-size:42px;
+}
+
+#bthome{bottom: 42px; font-size: 26px; position: absolute; left: 290px;}
+.btoffre.xl{font-size:20px;box-shadow:1px 1px 10px #383838}
+.btoffre.l{font-size:21px !important}
+.btoffre.s{font-size:13px;padding:5px 10px !important}
+
+#bthome .btoffre{box-shadow:1px 1px 10px #383838; padding: 12px 24px;}
+.btoffre, #submittel, .readmore a{background:none repeat 0 0 #333333;border:1px solid #FFFFFF;font-family:'Open Sans Condensed';font-weight:bold;padding:12px;color:#fff;position:relative;text-decoration:none !important}
+#submittel:hover, .readmore a:hover{-webkit-box-shadow:inset 0px 0px 10px rgba(0, 0, 0, 1);box-shadow:inset 0px 0px 10px rgba(0, 0, 0, 1); background:none repeat 0 0 #222}
+.readmore a{font-size:12px;padding:5px 12px}
+.btoffre .image-sprite{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/plus_bouton_offre.png) no-repeat;background-position:-146px -8px;width:25px;position:absolute;top:-10px;right:-11px;width:25px;height:25px}
+
+.defi .right .moduletable.menudeptagence {font-family:'Open Sans Condensed'; font-weight:bold;margin-top: -3px;background:transparent url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puce-dpt-agences.png) no-repeat 12px center ; color: black; position: absolute; top: 208px; z-index: 6; margin-left: 10px; border:none; font-size: 13px; padding: 14px 0 14px 34px;}
+
+.defi .right .moduletable.menudeptagence:hover{box-shadow: none;}
+.defi .right .moduletable.menudeptagence a:hover{text-decoration:none;}
+.home #eKomiWidget_default{text-align:center}
+
+.home .moduletable.lf_storeLocatorWidget {height: 226px;}
+.defi .moduletable.lf_storeLocatorWidget {height: 226px;}
+.home .fb_iframe_widget {   border: 1px solid #bdbabd; }
+.home .lf_storeLocatorWidget_poslist{z-index:7;}
+.dots{bottom:20px;left:0;position:absolute;right:0}
+.dots li{border:2px solid #FFFFFF;border-radius:6px;cursor:pointer;display:inline-block;height:8px;margin:0 4px;opacity:0.4;text-indent:-999em;/*transition:background 0.5s ease 0s, opacity 0.5s ease 0s;*/ width:8px}
+.dots li.active{background:none repeat 0 0 #FFFFFF;opacity:1}
+.arrows span{display:block;height:100%;opacity:0;text-indent:-999em;transition:opacity 0.6s ease 0s;background-color:rgba(255,255,255,0.5);height:100%;width:70px;background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/arrow.gif);background-repeat:no-repeat;position:absolute;top:0;cursor:pointer}
+.arrows .prev{left:0;background-position:12px center}
+.arrows .next{right:0;background-position:-40px center}
+.arrows span:hover{opacity:1}
+
+.home .col0{text-align:justify}
+.home .col0 h2{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon.png) no-repeat 0px -95px transparent;float:left;font-family:'Open Sans Condensed';font-size:28px;padding:26px 0 26px 40px;text-align:left;width:280px;line-height:1.1em}
+.home .col0 p{background:none repeat 0 0 #FFFFFF;display:block;float:right;margin:12px;padding:12px;text-align:justify;width:600px;line-height:1.1em;font-size:14px}
+.home .col1{width:24%;margin-left:10px;float:left;background:#fff}
+.col2{width:46%;float:left;background:#fff;margin: 0 6px 10px 13px; padding:0}
+.home .col3{float:right;margin-right:0px}
+
+
+
+#fdmenu li a:hover, #fdmenu li.selected > a{color:#010101}
+#fdmenu li a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fd_menu.gif) no-repeat left center transparent;display:block;font-size:11px;margin-left:5px;padding:6px 10px 6px 20px}
+#fdmenu li a + ul li a{margin-left:25px;width:136px}
+.old-contenu .item-page{width:700px}
+.txt_cont h3{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/puce_verte.png) no-repeat left top transparent;color:#003870;display:block;font-size:15px;margin-bottom:5px !important;margin-left:-42px !important;min-height:36px;padding-left:42px;padding-top:3px}
+.item-page .txt_cont ul{list-style:square outside none;margin:0 0 15px 15px}
+.item-page.old ul, .item-page.old ol, .item-page.old .liste{line-height:1.3em;margin:0 30px 15px 50px}
+.item-page.old li{margin:0 0 15px}
+.old .txt_cont li{background:none;margin:0 0 5px}
+.liste li, .contact .txt_cont li{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto.gif) no-repeat left 5px transparent !important;padding-left:20px}
+.round{padding-left:15px}
+
+/***** page services ********/
+.pictos{position:absolute;bottom:40px;right:0;width:250px}
+.offres, .candidature, .plan{display:block;float:left;font-size:11px;font-weight:bold;padding-bottom:5px;padding-top:25px}
+.offres{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/icon-gif-formulaire.gif") no-repeat right bottom transparent;margin-right:5px;padding-right:55px;text-align:right}
+.candidature{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/icon-gif-homme.gif") no-repeat left bottom transparent;margin-left:5px;padding-left:55px}
+.plan{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/icon-gif-plan.gif") no-repeat left bottom transparent;margin-left:85px;padding-left:75px;padding-top:40px}
+.mot-pdg{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/lire-mot-pdg.png") no-repeat right bottom transparent;bottom:10px;height:120px;left:405px;position:absolute;text-indent:-5000em;width:212px;z-index:999}
+
+#jcemediabox-popup-content .item-page{font-size:13px;height:auto;line-height:1.3em;min-height:1px;padding:0.5em 0;width:auto;margin-bottom:0}
+
+/* le groupe c'est */
+.landing.instit h1,.cest h1{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/h1.png) !important}
+.item-page.cest{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_groupe.jpg) no-repeat; padding-top: 318px; width: 720px}
+.cest .multicanal tr{display: block; margin-bottom: 45px}
+.cest .multicanal td{vertical-align:middle}
+.cest .multicanal td.logocol{width:195px}
+.cest .multicanal td.logocol a{display: block; text-align: center}
+.cest .multicanal h3{margin:0px 5px 14px 10px; padding-top:0; line-height:20px;font-size: 21px;    font-weight: 300}
+.cest .multicanal p{margin:0 5px 0 10px}
+
+.cest .datecle{border-left: 2px solid #CCCCCC;margin-left:50px}
+.cest .datecle li{list-style-type:none; background:url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces.png") no-repeat scroll -14px -1098px transparent; padding-left:54px;margin-left: -20px; margin-bottom:5px}
+.cest .datecle li.vert{background-position:-13px -746px}
+.cest .datecle li span{font-size:21px; font-weight:bold; margin-right:10px;margin-bottom:5px;float:left}
+.cest .datecle li.vert span{color:#70B121}
+
+.chiffrecle h3{background: none; margin: 0 auto 20px; padding: 0; text-align: center}
+.chiffrecle span{display:block; font-weight:bold; white-space: nowrap; font-size:28px}
+.chiffrecle p{line-height:1.8em; margin-bottom:12px}
+.chiffrecle span strong{font-size:0.7em}
+.chiffrecle td{vertical-align:middle}
+.chiffrecle .droite{padding-left:10px}
+.chiffrecle .fgauche{padding-right:10px; text-align:right}
+
+/* plan du site */
+#xmap{width:720px;font-size:14px}
+#xmap h2{margin:0 20px 5px !important}
+.level_0{line-height:1em;margin-left:20px}
+.level_1{list-style:disc outside none;margin:0.7em 30px 2em}
+.level_0 li{margin-bottom:10px}
+
+/* page évènement exceptionnel */
+/* intempéries */
+.intemperies .content{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fond-intemperies.png) left top; background-size:110% auto; position:relative}
+.intemperies.item-page{margin-bottom: 0; background:rgba(49, 93, 129, 0.75)}
+.intemperies .callback{box-shadow: 1px 1px 2px #999; background: #fff none repeat scroll 0 0; border-radius: 6px; display: block; margin-right: 118px;
+    padding: 16px; position: absolute; right: 10px; top: 105px; width: 280px;}
+.intemperies.item-page p{color:#FFF; line-height: 1.5em; font-size:18px;margin: 86px 6px 0px 200px; padding: 4px 0 75px; width: 300px;}
+
+.intemperies .callback div, .intemperies .callback form, .intemperies .callback input, .intemperies .callback fieldset, .intemperies .callback h3{display:block; margin-left:0}
+.intemperies .callback h3 {color: #222; font-size: 24px; line-height: 1em; margin: 0 0 15px !important; padding: 0 !important; text-align: center; text-transform: uppercase;}
+.intemperies .callback fieldset, .intemperies .callback label{display:block; margin: 0px 20px !important;border:none; padding: 0.35em 0.625em 0.75em;}
+.intemperies .callback label {font-size: 16px !important; text-align:center}
+.intemperies .callback .horaires{font-size:14px; text-align: left; margin:10px 0; padding-top: 0; padding-right: 0; background:url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/callback-horaires.png") no-repeat scroll 20px 0 / 20% !important; font-weight:bold; padding-left: 90px; text-transform: uppercase;}
+.intemperies .callback #telInterloc {border: none; border-bottom:1px solid #315d81;width:100%; color:#315d81;font-size: 18px; line-height:1.2em}
+.intemperies .callback #submittel{ background: #315d81; border: none; border-radius: 4px; box-shadow: 1px 1px 2px #555; color: white; font-size: 14px; font-weight: bold; width:100%; padding: 8px; text-transform: uppercase;}
+.intemperies .callback #resultat {top: 62px; background:none; left: 0; width: 100%;}
+.intemperies .callback .message {background: #ddd; box-shadow: none; font-size: 13px; line-height: 1.3em; padding: 0 20px;}
+.intemperies .callback .message.succes {background: #ddd url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/customer-service.svg") no-repeat scroll 8px center / 20% auto; line-height: 1.6em; margin-top: 10px; padding: 25px 20px 25px 80px;}
+
+
+/* pages métier */
+.old .item-page.metiers{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/bg_page.gif") no-repeat 390px bottom #FFFFFF;height:700px;width:725px !important}
+.metiers .gauche{float:left;width:380px;margin-left:-20px}
+.metiers .droite{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/encart.png") no-repeat left top transparent;float:left;height:630px;position:relative;width:344px;margin-top:-50px}
+.retour{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/croix.gif") no-repeat center top transparent;display:block;height:25px;position:absolute;right:30px;text-indent:-5000em;top:22px;width:24px}
+.commercial h3, .commercial h4, .commercial h5{color:#A8272D}
+.mkt h3, .mkt h4, .mkt h5{color:#009DDF}
+.compta h3, .compta h4, .compta h5{color:#FAD500}
+.rh h3, .rh h4, .rh h5{color:#F15A24}
+.info h3, .info h4, .info h5{color:#8CC63F}
+.sc h3, .sc h4, .sc h5{color:#8a2b88}
+.item-page.metiers h3{font-size:22px;margin-left:30px !important}
+.metiers h5{font-size:11px;margin:0 30px 3px}
+.old .item-page.metiers p{font-size:11px;line-height:1.3em;margin:0 30px 10px}
+.metiers .pictos{right:45px;bottom:12px}
+.metiers .mot-pdg{left:205px;bottom:0}
+#jcemediabox-popup-ajax h1{display:none}
+#jcemediabox-popup-ajax p{margin-left:30px !important;line-height:1.3em !important}
+.item-page.recrutement ul{margin:0 10px 15px !important}
+
+/*** pages actus ***/
+.blog img{height:auto;max-width:595px}
+
+.pagination{text-align:center;margin:1em 0}
+.pagination .counter{display:none}
+.pagination ul li{display:inline}
+.blog .pagination .pagenav{padding:0 5px;position:relative}
+.blog .pagination span{color:#000000}
+.blog .pagination a{color:#666}
+
+/* Shareable quote */
+.twitter-shareable-quote {background: none repeat scroll 0 0 #DDEEFF !important}
+.twitter-shareable-quote:hover {background: none repeat scroll 0 0 #E9EBE4 !important; text-decoration: none !important; text-indent: 10px !important}
+.twitter-shareable-quote a {color: #000000 !important; text-decoration: none !important}
+.twitter-shareable-quote.hover {background-color: #CCDDEE !important}
+.twitter-shareable-quote img {margin-left: 4px !important;
+    margin-right: 0px !important; margin-bottom: 0px !important;
+    margin-top: 0px !important; width: 14px !important;
+    height: 11px !important; border: none !important;
+    padding: 0 !important; float: none !important}
+.twitter-shareable-quote img.twitter-tw-icon-over, .twitter-shareable-quote:hover img.twitter-tw-icon-out {display: inline !important}
+.twitter-shareable-quote:hover img.twitter-tw-icon-over, .twitter-shareable-quote img.twitter-tw-icon-out {display: none !important}
+
+/* bloc partenaire (accueil) */
+.bloc-partenaire{font-size:14px;line-height:1.3em}
+
+/** pages département *******/
+.agencedep .item-page{width:720px}
+#listdepagence{float:left; overflow:auto; height:490px; border: 1px solid #CCCCCC; width:206px;}
+.agencedep .category-desc h1{text-align:left;}
+.agencedep .category-desc {width:74%}
+.agencedep .categories-list ul{float:left; margin-top:12px;}
+.agencedep .categories-list li{width:220px; padding:12px;}
+
+/********** pages agences *********/
+.agences .content{margin-bottom:3px}
+.agences .item-page, .landingpromomoto .item-page,.landing .item-page{padding: 265px 10px 2px 0px; width:720px; margin-bottom: 15px}
+.agences .item-page{padding-top:0;}
+.landingpromomoto .span-7, .landing .span-7{ left: 245px; position: absolute; top: 1px; width: 455px; z-index:2}
+
+.landingpromomoto h1,.landing h1{padding-top:20px;padding-left:30px; padding-right:480px; line-height: 1.1em; width: 210px;position: absolute; left: 0px; top: 0px; font-size:32px; border:1px solid #ddd; height:210px;
+background:-moz-linear-gradient(left, #FFF 0%, #e4e4e4 35%);/* FF3.6+ */
+background:-webkit-gradient(linear, left top, right top, color-stop(0%,#FFF), color-stop(35%,#e4e4e4));/* Chrome,Safari4+ */
+background:-webkit-linear-gradient(left, #FFF 0%, #e4e4e4 35%);/* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(left, #FFF 0%, #e4e4e4 35%);/* Opera 11.10+ */
+background:-ms-linear-gradient(left, #FFF 0%, #e4e4e4 35%);/* IE10+ */
+background:linear-gradient(to right, #FFF 0%, #e4e4e4 35%) repeat 0 0 transparent;
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#e4e4e4',GradientType=1 );/* IE6-9 */}
+.agences h1{font-size:32px; padding-left: 38px;}
+
+.agences h2, .landingpromomoto h2{background-color:transparent !important; font-size: 21px; font-weight: 700; padding-bottom:15px}
+
+.item-page.agences h2, .agences .col h2{clear:left; font-size: 28px !important;
+    margin-bottom: 0 !important;
+    min-height: 28px !important;
+    padding-left: 38px !important;
+    padding-top: 27px !important}
+
+.agences h3{padding-left:0;padding-bottom:2px}
+.agences .col{margin: 10px 4px 10px 0; float:left;}
+.agences .item-page p{margin:0;padding-left:38px; padding-right:10px; text-align:justify; font-size:12px}
+.agences .moduletable.promoagence p {padding-left: 2px;}
+.agences .moduletable.promoagence a{text-decoration:underline;}
+
+.right .moduletable.photo {padding:10px;width: 236px; background:#ddd;}
+.agences .col .moduletable{border: 1px solid #e6e6e6;background: #eee; padding:10px;}
+.agences .col .promoagence{margin-left: 37px;}
+.agences .col .promoagence .avec-hover, .agences .col .promoagence .avec-hover a, .agences .col .moduletable.produitsannexe{ width: 315px;}
+.agences .col .promoagence .avec-hover {box-shadow:none; margin:0; height:248px; background-position:0 130px}
+.agences .col .promoagence .avec-hover a{position:relative;}
+.agences .col .promoagence .avec-hover-txt {padding: 20px 5px 2px 20px;}
+.agences .col .promoagence .jenprofite {top:30px; right:5px;}
+.agences .col .moduletable h5{clear:left; background:#fff; font-size:18px; font-weight:700; font-family:'Open Sans Condensed'; padding:5px 12px; margin:6px 10px 15px}
+.agences .col .moduletable.produitsannexe li {list-style-type:disc; margin-bottom: 36px; margin-left:36px}
+.agences .col .moduletable.produitsannexe a{text-decoration:underline;}
+.contactagence{background:-moz-linear-gradient(top, #FFF 45%, #c4c4c4 100% !important);/* FF3.6+ */
+background:-webkit-gradient(linear, left top, right bottom, color-stop(45%,#FFF), color-stop(100%,#c4c4c4)) !important;/* Chrome,Safari4+ */
+background:-webkit-linear-gradient(top, #FFF 45%, #c4c4c4 100%) !important;/* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(top, #FFF 45%, #c4c4c4 100% !important);/* Opera 11.10+ */
+background:-ms-linear-gradient(top, #FFF 45%, #c4c4c4 100%) !important;/* IE10+ */
+background:linear-gradient(to bottom, #FFF 45%, #c4c4c4 100%) repeat 0 0 transparent !important;
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#c4c4c4',GradientType=0 );/* IE6-9 */}
+.contactagence div{background:url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fd_contact.png") no-repeat left top transparent}
+.contactagence h2{font-size:20px}
+.contactagence p{margin:5px 0;padding-left:32px}
+.contactagence .tel{line-height:28px;font-size:31px;font-family:'Open Sans Condensed'}
+.contactagence .conges{background:url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/departement-agence.png") no-repeat 0 -53px #71AF2E; line-height: 1.2em; font-size:13px; margin-top:12px; padding-bottom: 5px; padding-right: 5px; padding-top:5px; text-align:center; color:#fff}
+.contactagence .email{background:url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/contact/picto-arobase_small.png") no-repeat left top transparent;line-height:25px}
+.contactagence .email a{color:#70AE2D;text-decoration:underline}
+.contactagence .agent{font-size:14px; padding-top:8px; padding-bottom:5px; font-weight:bold}
+.contactagence .adresse{height:80px;font-size:14px; line-height:1.2em}
+.contactagence .adresse span[itemprop="street-address"] {margin-bottom:8px; display:block}
+.devisagence{text-align:center; width:auto !important; margin-bottom: 25px; margin-left: 32px; overflow: hidden;}
+.devisagence div{float:left;position:relative; border: 1px solid #e6e6e6; width:220px; height:267px; margin-left:5px}
+.devisagence p{height: 52px;}
+.devisagence div.auto{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/agences_auto.jpg) no-repeat #eee}
+.devisagence div.moto{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/agences_moto.jpg) no-repeat #eee}
+.devisagence div.scooter{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/agences_scooter.jpg) no-repeat #eee}
+.devisagence div.quad{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/agences_quad.jpg) no-repeat}
+.devisagence div.habitation{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/tarif-habitation.jpg) no-repeat #eee}
+.devisagence div:hover{-webkit-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.1);box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.1)}
+.devisagence a.btoffre{position:absolute; top:200px; left:55px; border:none; margin: 10px auto; font-size:1.3em !important; padding: 9px 7px; width: 100px; -webkit-box-shadow:0px 0px 7px rgba(0, 0, 0, 0.5); box-shadow:0px 0px 7px rgba(0, 0, 0, 0.5)}
+.devisagence a.btoffre:hover{-webkit-box-shadow:0px 0px 7px rgba(0, 0, 0, 0.5) !important; box-shadow:0px 0px 7px rgba(0, 0, 0, 0.5) !important}
+.devisagence a.lienoffre{top:184px; left:48px; position:absolute; text-decoration:underline}
+
+.promoagence h2{margin-bottom:8px;margin-top:5px;padding:0;text-align:center}
+.devisagence .promo{left: 10px; position: absolute; top: 10px; text-indent: -1999px; width:130px; height:130px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/macaron_promo_produit.png) no-repeat}
+.devisagence .moto .promo{background-position: -886px 0px}
+.devisagence .scooter .promo{background-position: -307px 0px}
+.devisagence .auto .promo{background-position: -27px 0px}
+
+.devisagence.landing{margin-left:5px}
+.devisagence.landing div{border:none; margin:0; border-left:5px solid transparent;width:145px; height:207px}
+.devisagence.landing div.auto{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/devis-ld_auto.jpg) no-repeat}
+.devisagence.landing div.moto{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/devis-ld_moto.jpg) no-repeat}
+.devisagence.landing div.scooter{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/devis-ld_scooter.jpg) no-repeat}
+.devisagence.landing div.quad{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/devis-ld_quad.jpg) no-repeat}
+.devisagence.landing div.auto:hover{border-left:5px solid #025092}
+.devisagence.landing div.deuxroues:hover{border-left:5px solid #025092}
+.left .devisagence a.btoffre{margin-top:130px}
+
+.asterix{color:#005195;font-family:Arial;font-size:12px}
+
+.agences .horaires h2{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fd_titre_horaires_agence.png) no-repeat; font-weight:700; font-size:16px; padding: 15px 10px; margin-top:-10px}
+.agences .horaires h2 span{color:#FFF; font-size:18px; margin-left:18px}
+.agences .horaires table{border-spacing:3px 5px; font-size:10px; border-collapse: separate; margin-top:11px}
+.agences .horaires table span{display:block}
+.agences .horaires td{ width:auto; text-align:center; padding:3px; border:1px solid #ccc;
+background:-moz-linear-gradient(left, #FFF 47%, #eee 100%);/* FF3.6+ */
+background:-webkit-gradient(linear, left top, right top, color-stop(47%,#FFF), color-stop(100%,#eee));/* Chrome,Safari4+ */
+background:-webkit-linear-gradient(left, #FFF 47%, #eee 100%);/* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(left, #FFF 47%, #eee 100%);/* Opera 11.10+ */
+background:-ms-linear-gradient(left, #FFF 47%, #eee 100%);/* IE10+ */
+background:linear-gradient(to right, #FFF 47%, #eee 100%) repeat 0 0 transparent;
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#eeeEEE',GradientType=1 );/* IE6-9 */}
+.agences .horaires td.actif{color:#fff; background:-moz-linear-gradient(left, #35a054 47%, #6baf4f 96%);/* FF3.6+ */
+background:-webkit-gradient(linear, left top, right top, color-stop(47%,#35a054), color-stop(96%,#6baf4f));/* Chrome,Safari4+ */
+background:-webkit-linear-gradient(left, #35a054 47%, #6baf4f 96%);/* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(left, #35a054 47%, #6baf4f 96%);/* Opera 11.10+ */
+background:-ms-linear-gradient(left, #35a054 47%, #6baf4f 96%);/* IE10+ */
+background:linear-gradient(to right, #35a054 47%, #6baf4f 96%) repeat 0 0 transparent;
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#35a054', endColorstr='#6baf4f',GradientType=1 );/* IE6-9 */}
+.agences .horaires span{font-size:12px}
+.agences .horaires hr{background-color:#093288;border:0 none;color:#005093;height:1px;margin:0}
+
+/*** formulaire devis ***/
+#form_start_devis input{margin:2px 0}
+.promo2roues{margin: 0 !important; padding: 0 !important; width: 258px !important;}
+.promo2roues p{font-size:18px}
+.promo2roues .legende, .landing.sante .legende{color: #999999;font-size: 11px; margin-top: 15px; text-align: center}
+.entetedevis{left: 460px; position: absolute; top: 30px; width:210px;}
+/********************** footer ************************/
+.footer{padding:50px 0 0 0;position:relative;width:988px;font-family:'Open Sans Condensed';border-top:1px solid #C8C9CB;}
+.engagements .footer{
+	margin:1250px 0 0 0 !important;
+}
+
+.home .footer div{/*float:left;*/display:inline-block;vertical-align:top;padding:0;}
+.footer div.menu_offre2{margin-top:16px;padding:0;margin-right:100px;}
+.footer span{text-transform:uppercase;font-weight:700;font-size:14px}
+.footer a{text-decoration:none !important;font-weight:700 !important;font-size:12px !important;padding:0 4px 0 0;line-height:20px;color:#777 !important;font-family:'Open Sans Condensed' !important}
+.footer a:hover{text-decoration:underline !important}
+.footer ul{margin:20px 0 0 0px;color:#777;width:100%;clear:both}
+.footer ul li{color:#777}
+/* .menu_infoprat{border-right:1px solid #999;height:190px} */
+/* .home .menu_infoprat{border-left:1px solid #999} */
+/*.footer div.menu_apropos{padding-top:50px;background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/images/logo_footer.png) no-repeat 35px 0;#width:160px;padding-right: 10px;}*/
+.footer div.menu_infoprat{padding: 0px;margin: 0 100px 0 0; }
+.footer div.menu_apropos{#width:160px;padding: 0;margin: 0 50px 0 0;}
+.footer div{margin: 0;}
+.footer div.menu_offre{padding-right: 0px;}
+.footer div.logofooter{border-top: 1px solid #333;margin-top: 40px;text-align: center; width: 100%; padding-right: 0px}
+
+.footer div.logofooter p span{display: block;position:absolute;top: 50%;}
+.logofooter #txt_footer{margin-top: 41px;font-weight: bold;margin-bottom: 40px;}
+.logofooter img{position: relative; vertical-align: middle;}
+
+.footer span, .footer .menu li{text-align:left}
+
+/*********************** Reseaux sociaux **********************/
+#reseaux{margin-top:58px;margin-left: 30px;width:80px}
+#reseaux li{display:inline;text-align:left}
+#reseaux a{display:inline-block;width:30px; margin-bottom:10px;padding-right: 10px;height:30px;text-indent:-5000em;background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/reseaux-sociaux.png);background-repeat:no-repeat}
+#link-twitter{background-position:-45px top}
+#link-googleplus{background-position:-90px top}
+#link-youtube{background-position:-135px top}
+#link-newsletter{background-position:-178px top;margin-right:20px;margin-left: 18px;}
+.item-page #reseaux{width:auto}
+
+/********* module recherche agence *******/
+.submit{border:1px solid #ccc;border-left:none;background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon.png) 0px -75px no-repeat;width:22px;cursor:pointer;margin:0;padding:0;border-radius:0;filter:chroma(color=#000000);height:20px;/*float:left;*/}
+*:first-child+html .submit{height:22px;margin-top:-1px}
+.inputbox{height:16px;float:left;border:1px solid #ccc;border-right:none;color:#666;margin:0;border-radius:0;-webkit-appearance:none}
+input, textarea, .field{border-radius:0;}
+select{border-radius:0; -webkit-appearance:menulist}
+.moduletable.lf_storeLocatorWidget{ padding: 14px 20px; background:#ddeff1 !important}
+.lf_storeLocatorWidget p{line-height:1.4em;font-family:'Open Sans Condensed', Times New Roman;font-weight:bold}
+#introsearch{margin-bottom:15px}
+#form_box_locator{margin:-7px 0 4px;height:20px}
+.lf_error, .lf_storeLocatorWidget_marker{display:none;}
+.right .lf_error{font-size: 1.1em;}
+.lf_storeLocatorWidget_poslist li {background-color: #fff;border-bottom: 1px solid #fff; box-shadow: 0 1px 0 #dddce4; margin: 2px 0 5px 2px; padding: 5px;}
+.lf_storeLocatorWidget_viewMore {background: #00529e url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/bg_view_more.png") no-repeat scroll right center; color: #fff;
+    display: block; font-size: 11px; height: 15px;  margin-left: 2px; padding: 6px 8px; text-decoration: none;}
+.lf_storeLocatorWidget_address_address{margin-top:2px;}
+.lf_storeLocatorWidget .proximity{font-weight:bold;}
+
+/******** module webcallback **********/
+.right .moduletable.webcallback{padding:3px 20px}
+#callback_form{position:relative}
+.callback h3{background-position:0 6px !important;color:#76BB39;line-height:1.2em !important;margin:0 30px !important;padding:0 0 6px 45px !important}
+.callback h3 strong{color:#222222;display:block}
+.item-page .right .callback{padding: 4px 24px 45px 6px; background:#F4F4F4; border: 1px solid #E6E6E6; width:200px; box-shadow:none}
+.item-page #options .right{margin-bottom:0}
+.item-page #options .right .callback{padding-left:14px}
+.item-page .right .callback h3, .item-page #produitbottom .callback h3{color:#222; padding-left:0px !important; padding-bottom: 3px !important; font-family: 'Open Sans Condensed'; font-size: 26px !important; font-weight: 300; margin:0 !important}
+#callback label{font-family:Open Sans Condensed;font-size:14px}
+#callback label span{line-height:1.2em;font-size:15px;font-weight:700}
+#callback fieldset{margin:4px 0 0}
+#telInterloc{width:99%;border:1px solid #ccc;color:#666;margin:0; font-size:12px;-webkit-appearance:none}
+#submittel{font-size:14px;padding:5px;width:100%;cursor:pointer;-webkit-appearance:none;border-radius:none;margin:0}
+#resultat{background:#F4F4F4;position:absolute;top:55px;line-height: 1.1em;padding:2px;width:99%;height:37px;display:none}
+
+/* module callback pour leadformance */
+.leadformance .right .moduletable.webcallback{padding:0}
+.leadformance .right .moduletable{border:0; width:99%;margin:0}
+.leadformance .right > div.moduletable:hover{-webkit-box-shadow:none;box-shadow:none}
+.leadformance .callback h3 {margin: 0 0 11px !important;}
+.leadformance .callback h3 strong{display: inline; line-height: 35px;}
+.leadformance #callback fieldset {margin: 12px 0 0;}
+.leadformance #submittel {background-color: #00529e;font-family: "Open Sans Condensed";  padding: 6px 12px; text-transform: uppercase;}
+
+
+/* parler à un conseiller */
+#produitbottom .webcallback{float:left}
+.webcallback.mid #resultat, .webcallback.end #resultat{top:96px}
+.item-page.rechercheagence .webcallback{position:absolute; right:180px; width:280px;  padding: 15px 35px 35px; height: 238px}
+.item-page.rechercheagence .callback h3{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon.png") no-repeat left top !important; margin: 0 3px 3px 5px !important; line-height:1.3em !important; font-size:21px}
+.item-page.rechercheagence .callback #resultat{top:175px !important}
+.item-page.rechercheagence .callback h3 strong {display:inline; margin-right:5px}
+.item-page.rechercheagence #rechercheagence{width:310px; padding: 15px 35px; height: 258px; float:left}
+.item-page.rechercheagence .webcallback, .item-page.rechercheagence #rechercheagence{background: #F4F4F4; border: 1px solid #E6E6E6}
+.item-page.rechercheagence .webcallback:hover, .item-page.rechercheagence #rechercheagence:hover{-webkit-box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.1);box-shadow:inset 0px 0px 12px rgba(0, 0, 0, 0.1)}
+.item-page.rechercheagence #introsearch > p{margin:0; font-weight:bold}
+.item-page.rechercheagence .inputbox {width:200px}
+.item-page.rechercheagence .lf_storeLocatorWidget_poslist {width:225px; border: 1px solid #CCCCCC; }
+.item-page.rechercheagence .lf_storeLocatorWidget_poslist > p {margin-left:0px}
+.item-page.rechercheagence .lf_storeLocatorWidget p, .item-page.rechercheagence .lf_storeLocatorWidget ul{margin:0}
+
+/****** module coupon réduction ******/
+.moduletable.promo, .moduletable.couponpromo{border:none;font-family:'Open Sans Condensed';font-weight:700;cursor:pointer;padding:20px 15px !important;width:226px}
+.moduletable.promo sup{font-size:21px}
+.moduletable.promo .bloc1{display:block;height:40px;margin:8px 20px !important}
+.moduletable.promo .bloc1 a{color:#FFFFFF}
+.promo:hover{box-shadow:none}
+.moduletable.promo.auto{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/coupon_auto.gif) no-repeat; margin-top:13px;cursor:default; width:228px}
+.right .moduletable.promo.mrh{cursor:default;background:#FFF !important;padding:10px 0 0 !important; width:256px; box-shadow:none !important}
+.right .moduletable.promo.sante{box-shadow: none !important;cursor: default;font-size: 15px;font-weight: normal;
+ height: 116px;line-height: 1.2em;margin: -2px 0 0;padding: 0 4px 0 16px !important; width: 238px;}
+ .right .moduletable.promo.scolaire{box-shadow: none !important;cursor: default;font-size: 15px;font-weight: normal;
+ height: 100px;line-height: 1.2em;padding: 0 4px 0 0px !important; width: 250px;}
+
+/************* lien espace pro *******************/
+.item107{background-position:-2px -49px;margin:53px 0;display:inline-block}
+.bloc-partenaire a{display:block;height:134px}
+.bloc-partenaire .item107{margin:10px 0 35px}
+.bloc-partenaire u{text-decoration:none}
+.bloc-partenaire u:hover{text-decoration:underline}
+
+/****** page devis ***********/
+.contentpane{width:720px}
+
+/*page home */
+.home{background: #f2f2f2;}
+.home .headerbis{height: 115px;}
+.home .headerbis #logosite{top: 15px; left: 35px;}
+.home h1{padding: 0}
+.home .headerbis #liens_header_v2{position: absolute; right: 0; top: 44px;}
+.home .headerbis #liens_header_v2 ul li{float: left; position: relative;padding:2px 10px 2px 30px;border-right: 1px solid #bbb;}
+.home .headerbis #liens_header_v2 ul li:last-child{border: 1px solid #BBBBBB;margin-right: 22px;border-radius: 5px;padding: 10px 12px 10px 30px;margin-top: -10px;margin-left: -1px;}
+.home .headerbis #liens_header_v2 ul li a{color: #333; font-weight: 600; font-size: 12px;}
+.home .headerbis #liens_header_v2 ul li a:hover{text-decoration: underline;color:#025092;}
+.home .headerbis #liens_header_v2 ul li #localisation_picto {background-color:#000; -webkit-mask-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_agence.svg);mask-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_agence.svg); width: 12px;}
+.home .headerbis #liens_header_v2 ul li #tel_picto {background-color:#000; -webkit-mask-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon_rappel.svg);mask-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon_rappel.svg); width: 15px;}
+.home .headerbis #liens_header_v2 ul li #contact_picto {background-color:#000; -webkit-mask-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon_espace-client.svg);mask-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon_espace-client.svg);width: 16px;}
+.home .headerbis #liens_header_v2 ul li #assist_picto {background-color:#000; -webkit-mask-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon_assistance.svg);mask-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon_assistance.svg); width: 18px;}
+.home .headerbis #liens_header_v2 ul li a span{height: 16px; left: 8px; position: absolute;}
+.home .headerbis #liens_header_v2 ul li a:hover span{background-color:#025092 !important;}
+
+.home .headerbis, .home .content, .home .content, .home .zone-bloc-1, .home .zone-bloc-2{background: #fff;}
+.home .zone-bloc-3{background: #f3f7fa; padding: 30px; height: 100px;}
+.home .slide{width: 988px;}
+.home .slide img{width: 100%; display: block; margin: 0 auto;}
+.home .zone-bloc-1{padding: 35px;}
+.home .zone-bloc-2{padding: 50px 30px 30px 30px;}
+.home .content{padding-top: 0px;}
+.footer{background: #fff; border-top: 0px;}
+.item-pagehome{padding: 30px;}
+.zone-bloc-1 .bloc.first{margin-left: 28px;padding:0; width: auto;height:310px;border:none}
+.zone-bloc-1 .bloc{color:#fff; width: 18%;padding: 15px 20px 10px 20px;float:left; background:#69AFCC no-repeat; border:15px solid #E7F4F6; height: 110px; line-height:1.5em; font-size:14px; margin: 0 0 0 12px; font-size: 16px}
+.zone-bloc-1 .bloc.contact {width: 35%; text-align: left; background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon_nous-contacter.png); background-position-y: center; background-position-x: 10px; padding-left:85px}
+.zone-bloc-1 .bloc.contact p{float: left;width: 48%; padding: 10% 0; line-height: 1.2em;}
+.zone-bloc-1 .bloc.agence{background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon_agences.png); background-position-x: center; background-position-y: 10px; border-top: 0; border-right:0}
+.zone-bloc-1 .bloc.agence p a, .zone-bloc-1 .bloc.sinistre p a {padding: 45px 20px 0; display: block;}
+.zone-bloc-1 .bloc.sinistre{background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_assistance.png); background-position-x: center; background-position-y: 10px; border-top:0; margin-left:0}
+.zone-bloc-1 .bloc *{color: #fff; font-family: Open Sans Condensed; font-size: 18px; letter-spacing: 1px; font-weight: bold;}
+
+.zone-bloc-1 .bloc .btoffre{width: 92%; margin: 0 auto; padding: 6px; display: block; background: none repeat 0 0 #025092; border: 0; font-family: 'Open Sans Condensed',Helvetica, Arial, sans-serif; }
+.zone-bloc-1 .bloc .localisation_agence{background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_geoloc.svg) 10px 6px no-repeat #025092; background-size: 28% 66%;}
+.zone-bloc-1 .bloc .contact_tel{background: #fff; border-radius: 8px; color:#000;  float: left; text-align: center; line-height: 1.7em; height: 30%; width: 40%; margin: 10% auto;}
+.zone-bloc-1 .bloc .devis{background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_devis.svg) 10px 8px no-repeat #025092; background-size: 35% 55%;}
+h2{font-size: 30px; background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/liseret.png) no-repeat; margin-bottom: 20px; margin-left: 35px; min-height: 40px; padding: 0px 15px 10px 40px;}
+.item-pagehome h2, .item-pagehome_v2 h2{font-size: 30px; background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/liseret.png) no-repeat; margin-bottom: 20px; margin-left: 35px; min-height: 40px; padding: 0px 15px 10px 40px;}
+.item-pagehome p{line-height: 18px; margin-bottom: 15px; margin-left: 80px; margin-right: 60px;}
+.zone-bloc-2 .bloc_actualite{width: 45%; display: inline-block; margin-left: 35px; margin-bottom: 25px; padding: 0px;}
+.zone-bloc-2 .bloc_actualite span{display: block; text-align: right; font-weight: lighter; color: #696262; font-size: 14px; padding: 10px 4px;}
+.zone-bloc-2 .bouton{border: 2px solid #025092; font-size: 16px; width: 220px; margin: 10px auto 0; font-weight: bold; text-align: center;}
+.zone-bloc-2 .bouton a {color: #025092;padding: 15px; display: block;}
+
+.home .footer .menu_assu2000 {margin: 0px 50px 0 90px; padding: 0;}
+.home .footer div.menu_infoprat {padding: 0px; margin: 0px 50px 0 0px;}
+.home .footer div.menu_apropos {padding: 0px; margin: 0px 50px 0 0px;}
+.img_actualite{position: relative;}
+.categ_actualite{position: absolute; right: 4px; bottom: 0; background: #6cb336; padding: 5px; color: #fff !important; width: 33%; font-size: 15px !important; text-align: center !important;}
+
+.zone-bloc-3{position: relative;}
+.zone-bloc-3 div img{position: absolute; width: 80px; height: 80px; left: 22%; top: 25%;}
+.zone-bloc-3 div .ekomi_text{position: absolute; left: 35%; top: 48%; color: #323639;}
+.zone-bloc-3 div .ekomi_text span{display: block;}
+.zone-bloc-3 div .ekomi_text span .ekomi_link{color: #018e01;}
+.zone-bloc-3 div .ekomi_text span .ekomi_link:hover{text-decoration: underline;}
+.zone-bloc-3 div .ekomi_text span:last-child{margin-top: 20px; margin-left: 70px;}
+.evaluation_stars_ekomi{float: right; margin-left: 15px;}
+.evaluation_stars_ekomi li{width: 1px; height: 1px; float: left; padding: 15px 10px 18px 18px; color: transparent; background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_etoile.svg) center center no-repeat; background-size: 50px 50px;}
+.evaluation_stars_ekomi li.demi_etoile{width: 1px; height: 1px; float: left; padding-top: 2px; color: transparent; background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_etoile_demie.svg) center center no-repeat; background-size: 72px 72px;}
+.zone-bloc-4{background: #fff; height: 50px;}
+.zone-bloc-4 div{float: left; height: 40%;}
+.zone-bloc-4 #reseaux_sociaux_home{width: 340px; background: #69afcc; color: #fff; padding: 15px;}
+.zone-bloc-4 #newsletter_home{width: 588px; background: #d7eff3; padding: 15px;}
+.zone-bloc-4 #newsletter_home #newsletter{position: relative; top: -5px;}
+.zone-bloc-4 #newsletter_home #newsletter_form .row1, .zone-bloc-4 #newsletter_home #newsletter_form .row2{display: inline-block; margin-left: 10px;}
+.zone-bloc-4 #newsletter_home #newsletter_form .row2{position: absolute;}
+.zone-bloc-4 #newsletter_home #newsletter_form .row2 #submitmail{background: #025092; font-size: 13px; box-shadow: none; padding: 5px 35px; border: 0; }
+.zone-bloc-4 #newsletter_home #mailSuscribe{width: 200px; background: #fff; border: 1px solid #ccc;}
+.zone-bloc-4 .modnewsletter #resultat{z-index: 999; top: 26px; right: -138px; padding: 12px; position: absolute;}
+#reseaux_sociaux_home span, #reseaux_sociaux_home ul{float: left;}
+#reseaux_sociaux_home ul{position: relative; top: -6px;}
+#reseaux_sociaux_home ul li{float: left; margin-left: 12px;}
+#reseaux_sociaux_home ul li a{
+	background-repeat: no-repeat;
+    background-position: 0;
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: relative;
+}
+.Fb_picto {
+    background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_FB.svg);
+}
+.Twitter_picto {
+    background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_twitter.svg);
+}
+.Ytb_picto {
+    background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_youtube.svg);
+}
+.Gplus_picto {
+    background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_google_plus.svg);
+}
+.Msg_picto {
+    background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_mail.svg);
+}
+.footer .menu_offre_home{padding-right: 0;}
+.footer .menu_offre_2_home{padding-left: 0; margin-top: 14px;}
+/*page contact*/
+.client-connecte{display:none}
+.item-page.contact{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_contact.jpg) no-repeat; padding-top: 318px;}
+.contact h1, .label h1, .garages h1{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/h1.png) !important; padding-top:130px !important}
+.contact h2, .cest h2{margin-top:10px}
+.contact #zone-devis{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/accueil/images/contact/fd_tel.png") repeat scroll 0 0 transparent; color: #FFFFFF; font-size: 21px; font-weight: bold; height: 70px; left: 360px;   padding: 18px 28px; text-align: center; top: 100px; font-family:'Open Sans Condensed'}
+.contact #zone-devis .tel{color:#FFF; font-size:28px}
+.contact .moduletable.lf_storeLocatorWidget {height: 288px;}
+.contact .moduletable.lf_storeLocatorWidget #introsearch {margin-bottom: 45px;}
+.item-page.contact > div{background:#e3e3e3}
+.item-page.contact .bloc{width: 23%;padding: 0 20px; margin: 10px 0 20px 30px; background:#FFF; height: 276px; line-height:1.1em; font-size:14px}
+.item-page.contact .bloc.first{margin-left: 49px;}
+.item-page.contact .btoffre{font-size: 16px; font-weight: normal; padding: 6px 18px;}
+.item-page.contact p, .item-page.contact .callback h3{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/contact/pictos_contact.png") no-repeat top center; text-align:center; padding: 90px 0px 0px 0px !important}
+.item-page.contact p strong, .item-page.contact .callback h3{font-size:19px;}
+.item-page.contact p#tel {background-position: -620px -25px; padding-top: 112px !important;}
+.item-page.contact p#email{background-position: -245px 20px; display: inline-block; padding-top: 130px !important;}
+.item-page.contact p#courrier{background-position: -152px 10px; display: inline-block; padding-top: 130px !important; margin-bottom: 10px !important;}
+.item-page.contact p#ouverture{background-position: 45px -25px; padding-top: 120px !important;}
+.item-page.contact p#reclamation{background-position: -490px 12px; display: inline-block; padding-top: 150px !important;}
+.item-page.contact a.client-non-connecte, .item-page.contact a.client-connecte{text-decoration:underline}
+.item-page.contact .callback h3 {background-position: -370px -25px !important; color: #333; margin-bottom: 10px !important;}
+.item-page.contact .callback h3 strong {color: #333; display: inline;}
+.item-page.contact .callback #resultat {top: 163px; font-size:12px;}
+
+/* page five star */
+.item-page.garages {background: url("/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_five-star.jpg") no-repeat;    padding-top: 326px; width: 720px}
+.item-page.garages .btgarage{clear:left; margin: 10px;}
+.item-page.garages .btgarage a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/garage-five-star-btn.png) no-repeat 5px #0a295f; padding-left:70px; padding-right:15px; margin:0 auto; width:150px; display:block}
+.item-page.garages ul{display: inline-block; margin: 10px 30px;}
+.item-page.garages ul li{margin:20px 35px; line-height: 1.5em; padding-left:90px; padding-top: 9px; vertical-align:middle; height:50px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/avantages-services-garages.png) no-repeat 0 -12px; float:left; width: 170px;}
+.item-page.garages ul li.reparation{padding-top: 14px;}
+.item-page.garages ul li.nettoyage{background-position: 0 -98px; margin-top: 0;}
+.item-page.garages ul li.nego{background-position: 0 -181px; margin-top: 0;}
+.item-page.garages ul li.gardien{background-position: 0 -264px; margin-top: 40px;}
+.item-page.garages ul li.controle{background-position: 0 -348px; padding-top: 0; height: 54px;}
+
+/* page open to dialog */ 
+.item-page.label {background: url("/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_label.jpg") no-repeat;    padding-top: 326px; width: 720px}
+.label #telephone, .label #perso, .label #fb{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/pictos_label.png) no-repeat 12px 18px;}
+.label #perso{background-position: 12px -98px;}
+.label #fb{background-position: 12px -188px;}
+.label .contact p{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/contact/pictos-contact.png") no-repeat; padding: 10px 0 10px 90px}
+
+.item-page.label p#tel{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces_mrh.png) no-repeat 0 -1226px;padding:10px 0 2px 90px;margin-bottom:0 !important}
+.label .contact p#tel{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces_mrh.png) no-repeat 0 -1226px;}
+.label #email{background-position: left -166px; margin-top:20px}
+.label #courrier{background-position:top left; margin-top:20px; padding-top:0px}
+.label #ouverture{background-position: left -60px; margin-top:40px}
+.label #reclamation{background-position: left -236px; margin-bottom:50px}
+.label #reclamation a{text-decoration:underline}
+.label .contact p{padding: 18px 0 18px 90px; margin: 12px 60px 12px 80px ;}
+.label #ouverture{background-position: left -68px; margin-top:initial;padding: 10px 0 10px 90px; margin: 20px 60px 20px 80px;}
+
+/* page landing pages jaunes */
+.item-page.pagejaune {background: url("/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel-landing-pagejaune.jpg") no-repeat; padding-top:270px;}
+
+.item-page.pagejaune #etapedevis, .item-page.pagejaune .devisagence{margin: 10px 10%;}
+.item-page.pagejaune #etapedevis li{float:left; width:190px; padding-top:130px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landing-etapes-devis.png) no-repeat; margin:10px 20px; font-size:1em}
+.item-page.pagejaune #etapedevis li span{float:left; font-size:40px; color:#103754; font-weight:bold; padding-right:6px; line-height: 36px;}
+.item-page.pagejaune #etapedevis #form{ background-position: 40px 0; /*width: 117px; height: 110px;*/ } 
+.item-page.pagejaune #etapedevis #tarif{ background-position: -130px 0;/* width: 117px; height: 110px;*/ } 
+.item-page.pagejaune #etapedevis #devis{ background-position: -308px 0; /*width: 117px; height: 110px;*/ }
+
+/*********
+* PAGE OFFRE PRODUIT -> .offre
+*********/
+.offre .right{margin-left:0}
+
+.item-page.offre{padding-top:318px;background:no-repeat 0 0;margin-bottom:0}
+.item-page.offre.deuxroues, .item-page.offre.auto{padding-top:220px}
+.item-page.offre.mrhhome{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mrh_principale_new.jpg)}
+.item-page.offre.sante{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_sante_new.jpg)}
+.item-page.offre.mutuelle{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mutuelle_new.jpg)}
+.item-page.offre.assupro.rcd{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/rc-d.jpg)}
+.item-page.offre.assupro.mrp{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/mrp.jpg)}
+.item-page.offre.assupro.flotte{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/flotte-auto.jpg)}
+.item-page.offre.assupro.rcpro{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/rc-pro.jpg)}
+.item-page.offre.prevoyance{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_prevoyance_new.jpg)}
+.item-page.offre.chienchat{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_animaux_new.jpg)}
+.item-page.offre.fit{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_fitchallenge.jpg)}
+.item-page.offre.defi{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_defirun.jpg);  padding-top: 335px;}
+.item-page.landing.cdd{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_cdd_et_apprentis.jpg)}
+.item-page.landing.etudiants{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mutuelle_etudiants.jpg)}
+.item-page.landing.ijh{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mutuelle_ijh.jpg)}
+.item-page.landing.chomage{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mut_sans_emploi.jpg)}
+.item-page.landing.seniors{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mutuelle_senior.jpg)}
+.item-page.landing.tns{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_travailleur_non_salarie.jpg)}
+.item-page.landing.scolaire.jeu{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_jeu_scolaire.jpg); padding-top:370px}
+.item-page.offre.auto.moustache{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/assurance-moustache.png); background-position-x: -10px; padding-top: 280px;}
+
+.offre h1, .contact h1, .cest h1, .landing.label h1, .garages h1, .pagejaune h1,.landing.instit h1, .landing.sante h1{color:#FFF;line-height:1.3em;padding:115px 0 0 0;position:absolute;top:0;left:30px;text-align:center;text-transform:uppercase;background:no-repeat 0 50px;height:200px;width:217px;font-size:30px}
+.landing.label h1{padding-top: 114px !important;}
+.offre.auto h1{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/offre/h1-auto.png) no-repeat 0 5px; padding-top: 78px; top: 5px; height:160px; width:198px; left:3px}
+.offre.auto.forfaitkm h1{height: 175px; line-height: 0.8em; padding-top: 30px; text-transform: none}
+.offre.auto.tempo h1{padding-top: 46px;}
+.offre.auto.forfaitkm h1 span{font-size:1.5em; line-height:1.1em; display:block}
+.offre.vsp h1{padding-top:45px}
+.offre.campingcar h1 {padding-top:56px}
+.offre.mrh h1{padding-top:100px !important}
+.offre.deuxroues h1{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/offre/h1-deuxroues.png) no-repeat scroll 0 5px ; padding-top: 74px; top: 5px; height:160px; left:3px; width:197px}
+.offre.mrh h1{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/offre/h1-mrh.png)}
+.offre.mrhpno h1{font-size:28px}
+.offre.sante h1, .landing.sante h1{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/offre/h1-sante.png)}
+.offre.mutuelle h1{padding-top:130px}
+.offre.credit h1{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/offre/h1-credit.png)}
+.offre.fit h1 {background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/offre/h1-fit.png")}
+.offre.defi h1{text-indent:-1999px;}
+.offre.auto.moustache h1{ background: #415b8d none repeat scroll 0 0; border-radius: 130px; height: 160px; line-height: 1.5; margin-top: 25px; padding: 55px 43px 0; width: 130px;left:15px}
+
+
+.old-contenu h1,.old h1,.contentpane h1, .espaceclient h1,.prospect h1, .offre h2, .contact h2, .cest > h2, .item-page.agences h2, .agences .col h2, .landingpromomoto h2,.landing h2 ,.timeline h1, .agencedep h1, .garages h2, .pagejaune h2, .fichesprat h2.titre{font-size:30px;background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon.png) no-repeat 0 -95px #E3E3E3; margin-bottom: 49px;min-height:40px;padding:18px 15px 10px 50px}
+.contentpane h1{margin-top:10px}
+.fichesprat h2.titre{font-weight:bold; margin:0 0 15px}
+
+.engagements h2{
+font-size:30px;background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/engagements/page-teamsport/drapeau.png) no-repeat -4px 0px #e6e6e6; margin-bottom: 30px;min-height:40px;padding:18px 15px 10px 50px;color:#222a62;
+}
+.engagements .slider{
+width:100%;
+height:266px;
+background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/engagements/page-teamsport/visuel.jpg) no-repeat 0px -30px #fff;
+margin-bottom: 20px;
+}
+.engagements .content {height:1670px !important;}
+.engagements .teamsport-logo{position: absolute;top: 56px;left: 70px;	}
+.engagements .core-eng{width:97%;margin: 0px 15px 0px 15px;}
+.engagements .core-eng .intro-engagements{margin: 0px 0px 0px 0px;}
+.engagements .core-eng .right-rs{float: right;margin-top: 15px;}
+.engagements .core-eng .right-rs p{text-align: right;display: inline-block;margin: 0px 15px 0px 0px;color: #787878;font-size: smaller;font-weight: bold;font-stretch: expanded;}
+.engagements .core-eng .right-rs #fb{margin-right: 15px;}
+.engagements .core-eng #img1{float: left;margin-top: 60px;margin-right: 28px;}
+.engagements .core-eng #img2{;margin-top: 10px;}
+.engagements .core-eng #labelimg1{margin-left: 35px;}
+.engagements .core-eng #labelimg2{width: 390px;margin-left: 529px;}
+.engagements .core-eng .labelimg{
+	width: 392px;
+	height: 500px;
+	background-color: #fff;
+	margin-top: -152px;
+	position: absolute;
+	background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/engagements/page-teamsport/drapeau.png) no-repeat 330px 0px #FFF;
+	border-top: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 10px solid #222a62;
+}
+.engagements .core-eng .labelimg .btn{
+	color: #fff;
+    font-size: 24px;
+    background: #222a62;
+    padding: 15px 40px 15px 40px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 160px;
+    margin-left: 70px;
+}
+.engagements .core-eng .labelimg #btn1{margin-top: 50px;}
+.engagements .core-eng .labelimg #btn2{margin-top: 20px;}
+.engagements .core-eng .labelimg .title1{color:#222a62;margin: 20px 0px 0px 35px;font-size: xx-large;font-family: Helvetica,Arial,sans-serif;}
+.engagements .core-eng .labelimg .title2{color: #222a62;margin: 0px 0px 30px 35px;font-size: large;font-stretch: condensed;font-family: Helvetica,Arial,sans-serif;}
+.engagements .core-eng .labelimg p{margin: 0px 42px 25px 35px;}
+.engagements .core-eng .imgmoment {margin-top: 400px;}
+.engagements .core-eng .footer-engagement{margin-top:400px;}
+.engagements .core-eng .footer-engagement img{float:left;}
+.engagements .core-eng .right-footer-engagement{border: 1px solid #e1e1e1;width: 472px;height: 339px;margin-left: 483px;}
+.engagements .core-eng .footer-engagement .label-img{
+	width: 210px;
+	height: 50px;
+	background-color:#fff;
+	position: absolute;
+	left: 274px;top: 20px;
+	background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/engagements/page-teamsport/drapeau-small.png) no-repeat 10px 0px #FFF;
+}
+.engagements .core-eng .footer-engagement .finance{
+	width: 115px;
+	height: 70px;
+	position: absolute;
+	right: 20px;
+	top: 35px;
+	background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/engagements/page-teamsport/financement.png) no-repeat;
+}
+.engagements .core-eng .footer-engagement .label-img p{
+	color: #222a62;
+    margin-top: 18px;
+    margin-left: 44px;
+    font-size: 15px;
+    font-stretch: condensed;
+	 margin-right: 0px;
+    margin-bottom: 0px;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #teo, .engagements .core-eng .footer-engagement .right-footer-engagement #anth, .engagements .core-eng .footer-engagement .right-footer-engagement #geoff, .engagements .core-eng .footer-engagement .right-footer-engagement #max{
+	text-transform: uppercase;color: #222a62;
+    margin: 10px 0px 0px 35px;font-size: 24px;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #project, .engagements .core-eng .footer-engagement .right-footer-engagement .resultat{
+	margin-top: 10px;
+    font-size: large;
+    margin-left: 40px;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #piste{
+	font-size: large;
+    margin-left: 40px;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #retrouvez{
+	font-style: italic;
+    font-size: 14pt;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 91px;
+	margin-top: 42px;
+}
+.projet{
+	margin-bottom: 30px;
+	position: relative;
+}
+.engagements .core-eng .footer-engagement .right-footer-engagement #btn3{
+	color: #fff;
+    font-size: 24px;
+    background: #222a62;
+    padding: 5px 25px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 246px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 90px;
+}
+#zone-devis{left:445px;position:absolute;top:145px;width:250px}
+.offre.auto #zone-devis, .offre.deuxroues #zone-devis,.offre.mrh #zone-devis{left:365px; top:115px}
+.offre.mrh #zone-devis{top:145px}
+#zone-devis .btoffre{font-size:28px}
+.offre.assupro #zone-devis{top: 135px;width: 231px;left: 390px;}
+.puce{background:transparent url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces.png) no-repeat}
+.reco{background:transparent url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/reco.png) no-repeat}
+.moto .reco.inclus{background-position:12px -78px; height:55px}
+.mrh .puce,.scolaire .puce{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces_mrh.png)}
+.mrh .puce.inclus,.scolaire .puce.inclus{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces.png)}
+/* vignette promo auto */
+.promoauto{margin-left: 128px; position: absolute; top: -12px; z-index: 2}
+
+/* recap */
+.offre #recap > div{width:300px;border-bottom: 8px solid #333333; height: 207px; margin-top:10px !important}
+.offre #recap h3{display:block; background: #333333; color:#FFF; margin-left:0px !important; font-weight:bold !important; font-size:24px; padding-left:10px !important; line-height:42px}
+.offre #recap .plus{display:block; float:left;margin:0 -10px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/recap_plus.png) no-repeat center; width:60px; height:215px;position: relative;z-index: 2}
+.offre #recap #formules{width:308px}
+.offre #recap #formules li{color: #FFFFFF; font-family: Open Sans Condensed; font-size: 32px; line-height: normal; text-align: center; padding:6px}
+.offre.moto #recap #formules li, .offre.auto.mfa #recap #formules li {padding:0;font-size: 31px}
+.offre #recap #formules .ligne2 li{padding: 20px 6px}
+.offre #recap #formules .ligne1 li {padding: 61px 6px}
+.offre #recap #optiontab li {background: #f5f5f5; height: 42px; line-height: 1.2em; margin: 0; width: 105px;padding: 20px 22px; text-align: center}
+.offre #recap #optiontab li.allinone{font-size: 16px; height: 75px; padding: 45px 22px !important;    width: auto}
+.offre #recap #services{margin:0}
+.offre #recap #services li{margin:0; width:134px; height:62px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fd_services.png) no-repeat #d5eacb; line-height:1.2em}
+.offre #recap #services .col-2 li, .offre #recap #services .col-3 li {line-height: 1.4em; position: relative; background:#d5eacb;height: 145px}
+
+.offre #recap #optiontab li.col-1 {width:255px}
+.offre #recap #optiontab .col-2 li, .offre #recap #optiontab .col-3 li{height: 125px; }
+.offre #recap #optiontab .col-3 li{width: 71px;padding: 20px 14px}
+.offre #recap #optiontab  li span, .offre #recap #optiontab .col-3 li span, .offre #recap #optiontab .col-2 li span{display: inline-block;height: 57px; width: 65px; margin-bottom:7px}
+.offre #recap #optiontab li.col-1 span{display: inline;height: auto; width: auto; margin-bottom:0px}
+.offre.forfaitkm #recap #optiontab li.col-1 strong{ font-size: 18px; position: relative}
+.offre.forfaitkm #recap #optiontab .image-sprite{background-position: -5px bottom;top:-25px}
+.offre #recap #services .col-3 li{width: 84px}
+.offre #recap li.right {border-left:1px solid transparent}
+.offre #recap li.left{border-right:1px solid #9bcd83}
+.offre #recap li.top{border-bottom:1px solid #9bcd83}
+.offre #recap #services li div{float:left; width:58%;text-align:center}
+.offre #recap #services .top.left{background-position:87px 27px; padding: 10px 5px 10px 10px; border-right:1px solid #9bcd83}
+.offre #recap #services .top.right{background-position:-55px 27px; padding: 10px 10px 10px 5px}
+.offre #recap #services .bottom.left{background-position:87px -55px; padding: 10px 5px 10px 10px}
+.offre #recap #services .bottom div{margin-top:10px}
+.offre #recap #services .col-2 div {position: relative; width: 75%}
+.offre #recap #services .col-3 div{position: relative; width: 100%}
+.offre #recap #services .col-2 .left div {left: 15px}
+.offre #recap #services .col-2 .right div {left: 20px}
+.offre #recap #services .bottom.right{background-position:-55px -55px; padding: 10px 10px 10px 5px}
+.offre #recap #services .picto{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_services.png);display: block;   height: 65px; width: 56px;float:left; font-size:12px; line-height:1.1em; margin-bottom: 0}
+.offre #recap #services .col-2 .picto, .offre #recap #services .col-3 .picto {float:none; margin:0 auto}
+
+.offre #recap #services .avance {background-position: -2px 7px}
+.offre #recap #services .constat {background-position: -216px 9px}
+.offre #recap #services .col-3 .constat {background-position: -210px -12px}
+.offre #recap #services .assistance {background-position: -138px -14px}
+.offre #recap #services .col-2 .assistance, .offre #recap #services .col-3 .assistance {background-position: -148px -10px}
+.offre #recap #services .conseiller {background-position: -85px -20px}
+
+/* slide */
+.offre #slider .titreformules{height:88px; width:688px; padding-top:3px; margin: 0px auto -15px; font-size:23px; text-align:center; font-family:"Open Sans Condensed"}
+.offre #slider.step1 {position:relative}
+.offre #slider.step1 .titreformules, .offre #slider.step1 .titreformules .formule1{width:111px}
+.offre #slider.step2 .titreformules{width:588px;#margin-left:200px}
+.offre.auto #slider .titreformules .actif{color:#3a97b4; font-weight:700}
+.offre.deuxroues #slider .titreformules .actif{color:#d81d00; font-weight:700}
+.offre.mrh #slider .titreformules .actif{color:#F08628; font-weight:700}
+.offre #slider .titreformules div{position:absolute; width:685px}
+.offre #slider.step1 .titreformules div {position: inherit;  width: auto}
+.offre #slider.step2 .titreformules div{position:absolute; width:585px;#position:relative}
+.offre #slider .titreformules span{display:block; width:65px; cursor:pointer; background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/trait.png) center bottom no-repeat #FFFFFF; margin-top: 0; bottom:0; padding-bottom:50px}
+.offre #slider.step1 .titreformules span{cursor:default}
+.offre #slider #slide{height:23px; width:680px; padding-top:3px; position: relative; margin: 50px auto}
+.offre #slider.step2 #slide{width:580px}
+.offre #slider #slide .listeformule{width:100%; margin-top: 0; position: absolute; top: -19px}
+.offre #slider #slide .listeformule span{display:block; width:65px; height:58px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/slider_step_auto.png) top left no-repeat #FFFFFF; margin-top: 0; top:0; cursor:pointer}
+.offre #slider #slide .listeformule .formule1, .offre #slider .titreformules .formule1{left: -25px; position: inherit}
+.offre #slider #slide .listeformule .formule2, .offre #slider .titreformules .formule2{margin:0 auto;position: relative}
+.offre.moto #slider #slide .listeformule .formule2, .offre.moto #slider .titreformules .formule2, .offre.auto.mfa #slider #slide .listeformule .formule2, .offre.auto.mfa #slider .titreformules .formule2{margin-left:27%; position: relative}
+.offre.auto.mfa #slider .titreformules .formule2{margin-left:26% !important; width:85px}
+.offre #slider.step2 .titreformules .formule2{left:95%;margin:0;#position:absolute;#top:0;#height:38px}
+.offre #slider #slide .listeformule .formule2{background-position:top center}
+.offre #slider #slide .listeformule .formule2.actif{background-position:bottom center}
+.offre #slider #slide .listeformule .formule3, .offre #slider .titreformules .formule3, .offre #slider #slide .listeformule .formule4, .offre #slider .titreformules .formule4{position: inherit; right: -34px;#position:absolute}
+.offre.moto #slider #slide .listeformule .formule3, .offre.moto #slider .titreformules .formule3, .offre.auto.mfa #slider #slide .listeformule .formule3, .offre.auto.mfa #slider .titreformules .formule3{position: inherit; margin-right: 33%}
+.offre #slider #slide .listeformule .formule3, .offre #slider #slide .listeformule .formule4{background-position:top right}
+.offre.moto #slider #slide .listeformule .formule3, .offre.auto.mfa #slider #slide .listeformule .formule3{background-position:top center}
+.offre #slider #slide .listeformule .formule3.actif, .offre #slider #slide .listeformule .formule4.actif{background-position:bottom right}
+.offre.moto #slider #slide .listeformule .formule3.actif, .offre.auto.mfa #slider #slide .listeformule .formule3.actif{background-position:bottom center}
+.offre #slider #slide.ui-widget-content {background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/slider_fd.png") repeat-x scroll top left #FFFFFF; color: #222222}
+/*curseur*/
+.ui-slider-handle {margin-left:-55px; height: 111px; position: absolute; width: 115px; z-index: 5; background: transparent no-repeat; top: -50px}
+.step1 .ui-slider-handle {cursor:default; display: block; margin: 0 auto; position:inherit; top:0}
+.offre.auto .ui-slider-handle{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/curseur.png)}
+.offre.deuxroues .ui-slider-handle{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/curseur_2roues.png)}
+.offre.mrh .ui-slider-handle,.offre.mrh1 .ui-slider-handle{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/curseurs_mrh.png);background-position: -14px 0}
+.offre.mrh2 .ui-slider-handle{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/curseurs_mrh.png);background-position:-142px 0}
+.offre.mrhetudiant .ui-slider-handle{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/curseurs_mrh.png);background-position:-272px 0}
+.offre.mrhpno .ui-slider-handle{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/curseurs_mrh.png);background-position:-400px 0}
+.offre.auto .ui-slider-handle span{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/picto_auto.png) no-repeat;display: block;height: 58px;margin: 17% auto 0;width: 84px}
+.offre.vsp .ui-slider-handle span{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/picto_vsp.png) no-repeat}
+.offre.campingcar .ui-slider-handle span{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/picto_campingcar.png) no-repeat;display: block;width: 87px}
+.offre.auto #slider #slide .ui-widget-header{z-index: 4; background: #3a97b4; height:54%; font-weight: bold}
+.offre.moto .ui-slider-handle span{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/picto_moto.png) no-repeat;display: block;height: 51px;margin: 21% auto 0;width: 70px}
+.offre.cyclo .ui-slider-handle span{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/picto_cyclo.png) no-repeat;display: block;height: 57px;margin: 18% auto 0;width: 70px}
+.offre.scooter .ui-slider-handle span{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/picto_scooter.png) no-repeat;display: block;height: 53px;margin: 19% auto 0;width: 72px}
+.offre.quad .ui-slider-handle span{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/picto_quad.png) no-repeat;display: block;height: 52px;margin: 22% auto 0;width: 70px}
+.offre.deuxroues #slider #slide .ui-widget-header{z-index: 4; background: #d81d00; height:54%; font-weight: bold}
+.offre.deuxroues #slider #slide .listeformule span{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/slider_step_2roues.png)}
+.offre.mrh #slider #slide .ui-widget-header{z-index: 4; background: #e87d21; height:54%; font-weight: bold}
+.offre.mrh #slider #slide .listeformule span{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/slider_step_mrh.png)}
+
+
+/*options*/
+.offre .option, .landing .sante .option{border-bottom:10px solid #E3E3E3;padding-bottom:25px;padding-left:75px;padding-top:22px}
+.offre #options h2{background-color:#E3E3E3}
+.offre #options h3, .landing .sante  #options h3{font-size:30px;line-height:56px;padding-left:105px;margin-left:-55px;font-weight:300}
+.offre #options h4{font-size:16px;display:inline;padding:5px 10px;margin-left:50px;margin-bottom:15px}
+.offre .item-page p, .offre #options ul.contenu{line-height:1.2em;margin:5px 20px 15px 50px;font-size:16px;text-align:justify}
+.offre .item-page #options p{margin:15px 20px 10px 50px}
+.offre #options ul.contenu{list-style:disc;margin-left:100px;margin-right:100px;margin-top:20px}
+.offre #options ul.contenu li{margin-bottom:10px}
+.listeformule{float:right;margin-top:-75px;list-style:none}
+.listeformule li{display:block;float:left;margin-left:5px;vertical-align:bottom}
+.listeformule .col-formule strong{color:#FFFFFF;padding:0 5px;width:56px;font-size:11px;height:35px;display:table-cell;vertical-align:middle}
+.listeformule .formule1{margin-top:20px}
+.listeformule .formule2{margin-top:12px}
+.listeformule .formule3{margin-top:6px}
+.listeformule .formule1 strong{border-top:9px solid}
+.listeformule .formule2 strong{border-top:17px solid}
+.listeformule .formule3 strong{border-top:23px solid}
+.listeformule .formule4 strong{border-top:29px solid}
+.offre #slider #listegaranties{width:625px; margin:16px auto; text-align: center;position:relative;z-index:2}
+.offre #slider #listegaranties ul{position:relative}
+.offre #slider #listegaranties li{display:inline-block}
+.offre #slider #listegaranties li.actif a{background:#71ba50; box-shadow: 2px 2px 4px #999999}
+.offre #slider #listegaranties li a{color:#fff; padding:4px 6px; margin:5px; background:#bcbcbd; text-align:center; border-radius:8px; border: 2px solid #FFF; white-space: nowrap; line-height: 36px; position:relative}
+.offre #slider .option{background:#bcbcbd; padding:10px 15px; text-align:center; border-bottom:none;border-left: 2px solid #FFF; width:215px}
+.offre #slider .option.actif{background:#71ba50}
+.offre #slider .option > p{margin:10px 0; text-align:center; color:#fff; font-size: 14px; height:70px}
+.offre #slider .option.actif > p {color:#333}
+.offre #slider #options{height:250px; margin:40px auto 18px; padding:6px 0; border:1px solid #d8d9da; border-left:none; border-right:none; position:relative; z-index:1}
+.offre #slider #options h2{background: none no-repeat scroll 0 0 #FFFFFF; font-size: 18px; margin: -10px auto 10px; min-height: 22px; padding: 0; text-align: center; width: 160px;position:relative}
+.offre #slider #options h3{font-size: 16px; line-height: 16px; margin-left: 0px;padding-left: 0px; padding-top: 14px; color:#fff;font-family: Arial, sans-serif; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fond_picto_options.png) top center no-repeat}
+.offre #slider #options h3 span{display:block; height:70px; width:60px;margin: 0 auto}
+.offre #slider #options h3 span.l{width: 65px}
+.bulle{background:#dfdfdf; border: 2px solid #909090; border-radius: 5px; margin-top:3px;
+ box-shadow: 4px 4px 10px #999999; display: block; padding: 10px; position: absolute; width: 340px; zoom:1}
+.actif .bulle{background:#d5eacb; border: 2px solid #8bc670}
+#listegaranties .bulle{left: 0; top: 24px}
+.bulle.right {right: -7px; left:auto !important}
+.bulle .titre_bulle{font-size:14px; text-align:left; background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fleche_info_bulle_gris.png) 50px 0px no-repeat; margin-top: -24px; padding-top:23px;line-height:1.6em; white-space:normal}
+.actif .bulle .titre_bulle{background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fleche_info_bulle.png)}
+#listegaranties .bulle .titre_bulle{background-position:5px 0px}
+.bulle.right .titre_bulle{background-position:right 0px !important}
+.offre #slider .bulle p{font-size:12px; color:#333; text-align:left; white-space: normal; font-weight:normal; margin:0}
+.offre #slider .option .bulle{top:18px}
+.offre #slider .option .hasTip{bottom:10px; position:relative; font-weight:bold; color:#FFF; text-decoration:underline}
+.offre #slider #options tfoot{height:10px}
+
+.perso{background-position:-3px -569px}
+.accessoire{background-position:-6px -400px}
+#slider .accessoire{background-position:-4px -406px}
+.zerokm{background-position:-2px 1px}
+.juridique{background-position:-6px -485px}
+#slider .juridique{background-position:-2px -488px}
+.privee{background-position:-2px -165px}
+.indemnisation{background-position:-2px -80px}
+.remplacement{background-position:-4px -1030px}
+#slider .remplacement {background-position: 0 -1033px}
+.franchise{background-position:-6px -250px}
+.serenite{background-position:0px -522px}
+#optiontab .serenite{background-position:0 -520px}
+.instrument{background-position:0px -910px}
+.piscine{background-position:0 -345px}
+.veranda{background-position:0 -430px}
+.canalisation{background-position:0 -977px}
+.terrain{background-position:0 -1045px}
+.jardin{background-position:0 -1340px}
+
+#garanties{background:#E3E3E3;margin:15px 0}
+#garanties > p{width:620px}
+.auto #garanties, .deuxroues #garanties, .mrh #garanties{background:none}
+
+#garanties #nav{float:right; position:relative;top:-78px}
+#garanties #nav li{float:left;border:1px solid #e6e6e6; border-left:none;width:155px;background:  no-repeat top #E3E3E3; height:66px}
+#garanties #nav li#unclic{background-position:55px 8px}
+#garanties #nav li#unclic.active{background-position:54px -122px}
+.auto #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_auto_small.png) no-repeat center 13px}
+.vsp #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_vsp_small.png) no-repeat center 14px}
+.campingcar #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_campingcar_small.png) no-repeat center 15px}
+.moto #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_moto_small.png) no-repeat center 12px}
+.quad #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_quad_small.png) no-repeat center 13px}
+.cyclo #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_cyclo_small.png) no-repeat center 13px}
+.scooter #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_scooter_small.png) no-repeat center 13px}
+.mrh1 #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_mrh1_small_off.png) no-repeat center 13px}
+.mrh1 #garanties #nav li#unclic.active a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_mrh1_small.png) no-repeat center 13px}
+.mrh2 #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_mrh2_small.png) no-repeat center 11px}
+.mrhetudiant #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_mrhetudiant_small.png) no-repeat center 11px}
+.mrhpno #garanties #nav li#unclic a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_mrhpno_small.png) no-repeat center 11px}
+
+#garanties #nav li#detail{background-position:55px -56px}
+#garanties #nav li#detail.active{background-position:55px -200px}
+#garanties #nav li a{padding:45px 3px 5px 3px; text-align:center; font-size:14px; display:block}
+#garanties #nav .active{background-color:#fff; background-position-top:-66px; border-bottom-color:#fff}
+.offre.auto #garanties #nav li{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_nav_auto.png)}
+.offre.auto #garanties #nav .active a{color:#3A97B4}
+.offre.deuxroues #garanties #nav li{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_nav_moto.png)}
+.offre.deuxroues #garanties #nav .active a{color: #d7280f}
+.offre.mrh #garanties #nav li{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_nav_mrh.png)}
+.offre.mrh #garanties #nav .active a{color: #F08628 }
+
+.offre.mutuelle #garanties #tarifconseil{padding: 10px;text-align: center;width: 680px;}
+.offre.mutuelle #garanties #tarifconseil a {margin:15px}
+
+.offre.auto .intro, .offre.credit .intro, .offre.deuxroues > p, .offre.mrh > p, .offre.scolaire .intro{margin-left: 260px; position: absolute; top: 25px; width: 420px; font-size:14px; margin-top:0; line-height:1.5em}
+
+#wording{width:245px}
+#tarifconseil{width:176px;padding:20px}
+.landing .ligne{margin:0 auto; width:500px}
+.ligne #tarifconseil{float:left}
+#tarifconseil a{padding:8px 15px;margin-top:10px;display:inline-block}
+
+/*landing sante */
+.offre.sante.general .content > .right {height:318px;}
+.offre.sante.general #garanties {float:left;background: #FFF;}
+.offre.sante .encart{ float: left; margin: 20px; width: 690px; box-shadow:-1px 7px 10px #888}
+.offre.sante .encart > p{background: #EEEEEE; margin: 0; padding: 18px 30px; font-style:italic}
+.item-page.offre.sante.general .right {background: #E3E3E3; margin-top: 9px;}
+.item-page.offre.sante.general .right .callback {margin:12px auto; clear:both;}
+.item-page.offre.sante.general #options .bloc{display:bloc; background: #EEE; margin: 10px 0; padding: 20px; width: 45%; text-align:left;}
+.item-page.offre.sante.general #options h4, .item-page.offre.auto.tempo #options h4{  background: none !important; display: block;    margin: 0 0 10px !important; padding: 0;}
+.item-page.offre.sante.general #options p{text-align:left; font-size:14px; margin:10px 0 0 50px !important;}
+
+/*landings mutuelle */
+.item-page.landing.sante{background-repeat : no-repeat; padding-top:340px;}
+.item-page.landing.cdd h1{padding:96px 20px 0 20px; width:176px}
+.item-page.landing.chomage h1{padding:96px 30px 0 30px; width:156px}
+.item-page.landing.tns h1{padding-top:90px}
+.landing .sante .avantages h3{color:#91b146;float:left;font-size: 1.2em; text-align: center; width: 90px; margin-left: 68px;} 
+
+.landing .sante .avantages ul{margin-left:68px; padding-left:80px;padding-top: 15px;margin-bottom:32px} 
+.landing .sante .avantages li, .assupro .avantages li{line-height: 14px; padding-left: 48px; padding-top: 14px;padding-bottom: 6px;}
+.assupro .avantages li{padding-top:0; }
+.assupro .avantages #options ul.contenu {font-size: 12px;}
+.assupro .avantages .contenu li{padding-left:2px}
+.landing .sante .inclus {background-position: -12px -657px; height: auto; text-indent: 0;}
+.landing .sante .legende{text-align:left;}
+.landing .sante #produitbottom, .assupro #produitbottom {border-top: 10px solid #e3e3e3; margin-top: -10px;}
+
+.avantages #tarifs{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/ico_avantages_tarif.png) no-repeat 10px 45px;}
+.avantages #gestion{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/ico_gestion_simplifiee.png) no-repeat 10px 45px;}
+.avantages #avantages{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/ico_autres_avantages.png) no-repeat 1px 48px;}
+.avantages #juridique{padding-bottom:25px; background-position: 0 -469px !important;}
+
+
+/*** landing moustache ***/
+.offre.auto.moustache .intro{color: #fff; font-size: 17px; font-weight: normal; line-height: 1.6em; margin-left: 250px; width: 330px;}
+.offre.auto.moustache #zone-devis{top:150px; left : 250px; width:330px}
+.btoffre.tarif.moustache{background: #415b8d; display:block; text-align:center}
+.offre.auto.moustache #tarifconseil, .offre.auto.moustache #tarifconseil a {width:250px}
+
+.offre.auto.moustache #recap li.left, .offre.auto.moustache #recap #services .top.left {border-right:1px solid #a8a8a8}
+.offre.auto.moustache #recap li.top{border-bottom:1px solid #a8a8a8}
+.offre.auto.moustache #recap #optiontab li {height: 62px; padding: 10px 22px;}
+
+.offre.auto.moustache #recap #services li {background-color:#cbdcea; background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fd_services_moustache.png");}
+.offre.auto.moustache #recap #services .bottom div{margin-top:0}
+.offre.auto.moustache #recap #services li div strong{display:block;}
+.offre.auto.moustache #recap #services .picto, .offre.auto.moustache #tableau2 .service .picto {background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_services_moustache.png"); height: 65px; width: 56px;}
+.offre.auto.moustache #tableau2 .service .picto {float: left; height: 46px; left: 13px;position: absolute;
+    top: 3px;}
+.offre.auto.moustache #recap #services .constat {background-position: -80px 5px;}
+.offre.auto.moustache #recap #services .appli {background-position: -216px -12px;}
+
+.offre.auto.moustache #garanties #nav li {background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_nav_moustache.png");width: 85px;}
+.offre.auto.moustache #garanties #nav li a{font-size: 11px; font-weight: bold; line-height: 1em;}
+.offre.auto.moustache #garanties #nav li#unclic, .offre.auto.moustache #garanties #nav li#detail, .offre.auto.moustache #garanties #nav li#unclic.active{background-position-x: 19px;}
+.auto.moustache #garanties #nav li#unclic a {background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/picto_moustache_small.png") no-repeat center 15px;}
+.offre.auto.moustache #garanties #nav .active a, .offre.auto.moustache #slider .titreformules .actif {color: #415b8d;}
+.offre.auto.moustache #slider #slide .ui-widget-header {background-color: #415b8d;}
+.offre.auto.moustache #slider #slide .listeformule span {background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/slider_step_moustache.png");}
+.offre.auto.moustache .ui-slider-handle {background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/curseur_moustache.png");}
+.offre.auto.moustache .ui-slider-handle span {background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/slide/picto_moustache.png");}
+.offre.auto.moustache #slider #listegaranties li.actif a, .offre.auto.moustache #slider .option.actif {background-color: #5f84cb;}
+.offre.auto.moustache .actif .bulle {background-color: #cbdcea; border: 2px solid #5f84cb;}
+.offre.auto.moustache .actif .bulle h5 {background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fleche_info_bulle_moustache.png");}
+.offre.auto.moustache #slider .option.actif > p {color:#183360;}
+.offre.auto.moustache #slider #options h3 {padding-top: 10px;}
+.offre.auto.moustache .puce{background:transparent url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces_moustache.png) no-repeat}
+.offre.auto.moustache .puce.accessoires { background-position: -6px 0;}
+.offre.auto.moustache .actif .puce.accessoires { background-position: -6px 0;}
+.offre.auto.moustache .puce.defense { background-position: -5px -80px;}
+.offre.auto.moustache #slider .puce.juridique { background-position: -5px -159px;}
+.offre.auto.moustache .puce.barbier { background-position: -6px -245px;}
+.offre.auto.moustache .actif .puce.barbier { background-position: -6px -322px;}
+
+.offre.auto.moustache .puce.inclus{background-position: center -408px;}
+.offre.auto.moustache #tableau2 .opt {background-color:#5f84cb;}
+.offre.auto.moustache #tableau2 .service .col-formule {padding: 5px 5px 5px 75px; height:38px; text-align: left; background: #d0dde6 url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/tab_fleche_service_inclus_moustache.png") no-repeat;position: relative;}
+.offre.auto.moustache #tableau2 .service .appli {background-position: -210px -12px;}
+.offre.auto.moustache #tableau2 .service .constat {background-position: -78px -12px;}
+.offre.auto.moustache #produitbottom #tarifconseil {float:none;}
+.offre.auto.moustache .right .moduletable, .moduletable.col3 {padding: 16px;}
+
+
+/* bloc super Assu */
+.moduletable.superassu {border:none; border-bottom:4px solid #f4f4f4;background:#fff; padding:9px; width:240px; height:220px}
+.superassu #bulle{
+	background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/fd_bulle_textuelle.png") no-repeat scroll 0 0;
+	width: 212px; padding:16px;font-size: 16px; height: 90px; line-height: 21px;
+}
+.chomage .superassu #bulle{font-size: 15px;}
+
+.superassu img{float:left;}
+.superassu #reseaux{float:left; margin-left: 16px; margin-top: 28px; width: 120px;}
+.superassu #link-youtube,.superassu #link-newsletter{display:none;}
+
+/*services*/
+#services{margin: 0 0 20px 10px}
+#services h3, .item-page.tempo .contenu h3{font-family:'Open Sans Condensed';font-size:25px;font-weight:300}
+#services li{float:left;margin:0 30px 10px 0;width:83px;vertical-align:top;line-height:1em}
+.picto{background:transparent url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/pictos.png) no-repeat;display:inline-block;margin-bottom:4px;width:83px;height:83px}
+
+.mrh .picto{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/pictos_mrh.png)}
+.sante .picto{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/pictos_sante.png)}
+
+.offre.sante.general #services{background: #FFFFFF;  margin: 6px;  padding: 25px;}
+.offre.sante.general #services li{margin: 0 0 10px;}
+
+/**** base de page produit - contact ********/
+
+.item-page.offre .contact > div{float:left; width:228px; padding:20px 25px; margin:10px 0}
+.item-page.offre .contact p{margin:0}
+
+.item-page.offre .contact .moduletable.promo.auto a{display: block; height: 100%; width: 100%}
+.item-page.offre .contact .moduletable.promo.auto,.item-page.offre .contact .moduletable.promo.deuxroues, .item-page.offre .contact .moduletable.couponpromo.mrh {height:234px; width:405px !important; margin:10px 0 0; padding: 0!important; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/page_prod/coupons_bas_fproduits_sprite.png) no-repeat}
+#couponpromo.pageprod .avec-hover{margin-top:0px}
+#couponpromo.pageprod .avec-hover,  #couponpromo.pageprod .avec-hover a{font-size:21px; height:234px; width:405px;background-image:none; text-align:left}
+#couponpromo.pageprod .avec-hover-txt {line-height: 1.3em; padding: 50px 30px 10px 180px}
+#couponpromo.pageprod .reduction strong {font-size:70px;margin-bottom:6px}
+#couponpromo.pageprod .reduction {font-size:21px;top:84px; left:20px}
+#couponpromo.pageprod .reduction .euro {font-size: 0.6em; top: -8px; margin: 0 0 0 15px}
+#couponpromo.pageprod .avec-hover span{text-align:left !important}
+
+.item-page.offre .contact .moduletable.promo.auto {background-position: -2px -466px}
+.item-page.offre .contact .moduletable.promo.deuxroues {background-position: -2px -2px}
+.item-page.offre .contact .moduletable.couponpromo.mrh {background-position: -2px -234px}
+.item-page.offre .contact .moduletable.promo.mrh{padding:0 !important;width:258px}
+.item-page.offre .contact .webcallback.end{ background: none repeat scroll 0 0 #EEEEEE; border: 1px solid #E6E6E6}
+.item-page.offre .contact .lf_storeLocatorWidget{margin: 10px !important;height:212px; padding-bottom:3px !important}
+.item-page.offre .contact .lf_storeLocatorWidget p{clear:left;}
+.item-page.offre .contact #introsearch{margin-bottom:25px !important}
+.item-page.offre .contact #introsearch > img{margin-bottom:1px !important}
+.auto_8000km {height:235px; padding:0 !important; width:410px !important; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/coupon_auto_410.jpg) no-repeat scroll 0 0 #EEEEEE}
+
+.item-page.offre .contact > div.conditionsfooter{width:385px;margin: 0; padding: 10px 20px 10px 0;}
+.item-page.offre .contact > div.conditionsfooter .conditions{height: 190px; width: 365px;}
+
+.item-page.offre .contact > div.chiffrecle {width:70%; margin:10px 10px 0 0; padding: 0 0 20px;background:#f4f4f4}
+.item-page.offre .contact > div.chiffrecle h3{background:#cecece; margin-left: 0; padding: 16px;}
+.item-page.offre .contact > div.chiffrecle div{width:28%; float:left; margin:0 10px 0 20px;}
+.item-page.offre .contact > div.chiffrecle img{width: auto; height:70px; margin-bottom:10px !important;}
+.item-page.offre .contact > div.chiffrecle p{font-size: 14px; line-height: 1.4em;}
+
+/*landing page promo 2roues ***/
+.landingpromomoto .span-7{ left: 270px}
+.landingpromomoto h1{ height: 170px; padding-left: 20px; padding-right: 450px; padding-top: 70px; width: 250px}
+#datepromo2roues{background: #D7280F; color: #FFFFFF; font-family: Open Sans Condensed; font-size: 16px; font-weight: bold; padding: 15px 25px; position: absolute; top: 10px}
+#datepromo2roues span{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fd_date_promo2roues.png") no-repeat right top; display: block; height: 46px; position: absolute; right: -10px; top: 0; width: 11px}
+.landingpromomoto #services{height: 130px}
+.landingpromomoto .conditions{background-color:transparent}
+.landingpromomoto #services h4{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fleche_service_inclus.png") no-repeat right top; float: left; font-size: 16px; line-height: 1.3em; margin: 0 35px; padding: 44px 30px; text-align: center; width: 70px}
+.landingpromomoto .offre{padding-bottom:12px; border-bottom:10px solid #EEE; height: 200px; margin: 10px 15px 10px 50px}
+.landingpromomoto .offre ul{line-height: 1.6em; list-style: disc outside none; margin-left: 240px; padding-bottom: 10px; padding-top: 10px}
+.landingpromomoto .offre .devisagence a{float:left;margin-left: 20px}
+
+/*picto*/
+.avance{background-position:0 0}
+.constat{background-position:-122px 0}
+.assistance{background-position:-242px 0}
+.conseiller{background-position:-363px 0}
+.defense{background-position:-484px 0}
+.tierspayant{background-position:-490px 0}
+.assistance24{background-position:-280px 8px}
+.serrurerie{background-position:-348px 7px}
+.encharge{background-position:-410px -9px}
+.conseiller2{background-position:-485px -12px}
+.sansfranchise{background-position:-535px -12px}
+.relogement{background-position:-593px -12px}
+
+#tableau2 .service .col-formule .serrurerie{background-position:-348px -4px}
+#services .col-2 .privee{background-position:-662px -5px}
+#services .col-2 .conseiller2{background-position:-476px 5px}
+
+/*tableau*/
+.offre.auto #tableau{float:none}
+#tableau{float:left;width:730px;padding-bottom:37px}
+.tableau{position: relative; overflow: auto;top: -50px}
+.tableau > ul > li{float:left}
+.tableau > ul > li > table{ margin-bottom:10px}
+.col-puce{width:26px}
+.col-formule{text-align:center}
+th, .listeformule{vertical-align:bottom}
+th.col-formule{border-left:2px solid #E3E3E3; position:relative; z-index:998}
+.auto th.col-formule, .deuxroues th.col-formule, .mrh th.col-formule{border:none}
+#tableau th.col-formule, #tableau td.col-formule{width:98px}
+#tableau th.col-formule strong{width:88px;color:#fff;padding:0 5px;font-size:14px}
+.mrh th.col-formule strong,.mrh th.col-formule,.mrh td.col-formule{width:270px}
+.auto th.col-formule, .deuxroues th.col-formule, .mrh th.col-formule,.scolaire th.col-formule{width:170px;vertical-align:middle}
+.cyclo #tableau2 th.col-formule,.quad #tableau2 th.col-formule{width:270px}
+.auto #tableau2 .col-description, .deuxroues #tableau2 .col-description{width:auto}
+.auto th.col-formule strong, .deuxroues th.col-formule strong, .mrh th.col-formule strong{font-weight: normal;display:inline;height:auto;border:0;vertical-align:middle}
+th.col-description > div,th.col-formule strong{display:table-cell;height:50px;vertical-align:middle}
+.titretableau{height:30px; width:420px; font-size:16px; padding:10px 20px 10px}
+.unslider-arrow{ cursor: pointer; display: inline; font-family: "Open Sans Condensed"; font-size: 28px;
+  font-weight: 700; padding: 5px 60px; vertical-align: middle}
+#tableau tr.nomgroupe td.col-description{background-color: #C8C9CB; border-left:none; -webkit-box-shadow:inset 0px 12px 12px -5px rgba(0, 0, 0, 0.2);box-shadow:inset 0px 12px 12px -5px rgba(0, 0, 0, 0.2)}
+tr.nomgroupe {border-top: 2px solid #868789}
+th.col-description > div{padding:29px 29px 0; float:left; cursor:pointer; font-size:14px !important}
+#tableau td.col-description{border-left:none !important}
+td.col-description > p, div.lexique p{margin-left:10px; font-size:12px}
+/*pb bordure ie7*/
+#tableau2 tr.nomgroupe td{border-top: 2px solid #868789;#border-bottom: 1px solid #D8D9DA}
+#tableau2 td.col-description,#tableau2 tr.details td{#border-left: 1px solid #D8D9DA;#border-bottom: 1px solid #D8D9DA}
+#tableau2 tr.details td.col-formule1,#tableau2 tr.details td.col-formule2,#tableau2 tr.details td.col-formule3,#tableau2 tr.details td.col-formule4{#border-left:none}
+
+th.formule1 strong{border-top:10px solid}
+th.formule2 strong{border-top:20px solid}
+th.formule3 strong{border-top:28px solid}
+th.formule4 strong{border-top:40px solid}
+th.formule5 strong{border-top:45px solid}
+
+.deuxroues .formule1 {background-color:#DC5945}
+.deuxroues .formule2 {background-color:#D82810}
+.deuxroues .formule3 {background-color:#C31B00}
+.deuxroues .formule4 {background-color:#AB1B00}
+
+.auto .formule1 {background-color:#BAD9E4}
+.auto .formule2 {background-color:#97c5d5}
+.auto .formule3 {background-color:#6aacc6}
+.auto .formule4 {background-color:#338daf}
+.deuxroues .inclus, .auto .inclus, .mrh .inclus,.scolaire  .inclus{background-position:center -655px}
+
+.auto.moustache .formule1 {background-color:#5f84cb}
+.auto.moustache .formule2 {background-color:#4f6fab}
+.auto.moustache .formule3 {background-color:#415b8d}
+
+.mrh .formule1 {background-color:#f8c28e}
+.mrh .formule2, .mrh1 .formule1{background-color:#f49a56}
+.mrh .formule3, .mrh1 .formule2,.mrh2 .formule1, .mrhetudiant .formule1, .mrhpno .formule1{background-color:#f18628}
+.mrh .formule4 {background-color:#e26000}
+.mrh .formule5 {background-color:#d83b00}
+
+.sante .formule1 strong{border-top-color:#b1c77c;background-color:#c0d296}
+.sante .formule2 strong{border-top-color:#91b146;background-color:#a7c16a}
+.sante .formule3 strong{border-top-color:#669400;background-color:#84aa33}
+.sante .formule4 strong{border-top-color:#366900;background-color:#5e8834}
+
+#garanties tbody{overflow:auto;margin-bottom:6px}
+.mention-br {background: #EEF6EB; border: 1px solid #19A305; border-radius: 3px; color: #19A305; display: inline-block; font-size:0.85em !important; letter-spacing: -1px; padding: 1px 3px}
+
+.offre #options h4, tbody td.col-puce{background:#D1EFB9 !important;border-left:0 !important}
+.nomgroupe .col-puce{color:#999999;cursor:pointer;font-size:18px;font-weight:bold}
+
+#tableau .nomgroupe td,#tableau .details td{border-left:2px solid #CCC;background:#fff;vertical-align:middle;text-align:center}
+.col-description div{text-align:left}
+.col-description h3{text-align:left;margin:20px 0;padding-left:15px;font-size:18px}
+
+.resume, .details td.legende{background:#fff;padding:8px 0}
+#tableau .details td strong{background:url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces.png") no-repeat scroll -25px -746px transparent;padding-left:27px !important;margin-left:-28px}
+
+.resume li, #tableau .details td strong, .lexique strong{display:inline-block;padding-left:28px;background-position:-15px -747px;font-size:16px;line-height:20px;vertical-align:top;height:auto;width:auto;font-weight:700}
+.inclus{text-indent:-20000px;height:50px}
+.item-page .details p{font-size:12px;margin-left:30px}
+.details.ferme, .resume.ferme{display:none}
+#tableau .lexique{ background: none repeat scroll 0 0 #FFF; float: left; font-family: 'Open sans condensed'; padding: 10px; width: 680px}
+#tableau .lexique p {font-family: Arial; font-size: 12px !important; padding-left:5px}
+#tableau .lexique h3{font-size:32px; font-weight:300; margin-bottom:14px}
+#tableau .lexique .puce{margin-left:-10px; font-family: 'Open sans condensed'}
+#tableau .lexique a{text-decoration:underline; font-family: Arial}
+#tableau .conditions{width:auto; background:none}
+
+/*tableau v2 */
+#tableau2 tbody tr{border-left:1px solid #d8d9da;border-bottom:1px solid #d8d9da}
+#tableau2 td{text-align: center; vertical-align: middle}
+#tableau2 .details strong {display: block; margin-left: 22px; margin-top: 8px; text-align: left}
+#tableau2 .details p {margin:0px 28px 8px 22px}
+#tableau2 .col-description {width:220px}
+#tableau2 .nomgroupe .col-formule1, #tableau2 .nomgroupe .col-formule3{background-color:#fbfbfb}
+#tableau2 .details .col-formule1, #tableau2 .details .col-formule3{background-color:#f2f2f2}
+#tableau2 .service .col-description {background:#404040}
+#tableau2 .service .col-description p{color:#fff; font-family: Open Sans Condensed; font-size: 18px; font-weight: 700; margin: 8px 0 8px 22px}
+#tableau2 .service .col-formule{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/tab_fleche_service_inclus.png) no-repeat #d5eacb;height: 48px}
+#tableau2 th{color:#FFF; font-size:34px;#font-size:24px; font-weight: 300; height: 68px}
+#tableau2 .opt{text-transform:uppercase; background:#71ba50; color:#FFF;border-radius:2px; display: inline; font-size: 11px; font-weight: bold; padding: 0 2px}
+#tableau2 .col-description h3{font-size:21px}
+.auto #tableau2 .col-description h3{color:#338DAF}
+.deuxroues #tableau2 .col-description h3{color: #D7280F}
+.mrh #tableau2 .col-description h3{color: #F08628}
+#tableau2 .service .picto{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/picto_services.png); vertical-align:middle; height: 46px; width: 56px; vertical-align:middle; margin-bottom:0}
+#tableau2 .service .constat{background-position: -210px -14px}
+#tableau2 .service .assistance{background-position: -145px -12px}
+#tableau2 .service .avance{ background-position: -8px -10px}
+#tableau2 .service .conseiller {background-position: -85px -12px}
+
+em{font-style:italic}
+
+.malus{background-position:-480px 0}
+.permis{background-position:-590px 0}
+.huitmillekm{background-position:-685px 0}
+.buggy{background-position:-900px 0}
+.nonhomologue{background-position:-786px 0}
+.jeunevsp{background-position:-1000px 0}
+.campingcar{background-position:-1105px 0}
+
+/*conditions*/
+#produitbottom{ background: none repeat scroll 0 0 #F4F4F4; height:145px; margin-bottom:15px; clear:both}
+#produitbottom #tarifconseil{float:right}
+.conditions{padding:45px 0 0 40px;background:#F4F4F4;width:708px;float:left;}
+.sante .conditions, .mrhhome .conditions{min-height:100px}
+#produitbottom .conditions{padding: 35px 0 40px 40px; width:55%; min-height:0}
+.auto .conditions #tarifconseil, .deuxroues .conditions #tarifconseil{padding:0}
+.conditions ul{background-position:-18px -820px;padding-left:40px;line-height:40px; vertical-align:middle}
+.conditions li{display:inline;margin-right:20px;vertical-align:top}
+.conditions ul ul{line-height:1.3em;display:inline-block}
+.conditions ul ul li{display:list-item;list-style-type:disc}
+.conditions a{text-decoration:underline}
+
+
+/**** bloc page fit challenge ****/
+.moduletable.fitchallenge{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fd_liensfitchallenge.jpg) no-repeat; height: 276px}
+.fitchallenge a{background:#458cca no-repeat center right; color:#FFF; font-family:"Open Sans Condensed"; font-size:16.5px; font-weight:700; text-transform:uppercase; line-height:1.3em; display:block; padding:12px 100px 12px 17px; margin:17px 0 29px}
+.fitchallenge #coach{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/bt_coachfit.jpg); padding:17px 100px 17px 17px}
+.fitchallenge #inscription{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/bt_inscriptionfit.jpg)}
+
+/**** bloc page defi-run ****/
+#inscription_defirun{width:180px;position:absolute;left:500px;top:0}
+#inscription_defirun a{background:#634956; color:#fff; font-family:"Open Sans Condensed"; font-size:23px; font-weight:700; line-height:1.3em;text-transform:none; display:block; padding:5px; margin:20px 0;position:relative;text-align:center;border:1px solid #fff;position:relative;}
+#inscription_defirun a:after{content:" ";display:block;width:25px;height:25px;position:absolute;right:-12px;top:-12px;background :url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/plus_bouton_offre.png") no-repeat -146px -8px}
+/*
+.moduletable.defi{background:#A88685; border: none; height: 308px; width: 218px; padding:5px 37px 20px}
+.defi #coach{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/bt_detaildefi.png);}
+.defi #inscription{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/bt_inscriptiondefi.png); padding:26px 100px 26px 17px}
+*/
+/**** landing page ***/
+.landing #zone-devis{left:390px;top:135px; width:231px; font-size: 28px;}
+.landing #zone-devis #tarifconseil a{ width: 200px;}
+.landing #zone-devis.multi{left:480px;top:25px}
+.landing #zone-devis.multi-gauche, .landing #zone-devis.express{top:80px}
+.multi-gauche #tarifconseil{padding:10px}
+.pagejaune #zone-devis.multi{left:480px;top:5px}
+.landing #zone-devis .btoffre{margin-top:0; font-size:22px !important;padding:8px !important}
+.landing #zone-devis.express .btoffre {margin-top: 15px;}
+.pagejaune #zone-devis .btoffre{font-size:20px !important;padding:8px 10px !important}
+.landing .item-page p a{color:#333;text-decoration:underline}
+.landing h1{ height:212px;padding-right:360px;padding-top:32px;padding-left:50px;border:0;width:320px;filter:none}
+.landing.deuxroues h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-moto.jpg) no-repeat 0 0 }
+.landing.enligne h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-en-ligne.jpg) no-repeat 0 0 }
+.landing.malus h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-malus.jpg) no-repeat 0 0 }
+.landing.jeune h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-jeune-conducteur.jpg) no-repeat 0 0 }
+.landing.devis.enligne h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/devis-assurance-en-ligne.jpg) no-repeat 0 0 }
+.landing.auto.enligne h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-auto-en-ligne.jpg) no-repeat 0 0 }
+.landing.auto.aggrave h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-auto-risque-aggrave.jpg) no-repeat 0 0 }
+.landing.auto.voiturette h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-voiturette.jpg) no-repeat 0 0 }
+.landing.auto.devis h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/devis-assurance-auto.jpg) no-repeat 0 0 }
+.landing.deuxroues.enligne h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-moto-en-ligne.jpg) no-repeat 0 0 }
+.landing.deuxroues.devis h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/devis-assurance-moto.jpg) no-repeat 0 0 }
+.landing.deuxroues.centvingtcinqcc h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-scooter-125cc.jpg) no-repeat 0 0 }
+.landing.deuxroues.cinquantecc h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-scooter-50cc.jpg) no-repeat 0 0 }
+.landing.auto.malus h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-auto-malus.jpg) no-repeat 0 0 }
+.landing.malus.paiement h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-non-paiement.jpg) no-repeat 0 0 }
+.landing.malus.permis h1{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-retrait-de-permis.jpg) no-repeat 0 0 }
+.landing .lf_storeLocatorWidget{padding-bottom:17px}
+.landing #produitbottom, .landing #garanties, .assupro #produitbottom{width:137%}
+
+.landing.auto.foot .item-page {background: #fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/foot.jpg) no-repeat scroll 0 0; padding-top: 340px;}
+.landing.auto.foot h1{text-align: center; color: #fff;text-transform: uppercase; background: #00529e none repeat scroll 0 0; border-radius: 130px; height: 160px; margin-top: 45px; margin-left: 45px; padding: 55px 33px 0; width: 150px;}
+.landing.auto.foot .btoffre.euro{margin:0 auto; color:#FFF; background-color:#e84e1b;padding:12px 25px 12px 55px; background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puce_trouvez-lagence.svg); background-repeat:no-repeat; background-position : 12px 5px; background-size:28px 40px}
+.landing.auto.foot .conditions{background:none;padding-bottom:30px}
+.landing.auto.foot .item-page img{width:100%}
+.landing.auto.foot .content img.mobile, .offre.sante.scolaire .content img.mobile{display:none}
+
+.landing.sante.scolaire.unan .item-page{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-scolaire-1-an-offert.jpg) no-repeat 0 0; padding-top:330px}
+.landing.sante.scolaire:not(.jeu) h1{color:#fff;background:transparent url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/offre/h1-sante.png) no-repeat 0 50%; height:190px;width:165px;  text-align:center;margin-left:35px;padding-left:25px;padding-top:100px;text-transform:uppercase;}
+.landing.sante .etapes li{font-size:16px; line-height:1.2em; vertical-align: top; display: inline-block; border:6px solid #E3E3E3; padding:120px 6px 6px 6px;margin-left:12px; width:198px; height:56px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/scolaire/etapes-jeu.png) no-repeat center -170px; text-align:center;}
+.landing.sante.scolaire.unan .etapes li{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/scolaire/etapes-jeu.png) no-repeat center -170px;padding-top:90px; height:86px}
+.landing.sante.scolaire .etapes li#photo{background-position:center 5px}
+.landing.sante.scolaire .etapes li#gagnants{background-position:center -382px}
+.landing.sante.scolaire .etapes li strong{display:block}
+.landing.sante.scolaire:not(.jeu) .conditions{float:none; background: #fff; font-size: 14px; font-style: italic; padding-top:0}
+.landing.sante.scolaire:not(.jeu) .conditions ul{margin: 0 auto; width: 260px;}
+.landing.sante.scolaire:not(.jeu) .conditions a{text-decoration:none;}
+.landing.sante.scolaire ul.avantages{font-size:14px; margin-left:55px;}
+.landing.sante.scolaire ul li .puce.inclus, .assupro .puce.inclus{margin-right:13px; display: inline-block; vertical-align: middle; width: 25px; height:32px; background-position: -18px -665px;}
+.landing.sante.scolaire #tarifconseil a.tel{font-size:36px; color:#91B046;font-weight: bold; margin-bottom: 25px; margin-top: 0; padding: 0; width: 210px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/scolaire/tel-scolaire.png) no-repeat left center; padding-left:45px; margin-left:-20px}
+.landing.sante.scolaire.unan .webcallback.end{margin-bottom: 30px;}
+.landing.sante.scolaire.unan .webcallback.end #resultat{top:57px}
+
+.landing.sante.scolaire.jeu h1{padding: 115px 18px 0; width: 185px;}
+.landing.sante.scolaire.jeu .lots{background:#ffe5d6; padding:10px 30px 0 10px;width:80%; margin-left:50px;}
+.landing.sante.scolaire.jeu .lots img{margin-right:25px;}
+.landing.sante.scolaire.jeu .lots h3{color:#db533d; text-transform:uppercase; font-size:34px; padding: 70px 0 30px;}
+.landing.sante.scolaire.jeu .lots ul{list-style-type:none; font-size:18px;}
+.landing.sante.scolaire.jeu .lots li{padding:12px 0;}
+.landing.sante.scolaire.jeu .etapes li {background: none; border: none; font-size: 14px;}
+
+.landing.sante.scolaire.jeu .etapes li strong {display:inline}
+
+.landing.sante.scolaire.jeu .etapes li#un {background : url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/scolaire/1.png") no-repeat scroll center top}
+.landing.sante.scolaire.jeu .etapes li#deux {background : url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/scolaire/2.png") no-repeat scroll center top}
+.landing.sante.scolaire.jeu .etapes li#trois {background : url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/scolaire/3.png") no-repeat scroll center top}
+
+.landing.sante.scolaire.jeu #jeu_termine{ position: absolute; background : rgba(250,250,250,0.9); text-align: center;z-index: 1; text-transform: uppercase; top: 0; height:1500px; width: 730px;}
+
+.landing.sante.scolaire.jeu #jeu_termine p{text-align:center; font-size:32px; font-family:"Open sans Condensed"}
+.landing.sante.scolaire.jeu #jeu_termine p.rouge{color : rgb(215,72,64); font-weight:bold;}
+
+.landing.sante.taxi .item-page {background: #fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/assurance-sos-taxi.jpg) no-repeat scroll 0 0; padding-top: 340px;}
+.landing.sante.taxi h1{ background: #ffb200 none repeat scroll 0 0; border-radius: 130px; height: 160px; line-height: 1.5; margin-top: 45px; padding: 55px 43px 0; width: 130px;}
+.landing.sante.taxi .etapes li{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/etapes-sos-taxi.png) no-repeat center 20px;}
+.landing.sante.taxi .etapes li#taxi{background-position:center -185px}
+.landing.sante.taxi .etapes li#maison{background-position:center -438px}
+
+.fondgris{background:#eee;padding:15px}
+.fondgris .col2{padding:15px 0;}
+p.niveau,p.indemni,p.prixparmois{text-align:center !important}
+p.niveau,p.prixparmois{font-size:16px !important}
+.somme strong,.indemni i{font-size:24px;font-style:normal}
+.landing.deuxroues .somme strong,.landing.deuxroues .indemni i{color:#D7280F}
+p.prixparmois{margin-top:25px !important}
+.prixparmois strong{border:1px solid #333;padding:10px 25px}
+
+.landing .item-page .col3{float:left;width:30%;margin:10px 62px}
+.col3 .niveau{margin-bottom:5px}
+.encadre{border:1px solid #333;padding:10px 0;text-align:center;line-height:1.5em;margin-bottom:15px}
+.encadre strong{font-size:14px}
+.landing.deuxroues .prixparmois strong, .deuxroues .encadre{border-color:#D7280F}
+
+.simple-demande{background:transparent url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/femme_tel.png) no-repeat 110px 25px;clear:left;min-height:140px;padding:25px 90px 0 225px}
+.bulle-tel{background:transparent url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/tel-rouge.jpg) no-repeat 0 0;margin-left:50px;padding-left:20px}
+.simple-demande .tel{font-weight:bold;font-size:16px}
+.simple-demande i{font-style:normal}
+.simple-demande.sans-image{background:#eee;float:left;clear:none;width:370px;padding:35px 8px 15px 0}
+.simple-demande .webcallback{width:220px;margin-left:120px}
+.simple-demande .webcallback #telInterloc{width:98%}
+.simple-demande .webcallback #resultat{position:relative;top:auto}
+
+p.attention{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/attention.png) no-repeat 0 0 !important;line-height:49px !important;height:49px !important;padding-left:50px !important;clear:left}
+
+.addthis_native_toolbox{clear:both;margin:15px 0 15px 50px}
+.timeline .addthis_native_toolbox{margin:0}
+
+/*********
+* BOUTON SWITCH MOBILE
+*********/
+.footer #deviceview{display:none;text-align:center;width:100%;margin-bottom:10px}
+.footer .basculemobile, .footer #deviceview{float:none;padding:0}
+.footer .basculemobile{margin:0 0 15px}
+#deviceview a{display:inline-block;height:24px;padding:5px 10px 5px 35px !important;background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/accueil/images/deviceview.png) no-repeat 5px 5px #333;font-weight:700 !important;font-size:12px;line-height:24px;color:#fff !important; text-decoration:none !important}
+#deviceview a:hover{text-decoration:none}
+#deviceview a#bt-mobile{background-position:5px 5px}
+#deviceview a#bt-desktop{background-position:5px -28px}
+
+/*********
+* TIMELINE
+*********/
+.timeline .blog{width:100%}
+.timeline .category-desc{background:#fff;padding:10px;margin:0 30px 0 50px}
+
+#timeline-anchor{left:auto;position:fixed;margin:0 auto;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;z-index:1}
+#timeline-anchor.floating{top:50px}
+.timeline-anchor-content{background:#E3E3E3;background: rgba(227,227,227,0.5);/*width:10%;*/padding: 5px;float:right;z-index:1}
+#timeline-anchor a,#timeline-anchor span{display:block;font-weight:700;padding:3px 5px}
+#timeline-anchor a{-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;	-o-transition:all 0.2s linear;-ms-transition:all 0.2s linear;transition:all 0.2s linear;	margin-left:5px;border-left:3px solid #A0A0A0}
+#timeline-anchor a:hover{border-color:#222}
+#timeline-anchor .annee{background:#222;color:#fff;padding:5px}
+
+#timeline{overflow:hidden;position:relative}
+#timeline-container{float:left;padding-bottom: 5em;position: relative;text-align: left;width: 100%;#background:transparent url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/line.gif) repeat-y top center}
+.timeline .row{border:none;margin:0 0 15px;clear:both;float:left;position:relative;width:100%;background:none}
+.timeline .item{background:none}
+.timeline .item>div{background:#fff;border:1px solid rgba(17, 17, 22, 0.3);-webkit-box-shadow:0 0 6px rgba(0, 0, 0, 0.1);-moz-box-shadow:0 0 6px rgba(0, 0, 0, 0.1);box-shadow:0 0 6px rgba(0, 0, 0, 0.1)}
+#timeline-container .item-infos{padding:10px 15px}
+#timeline-container .h2{font-weight:bold;margin:0;font-size:22px}
+
+#timeline-container .item-content{text-align:left}
+#timeline-container .item-content .texte{padding:10px}
+.item-content img{width:100%;height:auto}
+.item-content iframe{width:100%;}
+.cedtag{display:none}
+
+.timeline.blog h2{font-size:30px;font-weight:700;line-height:56px}
+
+#timeline-anchor a,#timeline-anchor span{margin:0 0 5px}
+#timeline-anchor{top:260px;right:0}
+#timeline-anchor a{font-size:11px}
+#timeline-anchor .annee{font-size:12px}
+#timeline-container:before{background:#222;content:"";height:100%;left:50%;margin-left:-2px;position:absolute;top:0;width:4px}
+.timeline .row{padding:15px 0 10px}
+.ss-left,.ss-right{float:left;width:48%;position:relative}
+.ss-left{text-align:right;padding:0 1.5% 0 0.5%}
+.ss-right{padding:0 0.5% 0 1.5%}
+.ss-right.item{margin-top:50px}
+#timeline-container .item>div{width:90%}
+#timeline-container .item>div.embed{border:none;background:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}
+.ss-left .item>div{margin-left:5px}
+.ss-right .item>div{margin-right:5px}
+.ss-circle-deco:before{width:10%;height:0px;border-bottom:5px dotted #ddd;border-bottom:5px dotted rgba(17, 17, 22, 0.3);-webkit-box-shadow:0px 1px 1px #fff;-moz-box-shadow:0px 1px 1px #fff;box-shadow:0px 1px 1px #fff;position:absolute;content:'';margin-top:-3px}
+.ss-circle-deco:after{width:0px;height:0px;border-top:10px solid transparent;border-bottom:10px solid transparent;content: '';position:absolute;margin-top:-10px}
+.ss-circle-deco:before,.ss-circle-deco:after{top:30px;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}
+.ss-left .ss-circle-deco:before{right:2%}
+.ss-right .ss-circle-deco:before{left:2%}
+.ss-left .ss-circle-deco:after{right:0;border-right:10px solid #222}
+.ss-right .ss-circle-deco:after{left:0;border-left:10px solid #222}
+.ss-right>div{float:left;margin-left:10%}
+
+.item-content img.portrait{max-height:250px;width:auto;margin:0 auto}
+.gallery .item-content .intro img{display:block}
+.gallery .item-content .intro a{display:block;width:auto;max-height:250px;overflow:hidden;position:relative;cursor:pointer;border:1px solid tranparent}
+.gallery .item-content .intro a:after{display:block;width:100%;height:250px;position:absolute;display:block;top:0%;left:0%;content: "";background: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/en-savoir-plus.png) no-repeat center center;opacity:0.05;-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;-o-transition:all 0.2s linear;-ms-transition:all 0.2s linear;transition:all 0.2s linear}
+.gallery .item-content .intro a:hover:after{opacity:1;background-color:rgba(0, 0, 0, .4)}
+
+/*ie7*/
+.ss-left>div{#margin-right:10%}
+#timeline-container .item{#background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/pointille.gif) repeat-x 0 30px}
+#timeline-container .embed .item-infos{#background:#E8E8E8}
+
+/*maillage*/
+.maillage h3{background:none;padding-left:0}
+.maillage li{line-height:1.3em;margin:6px 0}
+.maillage li a{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/fd_menu.gif) no-repeat 0 3px transparent; padding-left:20px;display:inline-block}
+.maillage>li>a,.maillage li li.active a{display:none}
+
+/*multidetention*/
+.landing.multidetention .item-page{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/multidetention_auto-mrh.jpg) no-repeat 0 0;position:relative}
+.landing.multidetention.vsp .item-page{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/multidetention_vsp-mrh.jpg) no-repeat 0 0}
+.landing.multidetention h1{color:#FFF;line-height:0.8em;padding:28px 0 0 0;position:absolute;top:0;left:10px;text-align:center;text-transform:normal;background:none !important;background:no-repeat 0 25px;height:200px;width:200px;font-size:32px}
+.landing.multidetention.vsp h1{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/offre/h1-auto.png) no-repeat 0 23px !important}
+.landing.multidetention h1 strong{font-size:2em;text-transform:uppercase;display:inline-block;margin:20px 0}
+.multidetention .pins{position:absolute;right:130px;top:50px}
+.multidetention center{margin:20px 0}
+.multidetention center .btoffre{display:inline-block !important;float:none;width:160px;font-size:16px;box-shadow:none;vertical-align:top;margin:0 10px;padding:22px 12px}
+.multidetention center .btoffre.tarif{padding:14px}
+
+/*promo*/
+.header .menu > li.last,.header .menu > li.last:hover,.header .menu > li.last.sfhover{border-right:none}
+.header .menu > li.last > a:hover .image-sprite, .header .menu > li.last:hover > a > .image-sprite, .header .menu > li.last > a.sfhover .image-sprite, .header .menu > li.last.sfhover > a > .image-sprite {
+    background: url('/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/produit.png') no-repeat right bottom; left:27px;
+}
+.header .menu > li.last > a,.header .menu > li.last > a:hover{border-right:none;}
+.header .menu > li.last > a  .image-sprite{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon_promo.svg) no-repeat 0 10px;}
+.header .menu > li.last > a{color:#B3CB37;width:111px}
+.header .menu > li.last > a:hover{background:#A4B935;color:#fff;}
+
+.landing.promo .item-page{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/avantages-promo.jpg) no-repeat 0 0}
+.landing.promo h1, .pagejaune h1{color:#FFF;line-height:1.3em;padding:95px 0 0 0;position:absolute;top:0;left:30px;text-align:center;text-transform:uppercase;background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/h1.png) !important;background:no-repeat 0 25px;height:200px;width:216px;font-size:32px}
+
+.avec-hover{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/promo_reductions.gif) no-repeat 0 0;margin:20px 0 20px 15px;-webkit-box-shadow:inset 0px 0px 5px rgba(0, 0, 0, 0.1);box-shadow:inset 0px 0px 5px rgba(0, 0, 0, 0.1);position:relative;font-size:15px;line-height:1.5em}
+.avec-hover-txt{padding:20px 20px 20px 200px;z-index:10}
+.avec-hover.pourcent10.moins8000km{background-position:left -118px !important}
+.avec-hover.scolaire {background-position: left -474px !important;}
+.avec-hover.pourcent19{background-position:left -235px !important}
+.avec-hover.offre1mois{background-position:left bottom !important}
+.avec-hover,.avec-hover a{height:118px;width:705px;display:block}
+.avec-hover a{position:absolute;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;top:0;left:0;border:2px solid #EEE\9;z-index:100;background: url(/web/20210304064631im_/https://www.assu2000.fr/images/blank.png) repeat 0 0\9}
+.avec-hover a:hover{background:rgba(0, 0, 0, 0.5);border:2px solid #1692B4\9}
+.jenprofite,.download{position:absolute;color:#fff;font-weight:700;display:block}
+.download{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/ico-telech-hover.png) no-repeat right center}
+.jenprofite{top:20px;right:20px;background:#333;padding:3px 40px}
+.avec-hover.auto a:hover .jenprofite,.auto .download{background-color:#1692B4}
+.avec-hover.moins8000km a:hover .jenprofite{background-color:#45c6ff}
+.avec-hover.moto a:hover .jenprofite,.moto .download{background-color:#d0302d}
+.mrh .download{background-color:#F08628}
+
+.avec-hover strong{font-size:1.2em}
+.avec-hover .txt-auto,.avec-hover .txt-mrh,.avec-hover .txt-moto,.avec-hover .txt-scolaire{font-size:32px;font-weight:700}
+.txt-auto,#couponpromo .auto .reduction{color:#4AABC9}
+.txt-mrh,#couponpromo .mrh .reduction{color:#F08628}
+.txt-moto,#couponpromo .moto .reduction{color:#d0302d}
+.scolaire .txt-scolaire{color:#91b144; text-transform:uppercase}
+
+
+.moins8000km .txt-auto{color:#45c6ff}
+
+.avec-hover img.moins8000km{position:absolute;left:105px;top:-1px}
+.txt-auto.moins8000km{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/patch-8000-reduc2.png) no-repeat top center;display:inline-block;padding-top:32px}
+
+.jenprofite,.download,
+.avec-hover .txt-auto,
+.avec-hover .txt-mrh,
+.avec-hover .txt-moto,
+.avec-hover .txt-scolaire,
+#couponpromo .reduction{font-family:'Open Sans Condensed',Helvetica,Arial,sans-serif}
+
+#couponpromo li{display:inline-block;margin:0 0 5px;#float:left}
+#couponpromo .avec-hover,#couponpromo .avec-hover a{height:120px;width:355px}
+#couponpromo .avec-hover{text-align:center;display:inline-block;margin:0;background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/landingpage/sprite_reduc-produits.png);font-size:13px}
+#couponpromo .avec-hover-txt{padding:20px 10px 10px 100px}
+#couponpromo .avec-hover .txt-auto,#couponpromo .avec-hover .txt-moto,#couponpromo .avec-hover .txt-mrh{display:block;text-align:center;margin:5px 0 15px}
+#couponpromo .avec-hover i{font-size:9px;font-family: Helvetica,Arial,sans-serif}
+
+#couponpromo .reduction{display:block;position:absolute;left:10px;top:40px;text-align:left;font-weight:700;font-size:16px}
+#couponpromo .reduction strong{font-size:60px;display:block;margin:0 0 12px;letter-spacing:-3px;position:relative}
+#couponpromo .reduction .euro{font-size:0.5em;display:inline-block;font-family:Helvetica,Arial,sans-serif;margin:0 0 0 8px;position:absolute;top:-7px;#top:22px}
+#couponpromo .download{top:40%;left:25%;padding:3px 60px;opacity:0;background-position:80% center;display:none\9}
+#couponpromo a:hover .download{opacity:1}
+
+#couponpromo .avec-hover.reduc50{background-position:3px 3px}
+#couponpromo .avec-hover.reduc30{background-position:3px -120px}
+#couponpromo .avec-hover.reduc15{background-position:3px -243px}
+
+
+/*debug <=ie8 */
+.moto.avec-hover a:hover{border-color:#d0302d\9}
+.mrh.avec-hover a:hover{border-color:#F08628\9}
+
+/*scolaire*/
+.item-page.offre.scolaire{background:none}
+.scolaire #zone-devis{left:350px;top:250px;width:270px}
+.scolaire .formule1{background-color:#A7C16A}
+.scolaire .formule2{background-color:#91B046}
+.offre.scolaire #recap>div{height:214px;width:500px}
+.offre.scolaire #recap #formules li{padding:0 6px}
+.offre #recap #formules li div{font-size:14px;font-weight:bold;color:#fff}
+.offre #recap #formules li div strong{font-size:32px;color:#333;background:none}
+.offre #recap #optiontab .col-4 li{height:132px;width:80px}
+.offre #recap #optiontab .col-4 li span{display:block;margin: 0 5px 5px 7px}
+
+.scolaire #tableau2 thead tr{border-bottom:1px solid #d8d9da}
+#tableau2 .details .col-description>div{margin:5px 20px;line-height:1.3em}
+#tableau2 .details div>strong{margin:0;display:inline}
+
+.asavoir{border:2px solid #F18628;margin:20px 0;padding:10px 20px}
+.asavoir h3{color:#F18628;font-size:24px;margin:10px 0}
+.offre .asavoir p{margin:0 0 15px;font-size:14px}
+.sante .asavoir{border-color:#91B146}
+.sante .asavoir h3{color:#91B146}
+
+.offre.scolaire #recap .plus {height:240px}
+.protection{background-position:0 -1105px} 
+.attestation{background-position:0 -1280px}
+.famille{background-position:0 -1165px} 
+.conseillerscol{background-position:0 -1222px} 
+
+.contact .moduletable.promo.scolaire{background:#eee url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/promo-scolaire.png) no-repeat 100% 0;border:1px solid #e6e6e6;width:230px;cursor:default;height:190px;position:relative;padding-right:160px !important}
+.contact .moduletable.promo.scolaire h3{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/sante-picto-trombone.png);color:#91B046;font-size:34px;;margin:-30px 0 15px -5px;height:60px;line-height:75px;padding:0 0 0 65px}
+.contact .moduletable.promo.scolaire p{font-family:Arial, Helvetica, sans-serif;font-weight:400;font-size:14px;margin:0 0 10px}
+.contact .moduletable.promo.scolaire li, .item-page.offre.auto.tempo #options li, .item-page.offre.auto.tempo table li{list-style-type:disc;font-size:14px;font-weight:400; margin:0 0 5px 20px}
+
+.blogrh .category-desc{margin:20px 30px 20px 50px}
+.blogrh .encadre {margin-left:50px}
+.encadre p{margin:0 30px 15px}
+
+/* scolaire - jeu vacances */
+.offre.sante.scolaire .jeu {margin: 0 auto; width: 727px;}
+.offre.sante.scolaire .jeu p a {text-decoration:underline;}
+
+.offre.sante.scolaire .jeu #tarifconseil a.btoffre{background-color:#7696bc; padding: 18px 12px;}
+
+.offre.sante.scolaire .jeu .etapes li {background: none; border: none; font-size: 14px; 
+line-height: 1.2em;
+    vertical-align: top;
+    display: inline-block;
+    padding: 120px 6px 6px 6px;
+    margin-left: 12px;
+    width: 198px;
+    height: 56px;
+    text-align: center;}
+
+.offre.sante.scolaire .jeu .etapes li strong {display:inline}
+
+.offre.sante.scolaire .jeu .etapes li#un {background : url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/scolaire/jeu/1.png") no-repeat scroll center top}
+.offre.sante.scolaire .jeu .etapes li#deux {background : url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/scolaire/jeu/2.png") no-repeat scroll center top}
+.offre.sante.scolaire .jeu .etapes li#trois {background : url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/scolaire/jeu/3.png") no-repeat scroll center top}
+
+
+/*****************
+* credit
+*****************/
+.item-page.credit{padding-top:0}
+.item-page.credit h1{position:relative;top:auto;left:auto;float:left;width:194px;height:180px;background-position:0 20px;padding-top:75px}
+.item-page.credit h2{clear:both}
+
+.item-page.credit .right{width:680px; margin-right:70px;}
+.item-page.credit .right .btoffre.last{margin-top:40px}
+.item-page.credit .center{text-align:center; width:91%}
+.item-page.credit .center .btoffre{margin:30px 40px;}
+.item-page.credit .center .btoffre.last{margin:20px 40px}
+
+.item-page.credit .left{width:180px;padding-top:30px; padding-left:45px}
+
+.item-page.credit .intro p{margin:0 0 20px !important}
+.item-page.credit .intro .btoffre{font-size:16px}
+.item-page.credit .btoffre{display:inline-block;width:245px;text-align:center;padding:10px}
+
+.item-page.credit .col2{background:#eee; padding:5px;font-family: "Open Sans Condensed"; font-size: 18px; font-weight: 700;}
+.item-page.credit .col2 h3{margin-top: 25px; text-align:center}
+.item-page.credit ul{margin-left:15px}
+.item-page.credit li{font-size:16px;margin-bottom:10px; font-family:"Open Sans Condensed"}
+.item-page.credit h3{text-transform:uppercase;color:#BB3580;font-weight:bold;margin-bottom:10px;font-size:16px;font-family:Helvetica, Arial, sans-serif;text-align:left}
+.item-page.credit .simulateurs li {display:inline-block; position:relative; width:32%; margin:0 0 20px; min-height:43px;}
+.item-page.credit .intro .right{margin-left:30px}
+.offre.credit .right .taux_partenaire{text-align: center;}
+.offre.credit .right .moduletable h3{background-image: none; margin-bottom:15px; padding-left: 0px;}
+.offre.credit .moduletable .btoffre{display: block; margin: 20px auto 0; width: 66%;}
+.item-page.credit .simulateurs a {display:block; font-weight:700; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puce-simulateurs-projet-immobilier.png) 0 -2px no-repeat; padding:13px 0 13px 65px;}
+.item-page.credit .simulateurs a.deux {padding-top:2px;}
+.item-page.credit .simulateurs a:hover{background-position:0 -51px; color:#BB3580;}
+.item-page.credit .bloc{padding:8px 8px 2px;box-shadow:2px 2px 5px #999; width:21%; height:150px; margin:20px 8px;font-size:18px; font-weight:700; font-family:"Open Sans Condensed"}
+.item-page.credit #appli{background:url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/application-mobile.png") no-repeat scroll 5px bottom #eee;}
+.item-page.credit #appli a{display: block; text-align: right;}
+.item-page.credit #appli > img{display: block;  margin: 8px 5px 8px 16px;}
+.item-page.credit .contact div{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/contact/pictos-contact.png") center top no-repeat; padding:15px 0; margin-top: 20px; width:100%}
+.item-page.credit .contact #tel{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/puces_mrh.png") no-repeat scroll center -1226px; height: 38px;}
+.item-page.credit .contact #courrier{background-position:center top; height: 42px;}
+.item-page.credit .contact #email{margin-left:20%; width:60%; height:38px}
+.item-page.credit .contact #horaires{background-position:center -80px; height: 42px;}
+
+.image.reponse{background-position:0 0}
+.image.accompagnement{background-position:0 -120px}
+.image.propositions{background-position:0 -245px}
+.image.formalites{background-position:0 -370px}
+.image.domicile{background-position:0 -500px}
+.image.satisfait{background-position:0 -640px}
+.image.divisez{background-position:0 -890px}
+.image.temps{background-position:0 -1140px}
+.image.liberte{background-position:0 -1265px}
+
+.bloc{display:inline-block;width:42%;margin:20px 0 20px 50px;vertical-align:top;text-align:center}
+.bloc .image{display:inline-block;text-indent:-3000em;width:114px;height:114px;margin:0 0 15px;background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/emprunteur-sprite.png) no-repeat;#display:block}
+.bloc .image.deja-assur{background-position:100% 0}
+
+
+/* page 404 */
+
+.erreur .item-page > h2, .erreur .item-page > h3, .erreur .item-page > div{width:377px; text-align:center;}
+.erreur .item-page > h2{font-size: 84px; font-weight: 700;}
+.erreur .item-page > h3{font-size:28px; margin-top:0; margin-bottom:30px;}
+.erreur .item-page > div{margin-bottom:35px;margin-left:22px;}
+.erreur .item-page .btoffre{padding:8px 26px; font-size:1.5em; margin-left:19px;}
+.erreur .item-page li {list-style-type: none; display:inline;margin-left:10px; padding-left:40px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icones-accueil-sitemap.png) 0 0 no-repeat; padding-top:8px}
+li #accueil{}
+li#plan{background-position:left -25px;}
+
+/** auto temporaire **/
+.item-page.tempo thead{background-color: #3a97b4; text-align:center}
+.item-page.tempo table td{border:8px solid #dddada ; padding:8px; vertical-align:middle}
+.item-page.tempo table td strong{ font-size:16px;}
+.item-page.tempo table td .puce{padding-left:75px;}
+.item-page.tempo h3{margin-left:50px; margin-bottom:20px;}
+.item-page.tempo h3 strong{font-weight:bold;}
+.item-page.offre.auto.tempo #options {width:48%; float:left;}
+.item-page.offre.auto.tempo #options ul {margin-bottom: 20px;}
+
+/*
+.header .menu .item117 ul li ul li.first{margin:30px 0 40px 25px}*/
+.header .menu .menu-desc{color:#333;text-align:left;font-family:Helvetica,Arial, sans-serif;font-size:14px;padding:0;margin:0;width:230px;font-size:15px}
+.header .menu .btoffre.credit{width:180px;margin:20px auto}
+
+#zone-devis .contact.btoffre{display:block;text-align:center}
+/* spécifique tablettes */
+@media only screen and (-webkit-min-device-pixel-ratio:0) and (min-device-width :768px)
+and (max-device-width :1024px){.submit{height:23px;background-position:0 -74px}}
+
+/*assurance emprunteur*/
+#ac_infographie-right{text-align:center}
+@media (min-width:768px){
+	#assureur_credit{margin:50px 70px 50px}
+	#assureur_credit,#ac_infographie,#ac_infographie-right{float:left}
+	#assureur_credit{margin-right:30px;}
+	#ac_infographie-right{width:370px;padding-top:120px}
+	#ac_infographie{margin:10px 30px 30px 50px;}
+}
+@media (max-width:768px){
+	.emprunteur .item-page img{max-width:100%;margin:0 10px}
+}
+/**
+* application mobile
+**/
+.item-page.instit{padding-top:340px}
+.item-page.application{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/page-appli.jpg) 0 0 no-repeat; }
+.appli-encadre{margin-left:50px;text-align:center;background:#e8e8e8;-webkit-border-radius: 12px;
+-moz-border-radius: 12px;border-radius: 12px;padding:10px}
+.appli-encadre p{text-align:center}
+.appli-encadre li{display:inline}
+.appli-encadre li a{display:inline-block;margin:0 5px;background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/appli-sprite-link.png) no-repeat;height:175px;width:175px;text-indent:-3000em}
+.appli-encadre li.android a{background-position:-225px 0}
+
+.appli-texte{margin-left:50px;}
+.appli-texte li{font-size:14px;margin:30px auto;padding-left:68px;position:relative;height:52px;}
+.appli-texte span{display:block;width:62px;height:52px;background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/appli-sprite-picto.png) no-repeat;text-indent:-3000em;position:absolute;left:0;top:0}
+.appli-texte p{margin-left:0;line-height:52px;height:52px}
+.appli-texte .photos span{ background-position: 0 0}
+.appli-texte .sinistre p{ line-height:normal}  
+.appli-texte .sinistre span{ background-position: 10px -82px}  
+.appli-texte .mobilite span{ background-position: 6px -145px} 
+.appli-texte .contact span{ background-position: 4px -211px} 
+.appli-texte .assistance span{ background-position: 0 -279px}  
+
+/* assurance-scolaire-avantages.html */
+.scolaire.avantages .item-page{background:#fff url(/web/20210304064631im_/https://www.assu2000.fr/images/scolaire/page-dediee.jpg) no-repeat;padding-top:350px}
+#quiz-scolaire{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/scolaire/quiz-fond.jpg) no-repeat;padding-top:240px;padding-right:80px}
+#quiz-scolaire a{display:none}
+.youtube{text-align:center}
+.youtube iframe{margin:0 auto}
+
+/* page newsletter */
+
+.item-page.newsletter {
+    background: transparent url("/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_entete_inscription_news.jpg") no-repeat scroll 0 0;
+    padding-top: 318px;
+}
+.landing.instit.newsletter h1 {padding-left: 5px; padding-top: 90px; width: 210px;}
+.moduletable.news h3 {background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/icon-news.png");
+    color: #222222;
+    line-height: 1.2em !important;
+    padding: 0 0 6px 70px !important;}
+.moduletable.archive h3 {background-image: url("/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/archive.png");
+    color: #222222;
+    line-height: 1.2em !important;
+    padding: 0 0 6px 70px !important;}
+.moduletable.news h3 strong {
+    color: #76bb39;
+    display: block;
+    margin-left: 20px;
+    font-size:24px;
+}
+.moduletable.archive h3 strong {
+    color: #76bb39;
+    display: block;
+    margin-left: 20px;
+    font-size:24px;
+}
+
+/*module inscription newsletter */
+.modnewsletter {position:relative;}
+#mailSuscribe{width:320px; background:#eee;padding:6px;margin-bottom:20px; color:#666; border:1px solid #888;}
+.modnewsletter #resultat {background: #2b2b2b; height: auto; padding: 16px; position: relative; top: 5px; line-height: 1.2em;}
+.modnewsletter #resultat .success strong{background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/check.png) no-repeat left center; display: inline-block; padding-left:28px; color:#76bb39}
+.modnewsletter #submitmail{padding:6px 21px}
+.modnewsletter #submitmail:hover{cursor:pointer;}
+ 
+
+
+/** Activité pro **/
+.header .item1586 > a .image-sprite{background-position:-486px bottom}
+.header .item1586:hover, .header .item1586:hover > a,.header .item1586 > a:hover, .header .item1586 > a.shover , .header .item1586.sfhover, .header .item1586.sfhover > a{background-color:#025092 !important;border-color:#025092 !important}
+.header .item1586 > ul{border:2px solid #025092;}
+.header .item1586 > div{background:#025092;}
+
+.header .item1586 > ul > li > a .image-sprite{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/sprite-sous-menu-pro.png)}
+.item1592 > a .image-sprite{background-position:5px -2px}
+.item1593 > a .image-sprite{background-position:476px 46px}
+.item1594 > a .image-sprite{background-position:137px 47px}
+.item1595 > a .image-sprite{background-position:70px 45px}
+.header .menu > li > ul > li.item1695 > a > .image-sprite { background-image: url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/menu_auto.png); background-position: 81px -9px; width: 72px; left: 130px;}
+/*******-------------------***************/
+
+.item1586 > div{background:#025092; display: block; text-align: center;}
+.promo2roues .legende, .landing.assupro .legende{color: #999999;font-size: 11px; margin-top: 15px; text-align: center}
+.right .moduletable.promo.assupro{box-shadow: none !important;cursor: default;font-size: 15px;font-weight: normal;height: 116px;line-height: 1.2em;margin: -2px 0 0;padding: 0 4px 0 16px !important; width: 238px;}
+.item-page.offre.assupro{width:710px;background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/assurance-pro.png)}
+.landing.assupro h1{color:#FFF;line-height:1.3em;padding:115px 0 0 0;position:absolute;top:0;left:30px;text-align:center;text-transform:uppercase;background:no-repeat 0 50px;height:200px;width:216px;font-size:32px}
+.offre.assupro h1, .landing.assupro h1{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/offre/h1-assupro.png)}
+.item-page.offre.assupro.rcpro h1{font-size: 28px;padding: 96px 0 0 0;}
+.item-page.offre.assupro.rcd h1{ padding-left: 10px; padding-right: 25px; padding-top: 95px; width: 210px;}
+
+.item-page.offre.assupro.rcd .blocpromo{position:absolute; left:220px; top: 165px; background:url(/web/20210304064631im_/https://www.assu2000.fr/templates/home/images/assurance-rcd_patch-promo.png) no-repeat; width:135px; height: 135px}
+/*
+     FILE ARCHIVED ON 06:46:31 Mar 04, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:39:26 Jul 05, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 119.282
+  exclusion.robots: 0.189
+  exclusion.robots.policy: 0.181
+  RedisCDXSource: 3.126
+  esindex: 0.051
+  LoadShardBlock: 87.507 (3)
+  PetaboxLoader3.datanode: 115.524 (4)
+  CDXLines.iter: 25.556 (3)
+  load_resource: 118.097
+  PetaboxLoader3.resolve: 41.021
+*/
