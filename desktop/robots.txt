@@ -1,0 +1,43 @@
+User-agent: *
+Disallow: /components/
+Disallow: /includes/
+Disallow: /language/
+Disallow: /libraries/
+Disallow: /logs/
+#Disallow: /media/
+#Disallow: /modules/
+Disallow: /plugins/
+#Disallow: /templates/
+Disallow: /proxidirect/
+Disallow: /Proximeo
+Disallow: /tplproximeo/
+Disallow: /form_callback.php
+Disallow: /dyn/
+Disallow: /questions-assurance/plugins/
+Disallow: /questions-assurance/administrator/
+Disallow: /questions-assurance/cache/
+Disallow: /questions-assurance/components/
+Disallow: /questions-assurance/includes/
+Disallow: /questions-assurance/language/
+Disallow: /questions-assurance/libraries/
+Disallow: /questions-assurance/logs/
+Disallow: /questions-assurance/tmp/
+Disallow: /questions-assurance/recherche.html
+Disallow: /espace-personnel.html
+Disallow: /Proximeo/*
+Disallow: /devis-assurance-auto/*
+Disallow: /devis-assurance-vsp/*
+Disallow: /devis-assurance-moto/*
+Disallow: /devis-assurance-cyclo/*
+Disallow: /devis-assurance-habitation/*
+Disallow: *.pdf
+
+Allow:/dyn/*.gif
+Allow:/dyn/*.jpg
+Allow:/dyn/*.png
+Allow:/dyn/*.js
+Allow:/dyn/*.css
+Allow:/templates/
+Allow:/media/
+
+Sitemap: http://www.assu2000.fr/sitemap.xml

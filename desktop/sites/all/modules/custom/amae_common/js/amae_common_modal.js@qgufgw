@@ -1,0 +1,62 @@
+/**
+ * Provide the HTML to create the modal dialog.
+ */
+(function ($) {
+  Drupal.theme.prototype.amae_common_modal_popup = function () {
+    var html = '';
+    html += '  <div id="ctools-modal">';
+    html += '    <div class="amae-common-modal overlay-call-back">';
+    html += '      <div class="overlay-inner">';
+    html += '        <a href="javascript:void(0);" class="close close-overlay icon-as" title="Fermer la fenêtre"><i class="icon-times"></i></a>';
+    html += '        <div id="modal-content">';
+
+    html += '        </div>';
+    html += '      </div>';
+    html += '    </div>';
+    html += '  </div>';
+    return html;
+  };
+
+  Drupal.theme.prototype.amae_common_modal_popup_error = function () {
+    var html = '';
+    html += '  <div id="ctools-modal">';
+    html += '    <div class="amae-common-modal overlay-call-back-error">';
+    html += '      <div class="overlay-inner">';
+    html += '        <a href="javascript:void(0);" class="close close-overlay-error icon-as" title="Fermer la fenêtre"><i class="icon-times"></i></a>';
+    html += '        <div id="modal-content">';
+
+    html += '        </div>';
+    html += '      </div>';
+    html += '    </div>';
+    html += '  </div>';
+    return html;
+  }
+})(jQuery);
+
+(function($, Drupal) {
+  function amae_show_popup(theme, response){
+    $('#ctools-modal').remove();
+    var popup = Drupal.theme(theme);
+    $('.main-footer').append(popup);
+    $('#modal-content').html(response.form);
+    if (typeof response.message != "undefined") {
+      $('#modal-content .row:first').prepend('<p class="error-message">' + response.message + '</p>');
+    }
+  }
+
+  Drupal.ajax.prototype.commands.modal_form_callback = function(ajax, response, status) {
+    amae_show_popup('amae_common_modal_popup', response);
+  }
+
+  Drupal.ajax.prototype.commands.modal_form_error = function(ajax, response, status) {
+    amae_show_popup('amae_common_modal_popup_error', response);
+  }
+
+  Drupal.ajax.prototype.commands.delay_modal_dismiss = function(ajax, response, status) {
+    setTimeout(function () {
+      Drupal.CTools.Modal.dismiss();
+      $('link.ctools-temporary-css').remove();
+    }, response.delay);
+  }
+
+})(jQuery, Drupal);

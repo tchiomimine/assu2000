@@ -1,0 +1,51 @@
+/**
+ * @file
+ *  JS side part of lead functionality.
+ */
+
+(function ($) {
+    /**
+     * Helper function to parse a querystring.
+     */
+    var amaeParseQueryString = function (query) {
+        var args = {};
+        var pos = query.indexOf('?');
+        if (pos != -1) {
+            query = query.substring(pos + 1);
+        }
+        var pairs = query.split('&');
+        for(var i in pairs) {
+            if (typeof(pairs[i]) == 'string') {
+                var pair = pairs[i].split('=');
+                // Ignore the 'q' path argument, if present.
+                if (pair[0] != 'q' && pair[1]) {
+                    args[decodeURIComponent(pair[0].replace(/\+/g, ' '))] = decodeURIComponent(pair[1].replace(/\+/g, ' '));
+                }
+            }
+        }
+        return args;
+    };
+
+    var amae_cx = $.cookie('amae_cx') || {};
+    // Convert into object if needed.
+    if (typeof amae_cx != "object") {
+        amae_cx = JSON.parse(amae_cx);
+    }
+
+    if (typeof amae_cx.url_src == "undefined") {
+        // Create Context.SRC.
+        amae_cx.url_src = document.referrer || 'N/A';
+        amae_cx.name_src = document.title || '';
+
+        amae_href = amaeParseQueryString(window.location.href);
+        amae_cx.code_apporteur = amae_href.codeApporteur || '';
+        amae_cx.source_name = amae_href.source_name || '';
+
+        // Save context in Cookie.
+        $.cookie('amae_cx', JSON.stringify(amae_cx), {
+            path: Drupal.settings.basePath,
+            expires: 365
+        });
+    }
+
+}(jQuery));
