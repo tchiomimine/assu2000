@@ -1,0 +1,29 @@
+<manifest alg="2" build="10" opt="true" iceEnabled="true" iceMarkupVersion="2" exportTarget="other" resolutions="1x" timestamp="1418218627599">
+  <folder name="css">
+    <file name="site_global.css" crc="365011649"/>
+    <file name="index.css" crc="4115800494" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="4164521501" ref="index"/>
+    <file name="museutils.js" crc="3777594392" ref="index"/>
+    <file name="jquery.scrolleffects.js" crc="117544926" ref="index"/>
+    <file name="jquery.watch.js" crc="4144919381" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="pression.png" crc="346524041" ref="index"/>
+    <file name="scroll_down.png" crc="4127119513" ref="index"/>
+    <file name="buller.png" crc="4292067383" ref="index"/>
+    <file name="bouchon.png" crc="262761413" ref="index"/>
+    <file name="etoiles.png" crc="479687413" ref="index"/>
+    <file name="champ.png" crc="4203479162" ref="index"/>
+    <file name="bulles.png" crc="3778265047" ref="index"/>
+    <file name="btn_champ.png" crc="3772264676" ref="index"/>
+    <file name="slogan_ba.png" crc="303800217" ref="index"/>
+    <file name="footer_fond_blanc.png" crc="461048559" ref="index"/>
+    <file name="bonne_annee.png" crc="4124963568" ref="index"/>
+    <file name="logo_assu.png" crc="97161828" ref="index"/>
+    <file name="bchon_footer.png" crc="152665895" ref="index"/>
+    <file name="scroll_up.png" crc="4084260325" ref="index"/>
+  </folder>
+  <file name="index.html" crc="3778140192" mt="1418218621959" redirect="true"/>
+</manifest>

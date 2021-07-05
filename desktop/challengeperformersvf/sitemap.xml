@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://www.CP2020_VF.fr/index.html</loc>
+    <lastmod>2019-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>http://www.CP2020_VF.fr/images/ombnre_section.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.CP2020_VF.fr/images/plant_1.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.CP2020_VF.fr/images/down.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.CP2020_VF.fr/images/cross_king.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.CP2020_VF.fr/images/ico-spike-down.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.CP2020_VF.fr/images/winner.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.CP2020_VF.fr/images/arrow_res.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.CP2020_VF.fr/images/logo_groupe_blanc.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>http://www.CP2020_VF.fr/assets/video_home_fx.mp4</loc>
+    <lastmod>2019-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.CP2020_VF.fr/assets/reglement-du-challenge-performers-_vf_vf.pdf</loc>
+    <lastmod>2019-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

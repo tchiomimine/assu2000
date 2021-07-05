@@ -1,0 +1,121 @@
+<manifest alg="2" build="2018.1.0.386" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="www.CP2020_VF.fr" resolutions="1x" timestamp="1565105362433">
+  <folder name="css">
+    <file name="site_global.css" crc="117355709"/>
+    <file name="master_master.css" crc="4294954227" ref="index"/>
+    <file name="index.css" crc="106657975" ref="index"/>
+  </folder>
+  <folder name="fonts">
+    <file name="poppins-light.woff" crc="106121552"/>
+    <file name="poppins-light.eot" crc="3786185247"/>
+    <file name="poppins-light.svg" crc="318317112"/>
+    <file name="poppins-regular.woff" crc="240494470"/>
+    <file name="poppins-regular.eot" crc="4057352415"/>
+    <file name="poppins-regular.svg" crc="15040951"/>
+    <file name="poppins-bold.woff" crc="404144087"/>
+    <file name="poppins-bold.eot" crc="3820260051"/>
+    <file name="poppins-bold.svg" crc="4000788076"/>
+  </folder>
+  <folder name="assets">
+    <file name="video_home_fx.mp4" crc="417989332" seo="true" mt="1562831307000"/>
+    <file name="reglement-du-challenge-performers-_vf_vf.pdf" crc="3867654944" seo="true" mt="1564663918000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index"/>
+    <file name="museutils.js" crc="340535759" ref="index"/>
+    <file name="whatinput.js" crc="86476730" ref="index"/>
+    <file name="museconfig.js" crc="4286661555" ref="index"/>
+    <file name="jquery.watch.js" crc="51536988" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4260645839" ref="index"/>
+    <file name="webpro.js" crc="4059564322" ref="index"/>
+    <file name="musewpslideshow.js" crc="3862962738" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="4147669564" ref="index"/>
+    <file name="touchswipe.js" crc="4075097462" ref="index"/>
+    <file name="require.js" crc="7928878" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="ombnre_section.png" crc="259460008" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="reglement_bg.jpg" crc="359658381" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="plant_1.png" crc="4223784296" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="down.png" crc="255583613" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="cross_king.png" crc="495415991" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="resultats_bg.jpg" crc="4116671082" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="résultats_h2.png" crc="446149462" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="ico-spike-down.png" crc="4209736183" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="winner.png" crc="4216543805" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="arrow_res.png" crc="3820770264" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="checklist_bg.jpg" crc="516118580" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="arrow_res-u36683.png" crc="73780233" ref="index"/>
+    <file name="black_gradient.png" crc="21235923" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="tiret.png" crc="4290489254" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="règlement_h2.png" crc="371713356" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="checklist.png" crc="3963100786" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="plant_2.png" crc="95501192" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="logo_groupe_blanc.png" crc="4104664393" seo="true" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="asset 16logo_vf-u37657.png" crc="3802803609" ref="index"/>
+    <file name="arrow_res-u43303.png" crc="73780233" ref="index"/>
+    <file name="arrow_res-u43310.png" crc="73780233" ref="index"/>
+    <file name="arrow_res-u43282.png" crc="73780233" ref="index"/>
+  </folder>
+  <file name="index.html" crc="210857231" seo="true" mt="1565105261579" redirect="true"/>
+</manifest>

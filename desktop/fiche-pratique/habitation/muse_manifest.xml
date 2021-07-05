@@ -1,0 +1,215 @@
+<manifest alg="2" build="2015.1.2.344" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="fiche-pratique-mrh.com" resolutions="1x" timestamp="1470646946685">
+  <folder name="css">
+    <file name="site_global.css" crc="426447593"/>
+    <file name="index.css" crc="3983908708" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="207176553" ref="phone>index:phone>espace-perso:phone>regler-cotisation:phone>documents-justificatifs:phone>besoin-assistance:phone>sinistre:phone>insatisfaction:phone>contact:phone>vehicule:index"/>
+    <file name="museutils.js" crc="3790713428" ref="phone>index:phone>espace-perso:phone>regler-cotisation:phone>documents-justificatifs:phone>besoin-assistance:phone>sinistre:phone>insatisfaction:phone>contact:phone>vehicule:index"/>
+    <file name="whatinput.js" crc="84559013" ref="phone>index:phone>espace-perso:phone>regler-cotisation:phone>documents-justificatifs:phone>besoin-assistance:phone>sinistre:phone>insatisfaction:phone>contact:phone>vehicule:index"/>
+    <file name="jquery.watch.js" crc="4244854265" ref="phone>index:phone>espace-perso:phone>regler-cotisation:phone>documents-justificatifs:phone>besoin-assistance:phone>sinistre:phone>insatisfaction:phone>contact:phone>vehicule:index"/>
+    <file name="pie.js" crc="3827607177" ref="phone>documents-justificatifs:phone>insatisfaction:index"/>
+    <file name="webpro.js" crc="329496574" ref="phone>sinistre:phone>insatisfaction:index"/>
+    <file name="musewpslideshow.js" crc="394033048" ref="phone>sinistre:phone>insatisfaction:index"/>
+    <file name="jquery.museoverlay.js" crc="4265131668" ref="phone>sinistre:phone>insatisfaction:index"/>
+    <file name="touchswipe.js" crc="497316881" ref="phone>sinistre:phone>insatisfaction:index"/>
+    <file name="museredirect.js" crc="71780213" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="fiche-habitation.png" crc="4168194438" seo="true" ref="phone>index:phone>espace-perso:phone>regler-cotisation:phone>documents-justificatifs:phone>besoin-assistance:phone>sinistre:phone>insatisfaction:phone>contact:phone>vehicule"/>
+    <file name="picto-titre.png" crc="147588326" seo="true" ref="phone>index:phone>espace-perso:index"/>
+    <file name="fleche-droite.png" crc="3993723544" seo="true" ref="phone>index"/>
+    <file name="blank.gif" crc="4208392903" ref="phone>index:phone>espace-perso:phone>regler-cotisation:phone>documents-justificatifs:phone>besoin-assistance:phone>sinistre:phone>insatisfaction:phone>contact:phone>vehicule:index"/>
+    <file name="u1925_states.png" crc="4045998203" ref="phone>index"/>
+    <file name="u1925_states-r.png" crc="4045998203" ref="phone>index"/>
+    <file name="u1925_states-m.png" crc="4045998203" ref="phone>index"/>
+    <file name="picto-titre-p2.png" crc="3953631335" seo="true" ref="phone>index:phone>regler-cotisation:index"/>
+    <file name="u1958_states.png" crc="377972960" ref="phone>index"/>
+    <file name="u1958_states-r.png" crc="377972960" ref="phone>index"/>
+    <file name="u1958_states-m.png" crc="377972960" ref="phone>index"/>
+    <file name="picto-titre-p3.png" crc="430444848" seo="true" ref="phone>index:phone>documents-justificatifs:index"/>
+    <file name="u1966_states.png" crc="165235635" ref="phone>index"/>
+    <file name="u1966_states-r.png" crc="165235635" ref="phone>index"/>
+    <file name="u1966_states-m.png" crc="165235635" ref="phone>index"/>
+    <file name="picto-titre-p4.png" crc="163602086" seo="true" ref="phone>index:phone>besoin-assistance:index"/>
+    <file name="u1974_states.png" crc="4055608341" ref="phone>index"/>
+    <file name="u1974_states-r.png" crc="4055608341" ref="phone>index"/>
+    <file name="u1974_states-m.png" crc="4055608341" ref="phone>index"/>
+    <file name="picto-titre-p5.png" crc="3759120287" seo="true" ref="phone>index:phone>sinistre:index"/>
+    <file name="u1982_states.png" crc="436508141" ref="phone>index"/>
+    <file name="u1982_states-r.png" crc="436508141" ref="phone>index"/>
+    <file name="u1982_states-m.png" crc="436508141" ref="phone>index"/>
+    <file name="picto-titre-p7.png" crc="212512660" seo="true" ref="phone>index:phone>insatisfaction:index"/>
+    <file name="u1998_states.png" crc="3919675795" ref="phone>index"/>
+    <file name="u1998_states-r.png" crc="3919675795" ref="phone>index"/>
+    <file name="u1998_states-m.png" crc="3919675795" ref="phone>index"/>
+    <file name="picto-titre-p8.png" crc="333892934" seo="true" ref="phone>index:phone>contact:index"/>
+    <file name="u2009_states.png" crc="252000757" ref="phone>index"/>
+    <file name="u2009_states-r.png" crc="252000757" ref="phone>index"/>
+    <file name="u2009_states-m.png" crc="252000757" ref="phone>index"/>
+    <file name="picto-titre-p9.png" crc="474635189" seo="true" ref="phone>index:phone>vehicule:index"/>
+    <file name="u2017_states.png" crc="271926090" ref="phone>index"/>
+    <file name="u2017_states-r.png" crc="271926090" ref="phone>index"/>
+    <file name="u2017_states-m.png" crc="271926090" ref="phone>index"/>
+    <file name="logo.png" crc="319969564" seo="true" ref="phone>index:index"/>
+    <file name="fermer-rubrique.png" crc="513268317" seo="true" ref="phone>espace-perso:phone>regler-cotisation:phone>documents-justificatifs:phone>besoin-assistance:phone>sinistre:phone>insatisfaction:phone>contact:phone>vehicule"/>
+    <file name="u2038_states.png" crc="4045998203" ref="phone>espace-perso"/>
+    <file name="u2038_states-r.png" crc="4045998203" ref="phone>espace-perso"/>
+    <file name="u2038_states-m.png" crc="4045998203" ref="phone>espace-perso"/>
+    <file name="btn-espaceperso.png" crc="4037218027" seo="true" ref="phone>espace-perso:index"/>
+    <file name="u2055-4.png" crc="4294667699" ref="phone>espace-perso"/>
+    <file name="picto-payer.png" crc="3783553638" seo="true" ref="phone>espace-perso:index"/>
+    <file name="picto-telecharger.png" crc="4194132245" seo="true" ref="phone>espace-perso:index"/>
+    <file name="picto-contrat.png" crc="4281047000" seo="true" ref="phone>espace-perso:index"/>
+    <file name="picto-modifier.png" crc="4225517814" seo="true" ref="phone>espace-perso:index"/>
+    <file name="picto-envoyer.png" crc="3840997120" seo="true" ref="phone>espace-perso:index"/>
+    <file name="picto-espace.png" crc="3770414576" seo="true" ref="phone>espace-perso:index"/>
+    <file name="u2097_states.png" crc="377972960" ref="phone>regler-cotisation"/>
+    <file name="u2097_states-r.png" crc="377972960" ref="phone>regler-cotisation"/>
+    <file name="u2097_states-m.png" crc="377972960" ref="phone>regler-cotisation"/>
+    <file name="element-graphique-fiche-habitation.png" crc="379794598" seo="true" ref="phone>regler-cotisation:index"/>
+    <file name="picto-espace-p2.png" crc="3820944294" seo="true" ref="phone>regler-cotisation:index"/>
+    <file name="picto-tel-p2.png" crc="4235058785" seo="true" ref="phone>regler-cotisation:index"/>
+    <file name="u2144_states.png" crc="165235635" ref="phone>documents-justificatifs"/>
+    <file name="u2144_states-r.png" crc="165235635" ref="phone>documents-justificatifs"/>
+    <file name="u2144_states-m.png" crc="165235635" ref="phone>documents-justificatifs"/>
+    <file name="4solutions.png" crc="491060842" seo="true" ref="phone>documents-justificatifs:index"/>
+    <file name="u2195_states.png" crc="4055608341" ref="phone>besoin-assistance"/>
+    <file name="u2195_states-r.png" crc="4055608341" ref="phone>besoin-assistance"/>
+    <file name="u2195_states-m.png" crc="4055608341" ref="phone>besoin-assistance"/>
+    <file name="u2240_states.png" crc="436508141" ref="phone>sinistre"/>
+    <file name="u2240_states-r.png" crc="436508141" ref="phone>sinistre"/>
+    <file name="u2240_states-m.png" crc="436508141" ref="phone>sinistre"/>
+    <file name="u3869.png" crc="4252393073" ref="phone>sinistre"/>
+    <file name="u3869-r.png" crc="4283241380" ref="phone>sinistre"/>
+    <file name="u3869-a.png" crc="386758179" ref="phone>sinistre"/>
+    <file name="u3875.png" crc="4169331800" ref="phone>sinistre"/>
+    <file name="u3875-r.png" crc="463413024" ref="phone>sinistre"/>
+    <file name="u3875-a.png" crc="3951463661" ref="phone>sinistre"/>
+    <file name="u3881.png" crc="353648811" ref="phone>sinistre"/>
+    <file name="u3881-r.png" crc="311687346" ref="phone>sinistre"/>
+    <file name="u3881-a.png" crc="52483835" ref="phone>sinistre"/>
+    <file name="u3877.png" crc="4001601232" ref="phone>sinistre"/>
+    <file name="u3877-a.png" crc="4001601232" ref="phone>sinistre"/>
+    <file name="u3879.png" crc="3780041529" ref="phone>sinistre"/>
+    <file name="u3879-a.png" crc="3780041529" ref="phone>sinistre"/>
+    <file name="u3871.png" crc="193196460" ref="phone>sinistre"/>
+    <file name="u3871-r.png" crc="3991441556" ref="phone>sinistre"/>
+    <file name="u3871-a.png" crc="3859461530" ref="phone>sinistre"/>
+    <file name="u3873.png" crc="460250355" ref="phone>sinistre"/>
+    <file name="u3873-a.png" crc="460250355" ref="phone>sinistre"/>
+    <file name="picto-email-p5.png" crc="474927909" seo="true" ref="phone>sinistre:index"/>
+    <file name="u3848-4.png" crc="4038438419" ref="phone>sinistre"/>
+    <file name="u3849-4.png" crc="4188325788" ref="phone>sinistre"/>
+    <file name="picto-courier-p5.png" crc="4033840592" seo="true" ref="phone>sinistre:index"/>
+    <file name="u2398_states.png" crc="3919675795" ref="phone>insatisfaction"/>
+    <file name="u2398_states-r.png" crc="3919675795" ref="phone>insatisfaction"/>
+    <file name="u2398_states-m.png" crc="3919675795" ref="phone>insatisfaction"/>
+    <file name="fond-email2.png" crc="425885952" seo="true" ref="phone>insatisfaction:index"/>
+    <file name="petit-oui.png" crc="3949295959" seo="true" ref="phone>insatisfaction:index"/>
+    <file name="petit-non.png" crc="347829816" seo="true" ref="phone>insatisfaction:index"/>
+    <file name="non.jpg" crc="3955608241" seo="true" ref="phone>insatisfaction:index"/>
+    <file name="oui.jpg" crc="4255048462" seo="true" ref="phone>insatisfaction:index"/>
+    <file name="u2467_states.png" crc="252000757" ref="phone>contact"/>
+    <file name="u2467_states-r.png" crc="252000757" ref="phone>contact"/>
+    <file name="u2467_states-m.png" crc="252000757" ref="phone>contact"/>
+    <file name="contact.png" crc="109620419" seo="true" ref="phone>contact"/>
+    <file name="reseaux-sociaux2-crop-u2528.png" crc="212365169" seo="true" ref="phone>contact:index"/>
+    <file name="facebook.png" crc="402714631" seo="true" ref="phone>contact:index"/>
+    <file name="twitter.png" crc="4127487667" seo="true" ref="phone>contact:index"/>
+    <file name="google-plus.png" crc="3766766759" seo="true" ref="phone>contact:index"/>
+    <file name="u2495_states.png" crc="4176008014" ref="phone>vehicule"/>
+    <file name="u2495_states-r.png" crc="4176008014" ref="phone>vehicule"/>
+    <file name="u2495_states-m.png" crc="4176008014" ref="phone>vehicule"/>
+    <file name="souscrire162x153.png" crc="386764438" seo="true" ref="phone>vehicule"/>
+    <file name="promo.png" crc="404121428" seo="true" ref="phone>vehicule:index"/>
+    <file name="u442-4.png" crc="335988289" ref="index"/>
+    <file name="ordi.png" crc="128246842" seo="true" ref="index"/>
+    <file name="u1102-4.png" crc="481043665" ref="index"/>
+    <file name="u1101-8.png" crc="4114634892" ref="index"/>
+    <file name="u388-4.png" crc="525658501" ref="index"/>
+    <file name="u1861-4.png" crc="3779581678" ref="index"/>
+    <file name="u1856-4.png" crc="427028088" ref="index"/>
+    <file name="u450-4.png" crc="299931538" ref="index"/>
+    <file name="ordinateur-p3.png" crc="4245647810" seo="true" ref="index"/>
+    <file name="email-p3.png" crc="3825562980" seo="true" ref="index"/>
+    <file name="tel-p3.png" crc="4282544346" seo="true" ref="index"/>
+    <file name="courier-p3.png" crc="125719645" seo="true" ref="index"/>
+    <file name="picto-idee.png" crc="173324622" seo="true" ref="index"/>
+    <file name="picto-livre.png" crc="4152755423" seo="true" ref="index"/>
+    <file name="u529-4.png" crc="3758117096" ref="index"/>
+    <file name="u652-4.png" crc="4106376462" ref="index"/>
+    <file name="u656-4.png" crc="4038438419" ref="index"/>
+    <file name="u660-4.png" crc="4188325788" ref="index"/>
+    <file name="u3010.png" crc="4252393073" ref="index"/>
+    <file name="u3010-r.png" crc="4283241380" ref="index"/>
+    <file name="u3010-a.png" crc="386758179" ref="index"/>
+    <file name="u3008.png" crc="4169331800" ref="index"/>
+    <file name="u3008-r.png" crc="463413024" ref="index"/>
+    <file name="u3008-a.png" crc="3951463661" ref="index"/>
+    <file name="u3006.png" crc="353648811" ref="index"/>
+    <file name="u3006-r.png" crc="311687346" ref="index"/>
+    <file name="u3006-a.png" crc="52483835" ref="index"/>
+    <file name="u3004.png" crc="4001601232" ref="index"/>
+    <file name="u3004-a.png" crc="4001601232" ref="index"/>
+    <file name="u3012.png" crc="3780041529" ref="index"/>
+    <file name="u3012-a.png" crc="3780041529" ref="index"/>
+    <file name="u3380.png" crc="193196460" ref="index"/>
+    <file name="u3380-r.png" crc="3991441556" ref="index"/>
+    <file name="u3380-a.png" crc="3859461530" ref="index"/>
+    <file name="u3381.png" crc="460250355" ref="index"/>
+    <file name="u3381-a.png" crc="460250355" ref="index"/>
+    <file name="u770-4.png" crc="500566172" ref="index"/>
+    <file name="img-contacter2.png" crc="366822642" seo="true" ref="index"/>
+    <file name="u915-4.png" crc="186520678" ref="index"/>
+    <file name="img-contact2.png" crc="18735867" seo="true" ref="index"/>
+    <file name="u1375-4.png" crc="178588251" ref="index"/>
+    <file name="souscrire.png" crc="386764438" seo="true" ref="index"/>
+    <file name="u991.png" crc="4133124970" ref="index"/>
+    <file name="u991-r.png" crc="4133124970" ref="index"/>
+    <file name="u991-m.png" crc="4133124970" ref="index"/>
+    <file name="u991-a.png" crc="4129726137" ref="index"/>
+    <file name="u990.png" crc="4291702901" ref="index"/>
+    <file name="u990-r.png" crc="4291702901" ref="index"/>
+    <file name="u990-a.png" crc="4206822561" ref="index"/>
+    <file name="u166.png" crc="478727830" ref="index"/>
+    <file name="u166-a.png" crc="478727830" ref="index"/>
+    <file name="u173.png" crc="4102958112" ref="index"/>
+    <file name="u173-a.png" crc="4102958112" ref="index"/>
+    <file name="u180.png" crc="3902561403" ref="index"/>
+    <file name="u180-a.png" crc="3902561403" ref="index"/>
+    <file name="u206.png" crc="3805247900" ref="index"/>
+    <file name="u206-a.png" crc="3805247900" ref="index"/>
+    <file name="u213.png" crc="3861421003" ref="index"/>
+    <file name="u213-a.png" crc="3861421003" ref="index"/>
+    <file name="u1367.png" crc="380046691" ref="index"/>
+    <file name="u1367-a.png" crc="380046691" ref="index"/>
+    <file name="fiche-pratique-mrh.png" crc="4132830046" seo="true" ref="index"/>
+    <file name="contact_assu-01373x135.png" crc="420345731" seo="true" ref="phone>besoin-assistance"/>
+    <file name="contact_assu-01.png" crc="420345731" seo="true" ref="index"/>
+  </folder>
+  <folder name="phone">
+    <folder name="css">
+      <file name="master_a-gabarit.css" crc="84356832" ref="phone>sinistre:phone>vehicule:phone>insatisfaction:phone>contact:phone>besoin-assistance:phone>documents-justificatifs:phone>regler-cotisation:phone>espace-perso:phone>index"/>
+      <file name="sinistre.css" crc="3810356576" ref="phone>sinistre"/>
+      <file name="vehicule.css" crc="212973967" ref="phone>vehicule"/>
+      <file name="insatisfaction.css" crc="4281487625" ref="phone>insatisfaction"/>
+      <file name="contact.css" crc="250380957" ref="phone>contact"/>
+      <file name="besoin-assistance.css" crc="365801673" ref="phone>besoin-assistance"/>
+      <file name="documents-justificatifs.css" crc="342656670" ref="phone>documents-justificatifs"/>
+      <file name="regler-cotisation.css" crc="51389698" ref="phone>regler-cotisation"/>
+      <file name="espace-perso.css" crc="158232046" ref="phone>espace-perso"/>
+      <file name="index.css" crc="3919186044" ref="phone>index"/>
+    </folder>
+    <file name="index.html" crc="477638454" seo="true" mt="1438356229798" redirect="true"/>
+    <file name="espace-perso.html" crc="3968589796" seo="true" mt="1438356229798" redirect="true"/>
+    <file name="regler-cotisation.html" crc="252747067" seo="true" mt="1438356229798" redirect="true"/>
+    <file name="documents-justificatifs.html" crc="4048359496" seo="true" mt="1438356229798" redirect="true"/>
+    <file name="besoin-assistance.html" crc="3839026686" seo="true" mt="1470646886014" redirect="true"/>
+    <file name="sinistre.html" crc="3843936461" seo="true" mt="1438608148751" redirect="true"/>
+    <file name="insatisfaction.html" crc="4290230707" seo="true" mt="1438356229798" redirect="true"/>
+    <file name="contact.html" crc="4139505596" seo="true" mt="1438356229798" redirect="true"/>
+    <file name="vehicule.html" crc="368537137" seo="true" mt="1438356229798" redirect="true"/>
+  </folder>
+  <file name="index.html" crc="260676095" seo="true" mt="1470644056664" redirect="true"/>
+</manifest>

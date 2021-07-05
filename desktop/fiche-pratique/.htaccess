@@ -1,0 +1,2 @@
+# pour que ça marche sur nos serveur le html est interprete comme du php
+AddType application/x-httpd-php .html .htm

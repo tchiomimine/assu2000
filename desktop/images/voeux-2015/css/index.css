@@ -1,0 +1,376 @@
+.version.index /* version checker */
+{
+	color: #0000F5;
+	background-color: #5221AE;
+}
+
+.html
+{
+	background-color: #02021F;
+}
+
+#page
+{
+	z-index: 1;
+	width: 1280px;
+	min-height: 900px;
+	background-image: none;
+	border-style: none;
+	border-color: #E21E79;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#ht-page
+{
+	position: relative;
+}
+
+#u75
+{
+	z-index: 3;
+	width: 1279px;
+	height: 475px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #000000;
+	margin-top: 44px;
+	position: relative;
+	background: transparent url("../images/pression.png") no-repeat center center;
+}
+
+#u105
+{
+	z-index: 8;
+	width: 68px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: fixed;
+	top: 494px;
+	left: 610px;
+}
+
+#buller
+{
+	margin-left: 7px;
+	margin-top: 22px;
+	position: relative;
+}
+
+#u83
+{
+	z-index: 4;
+	width: 1280px;
+	height: 407px;
+	border-style: none;
+	border-color: transparent;
+	top: -4px;
+	margin-bottom: -4px;
+	position: relative;
+	background: transparent url("../images/buller.png") no-repeat center center;
+}
+
+#u111
+{
+	z-index: 10;
+	width: 68px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	margin-left: 610px;
+	margin-top: 28px;
+	position: relative;
+}
+
+#champagne
+{
+	margin-left: 7px;
+	margin-top: 138px;
+	position: relative;
+}
+
+#u97
+{
+	z-index: 5;
+	width: 239px;
+	height: 251px;
+	border-style: none;
+	border-color: transparent;
+	position: fixed;
+	top: 1274px;
+	left: 518px;
+	background: transparent url("../images/bouchon.png") no-repeat center center;
+}
+
+#pu121
+{
+	width: 0.01px;
+	margin-left: -115px;
+	margin-top: 46px;
+}
+
+#u121
+{
+	z-index: 2;
+	width: 992px;
+	height: 1110px;
+	border-style: none;
+	border-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	left: 174px;
+	background: transparent url("../images/etoiles.png") no-repeat center center;
+}
+
+#u90
+{
+	z-index: 7;
+	width: 1083px;
+	border-style: none;
+	border-color: transparent;
+	padding-bottom: 1438px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 412px;
+	left: 197px;
+	background: transparent url("../images/champ.png") no-repeat center top;
+}
+
+#u135
+{
+	z-index: 22;
+	width: 409px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: -101px;
+	left: 411px;
+}
+
+#u219
+{
+	z-index: 12;
+	width: 68px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	opacity: 0.4;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+	filter: alpha(opacity=40);
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 369px;
+	left: 1047px;
+}
+
+#u219:hover
+{
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	margin: 369px -10000px 0px 0px;
+}
+
+#u219.MuseLinkActive
+{
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	margin: 369px -10000px 0px 0px;
+}
+
+#u186
+{
+	z-index: 14;
+	border-style: none;
+	border-color: transparent;
+	background-color: #FFFFFF;
+	padding-bottom: 51px;
+}
+
+#u186_align_to_page
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1280px;
+	position: relative;
+	left: -100px;
+}
+
+#u282
+{
+	z-index: 37;
+	width: 16px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 53px;
+	left: 134px;
+}
+
+#u281-6
+{
+	z-index: 31;
+	width: 741px;
+	min-height: 18px;
+	background-color: transparent;
+	font-size: 12px;
+	color: #02021F;
+	line-height: 14px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 59px;
+	left: 159px;
+}
+
+#u281-2
+{
+	font-weight: bold;
+}
+
+#u186-bw
+{
+	z-index: 14;
+	margin-top: 2275px;
+	height: 77px;
+}
+
+#u205
+{
+	z-index: 17;
+	width: 68px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 165px;
+	left: 729px;
+}
+
+#pop
+{
+	position: relative;
+	width: 22px;
+	margin-right: -10000px;
+	margin-top: 147px;
+	left: 115px;
+}
+
+#footer
+{
+	position: relative;
+	width: 22px;
+	margin-right: -10000px;
+	margin-top: 1720px;
+	left: 126px;
+}
+
+#u147
+{
+	z-index: 26;
+	width: 811px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 473px;
+	left: 338px;
+}
+
+#u192
+{
+	z-index: 28;
+	width: 1280px;
+	border-style: none;
+	border-color: transparent;
+	padding-bottom: 12px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 1376px;
+	background: transparent url("../images/footer_fond_blanc.png") no-repeat center top;
+}
+
+#u153
+{
+	z-index: 29;
+	width: 248px;
+	background-color: transparent;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 659px;
+	left: 842px;
+}
+
+#u313
+{
+	z-index: 39;
+	width: 68px;
+	background-color: transparent;
+	opacity: 0.4;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+	filter: alpha(opacity=40);
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 2080px;
+	left: 1246px;
+}
+
+#pu141
+{
+	width: 0.01px;
+	padding-bottom: 277px;
+	margin-left: 221px;
+	margin-top: -2137px;
+}
+
+#u141
+{
+	z-index: 24;
+	width: 200px;
+	background-color: transparent;
+	position: fixed;
+	top: 1545px;
+	left: 221px;
+}
+
+.js #u83.ose_pre_init,.js #u111.ose_pre_init,.js #u97.ose_pre_init,.js #u121.ose_pre_init,.js #u135.ose_pre_init,.js #u205.ose_pre_init,.js #u147.ose_pre_init,.js #u141.ose_pre_init
+{
+	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+}
+
+#u204
+{
+	z-index: 6;
+	width: 207px;
+	height: 262px;
+	border-style: none;
+	border-color: transparent;
+	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	position: fixed;
+	top: 1560px;
+	left: 541px;
+	background: transparent url("../images/bouchon.png") no-repeat center center;
+}
+
+.js #u105.ose_pre_init,.js #u204.ose_pre_init
+{
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+}
+
+body
+{
+	position: relative;
+	min-width: 1280px;
+}
+
+#page .verticalspacer
+{
+	clear: both;
+}
+

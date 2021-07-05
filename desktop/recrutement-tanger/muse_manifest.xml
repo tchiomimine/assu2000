@@ -1,0 +1,84 @@
+<manifest alg="2" build="2015.1.2.344" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="www.assu2000.fr/recrutement-Tanger" resolutions="1x" timestamp="1465809541040">
+  <folder name="phone">
+    <folder name="css">
+      <file name="master_a-gabarit.css" crc="4279784061" ref="phone>index"/>
+      <file name="index.css" crc="4214248168" ref="phone>index"/>
+    </folder>
+    <file name="index.html" crc="519856591" seo="true" mt="1465809130290" redirect="true"/>
+  </folder>
+  <folder name="css">
+    <file name="site_global.css" crc="362465650"/>
+    <file name="master_a-gabarit.css" crc="131091023" ref="index"/>
+    <file name="index.css" crc="92584699" ref="index"/>
+  </folder>
+  <folder name="fonts">
+    <file name="calibri.woff" crc="3973106134"/>
+    <file name="calibri.eot" crc="4266804128"/>
+    <file name="calibri.svg" crc="4141281723"/>
+    <file name="calibri-light.woff" crc="3817725073"/>
+    <file name="calibri-light.eot" crc="43744311"/>
+    <file name="calibri-light.svg" crc="378688057"/>
+    <file name="damion-regular-webfont.woff" crc="250065446"/>
+    <file name="damion-regular-webfont.eot" crc="40803059"/>
+    <file name="damion-regular-webfont.svg" crc="318558757"/>
+    <file name="calibri-italic.woff" crc="260892900"/>
+    <file name="calibri-italic.eot" crc="4164984610"/>
+    <file name="calibri-italic.svg" crc="366439423"/>
+    <file name="calibri-bold.woff" crc="3929987727"/>
+    <file name="calibri-bold.eot" crc="287582244"/>
+    <file name="calibri-bold.svg" crc="4006702351"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="207176553" ref="index:phone>index"/>
+    <file name="museutils.js" crc="3790713428" ref="index:phone>index"/>
+    <file name="whatinput.js" crc="84559013" ref="index:phone>index"/>
+    <file name="pie.js" crc="3827607177" ref="index:phone>index"/>
+    <file name="webpro.js" crc="329496574" ref="index:phone>index"/>
+    <file name="musewpdisclosure.js" crc="4234230767" ref="index:phone>index"/>
+    <file name="jquery.watch.js" crc="4244854265" ref="index:phone>index"/>
+    <file name="jquery.scrolleffects.js" crc="4219894366" ref="index:phone>index"/>
+    <file name="museredirect.js" crc="71780213" ref="index"/>
+    <file name="musewpslideshow.js" crc="394033048" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="4265131668" ref="index"/>
+    <file name="touchswipe.js" crc="497316881" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="logo groupe.png" crc="509239839" seo="true" ref="index:phone>index"/>
+    <file name="hp-visuel3.jpg" crc="369315449" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index:phone>index"/>
+    <file name="formation.jpg" crc="4018341209" ref="index:phone>index"/>
+    <file name="formation-2.jpg" crc="3904032746" ref="index:phone>index"/>
+    <file name="2.jpg" crc="168408503" ref="index:phone>index"/>
+    <file name="2-actif.jpg" crc="365626868" ref="index:phone>index"/>
+    <file name="cdi.png" crc="3903433671" ref="index:phone>index"/>
+    <file name="cdi-actif.png" crc="3874770161" ref="index:phone>index"/>
+    <file name="typo.png" crc="329342090" seo="true" ref="index:phone>index"/>
+    <file name="en-savoir-.png" crc="17267202" ref="index:phone>index"/>
+    <file name="logo.jpg" crc="3975025136" seo="true" ref="index"/>
+    <file name="salaire-1.jpg" crc="3777925601" ref="index:phone>index"/>
+    <file name="salaire.jpg" crc="170597832" ref="index:phone>index"/>
+    <file name="croissance-1.jpg" crc="169813515" ref="index:phone>index"/>
+    <file name="croissance.jpg" crc="23413249" ref="index:phone>index"/>
+    <file name="team.jpg" crc="106221116" ref="index:phone>index"/>
+    <file name="team-2.jpg" crc="395554752" ref="index:phone>index"/>
+    <file name="u1120-grad.png" crc="358483344" ref="index"/>
+    <file name="poste-1.png" crc="4242982252" seo="true" ref="index"/>
+    <file name="poste-2.jpg" crc="175934138" seo="true" ref="index"/>
+    <file name="temoignage.png" crc="40805538" seo="true" ref="index:phone>index"/>
+    <file name="dialogue.png" crc="512188498" seo="true" ref="index:phone>index"/>
+    <file name="twitter.png" crc="111762373" seo="true" ref="index:phone>index"/>
+    <file name="google plus.png" crc="3999501239" seo="true" ref="index:phone>index"/>
+    <file name="facebook.png" crc="178157542" seo="true" ref="index:phone>index"/>
+    <file name="youtube.png" crc="66418722" seo="true" ref="index:phone>index"/>
+    <file name="fermer.png" crc="3908664992" ref="index:phone>index"/>
+    <file name="logo groupe-blanc.png" crc="3781543687" seo="true" ref="index:phone>index"/>
+    <file name="hp-visuel3-crop-u3117.jpg" crc="490972112" ref="phone>index"/>
+    <file name="logo-crop-u3108.jpg" crc="222882148" ref="phone>index"/>
+    <file name="poste-1-crop-u3309.png" crc="3837695476" ref="phone>index"/>
+    <file name="poste-2-crop-u3379.jpg" crc="3892381139" ref="phone>index"/>
+    <file name="u3387-grad.png" crc="4022052420" ref="phone>index"/>
+    <file name="loading.gif" crc="3815509949" ref="index"/>
+    <file name="u1170-grad.png" crc="4022052420" ref="index"/>
+  </folder>
+  <file name="index.html" crc="87098680" seo="true" mt="1465809532767" redirect="true"/>
+</manifest>

@@ -1,0 +1,136 @@
+#u3573
+{
+	background-color: #636265;
+}
+
+#u2912,#u3570
+{
+	background-color: transparent;
+}
+
+#u3579
+{
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-delay: 0s;
+	-webkit-transition-timing-function: ease;
+	transition-duration: 0.3s;
+	transition-delay: 0s;
+	transition-timing-function: ease;
+	background-image: url("../../images/blank.gif");
+	background-color: transparent;
+}
+
+#u3579:hover
+{
+	opacity: 0.79;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=79)";
+	filter: alpha(opacity=79);
+}
+
+#u3581
+{
+	-webkit-transition-duration: 0s;
+	-webkit-transition-delay: 0s;
+	transition-duration: 0s;
+	transition-delay: 0s;
+	background-image: url("../../images/blank.gif");
+	background-color: transparent;
+}
+
+#u3577
+{
+	-webkit-transition-duration: 0s;
+	-webkit-transition-delay: 0s;
+	transition-duration: 0s;
+	transition-delay: 0s;
+	background-image: url("../../images/blank.gif");
+	background-color: transparent;
+}
+
+#u3575
+{
+	-webkit-transition-duration: 0s;
+	-webkit-transition-delay: 0s;
+	transition-duration: 0s;
+	transition-delay: 0s;
+	background-image: url("../../images/blank.gif");
+	background-color: transparent;
+}
+
+#u3581:hover,#u3577:hover,#u3575:hover
+{
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-delay: 0s;
+	-webkit-transition-timing-function: ease;
+	transition-duration: 0.3s;
+	transition-delay: 0s;
+	transition-timing-function: ease;
+	opacity: 0.8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+}
+
+#u3572-30
+{
+	background-color: transparent;
+	text-align: center;
+	font-weight: 700;
+}
+
+#u3572-2
+{
+	font-size: 16px;
+	text-transform: uppercase;
+	line-height: 19px;
+	color: #636265;
+	font-family: '__Calibri_5';
+}
+
+#u3572-3
+{
+	text-transform: uppercase;
+	color: #636265;
+	font-family: '__Calibri_5';
+}
+
+#u3572-6,#u3572-10
+{
+	text-transform: uppercase;
+	color: #757675;
+	font-family: '__Oswald_5';
+	line-height: 0px;/* 0 for mixed font sized paras; applied on spans instead */
+}
+
+#u3572-4,#u3572-8
+{
+	font-size: 13px;
+	text-transform: none;
+	color: #757675;
+	font-family: '__Calibri_5';
+	font-weight: 700;
+	line-height: 25px;
+}
+
+#u3572-13,#u3572-16,#u3572-19,#u3572-22,#u3572-25,#u3572-28
+{
+	color: #757675;
+	font-family: '__Oswald_5';
+	line-height: 0px;/* 0 for mixed font sized paras; applied on spans instead */
+}
+
+#u3572-7,#u3572-11,#u3572-14,#u3572-17,#u3572-20,#u3572-23,#u3572-26
+{
+	font-size: 13px;
+	color: #757675;
+	font-family: '__Calibri_5';
+	font-weight: 700;
+	line-height: 25px;
+}
+
+#u3574
+{
+	border-width: 0px;
+	border-color: transparent;
+	background-color: transparent;
+}
+
