@@ -1,0 +1,1144 @@
+# MOD_DEFLATE COMPRESSION
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript application/x-httpd-php
+#Pour les navigateurs incompatibles
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+#ne pas mettre en cache si ces fichiers le sont déjà
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
+#les proxies doivent donner le bon contenu
+Header append Vary User-Agent env=!dont-vary
+
+####### controle du cache pour les images, js et css
+#
+# A86400 --> 24h avant expiration
+# A7200 --> 2h avant expiration
+# A604800 --> 1 semaine avant expiration
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    #ExpiresByType image/gif A14400
+    #ExpiresByType image/png A14400
+    #ExpiresByType image/jpg A14400
+    #ExpiresByType image/jpeg A14400
+    #ExpiresByType image/ico A604800
+    #ExpiresByType image/icon A604800
+    #ExpiresByType image/x-icon A604800
+    ExpiresByType text/css A86400
+    ExpiresByType text/javascript A604800
+    ExpiresByType application/x-shockwave-flash A604800
+    ExpiresByType text/html "access plus 7200 seconds"
+    ExpiresByType application/xhtml+xml "access plus 7200 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+## Mise en cache cache-control
+#  One minute: max-age=60
+#  One hour: max-age=3600
+#  One day: max-age=86400
+#  One week: max-age=604800
+#  One month: max-age=2628000
+#  30 days : max-age=2592000
+#  One year: max-age=31536000
+	<FilesMatch "\\.(ico|jpe?g|png|gif|swf)$">
+		Header set Cache-Control "max-age=2592000, public"
+	</FilesMatch>
+	<FilesMatch "\\.(css)$">
+		Header set Cache-Control "max-age=2592000, public"
+	</FilesMatch>
+	<FilesMatch "\\.(js)$">
+		Header set Cache-Control "max-age=2592000, private"
+	</FilesMatch>
+	<FilesMatch "\\.(x?html?|php)$">
+		Header set Cache-Control "max-age=600, private, must-revalidate"
+	</FilesMatch>
+    <FilesMatch "\\.(pdf)$">
+      Header set X-Robots-Tag "noindex"
+    </FilesMatch>
+</IfModule>
+
+Header unset ETag
+FileETag None
+
+DirectoryIndex index.html index.php
+ErrorDocument 404 /erreur-404.html
+ErrorDocument 503 /erreur-503.html
+
+#AddType application/octet-stream .pdf 
+#Options +FollowSymLinks
+
+RewriteEngine On
+#RewriteBase /
+
+DefaultType text/html
+
+RedirectMatch 404 "(?:.*)/(?:\.git|readme\.md)(?:/.*)?$"
+
+######## Redirection index.html index.php index.asp vers /
+#
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.(html|php|asp)\ HTTP/
+RewriteRule ^(.*)index\.(html|php|asp)$ /$1 [R=301,L]
+
+######## POUR FLORENT
+#
+RewriteRule apache-balancer-manager - [L]
+RewriteRule apache-status-balancer - [L]
+
+######## Redirection http quand on n'est pas dans formulaire
+#
+#RewriteCond %{HTTPS} off
+#RewriteCond %{REQUEST_URI} ^/devis-assurance-(.*)$
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [NC,R=301,L]
+
+#RewriteCond %{HTTPS} on
+#RewriteCond %{REQUEST_URI} !^/devis-assurance-(.*)$
+#RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|png|php|eot|ttf|woff|ico)$
+#RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1 [NC,R=301,L]
+
+######## Redirection en prod
+#
+
+## recharger devis partenaires
+RewriteCond %{REQUEST_URI} ^/partenaire/devis-partenaire(Auto|Moto|Mrh|Santé|Animal).html
+RewriteRule ^(.*)$ /devis-assurance-en-ligne.html [R=301,L]
+
+#espace perso
+RewriteCond %{REQUEST_URI} /espace-personnel$
+RewriteRule .* https://%{HTTP_HOST}/Proximeo/connexionClient\.do [R=301,L]
+#RewriteRule .* http://%{HTTP_HOST}/Proximeo/connexionClient\.do [R=301,L]
+
+RewriteCond %{REQUEST_URI} /formulaire-client.html$
+RewriteRule .* https://%{HTTP_HOST}/Proximeo/recevoirDocument.do?pageInformation=true [R=301,L]
+#RewriteRule .* http://%{HTTP_HOST}/Proximeo/recevoirDocument.do?pageInformation=true [R=301,L]
+
+RewriteCond %{REQUEST_URI} /contact/service-consommateur.html$ [OR]
+RewriteCond %{REQUEST_URI} /contact/service-consommateur$
+RewriteRule .* https://%{HTTP_HOST}/Proximeo/creerProspectForWeb\.do?selectedTheme=prospect [R=301,L]
+#RewriteRule .* http://%{HTTP_HOST}/Proximeo/creerProspectForWeb\.do?selectedTheme=prospect [R=301,L]
+
+#devis-assurance-scolaire
+#RewriteCond %{REQUEST_URI} ^/devis-assurance-scolaire$ [OR]
+#RewriteCond %{REQUEST_URI} ^/devis-assurance-scolaire/$
+#RewriteRule .* https://%{HTTP_HOST}/Proximeo/chargerDevisScolForWeb\.do [R=301,L]
+
+#RewriteCond %{REQUEST_URI} ^/proximeo(.*)$
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}/Proximeo$1 [NC,R=301,L]
+
+#Les agences ne peuvent lire les PDF
+RewriteCond %{REMOTE_ADDR} ^10\.5([0-9]?)\.([0-9]?[0-9])\.([0-9]?[0-9])
+RewriteRule ^/?images/(.*)\.pdf$ - [NC,F,L]
+
+# probleme URL dossier auquel il manque / à la fin
+RewriteRule ^auto$ /assurance-auto/ [R=301,L]
+RewriteRule ^assurance-auto$ /assurance-auto/ [R=301,L]
+RewriteRule ^moto$ /assurance-moto/ [R=301,L]
+RewriteRule ^scooter$ /assurance-scooter/ [R=301,NC,L]
+RewriteRule ^cyclo$ /assurance-cyclo/ [R=301,L]
+RewriteRule ^vsp$ /assurance-voiture-sans-permis/ [R=301,L]
+RewriteRule ^habitation$ /assurance-habitation/ [R=301,L]
+RewriteRule ^prevoyance$ /assurance-prevoyance/ [R=301,L]
+RewriteRule ^scolaire$ /assurance-scolaire/ [R=301,L]
+RewriteRule ^campingcar$ /assurance-camping-car/ [R=301,L]
+RewriteRule ^sante$ /mutuelle/ [R=301,L]
+RewriteRule ^assurance-sante$ /mutuelle/ [R=301,L]
+RewriteRule ^assurance-sante/$ /mutuelle/ [R=301,L]
+
+RewriteRule ^phpsqlsearch_genxml.php /? [R=301,L]
+RewriteRule ^index[0-9]$ / [R=301,L]
+RewriteRule ^le-groupe-assu-2000$ /qui-sommes-nous.html [R=301,L]
+RewriteRule ^le-groupe-assu-2000/carte-assu-2000-service/$ /carte-interactive.html [R=301,L]
+RewriteRule ^les-services/service-client/79-nous-rejoindre/71-mot-president.html$ /les-services/service-client.html [R=301,L]
+RewriteRule ^les-services/service-client/79-nous-rejoindre$ /les-services/service-client.html [R=301,L]
+
+RewriteRule ^nous-rejoindre$ https://www.groupeassu2000.fr/carrieres [R=301,L]
+RewriteRule ^nous-rejoindre/les-offres/$ https://www.groupeassu2000.fr/carrieres [R=301,L]
+RewriteRule ^nous-rejoindre/79-nous-rejoindre$ https://www.groupeassu2000.fr/carrieres [R=301,L]
+RewriteRule ^nous-rejoindre/79-nous-rejoindre/71-mot-president$ /les-services/mot-president.html [R=301,L]
+RewriteRule ^nous-rejoindre/ https://www.groupeassu2000.fr/carrieres [R=301,L]
+RewriteRule ^nos-offres-emploi.html$ https://www.groupeassu2000.fr/carrieres [R=301,L]
+RewriteRule ^groupe$ https://www.groupeassu2000.fr [R=301,L]
+RewriteRule ^groupe\/$ https://www.groupeassu2000.fr [R=301,L]
+RewriteRule ^blog$ https://www.groupeassu2000.fr/corporate/blog-actu [R=301,L]
+RewriteRule ^blog\/$ https://www.groupeassu2000.fr/corporate/blog-actu [R=301,L]
+
+
+RewriteRule ^actualites/130-avril-2012--elargissement-du-produit-auto$ /actualites/130-avril-2012-elargissement-du-produit-auto.html [R=301,L]
+RewriteRule ^actualites/673-janvier-2013-prolongation-offre-sante.html$ /actualites/685-janvier-2014-prolongation-offre-sante.html [R=301,L]
+RewriteRule ^actualites/685-janvier-2013-prolongation-offre-sante.html$ /actualites/685-janvier-2014-prolongation-offre-sante.html [R=301,L]
+RewriteRule ^actualites/231-mars-2013--un-nouveau-logo- /actualites/231-mars-2013-un-nouveau-logo.html [R=301,L]
+RewriteRule ^qui-sommes-nous$ /qui-sommes-nous.html? [R=301,L]
+
+RewriteRule ^pages-orphelines.html /plan-du-site.html [R=301,L]
+RewriteRule ^promo.html$ / [R=301,L]
+RewriteRule ^promo2.html$ / [R=301,L]
+RewriteRule ^promo3.html$ / [R=301,L]
+RewriteRule ^nos-offres/ / [R=301,L]
+RewriteRule ^nos-offres/9-uncategorised$ / [R=301,L]
+RewriteRule ^chien-chat$ / [R=301,L]
+RewriteRule ^assurance-chien-chat/ / [R=301,L]
+RewriteRule ^assurance-scooter.html$ /assurance-scooter/? [R=301,L]
+RewriteRule ^scooter.html$ /assurance-scooter/? [R=301,NC,L]
+
+RewriteRule ^un-succes-debute.html / [R=301,L]
+RewriteRule ^glossaire/ /? [R=301,L]
+RewriteRule ^les-services/service-comptabilite/ /? [R=301,L]
+
+RewriteRule ^actualites$ /actualites/ [R=301,L]
+RewriteRule ^newsletter$ /newsletter/ [R=301,L]
+RewriteRule ^le-groupe-assu-2000/contactez-nous(.*) /contact/ [R=301,L]
+RewriteRule ^contact$ /contact/ [R=301,L]
+RewriteRule ^le-groupe-assu-2000/twitter/$ https://twitter.com/assu2000 [R=301,L]
+RewriteRule ^le-groupe-assu-2000/twitter-explique/$ https://twitter.com/assu2000 [R=301,L]
+RewriteRule ^le-groupe-assu-2000/presentation$ /qui-sommes-nous.html [R=301,L]
+RewriteRule ^le-groupe-assu-2000/presentation.html$ /qui-sommes-nous.html [R=301,L]
+
+RewriteRule ^mon-compte.html$ /espace-personnel [R=301,L]
+
+RewriteRule ^images/stories/pdf/reduction-assurance-auto-assu2000.pdf$ /images/assu_bon_reduc/bon_reduction_auto.pdf [R=301,L] 
+
+RewriteRule ^voeux2013/$ / [R=301,L] 
+RewriteRule ^voeux-2014/$ / [R=301,L] 
+RewriteRule ^voeux-2015/$ /images/voeux-2015/ [L] 
+RewriteRule ^voeuxgroupe-2015/$ /images/voeuxgroupe-2015/ [L] 
+
+RewriteRule ^credit--copyright/$ /copyright.html [R=301,L] 
+
+RewriteRule ^newsletter/la-question-du-mois$ /newsletter/la-question-du-mois/ [R=301,L]
+RewriteRule ^newsletter/le-billet-du-mois$ /newsletter/le-billet-du-mois/ [R=301,L]
+RewriteRule ^newsletter/le-chiffre-du-mois$ /newsletter/le-chiffre-du-mois/ [R=301,L]
+RewriteRule ^newsletter/le-journal-dassu-2000$ /newsletter/le-journal-dassu-2000/ [R=301,L]
+RewriteRule ^newsletter/les-news-du-mois$ /newsletter/les-news-du-mois/ [R=301,L]
+RewriteRule ^newsletter/zoom-sur$ /newsletter/zoom-sur/ [R=301,L]
+
+RewriteRule ^actualites/133-juin-2012--lassistance-0-km$ /actualites/133-juin-2012-lassistance-0-km.html [R=301,L]
+RewriteRule ^assurance-auto/effectuer-devis-auto-euro-assurance.html$ /devis-auto/ [R=301,L]
+RewriteRule ^assurance-voiture-sans-permis/effectuer-devis-voiture-sans-permis-euro-assurance.html$ /devis-vsp/ [R=301,L]
+RewriteRule ^assurance-moto/effectuer-devis-moto-euro-assurance.html$ /devis-moto/ [R=301,L]
+RewriteRule ^assurance-cyclo/effectuer-devis-cyclo-euro-assurance.html$ /devis-cyclo/ [R=301,L]
+RewriteRule annonces-jaunes-devis-assurance-auto /devis-auto/ [R=301,L]
+RewriteRule annonces-jaunes-devis-assurance-moto /devis-moto/ [R=301,L]
+RewriteRule carte-interactive-annonces-jaunes-moto /assurance-moto/ [R=301,L]
+RewriteRule carte-interactive-annonces-jaunes-auto /assurance-auto/ [R=301,L]
+RewriteRule ^assurance-auto-temporaire.html$ /assurance-auto/ [R=301,L]
+
+RewriteRule ^garantie-electromenager$ /? [R=301,L]
+RewriteRule ^nos-offres/79-nous-rejoindre.html$ /? [R=301,L]
+
+RewriteRule ^nous-rejoindre/les-metiers/$ /les-services/ [R=301,L]
+
+RewriteRule ^un-reseau-de-proximite-de-plus-de-400-agences.html$ /groupe/ [R=301,L]
+RewriteRule ^partenaires-assurances-assu2000.html$ /groupe/ [R=301,L]
+RewriteRule ^un-succes-debute-il-y-a-pres-de-40-ans(\.html)?$ /groupe/ [R=301,L]
+RewriteRule ^un-succes-debute-il-y-a-plus-de-35-ans.html$ /groupe/ [R=301,L]
+RewriteRule ^le-groupe-assu-2000/presentation/$ /groupe/ [R=301,L]
+RewriteRule ^le-groupe-assu-2000/partenaires-assurances-assu2000/ /groupe/ [R=301,L]
+
+RewriteRule ^devis/habitation.html$ /assurance-habitation/ [R=301,L]
+RewriteRule ^devis/garantie-electromenager-et-audiovisuel/ /assurance-habitation/ [R=301,L]
+RewriteRule ^garantie-electromenager/synthese(\/?) /assurance-habitation/ [R=301,L]
+RewriteRule ^garantie-electromenager/details/ /assurance-habitation/ [R=301,L]
+RewriteRule ^les-services/service-rh/index.php$ /les-services/service-rh.html? [R=301,L]
+RewriteRule ^nos-offres/9-uncategorised/122-vous-souhaitez-effectuer-un-devis-auto-sur-le-site-de-notre-partenaire-euro-assurance.html$ /devis-auto/ [R=301,L]
+RewriteRule ^assurance-habitation/effectuer-devis-habitation-euro-assurance.html$ /assurance-habitation/ [R=301,L]
+RewriteRule ^devis/sante$ /mutuelle/ [R=301,L]
+RewriteRule ^mutuelle.html$ /mutuelle/ [R=301,L]
+RewriteRule ^mutuelle/effectuer-devis-sante-euro-assurance.html$ /mutuelle/ [R=301,L]
+RewriteRule ^assurance-prevoyance/details.html$ /assurance-prevoyance/ [R=301,L]
+RewriteRule ^assurance-habitation/details$ /assurance-habitation/ [R=301,L]
+RewriteRule ^les-services/service-(.*)/79-nous-rejoindre.html /les-services/service-$1.html? [R=301,L]
+RewriteRule ^les-services/service-informatique/ /les-services/service-informatique.html? [R=301,L]
+RewriteRule ^les-services/service-rh/ /les-services/service-rh.html? [R=301,L]
+RewriteRule ^nous-rejoindre/candidature-spontanee/ /candidature-spontanee.html? [R=301,L]
+RewriteRule ^nous-rejoindre/candidature-spontanee.html /candidature-spontanee.html? [R=301,L]
+
+RewriteRule ^prevoyance/ /assurance-prevoyance/? [R=301,L]
+RewriteRule ^assurance-au-quotidien/ /actualites/? [R=301,L]
+RewriteRule ^le-groupe-assu-2000/news/$ /actualites/? [R=301,L]
+RewriteRule ^assurance-scooter-50cm3/synthese$ /assurance-scooter/ [R=301,L]
+RewriteRule ^assurance-scooter-50cm3/synthese.html$ /assurance-scooter/ [R=301,L]
+RewriteRule ^credit-et-copyright$ /copyright.html [R=301,L]
+RewriteRule ^actualites/214-janvier-2013--meilleurs-voeux-.html$ /actualites/214-janvier-2013-meilleurs-voeux.html [R=301,L]
+RewriteRule ^devis/auto.html$ /devis-auto/ [R=301,L]
+RewriteRule ^sport-sante/fit-challenge$ sport-sante/fit-challenge/ [R=301,L]
+
+#2014-06-30 redirection de tout sport vers la timeline
+RewriteRule ^sport/(.+)$  /sport/? [R=301,L]
+RewriteRule ^sport-sante/$  /sport/? [R=301,L]
+
+RewriteRule ^scolaire.html$  /assurance-scolaire/? [R=301,L]
+RewriteRule ^images/assu2000_dg_sante_biopass.pdf$  /images/assu2000_dg_sante.pdf [R=301,L]
+RewriteRule ^images/assu2000_dg_sante_biopass_tns.pdf$  /images/assu2000_dg_sante.pdf [R=301,L]
+
+RewriteRule ^assurance-vie.html$  http://%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^assurance-vie$  http://%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^rhda2(.+)$  /nos-offres-emploi.html? [R=301,L]
+
+RewriteRule 79-nous-rejoindre.html(.+)$  /nos-offres-emploi.html? [R=301,L]
+
+RewriteRule ^glossaire/$  http://%{HTTP_HOST}/? [R=301,L]
+RewriteRule ^sportpage-(.*).html$  /sport/? [R=301,L]
+RewriteRule ^assurance-scolaire.html$  /assurance-scolaire/? [R=301,L]
+RewriteRule ^assurance-scolaire/devis/$ /assurance-scolaire/ [R=301,L]
+RewriteRule ^assurance-scolaire-avantages.html$ /assurance-scolaire/avantages.html [R=301,L]
+RewriteRule ^sport.html$  /sport/? [R=301,L]
+RewriteRule ^WebAssu2000/(.*)$  http://%{HTTP_HOST}/? [R=301,L]
+RewriteRule ^images/stories/pdf/reduction-assurance.html$  /promotion-avantage-assurance.html? [R=301,L]
+RewriteRule ^assurance-voiture-sans-permis-habitation.html$ /promotion-avantage-assurance.html? [R=301,L]
+RewriteRule ^les-services/service-client/index.php$  /groupe/? [R=301,L]
+RewriteRule ^apply.html$  http://%{HTTP_HOST}/? [R=301,L]
+RewriteRule ^carte-interactive-annonces-jaunes-Auto.html$  /carte-interactive.html? [R=301,L]
+RewriteRule ^voeux2013/assu-grp.html$  /groupe/? [R=301,L]
+RewriteRule ^assurance-laval-vieux-saint-louis-(.*)$ http://agence.assu2000.fr/253434-assu-2000-laval [R=301,L]
+
+######## Redirection nlles pages Agences leadformances
+#
+RewriteRule ^agences/$ http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-agen-assu-2000.html http://agence.assu2000.fr/253303-assu-2000-agen? [R=301,L,NC]
+RewriteRule ^assurance-aix-en-provence-assu-2000.html http://agence.assu2000.fr/253391-assu-2000-aix-en-provence? [R=301,L,NC]
+RewriteRule ^assurance-albi-assu-2000.html http://agence.assu2000.fr/253290-assu-2000-albi? [R=301,L,NC]
+RewriteRule ^assurance-ales-assu-2000.html http://agence.assu2000.fr/253270-assu-2000-ales? [R=301,L,NC]
+RewriteRule ^assurance-alfortville-assu-2000.html http://agence.assu2000.fr/253150-assu-2000-alfortville? [R=301,L,NC]
+RewriteRule ^assurance-amiens-leclerc-assu-2000.html http://agence.assu2000.fr/253403-assu-2000-amiens-leclerc? [R=301,L,NC]
+RewriteRule ^assurance-amiens-noyon-assu-2000.html http://agence.assu2000.fr/253185-assu-2000-amiens-noyon? [R=301,L,NC]
+RewriteRule ^assurance-angers-europe-assu-2000.html http://agence.assu2000.fr/253351-assu-2000-angers-europe? [R=301,L,NC]
+RewriteRule ^assurance-angers-foch-assu-2000.html http://agence.assu2000.fr/253352-assu-2000-angers-foch? [R=301,L,NC]
+RewriteRule ^assurance-angouleme-assu-2000.html http://agence.assu2000.fr/253327-assu-2000-angouleme? [R=301,L,NC]
+RewriteRule ^assurance-annecy-assu-2000.html http://agence.assu2000.fr/253439-assu-2000-annecy? [R=301,L,NC]
+RewriteRule ^assurance-antibes-assu-2000.html http://agence.assu2000.fr/253278-assu-2000-antibes? [R=301,L,NC]
+RewriteRule ^assurance-antony-assu-2000.html http://agence.assu2000.fr/253123-assu-2000-antony? [R=301,L,NC]
+RewriteRule ^assurance-arcueil-assu-2000.html http://agence.assu2000.fr/253086-assu-2000-arcueil? [R=301,L,NC]
+RewriteRule ^assurance-argenteuil-assu-2000.html http://agence.assu2000.fr/253099-assu-2000-argenteuil? [R=301,L,NC]
+RewriteRule ^assurance-arles-assu-2000.html http://agence.assu2000.fr/253295-assu-2000-arles? [R=301,L,NC]
+RewriteRule ^assurance-armentieres-assu-2000.html http://agence.assu2000.fr/253184-assu-2000-armentieres? [R=301,L,NC]
+RewriteRule ^assurance-arpajon-assu-2000.html http://agence.assu2000.fr/253402-assu-2000-arpajon? [R=301,L,NC]
+RewriteRule ^assurance-arras-assu-2000.html http://agence.assu2000.fr/253181-assu-2000-arras? [R=301,L,NC]
+RewriteRule ^assurance-asnieres-sur-seine-assu-2000.html http://agence.assu2000.fr/253087-assu-2000-asnieres-sur-seine? [R=301,L,NC]
+RewriteRule ^assurance-athis-mons-assu-2000.html http://agence.assu2000.fr/253162-assu-2000-athis-mons? [R=301,L,NC]
+RewriteRule ^assurance-aubagne-assu-2000.html http://agence.assu2000.fr/253243-assu-2000-aubagne? [R=301,L,NC]
+RewriteRule ^assurance-aubervilliers-assu-2000.html http://agence.assu2000.fr/253171-assu-2000-aubervilliers? [R=301,L,NC]
+RewriteRule ^assurance-audincourt-assu-2000.html http://agence.assu2000.fr/253409-assu-2000-audincourt? [R=301,L,NC]
+RewriteRule ^assurance-aulnay-sous-bois-assu-2000.html http://agence.assu2000.fr/253083-assu-2000-aulnay-sous-bois? [R=301,L,NC]
+RewriteRule ^assurance-auxerre-assu-2000.html http://agence.assu2000.fr/253387-assu-2000-auxerre? [R=301,L,NC]
+RewriteRule ^assurance-avignon-saint-ruf-assu-2000.html http://agence.assu2000.fr/253267-assu-2000-avignon-saint-ruf? [R=301,L,NC]
+RewriteRule ^assurance-avignon-thiers-assu-2000.html http://agence.assu2000.fr/253302-assu-2000-avignon-thiers? [R=301,L,NC]
+RewriteRule ^assurance-bar-le-duc-assu-2000.html http://agence.assu2000.fr/253368-assu-2000-bar-le-duc? [R=301,L,NC]
+RewriteRule ^assurance-bayonne-assu-2000.html http://agence.assu2000.fr/253348-assu-2000-bayonne? [R=301,L,NC]
+RewriteRule ^assurance-beauvais-assu-2000.html http://agence.assu2000.fr/253180-assu-2000-beauvais? [R=301,L,NC]
+RewriteRule ^assurance-belfort-assu-2000.html http://agence.assu2000.fr/253280-assu-2000-belfort? [R=301,L,NC]
+RewriteRule ^assurance-bergerac-assu-2000.html http://agence.assu2000.fr/253356-assu-2000-bergerac? [R=301,L,NC]
+RewriteRule ^assurance-besancon-belfort-assu-2000.html http://agence.assu2000.fr/253309-assu-2000-besancon-est? [R=301,L,NC]
+RewriteRule ^assurance-besancon-dole-assu-2000.html http://agence.assu2000.fr/253333-assu-2000-besancon-ouest? [R=301,L,NC]
+RewriteRule ^assurance-bethune-assu-2000.html http://agence.assu2000.fr/253176-assu-2000-bethune? [R=301,L,NC]
+RewriteRule ^assurance-beziers-clemenceau-assu-2000.html http://agence.assu2000.fr/253380-assu-2000-beziers-clemenceau? [R=301,L,NC]
+RewriteRule ^assurance-beziers-garibaldi-assu-2000.html http://agence.assu2000.fr/253372-assu-2000-beziers-garibaldi? [R=301,L,NC]
+RewriteRule ^assurance-blois-assu-2000.html http://agence.assu2000.fr/253419-assu-2000-blois? [R=301,L,NC]
+RewriteRule ^assurance-bobigny-assu-2000.html http://agence.assu2000.fr/253141-assu-2000-bobigny? [R=301,L,NC]
+RewriteRule ^assurance-bondy-assu-2000.html http://agence.assu2000.fr/253082-assu-2000-bondy? [R=301,L,NC]
+RewriteRule ^assurance-bordeaux-marne-assu-2000.html http://agence.assu2000.fr/253315-assu-2000-bordeaux-marne? [R=301,L,NC]
+RewriteRule ^assurance-bordeaux-portal-assu-2000.html http://agence.assu2000.fr/253321-assu-2000-bordeaux-portal? [R=301,L,NC]
+RewriteRule ^assurance-bordeaux-stalingrad-assu-2000.html http://agence.assu2000.fr/253316-assu-2000-bordeaux-stalingrad? [R=301,L,NC]
+RewriteRule ^assurance-boulogne-assu-2000.html http://agence.assu2000.fr/253129-assu-2000-boulogne? [R=301,L,NC]
+RewriteRule ^assurance-boulogne-sur-mer-assu-2000.html http://agence.assu2000.fr/253197-assu-2000-boulogne-sur-mer? [R=301,L,NC]
+RewriteRule ^assurance-bourg-en-bresse-assu-2000.html http://agence.assu2000.fr/253223-assu-2000-bourg-en-bresse? [R=301,L,NC]
+RewriteRule ^assurance-bourg-la-reine-assu-2000.html http://agence.assu2000.fr/253160-assu-2000-bourg-la-reine? [R=301,L,NC]
+RewriteRule ^assurance-bourgoin-jallieu-assu-2000.html http://agence.assu2000.fr/253225-assu-2000-bourgoin-jallieu? [R=301,L,NC]
+RewriteRule ^assurance-brest-jaures-assu-2000.html http://agence.assu2000.fr/253252-assu-2000-brest-jaures? [R=301,L,NC]
+RewriteRule ^assurance-brest-porte-assu-2000.html http://agence.assu2000.fr/253281-assu-2000-brest-porte? [R=301,L,NC]
+RewriteRule ^assurance-bretigny-sur-orge-assu-2000.html http://agence.assu2000.fr/253393-assu-2000-bretigny-sur-orge? [R=301,L,NC]
+RewriteRule ^assurance-brignoles-assu-2000.html http://agence.assu2000.fr/253411-assu-2000-brignoles? [R=301,L,NC]
+RewriteRule ^assurance-brive-la-gaillarde-assu-2000.html http://agence.assu2000.fr/253347-assu-2000-brive-la-gaillarde? [R=301,L,NC]
+RewriteRule ^assurance-bron-assu-2000.html http://agence.assu2000.fr/253204-assu-2000-bron? [R=301,L,NC]
+RewriteRule ^assurance-bruay-la-buissiere-assu-200(.*) http://agence.assu2000.fr/253357-assu-2000-bruay-la-buissiere? [R=301,L,NC]
+RewriteRule ^assurance-caen-saint-jean-assu-2000.html http://agence.assu2000.fr/253224-assu-2000-caen-saint-jean? [R=301,L,NC]
+RewriteRule ^assurance-caen-vaucelles-assu-2000.html http://agence.assu2000.fr/253435-assu-2000-caen-vaucelles? [R=301,L,NC]
+RewriteRule ^assurance-cagnes-sur-mer-assu-2000.html http://agence.assu2000.fr/253291-assu-2000-cagnes-sur-mer? [R=301,L,NC]
+RewriteRule ^assurance-cahors-assu-2000.html http://agence.assu2000.fr/253346-assu-2000-cahors? [R=301,L,NC]
+RewriteRule ^assurance-calais-assu-2000.html http://agence.assu2000.fr/253209-assu-2000-calais? [R=301,L,NC]
+RewriteRule ^assurance-cambrai-assu-2000.html http://agence.assu2000.fr/253178-assu-2000-cambrai? [R=301,L,NC]
+RewriteRule ^assurance-cannes-jaures-assu-2000.html http://agence.assu2000.fr/253318-assu-2000-cannes? [R=301,L,NC]
+RewriteRule ^assurance-cannes-la-bocca-assu-2000.html http://agence.assu2000.fr/253274-assu-2000-cannes-la-bocca? [R=301,L,NC]
+RewriteRule ^assurance-carcassonne-assu-2000.html http://agence.assu2000.fr/253354-assu-2000-carcassonne? [R=301,L,NC]
+RewriteRule ^assurance-carpentras-assu-2000.html http://agence.assu2000.fr/253259-assu-2000-carpentras? [R=301,L,NC]
+RewriteRule ^assurance-carvin-assu-2000.html http://agence.assu2000.fr/253406-assu-2000-carvin? [R=301,L,NC]
+RewriteRule ^assurance-castres-assu-2000.html http://agence.assu2000.fr/253294-assu-2000-castres? [R=301,L,NC]
+RewriteRule ^assurance-cavaillon-assu-2000.html http://agence.assu2000.fr/253331-assu-2000-cavaillon? [R=301,L,NC]
+RewriteRule ^assurance-cergy-prefecture-assu-2000.html http://agence.assu2000.fr/253161-assu-2000-cergy-prefecture? [R=301,L,NC]
+RewriteRule ^assurance-cergy-saint-christophe-assu-2000.html http://agence.assu2000.fr/253398-assu-2000-cergy-saint-christophe? [R=301,L,NC]
+RewriteRule ^assurance-chalon-sur-saone-assu-2000.html http://agence.assu2000.fr/253336-assu-2000-chalon-sur-saone? [R=301,L,NC]
+RewriteRule ^assurance-chalon-en-champagne-assu-2000.html http://agence.assu2000.fr/253191-assu-2000-chalons-en-champagne? [R=301,L,NC]
+RewriteRule ^assurance-chambery-assu-2000.html http://agence.assu2000.fr/253220-assu-2000-chambery? [R=301,L,NC]
+RewriteRule ^assurance-champigny-assu-2000.html http://agence.assu2000.fr/253133-assu-2000-champigny-sur-marne? [R=301,L,NC]
+RewriteRule ^assurance-charleville-mezieres-assu-2000.html http://agence.assu2000.fr/253371-assu-2000-charleville-mezieres? [R=301,L,NC]
+RewriteRule ^assurance-chartres-assu-2000.html http://agence.assu2000.fr/253300-assu-2000-chartres? [R=301,L,NC]
+RewriteRule ^assurance-chatellerault-assu-2000.html http://agence.assu2000.fr/253392-assu-2000-chatellerault? [R=301,L,NC]
+RewriteRule ^assurance-chaumont-assu-2000.html http://agence.assu2000.fr/253401-assu-2000-chaumont? [R=301,L,NC]
+RewriteRule ^assurance-chauny-assu-2000.html http://agence.assu2000.fr/253186-assu-2000-chauny? [R=301,L,NC]
+RewriteRule ^assurance-chelles-assu-2000.html http://agence.assu2000.fr/253119-assu-2000-chelles? [R=301,L,NC]
+RewriteRule ^assurance-cherbourg-octeville-assu-2000.html http://agence.assu2000.fr/253440-assu-2000-cherbourg-octeville? [R=301,L,NC]
+RewriteRule ^assurance-choisy-assu-2000.html http://agence.assu2000.fr/253096-assu-2000-choisy-le-roi? [R=301,L,NC]
+RewriteRule ^assurance-cholet-assu-2000.html http://agence.assu2000.fr/253342-assu-2000-cholet? [R=301,L,NC]
+RewriteRule ^assurance-clamart-assu-2000.html http://agence.assu2000.fr/253146-assu-2000-clamart? [R=301,L,NC]
+RewriteRule ^assurance-clermont-ferrand-gaillard-assu-2000.html http://agence.assu2000.fr/253426-assu-2000-clermont-ferrand-gaillard? [R=301,L,NC]
+RewriteRule ^assurance-clermont-ferrand-lafayette-assu-2000.html http://agence.assu2000.fr/253425-assu-2000-clermont-ferrand-lafayette? [R=301,L,NC]
+RewriteRule ^assurance-clichy-assu-2000.html http://agence.assu2000.fr/253156-assu-2000-clichy? [R=301,L,NC]
+RewriteRule ^assurance-colmar-assu-2000.html http://agence.assu2000.fr/253311-assu-2000-colmar? [R=301,L,NC]
+RewriteRule ^assurance-colombes-assu-2000.html http://agence.assu2000.fr/253109-assu-2000-colombes? [R=301,L,NC]
+RewriteRule ^assurance-colomiers-assu-2000.html http://agence.assu2000.fr/253312-assu-2000-colomiers? [R=301,L,NC]
+RewriteRule ^assurance-compiegne-assu-2000.html http://agence.assu2000.fr/253195-assu-2000-compiegne? [R=301,L,NC]
+RewriteRule ^assurance-conflans-sainte-honorine-as(.*) http://agence.assu2000.fr/253145-assu-2000-conflans-sainte-honorine? [R=301,L,NC]
+RewriteRule ^assurance-corbeil-essonnes-assu-2000.html http://agence.assu2000.fr/253137-assu-2000-corbeil-essonnes? [R=301,L,NC]
+RewriteRule ^assurance-coulommiers-assu-2000.html http://agence.assu2000.fr/253389-assu-2000-coulommiers? [R=301,L,NC]
+RewriteRule ^assurance-courbevoie-assu-2000.html http://agence.assu2000.fr/253088-assu-2000-courbevoie? [R=301,L,NC]
+RewriteRule ^assurance-creil-assu-2000.html http://agence.assu2000.fr/253152-assu-2000-creil? [R=301,L,NC]
+RewriteRule ^assurance-creteil-assu-2000.html http://agence.assu2000.fr/253098-assu-2000-creteil? [R=301,L,NC]
+RewriteRule ^assurance-dax-assu-2000.html http://agence.assu2000.fr/253422-assu-2000-dax? [R=301,L,NC]
+RewriteRule ^assurance-decines-assu-2000.html http://agence.assu2000.fr/253241-assu-2000-decines? [R=301,L,NC]
+RewriteRule ^assurance-dieppe-assu-2000.html http://agence.assu2000.fr/253230-assu-2000-dieppe? [R=301,L,NC]
+RewriteRule ^assurance-dijon-auxonne-assu-2000.html http://agence.assu2000.fr/253332-assu-2000-dijon-auxone? [R=301,L,NC]
+RewriteRule ^assurance-dijon-rousseau-assu-2000.html http://agence.assu2000.fr/253325-assu-2000-dijon-rousseau? [R=301,L,NC]
+RewriteRule ^assurance-dole-assu-2000.html http://agence.assu2000.fr/253361-assu-2000-dole? [R=301,L,NC]
+RewriteRule ^assurance-douai-assu-2000.html http://agence.assu2000.fr/253172-assu-2000-douai? [R=301,L,NC]
+RewriteRule ^assurance-draguignan-assu-2000.html http://agence.assu2000.fr/253265-assu-2000-draguignan? [R=301,L,NC]
+RewriteRule ^assurance-drancy-assu-2000.html http://agence.assu2000.fr/253102-assu-2000-drancy? [R=301,L,NC]
+RewriteRule ^assurance-dreux-assu-2000.html http://agence.assu2000.fr/253257-assu-2000-dreux? [R=301,L,NC]
+RewriteRule ^assurance-dunkerque-assu-2000.html http://agence.assu2000.fr/253196-assu-2000-dunkerque? [R=301,L,NC]
+RewriteRule ^assurance-elancourt-assu-2000.html http://agence.assu2000.fr/253418-assu-2000-elancourt? [R=301,L,NC]
+RewriteRule ^assurance-elbeuf-assu-2000.html http://agence.assu2000.fr/253212-assu-2000-elbeuf? [R=301,L,NC]
+RewriteRule ^assurance-enghien-les-bains-assu-2000.html http://agence.assu2000.fr/253124-assu-2000-enghien-les-bains? [R=301,L,NC]
+RewriteRule ^assurance-epernay-assu-2000.html http://agence.assu2000.fr/253192-assu-2000-epernay? [R=301,L,NC]
+RewriteRule ^assurance-epinal-assu-2000.html http://agence.assu2000.fr/253304-assu-2000-epinal? [R=301,L,NC]
+RewriteRule ^assurance-epinay-sur-seine-assu-2000.html http://agence.assu2000.fr/253415-assu-2000-epinay-sur-seine? [R=301,L,NC]
+RewriteRule ^assurance-ermont-assu-2000.html http://agence.assu2000.fr/253159-assu-2000-ermont? [R=301,L,NC]
+RewriteRule ^assurance-etampes-assu-2000.html http://agence.assu2000.fr/253324-assu-2000-etampes? [R=301,L,NC]
+RewriteRule ^assurance-evreux-assu-2000.html http://agence.assu2000.fr/253210-assu-2000-evreux? [R=301,L,NC]
+RewriteRule ^assurance-evry-assu-2000.html http://agence.assu2000.fr/253142-assu-2000-evry? [R=301,L,NC]
+RewriteRule ^assurance-fecamp-assu-2000.html http://agence.assu2000.fr/253349-assu-2000-fecamp? [R=301,L,NC]
+RewriteRule ^assurance-firminy-assu-2000.html http://agence.assu2000.fr/253218-assu-2000-firminy? [R=301,L,NC]
+RewriteRule ^assurance-fontainebleau-assu-2000.html http://agence.assu2000.fr/253276-assu-2000-fontainebleau? [R=301,L,NC]
+RewriteRule ^assurance-fontenay-aux-roses-assu-2000.html http://agence.assu2000.fr/253144-assu-2000-fontenay-aux-roses? [R=301,L,NC]
+RewriteRule ^assurance-fontenay-sous-bois-assu-2000.html http://agence.assu2000.fr/253138-assu-2000-fontenay-sous-bois? [R=301,L,NC]
+RewriteRule ^assurance-forbach-assu-2000.html http://agence.assu2000.fr/253288-assu-2000-forbach? [R=301,L,NC]
+RewriteRule ^assurance-franconville-assu-2000.html http://agence.assu2000.fr/253397-assu-2000-franconville? [R=301,L,NC]
+RewriteRule ^assurance-gagny-assu-2000.html http://agence.assu2000.fr/253139-assu-2000-gagny? [R=301,L,NC]
+RewriteRule ^assurance-gennevilliers-assu-2000(.*) http://agence.assu2000.fr/253155-assu-2000-gennevilliers? [R=301,L,NC]
+RewriteRule ^assurance-givors-assu-2000.html http://agence.assu2000.fr/253221-assu-2000-givors? [R=301,L,NC]
+RewriteRule ^assurance-goussainville-assu-2000.html http://agence.assu2000.fr/253399-assu-2000-goussainville? [R=301,L,NC]
+RewriteRule ^assurance-grasse-assu-2000.html http://agence.assu2000.fr/253292-assu-2000-grasse? [R=301,L,NC]
+RewriteRule ^assurance-grenoble-jaures-assu-2000.html http://agence.assu2000.fr/253219-assu-2000-grenoble-jaures? [R=301,L,NC]
+RewriteRule ^assurance-grenoble-rivet-assu-2000.html http://agence.assu2000.fr/253239-assu-2000-grenoble-rivet? [R=301,L,NC]
+RewriteRule ^assurance-hagondange-assu-2000.html http://agence.assu2000.fr/253355-assu-2000-hagondange? [R=301,L,NC]
+RewriteRule ^assurance-haguenau-assu-2000.html http://agence.assu2000.fr/253319-assu-2000-haguenau? [R=301,L,NC]
+RewriteRule ^assurance-herouville-saint-clair-assu-2000.html http://agence.assu2000.fr/253438-assu-2000-herouville-saint-clair? [R=301,L,NC]
+RewriteRule ^assurance-hyeres-les-palmiers-assu-2000.html http://agence.assu2000.fr/253249-assu-2000-hyeres? [R=301,L,NC]
+RewriteRule ^assurance-issy-les-moulineaux-assu-2000.html http://agence.assu2000.fr/253151-assu-2000-issy-les-moulineaux? [R=301,L,NC]
+RewriteRule ^assurance-istres-assu-2000.html http://agence.assu2000.fr/253277-assu-2000-istres? [R=301,L,NC]
+RewriteRule ^assurance-ivry-assu-2000.html http://agence.assu2000.fr/253101-assu-2000-ivry-sur-seine? [R=301,L,NC]
+RewriteRule ^assurance-joinville-assu-2000.html http://agence.assu2000.fr/253092-assu-2000-joinville-le-pont? [R=301,L,NC]
+RewriteRule ^assurance-joue-les-tours-assu-2000.html http://agence.assu2000.fr/253382-assu-2000-joue-les-tours? [R=301,L,NC]
+RewriteRule ^assurance-juvisy-sur-orge-assu-2000.html http://agence.assu2000.fr/253149-assu-2000-juvisy-sur-orge? [R=301,L,NC]
+RewriteRule ^assurance-la-courneuve-assu-2000.html http://agence.assu2000.fr/253084-assu-2000-la-courneuve? [R=301,L,NC]
+RewriteRule ^assurance-la-roche-sur-yon-assu-2000.html http://agence.assu2000.fr/253305-assu-2000-la-roche-sur-yon? [R=301,L,NC]
+RewriteRule ^assurance-la-seyne-sur-mer-assu-2000.html http://agence.assu2000.fr/253242-assu-2000-la-seyne-sur-mer? [R=301,L,NC]
+RewriteRule ^assurance-lagny-assu-2000.html http://agence.assu2000.fr/253163-assu-2000-lagny-sur-marne? [R=301,L,NC]
+RewriteRule ^assurance-lambersart-assu-2000.html http://agence.assu2000.fr/253174-assu-2000-lambersart? [R=301,L,NC]
+RewriteRule ^assurance-lanester-assu-2000.html http://agence.assu2000.fr/253250-assu-2000-lanester? [R=301,L,NC]
+RewriteRule ^assurance-laval-vieux-saint-louis-assu-2000.html http://agence.assu2000.fr/253434-assu-2000-laval? [R=301,L,NC]
+RewriteRule ^assurance-le-blanc-mesnil-assu-2000.html http://agence.assu2000.fr/253132-assu-2000-le-blanc-mesnil? [R=301,L,NC]
+RewriteRule ^assurance-le-bourget-assu-2000.html http://agence.assu2000.fr/253164-assu-2000-le-bourget? [R=301,L,NC]
+RewriteRule ^assurance-le-creusot-assu-2000.html http://agence.assu2000.fr/253370-assu-2000-le-creusot? [R=301,L,NC]
+RewriteRule ^assurance-le-havre-caucriauville-assu-2000.html http://agence.assu2000.fr/253428-assu-2000-le-havre-caucriauville? [R=301,L,NC]
+RewriteRule ^assurance-le-havre-coty-assu-2000.html http://agence.assu2000.fr/253228-assu-2000-le-havre-coty? [R=301,L,NC]
+RewriteRule ^assurance-le-havre-republique-assu-2000.html http://agence.assu2000.fr/253222-assu-2000-le-havre-republique? [R=301,L,NC]
+RewriteRule ^assurance-le-kremlin-bicetre-assu-2000.html http://agence.assu2000.fr/253090-assu-2000-le-kremlin-bicetre? [R=301,L,NC]
+RewriteRule ^assurance-le-mans-jaures-assu-2000.html http://agence.assu2000.fr/253383-assu-2000-le-mans-jaures? [R=301,L,NC]
+RewriteRule ^assurance-le-mans-nationale-assu-2000.html http://agence.assu2000.fr/253386-assu-2000-le-mans-nationale? [R=301,L,NC]
+RewriteRule ^assurance-le-perreux-assu-2000.html http://agence.assu2000.fr/253091-assu-2000-le-perreux? [R=301,L,NC]
+RewriteRule ^assurance-petit-quevilly-assu-2000.html http://agence.assu2000.fr/253217-assu-2000-le-petit-quevilly? [R=301,L,NC]
+RewriteRule ^assurance-lens-assu-2000.html http://agence.assu2000.fr/253170-assu-2000-lens? [R=301,L,NC]
+RewriteRule ^assurance-les-lilas-assu-2000.html http://agence.assu2000.fr/253157-assu-2000-les-lilas? [R=301,L,NC]
+RewriteRule ^assurance-les-mureaux-assu-2000.html http://agence.assu2000.fr/253158-assu-2000-les-mureaux? [R=301,L,NC]
+RewriteRule ^assurance-les-ulis-assu-2000.html http://agence.assu2000.fr/253367-assu-2000-les-ulis? [R=301,L,NC]
+RewriteRule ^assurance-libourne-assu-2000.html http://agence.assu2000.fr/253388-assu-2000-libourne? [R=301,L,NC]
+RewriteRule ^assurance-lievin-assu-2000.html http://agence.assu2000.fr/253379-assu-2000-lievin? [R=301,L,NC]
+RewriteRule ^assurance-lille-assu-2000.html http://agence.assu2000.fr/253168-assu-2000-lille? [R=301,L,NC]
+RewriteRule ^assurance-lille-fives-assu-2000.html http://agence.assu2000.fr/253173-assu-2000-lille-fives? [R=301,L,NC]
+RewriteRule ^assurance-limoges-assu-2000.html http://agence.assu2000.fr/253378-assu-2000-limoges? [R=301,L,NC]
+RewriteRule ^assurance-lisieux-assu-2000.html http://agence.assu2000.fr/253227-assu-2000-lisieux? [R=301,L,NC]
+RewriteRule ^assurance-livry-gargan-assu-2000.html http://agence.assu2000.fr/253187-assu-2000-livry-gargan? [R=301,L,NC]
+RewriteRule ^assurance-longjumeau-assu-2000.html http://agence.assu2000.fr/253326-assu-2000-longjumeau? [R=301,L,NC]
+RewriteRule ^assurance-loos-assu-2000.html http://agence.assu2000.fr/253360-assu-2000-loos? [R=301,L,NC]
+RewriteRule ^assurance-lorient-assu-2000.html http://agence.assu2000.fr/253251-assu-2000-lorient? [R=301,L,NC]
+RewriteRule ^assurance-louviers-assu-2000.html http://agence.assu2000.fr/253429-assu-2000-louviers? [R=301,L,NC]
+RewriteRule ^assurance-lunel-assu-2000.html http://agence.assu2000.fr/253405-assu-2000-lunel? [R=301,L,NC]
+RewriteRule ^assurance-luneville-assu-2000.html http://agence.assu2000.fr/253376-assu-2000-luneville? [R=301,L,NC]
+RewriteRule ^assurance-lyon-croix-1er-assu-2000.html http://agence.assu2000.fr/253215-assu-2000-lyon-1er? [R=301,L,NC]
+RewriteRule ^assurance-lyon-3e-assu-2000.html http://agence.assu2000.fr/253199-assu-2000-lyon-3e? [R=301,L,NC]
+RewriteRule ^assurance-lyon-8e-assu-2000.html http://agence.assu2000.fr/253203-assu-2000-lyon-8e? [R=301,L,NC]
+RewriteRule ^assurance-macon-assu-2000.html http://agence.assu2000.fr/253353-assu-2000-macon? [R=301,L,NC]
+RewriteRule ^assurance-maisons-alfort-assu-2000.html http://agence.assu2000.fr/253095-assu-2000-maisons-alfort? [R=301,L,NC]
+RewriteRule ^assurance-manosque-assu-2000.html http://agence.assu2000.fr/253394-assu-2000-manosque? [R=301,L,NC]
+RewriteRule ^assurance-mantes-la-jolie-assu-2000.html http://agence.assu2000.fr/253127-assu-2000-mantes-la-jolie? [R=301,L,NC]
+RewriteRule ^assurance-marignane-assu-2000.html http://agence.assu2000.fr/253234-assu-2000-marignane? [R=301,L,NC]
+RewriteRule ^assurance-maromme-assu-2000.html http://agence.assu2000.fr/253400-assu-2000-maromme? [R=301,L,NC]
+RewriteRule ^assurance-marseille-10e-assu-2000.html http://agence.assu2000.fr/253258-assu-2000-marseille-10e? [R=301,L,NC]
+RewriteRule ^assurance-marseille-13e-assu-2000.html http://agence.assu2000.fr/253341-assu-2000-marseille-13e? [R=301,L,NC]
+RewriteRule ^assurance-marseille-15e-quartier-nord-assu-2000.html http://agence.assu2000.fr/253248-assu-2000-marseille-15e-saint-antoine? [R=301,L,NC]
+RewriteRule ^assurance-marseille-15e-saint-louis-assu-2000.html http://agence.assu2000.fr/253377-assu-2000-marseille-15e-saint-louis? [R=301,L,NC]
+RewriteRule ^assurance-marseille-6e-assu-2000.html http://agence.assu2000.fr/317065-assu-2000-marseille-6e? [R=301,L,NC]
+RewriteRule ^assurance-marseille-3e-assu-2000.html http://agence.assu2000.fr/253238-assu-2000-marseille-3e? [R=301,L,NC]
+RewriteRule ^assurance-marseille-4e-assu-2000.html http://agence.assu2000.fr/253232-assu-2000-marseille-4e? [R=301,L,NC]
+RewriteRule ^assurance-marseille-5e-assu-2000.html http://agence.assu2000.fr/253236-assu-2000-marseille-5e? [R=301,L,NC]
+RewriteRule ^assurance-marseille-9e-assu-2000.html http://agence.assu2000.fr/253231-assu-2000-marseille-9e? [R=301,L,NC]
+RewriteRule ^assurance-martigues-assu-2000.html http://agence.assu2000.fr/253240-assu-2000-martigues? [R=301,L,NC]
+RewriteRule ^assurance-massy-assu-2000.html http://agence.assu2000.fr/253131-assu-2000-massy? [R=301,L,NC]
+RewriteRule ^assurance-maubeuge-assu-2000.html http://agence.assu2000.fr/253179-assu-2000-maubeuge? [R=301,L,NC]
+RewriteRule ^assurance-meaux-assu-2000.html http://agence.assu2000.fr/253114-assu-2000-meaux? [R=301,L,NC]
+RewriteRule ^assurance-melun-assu-2000.html http://agence.assu2000.fr/253126-assu-2000-melun? [R=301,L,NC]
+RewriteRule ^assurance-merignac-assu-2000.html http://agence.assu2000.fr/253314-assu-2000-merignac? [R=301,L,NC]
+RewriteRule ^assurance-metz-gare-assu-2000.html http://agence.assu2000.fr/253284-assu-2000-metz? [R=301,L,NC]
+RewriteRule ^assurance-meudon-assu-2000.html http://agence.assu2000.fr/253166-assu-2000-meudon? [R=301,L,NC]
+RewriteRule ^assurance-meyzieu-assu-2000.html http://agence.assu2000.fr/253275-assu-2000-meyzieu? [R=301,L,NC]
+RewriteRule ^assurance-millau-assu-2000.html http://agence.assu2000.fr/253423-assu-2000-millau? [R=301,L,NC]
+RewriteRule ^assurance-miramas-assu-2000.html http://agence.assu2000.fr/253395-assu-2000-miramas? [R=301,L,NC]
+RewriteRule ^assurance-montargis-assu-2000.html http://agence.assu2000.fr/253310-assu-2000-montargis? [R=301,L,NC]
+RewriteRule ^assurance-montauban-assu-2000.html http://agence.assu2000.fr/253320-assu-2000-montauban? [R=301,L,NC]
+RewriteRule ^assurance-montbeliard-assu-2000.html http://agence.assu2000.fr/253287-assu-2000-montbeliard? [R=301,L,NC]
+RewriteRule ^assurance-mont-de-marsan-assu-2000.html http://agence.assu2000.fr/253359-assu-2000-mont-de-marsan? [R=301,L,NC]
+RewriteRule ^assurance-montelimar-assu-2000.html http://agence.assu2000.fr/253338-assu-2000-montelimar? [R=301,L,NC]
+RewriteRule ^assurance-montereau-assu-2000.html http://agence.assu2000.fr/253271-assu-2000-montereau? [R=301,L,NC]
+RewriteRule ^assurance-montpellier-assu-2000.html http://agence.assu2000.fr/253362-assu-2000-montpellier? [R=301,L,NC]
+RewriteRule ^assurance-montreuil-croix-de-chavaux-assu-2000.html http://agence.assu2000.fr/253424-assu-2000-montreuil? [R=301,L,NC]
+RewriteRule ^assurance-montrouge-assu-2000.html http://agence.assu2000.fr/253104-assu-2000-montrouge? [R=301,L,NC]
+RewriteRule ^assurance-morlaix-assu-2000.html http://agence.assu2000.fr/253253-assu-2000-morlaix? [R=301,L,NC]
+RewriteRule ^assurance-mulhouse-aristide-briand-assu-2000.html http://agence.assu2000.fr/253263-assu-2000-mulhouse-aristide-briand? [R=301,L,NC]
+RewriteRule ^assurance-mulhouse-republique-assu-2000.html http://agence.assu2000.fr/253268-assu-2000-mulhouse-republique? [R=301,L,NC]
+RewriteRule ^assurance-muret-assu-2000.html http://agence.assu2000.fr/253334-assu-2000-muret? [R=301,L,NC]
+RewriteRule ^assurance-nancy-saint-dizier-assu-2000.html http://agence.assu2000.fr/253296-assu-2000-nancy-saint-dizier? [R=301,L,NC]
+RewriteRule ^assurance-nancy-saint-leon-assu-2000.html http://agence.assu2000.fr/253299-assu-2000-nancy-saint-leon? [R=301,L,NC]
+RewriteRule ^assurance-nanterre-assu-2000.html http://agence.assu2000.fr/253110-assu-2000-nanterre? [R=301,L,NC]
+RewriteRule ^assurance-nantes-commerce-assu-2000.html http://agence.assu2000.fr/253420-assu-2000-nantes? [R=301,L,NC]
+RewriteRule ^assurance-nantes-bellevue-assu-2000.html http://agence.assu2000.fr/253244-assu-2000-nantes-commerce? [R=301,L,NC]
+RewriteRule ^assurance-nantes-dalby-assu-2000.html http://agence.assu2000.fr/253363-assu-2000-nantes-dalby? [R=301,L,NC]
+RewriteRule ^assurance-narbonne-assu-2000.html http://agence.assu2000.fr/253384-assu-2000-narbonne? [R=301,L,NC]
+RewriteRule ^assurance-nice-augustin-assu-2000.html http://agence.assu2000.fr/253374-assu-2000-nice-augustin? [R=301,L,NC]
+RewriteRule ^assurance-nice-carlone-assu-2000.html http://agence.assu2000.fr/253328-assu-2000-nice-carlone? [R=301,L,NC]
+RewriteRule ^assurance-nice-malaussena-assu-2000.html http://agence.assu2000.fr/253366-assu-2000-nice-malaussena? [R=301,L,NC]
+RewriteRule ^assurance-nice-republique-assu-2000.html http://agence.assu2000.fr/253297-assu-2000-nice-republique? [R=301,L,NC]
+RewriteRule ^assurance-nimes-assu-2000.html http://agence.assu2000.fr/253261-assu-2000-nimes? [R=301,L,NC]
+RewriteRule ^assurance-niort-assu-2000.html http://agence.assu2000.fr/253441-assu-2000-niort? [R=301,L,NC]
+RewriteRule ^assurance-noisy-le-grand-assu-2000.html http://agence.assu2000.fr/253111-assu-2000-noisy-le-grand? [R=301,L,NC]
+RewriteRule ^assurance-noisy-le-sec-assu-2000.html http://agence.assu2000.fr/253135-assu-2000-noisy-le-sec? [R=301,L,NC]
+RewriteRule ^assurance-orange-assu-2000.html http://agence.assu2000.fr/253298-assu-2000-orange? [R=301,L,NC]
+RewriteRule ^assurance-orleans-assu-2000.html http://agence.assu2000.fr/253282-assu-2000-orleans? [R=301,L,NC]
+RewriteRule ^assurance-oullins-assu-2000.html http://agence.assu2000.fr/253200-assu-2000-oullins? [R=301,L,NC]
+RewriteRule ^assurance-oyonnax-assu-2000.html http://agence.assu2000.fr/253408-assu-2000-oyonnax? [R=301,L,NC]
+RewriteRule ^assurance-pamiers-assu-2000.html http://agence.assu2000.fr/253421-assu-2000-pamiers? [R=301,L,NC]
+RewriteRule ^assurance-pantin-assu-2000.html http://agence.assu2000.fr/253122-assu-2000-pantin? [R=301,L,NC]
+RewriteRule ^assurance-paris-10e-assu-2000.html http://agence.assu2000.fr/253093-assu-2000-paris-10e? [R=301,L,NC]
+RewriteRule ^assurance-paris-11e-assu-2000.html http://agence.assu2000.fr/253103-assu-2000-paris-11e? [R=301,L,NC]
+RewriteRule ^assurance-paris-13e-assu-2000.html http://agence.assu2000.fr/253130-assu-2000-paris-13e? [R=301,L,NC]
+RewriteRule ^assurance-paris-14e-brune-assu-2000.html http://agence.assu2000.fr/253118-assu-2000-paris-14e-brune? [R=301,L,NC]
+RewriteRule ^assurance-paris-14e-losserand-assu-2000.html http://agence.assu2000.fr/253094-assu-2000-paris-14e-losserand? [R=301,L,NC]
+RewriteRule ^assurance-paris-18e-la-fourche-assu-2000.html http://agence.assu2000.fr/253183-assu-2000-paris-18e-la-fourche? [R=301,L,NC]
+RewriteRule ^assurance-paris-18e-ornano-assu-2000.html http://agence.assu2000.fr/253108-assu-2000-paris-18e-ornano? [R=301,L,NC]
+RewriteRule ^assurance-paris-19e-assu-2000.html http://agence.assu2000.fr/253125-assu-2000-paris-19e? [R=301,L,NC]
+RewriteRule ^assurance-paris-20e-avron-assu-2000.html http://agence.assu2000.fr/253128-assu-2000-paris-20e-avron? [R=301,L,NC]
+RewriteRule ^assurance-paris-20e-belgrand-assu-2000.html http://agence.assu2000.fr/253097-assu-2000-paris-20e-belgrand? [R=301,L,NC]
+RewriteRule ^assurance-paris-15e-assu-2000.html http://agence.assu2000.fr/253116-assu-2000-paris-vaugirard-15e? [R=301,L,NC]
+RewriteRule ^assurance-pau-assu-2000.html http://agence.assu2000.fr/253343-assu-2000-pau? [R=301,L,NC]
+RewriteRule ^assurance-perigueux-assu-2000.html http://agence.assu2000.fr/253330-assu-2000-perigueux? [R=301,L,NC]
+RewriteRule ^assurance-perpignan-clemenceau-assu-2000.html http://agence.assu2000.fr/253433-assu-2000-perpignan-clemenceau? [R=301,L,NC]
+RewriteRule ^assurance-perpignan-assu-2000.html http://agence.assu2000.fr/253410-assu-2000-perpignan-saint-jacques? [R=301,L,NC]
+RewriteRule ^assurance-poissy-assu-2000.html http://agence.assu2000.fr/253154-assu-2000-poissy? [R=301,L,NC]
+RewriteRule ^assurance-poitiers-robert-schuman-assu-2000.html http://agence.assu2000.fr/253437-assu-2000-poitiers? [R=301,L,NC]
+RewriteRule ^assurance-pontault-combault-assu-2000.html http://agence.assu2000.fr/253193-assu-2000-pontault-combault? [R=301,L,NC]
+RewriteRule ^assurance-puteaux-assu-2000.html http://agence.assu2000.fr/253107-assu-2000-puteaux? [R=301,L,NC]
+RewriteRule ^assurance-quimper-assu-2000.html http://agence.assu2000.fr/253260-assu-2000-quimper? [R=301,L,NC]
+RewriteRule ^assurance-reims-zola-assu-2000.html http://agence.assu2000.fr/253194-assu-2000-reims-emile-zola? [R=301,L,NC]
+RewriteRule ^assurance-reims-jaures-assu-2000.html http://agence.assu2000.fr/253205-assu-2000-reims-jaures? [R=301,L,NC]
+RewriteRule ^assurance-rennes-fougeres-assu-2000.html http://agence.assu2000.fr/253436-assu-2000-rennes-fougeres? [R=301,L,NC]
+RewriteRule ^assurance-rennes-puits-mauger-assu-2000.html http://agence.assu2000.fr/253269-assu-2000-rennes-puits-mauger? [R=301,L,NC]
+RewriteRule ^assurance-reze-assu-2000.html http://agence.assu2000.fr/253254-assu-2000-reze? [R=301,L,NC]
+RewriteRule ^assurance-rillieux-la-pape-assu-2000.html http://agence.assu2000.fr/253213-assu-2000-rillieux-la-pape? [R=301,L,NC]
+RewriteRule ^assurance-ris-orangis-assu-2000.html http://agence.assu2000.fr/253147-assu-2000-ris-orangis? [R=301,L,NC]
+RewriteRule ^assurance-roanne-assu-2000.html http://agence.assu2000.fr/253350-assu-2000-roanne? [R=301,L,NC]
+RewriteRule ^assurance-rochefort-assu-2000.html http://agence.assu2000.fr/253344-assu-2000-rochefort? [R=301,L,NC]
+RewriteRule ^assurance-romans-sur-isere-assu-2000.html http://agence.assu2000.fr/253416-assu-2000-romans-sur-isere? [R=301,L,NC]
+RewriteRule ^assurance-rosny-sous-bois-assu-2000.html http://agence.assu2000.fr/253136-assu-2000-rosny-sous-bois? [R=301,L,NC]
+RewriteRule ^assurance-roubaix-assu-2000.html http://agence.assu2000.fr/253177-assu-2000-roubaix? [R=301,L,NC]
+RewriteRule ^assurance-rouen-jeanne-d-arc-assu-2000.html http://agence.assu2000.fr/253216-assu-2000-rouen-jeanne-d-arc? [R=301,L,NC]
+RewriteRule ^assurance-rouen-saint-sever-assu-2000.html http://agence.assu2000.fr/253206-assu-2000-rouen-saint-sever? [R=301,L,NC]
+RewriteRule ^assurance-rueil-malmaison-assu-2000(.*) http://agence.assu2000.fr/253120-assu-2000-rueil-malmaison? [R=301,L,NC]
+RewriteRule ^assurance-saint-maur-des-fosses-assu-2000.html http://agence.assu2000.fr/253427-assu-2000-saint-maur-des-fosses? [R=301,L,NC]
+RewriteRule ^assurance-saint-avold-assu-2000.html http://agence.assu2000.fr/253307-assu-2000-saint-avold? [R=301,L,NC]
+RewriteRule ^assurance-saint-brieuc-assu-2000.html http://agence.assu2000.fr/253264-assu-2000-saint-brieuc? [R=301,L,NC]
+RewriteRule ^assurance-saint-chamond-assu-2000.html http://agence.assu2000.fr/253245-assu-2000-saint-chamond? [R=301,L,NC]
+RewriteRule ^assurance-saint-denis-assu-2000.html http://agence.assu2000.fr/253085-assu-2000-saint-denis? [R=301,L,NC]
+RewriteRule ^assurance-saint-die-assu-2000.html http://agence.assu2000.fr/253306-assu-2000-saint-die-des-vosges? [R=301,L,NC]
+RewriteRule ^assurance-sainte-genevieve-des-bois-assu-2000.html http://agence.assu2000.fr/253340-assu-2000-sainte-genevieve-des-bois? [R=301,L,NC]
+RewriteRule ^assurance-saintes-assu-2000.html http://agence.assu2000.fr/253414-assu-2000-saintes? [R=301,L,NC]
+RewriteRule ^assurance-saint-etienne-11-novembre-assu-2000.html http://agence.assu2000.fr/253214-assu-2000-saint-etienne-11-novembre? [R=301,L,NC]
+RewriteRule ^assurance-saint-etienne-gambetta-assu-2000.html http://agence.assu2000.fr/253226-assu-2000-saint-etienne-charles-de-gaulle? [R=301,L,NC]
+RewriteRule ^assurance-saint-fons-assu-2000.html http://agence.assu2000.fr/253202-assu-2000-saint-fons? [R=301,L,NC]
+RewriteRule ^assurance-saint-herblain-assu-2000.html http://agence.assu2000.fr/253247-assu-2000-saint-herblain? [R=301,L,NC]
+RewriteRule ^assurance-saint-lo-assu-2000.html http://agence.assu2000.fr/253431-assu-2000-saint-lo? [R=301,L,NC]
+RewriteRule ^assurance-saint-malo-assu-2000.html http://agence.assu2000.fr/253430-assu-2000-saint-malo? [R=301,L,NC]
+RewriteRule ^assurance-saint-nazaire-assu-2000.html http://agence.assu2000.fr/253246-assu-2000-saint-nazaire? [R=301,L,NC]
+RewriteRule ^assurance-saint-omer-assu-2000.html http://agence.assu2000.fr/253198-assu-2000-saint-omer? [R=301,L,NC]
+RewriteRule ^assurance-saint-ouen-assu-2000.html http://agence.assu2000.fr/253112-assu-2000-saint-ouen? [R=301,L,NC]
+RewriteRule ^assurance-saint-ouen-l-aumone-assu-2000.html http://agence.assu2000.fr/253115-assu-2000-saint-ouen-l-aumone? [R=301,L,NC]
+RewriteRule ^assurance-saint-priest-assu-2000.html http://agence.assu2000.fr/253201-assu-2000-saint-priest? [R=301,L,NC]
+RewriteRule ^assurance-saint-quentin-assu-2000.html http://agence.assu2000.fr/253188-assu-2000-saint-quentin? [R=301,L,NC]
+RewriteRule ^assurance-saint-raphael-assu-2000.html http://agence.assu2000.fr/253266-assu-2000-saint-raphael? [R=301,L,NC]
+RewriteRule ^assurance-salon-de-provence-assu-2000.html http://agence.assu2000.fr/253335-assu-2000-salon-de-provence? [R=301,L,NC]
+RewriteRule ^assurance-sarcelles-assu-2000.html http://agence.assu2000.fr/253113-assu-2000-sarcelles? [R=301,L,NC]
+RewriteRule ^assurance-sarreguemines-assu-2000.html http://agence.assu2000.fr/253329-assu-2000-sarreguemines? [R=301,L,NC]
+RewriteRule ^assurance-sartrouville-assu-2000.html http://agence.assu2000.fr/253148-assu-2000-sartrouville? [R=301,L,NC]
+RewriteRule ^assurance-savigny-le-temple-assu-2000.html http://agence.assu2000.fr/253396-assu-2000-savigny-le-temple? [R=301,L,NC]
+RewriteRule ^assurance-savigny-assu-2000.html http://agence.assu2000.fr/253105-assu-2000-savigny-sur-orge? [R=301,L,NC]
+RewriteRule ^assurance-schiltigheim-assu-2000.html http://agence.assu2000.fr/253286-assu-2000-schiltigheim? [R=301,L,NC]
+RewriteRule ^assurance-sens-assu-2000.html http://agence.assu2000.fr/253404-assu-2000-sens? [R=301,L,NC]
+RewriteRule ^assurance-sete-assu-2000.html http://agence.assu2000.fr/253413-assu-2000-sete? [R=301,L,NC]
+RewriteRule ^assurance-sevran-assu-2000.html http://agence.assu2000.fr/253143-assu-2000-sevran? [R=301,L,NC]
+RewriteRule ^assurance-soissons-assu-2000.html http://agence.assu2000.fr/253190-assu-2000-soissons? [R=301,L,NC]
+RewriteRule ^assurance-stains-assu-2000.html http://agence.assu2000.fr/253182-assu-2000-stains? [R=301,L,NC]
+RewriteRule ^assurance-strasbourg-montagne-assu-2000.html http://agence.assu2000.fr/253279-assu-2000-strasbourg? [R=301,L,NC]
+RewriteRule ^assurance-strasbourg-etoile-assu-2000.html http://agence.assu2000.fr/253262-assu-2000-strasbourg-etoile? [R=301,L,NC]
+RewriteRule ^assurance-strasbourg-faubourg-assu-2000.html http://agence.assu2000.fr/253273-assu-2000-strasbourg-faubourg? [R=301,L,NC]
+RewriteRule ^assurance-suresnes-assu-2000.html http://agence.assu2000.fr/253089-assu-2000-suresnes? [R=301,L,NC]
+RewriteRule ^assurance-tarbes-assu-2000.html http://agence.assu2000.fr/253407-assu-2000-tarbes? [R=301,L,NC]
+RewriteRule ^assurance-thionville-assu-2000.html http://agence.assu2000.fr/253323-assu-2000-thionville? [R=301,L,NC]
+RewriteRule ^assurance-toul-assu-2000.html http://agence.assu2000.fr/253373-assu-2000-toul? [R=301,L,NC]
+RewriteRule ^assurance-toulon-blache-assu-2000.html http://agence.assu2000.fr/253235-assu-2000-toulon-blache? [R=301,L,NC]
+RewriteRule ^assurance-toulon-assu-2000.html http://agence.assu2000.fr/253256-assu-2000-toulon-pont-du-las? [R=301,L,NC]
+RewriteRule ^assurance-toulouse-bayard-assu-2000.html http://agence.assu2000.fr/253412-assu-2000-toulouse-bayard? [R=301,L,NC]
+RewriteRule ^assurance-toulouse-bonnefoy-assu-2000.html http://agence.assu2000.fr/253283-assu-2000-toulouse-bonnefoy? [R=301,L,NC]
+RewriteRule ^assurance-toulouse-minimes-assu-2000.html http://agence.assu2000.fr/253285-assu-2000-toulouse-les-minimes? [R=301,L,NC]
+RewriteRule ^assurance-toulouse-mirail-assu-2000.html http://agence.assu2000.fr/253317-assu-2000-toulouse-mirail? [R=301,L,NC]
+RewriteRule ^assurance-toulouse-saint-exupery-assu-2000.html http://agence.assu2000.fr/253289-assu-2000-toulouse-saint-exupery? [R=301,L,NC]
+RewriteRule ^assurance-toulouse-saint-cyprien-assu-2000.html http://agence.assu2000.fr/253293-assu-2000-toulouse-saint-cyprien? [R=301,L,NC]
+RewriteRule ^assurance-tourcoing-assu-2000.html http://agence.assu2000.fr/253189-assu-2000-tourcoing? [R=301,L,NC]
+RewriteRule ^assurance-tours-assu-2000.html http://agence.assu2000.fr/253375-assu-2000-tours? [R=301,L,NC]
+RewriteRule ^assurance-trappes-assu-2000.html http://agence.assu2000.fr/253365-assu-2000-trappes? [R=301,L,NC]
+RewriteRule ^assurance-troyes-assu-2000.html http://agence.assu2000.fr/253339-assu-2000-troyes? [R=301,L,NC]
+RewriteRule ^assurance-troyes-jaures-assu-2000.html http://agence.assu2000.fr/253272-assu-2000-troyes-jaures? [R=301,L,NC]
+RewriteRule ^assurance-valence-assu-2000.html http://agence.assu2000.fr/253229-assu-2000-valence? [R=301,L,NC]
+RewriteRule ^assurance-valenciennes-assu-2000.html http://agence.assu2000.fr/253169-assu-2000-valenciennes? [R=301,L,NC]
+RewriteRule ^assurance-vandoeuvre-les-nancy-assu-2000.html http://agence.assu2000.fr/253301-assu-2000-vandoeuvre-les-nancy? [R=301,L,NC]
+RewriteRule ^assurance-vannes-assu-2000.html http://agence.assu2000.fr/253255-assu-2000-vannes? [R=301,L,NC]
+RewriteRule ^assurance-vaulx-en-velin-assu-2000.html http://agence.assu2000.fr/253207-assu-2000-vaulx-en-velin? [R=301,L,NC]
+RewriteRule ^assurance-venissieux-assu-2000.html http://agence.assu2000.fr/253369-assu-2000-venissieux? [R=301,L,NC]
+RewriteRule ^assurance-verdun-assu-2000.html http://agence.assu2000.fr/253390-assu-2000-verdun? [R=301,L,NC]
+RewriteRule ^assurance-vernon-assu-2000.html http://agence.assu2000.fr/253358-assu-2000-vernon? [R=301,L,NC]
+RewriteRule ^assurance-versailles-chantiers-assu-2000.html http://agence.assu2000.fr/253121-assu-2000-versailles-chantiers? [R=301,L,NC]
+RewriteRule ^assurance-versailles-foch-assu-2000.html http://agence.assu2000.fr/253153-assu-2000-versailles-foch? [R=301,L,NC]
+RewriteRule ^assurance-vesoul-assu-2000.html http://agence.assu2000.fr/253322-assu-2000-vesoul? [R=301,L,NC]
+RewriteRule ^assurance-vienne-assu-2000.html http://agence.assu2000.fr/253345-assu-2000-vienne? [R=301,L,NC]
+RewriteRule ^assurance-vierzon-assu-2000.html http://agence.assu2000.fr/253417-assu-2000-vierzon? [R=301,L,NC]
+RewriteRule ^assurance-vigneux-sur-seine-assu-2000.html http://agence.assu2000.fr/253313-assu-2000-vigneux-sur-seine? [R=301,L,NC]
+RewriteRule ^assurance-villefranche-assu-2000.html http://agence.assu2000.fr/253211-assu-2000-villefranche? [R=301,L,NC]
+RewriteRule ^assurance-villejuif-assu-2000.html http://agence.assu2000.fr/253134-assu-2000-villejuif? [R=301,L,NC]
+RewriteRule ^assurance-villenave-d-ornon-assu-2000.html http://agence.assu2000.fr/253337-assu-2000-villenave-d-ornon? [R=301,L,NC]
+RewriteRule ^assurance-villeneuve-d-ascq-assu-2000.html http://agence.assu2000.fr/253175-assu-2000-villeneuve-d-ascq? [R=301,L,NC]
+RewriteRule ^assurance-villeneuve-saint-georges-assu-2000.html http://agence.assu2000.fr/253117-assu-2000-villeneuve-saint-georges? [R=301,L,NC]
+RewriteRule ^assurance-villeneuve-sur-lot-assu-2000.html http://agence.assu2000.fr/253364-assu-2000-villeneuve-sur-lot? [R=301,L,NC]
+RewriteRule ^assurance-villepinte-assu-2000.html http://agence.assu2000.fr/253165-assu-2000-villepinte? [R=301,L,NC]
+RewriteRule ^assurance-villeurbanne-grand-clement-assu-2000.html http://agence.assu2000.fr/253432-assu-2000-villeurbanne? [R=301,L,NC]
+RewriteRule ^assurance-villeurbanne-emile-zola-assu-2000.html http://agence.assu2000.fr/253208-assu-2000-villeurbanne-emile-zola? [R=301,L,NC]
+RewriteRule ^assurance-villiers-le-bel-assu-2000.html http://agence.assu2000.fr/253167-assu-2000-villiers-le-bel? [R=301,L,NC]
+RewriteRule ^assurance-villiers-sur-marne-assu-2000.html http://agence.assu2000.fr/253140-assu-2000-villiers-sur-marne? [R=301,L,NC]
+RewriteRule ^assurance-vincennes-assu-2000.html http://agence.assu2000.fr/253100-assu-2000-vincennes? [R=301,L,NC]
+RewriteRule ^assurance-vitrolles-assu-2000.html http://agence.assu2000.fr/253237-assu-2000-vitrolles? [R=301,L,NC]
+RewriteRule ^assurance-vitry-assu-2000.html http://agence.assu2000.fr/253106-assu-2000-vitry-sur-seine? [R=301,L,NC]
+RewriteRule ^assurance-voiron-assu-2000.html http://agence.assu2000.fr/253385-assu-2000-voiron? [R=301,L,NC]
+RewriteRule ^assurance-wattrelos-assu-2000.html http://agence.assu2000.fr/253381-assu-2000-wattrelos? [R=301,L,NC]
+RewriteRule ^assurance-la-source-assu-2000.html http://agence.assu2000.fr/253282-assu-2000-orleans? [R=301,L,NC]
+
+RewriteRule ^agences/assurance-ain/ http://agence.assu2000.fr/fr/rhone-alpes/ain? [R=301,L,NC]
+RewriteRule ^agences/assurance-aisne/ http://agence.assu2000.fr/fr/picardie/aisne? [R=301,L,NC]
+RewriteRule ^agences/assurance-alpes-de-haute-provence/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/alpes-de-haute-provence? [R=301,L,NC]
+RewriteRule ^agences/assurance-alpes-maritimes/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/alpes-maritimes? [R=301,L,NC]
+RewriteRule ^agences/assurance-ardennes/ http://agence.assu2000.fr/fr/champagne-ardenne/ardennes? [R=301,L,NC]
+RewriteRule ^agences/assurance-ariege/ http://agence.assu2000.fr/fr/midi-pyrenees/ariege? [R=301,L,NC]
+RewriteRule ^agences/assurance-aube/ http://agence.assu2000.fr/fr/champagne-ardenne/aube? [R=301,L,NC]
+RewriteRule ^agences/assurance-aude/ http://agence.assu2000.fr/fr/languedoc-roussillon/aude? [R=301,L,NC]
+RewriteRule ^agences/assurance-aveyron/ http://agence.assu2000.fr/fr/midi-pyrenees/aveyron? [R=301,L,NC]
+RewriteRule ^agences/assurance-bouches-du-rhone/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/bouches-du-rhone? [R=301,L,NC]
+RewriteRule ^agences/assurance-calvados/ http://agence.assu2000.fr/fr/basse-normandie/calvados? [R=301,L,NC]
+RewriteRule ^agences/assurance-charente/ http://agence.assu2000.fr/fr/poitou-charentes/charente? [R=301,L,NC]
+RewriteRule ^agences/assurance-charente-maritime/ http://agence.assu2000.fr/fr/poitou-charentes/charente-maritime? [R=301,L,NC]
+RewriteRule ^agences/assurance-cher/ http://agence.assu2000.fr/fr/centre/loir-et-cher? [R=301,L,NC]
+RewriteRule ^agences/assurance-correze/ http://agence.assu2000.fr/fr/limousin/correze? [R=301,L,NC]
+RewriteRule ^agences/assurance-cote-d-or/ http://agence.assu2000.fr/fr/bourgogne/cote-d-or? [R=301,L,NC]
+RewriteRule ^agences/assurance-cotes-d-armor/ http://agence.assu2000.fr/fr/bretagne/cotes-d-armor? [R=301,L,NC]
+RewriteRule ^agences/assurance-dordogne/ http://agence.assu2000.fr/fr/aquitaine/dordogne? [R=301,L,NC]
+RewriteRule ^agences/assurance-doubs/ http://agence.assu2000.fr/fr/franche-comte/doubs? [R=301,L,NC]
+RewriteRule ^agences/assurance-drome/ http://agence.assu2000.fr/fr/rhone-alpes/drome? [R=301,L,NC]
+RewriteRule ^agences/assurance-eure/ http://agence.assu2000.fr/fr/haute-normandie/eure? [R=301,L,NC]
+RewriteRule ^agences/assurance-eure-et-loir/ http://agence.assu2000.fr/fr/centre/eure-et-loir? [R=301,L,NC]
+RewriteRule ^agences/assurance-finistere/ http://agence.assu2000.fr/fr/bretagne/finistere? [R=301,L,NC]
+RewriteRule ^agences/assurance-gard/ http://agence.assu2000.fr/fr/languedoc-roussillon/gard? [R=301,L,NC]
+RewriteRule ^agences/assurance-haute-garonne/ http://agence.assu2000.fr/fr/midi-pyrenees/haute-garonne? [R=301,L,NC]
+RewriteRule ^agences/assurance-gironde/ http://agence.assu2000.fr/fr/aquitaine/gironde? [R=301,L,NC]
+RewriteRule ^agences/assurance-herault/ http://agence.assu2000.fr/fr/languedoc-roussillon/herault? [R=301,L,NC]
+RewriteRule ^agences/assurance-ille-et-vilaine/ http://agence.assu2000.fr/fr/bretagne/ille-et-vilaine? [R=301,L,NC]
+RewriteRule ^agences/assurance-indre-et-loire/ http://agence.assu2000.fr/fr/centre/indre-et-loire? [R=301,L,NC]
+RewriteRule ^agences/assurance-isere/ http://agence.assu2000.fr/fr/rhone-alpes/isere? [R=301,L,NC]
+RewriteRule ^agences/assurance-jura/ http://agence.assu2000.fr/fr/franche-comte/jura? [R=301,L,NC]
+RewriteRule ^agences/assurance-landes/ http://agence.assu2000.fr/fr/aquitaine/landes? [R=301,L,NC]
+RewriteRule ^agences/assurance-loir-et-cher/ http://agence.assu2000.fr/fr/centre/loir-et-cher? [R=301,L,NC]
+RewriteRule ^agences/assurance-loire/ http://agence.assu2000.fr/fr/rhone-alpes/loire? [R=301,L,NC]
+RewriteRule ^agences/assurance-loire-atlantique/ http://agence.assu2000.fr/fr/pays-de-la-loire/loire-atlantique? [R=301,L,NC]
+RewriteRule ^agences/assurance-loiret/ http://agence.assu2000.fr/fr/centre/loiret? [R=301,L,NC]
+RewriteRule ^agences/assurance-lot/ http://agence.assu2000.fr/fr/midi-pyrenees/lot? [R=301,L,NC]
+RewriteRule ^agences/assurance-lot-et-garonne/ http://agence.assu2000.fr/fr/aquitaine/lot-et-garonne? [R=301,L,NC]
+RewriteRule ^agences/assurance-maine-et-loire/ http://agence.assu2000.fr/fr/pays-de-la-loire/maine-et-loire? [R=301,L,NC]
+RewriteRule ^agences/assurance-manche/ http://agence.assu2000.fr/fr/basse-normandie/manche? [R=301,L,NC]
+RewriteRule ^agences/assurance-marne/ http://agence.assu2000.fr/fr/champagne-ardenne/marne? [R=301,L,NC]
+RewriteRule ^agences/assurance-haute-marne/ http://agence.assu2000.fr/fr/champagne-ardenne/haute-marne? [R=301,L,NC]
+RewriteRule ^agences/assurance-mayenne/ http://agence.assu2000.fr/fr/pays-de-la-loire/mayenne? [R=301,L,NC]
+RewriteRule ^agences/assurance-meurthe-et-moselle/ http://agence.assu2000.fr/fr/lorraine/meurthe-et-moselle? [R=301,L,NC]
+RewriteRule ^agences/assurance-meuse/ http://agence.assu2000.fr/fr/lorraine/meuse? [R=301,L,NC]
+RewriteRule ^agences/assurance-morbihan/ http://agence.assu2000.fr/fr/bretagne/morbihan? [R=301,L,NC]
+RewriteRule ^agences/assurance-moselle/ http://agence.assu2000.fr/fr/lorraine/moselle? [R=301,L,NC]
+RewriteRule ^agences/assurance-nord/ http://agence.assu2000.fr/fr/nord-pas-de-calais/nord? [R=301,L,NC]
+RewriteRule ^agences/assurance-oise/ http://agence.assu2000.fr/fr/picardie/oise? [R=301,L,NC]
+RewriteRule ^agences/assurance-pas-de-calais/ http://agence.assu2000.fr/fr/nord-pas-de-calais? [R=301,L,NC]
+RewriteRule ^agences/assurance-puy-de-dome/ http://agence.assu2000.fr/fr/auvergne/puy-de-dome? [R=301,L,NC]
+RewriteRule ^agences/assurance-pyrenees-atlantiques/ http://agence.assu2000.fr/fr/aquitaine/pyrenees-atlantiques? [R=301,L,NC]
+RewriteRule ^agences/assurance-assurance-hautes-pyrenees/ http://agence.assu2000.fr/fr/midi-pyrenees/hautes-pyrenees? [R=301,L,NC]
+RewriteRule ^agences/assurance-pyrenees-orientales/ http://agence.assu2000.fr/fr/languedoc-roussillon/pyrenees-orientales? [R=301,L,NC]
+RewriteRule ^agences/assurance-bas-rhin/ http://agence.assu2000.fr/fr/alsace/bas-rhin? [R=301,L,NC]
+RewriteRule ^agences/assurance-haut-rhin/ http://agence.assu2000.fr/fr/alsace/haut-rhin? [R=301,L,NC]
+RewriteRule ^agences/assurance-rhone/ http://agence.assu2000.fr/fr/rhone-alpes/rhone? [R=301,L,NC]
+RewriteRule ^agences/assurance-haute-saone/ http://agence.assu2000.fr/fr/franche-comte/haute-saone? [R=301,L,NC]
+RewriteRule ^agences/assurance-saone-et-loire/ http://agence.assu2000.fr/fr/bourgogne/saone-et-loire? [R=301,L,NC]
+RewriteRule ^agences/assurance-sarthe/ http://agence.assu2000.fr/fr/pays-de-la-loire/sarthe? [R=301,L,NC]
+RewriteRule ^agences/assurance-savoie/ http://agence.assu2000.fr/fr/rhone-alpes/savoie? [R=301,L,NC]
+RewriteRule ^agences/assurance-haute-savoie/ http://agence.assu2000.fr/fr/rhone-alpes/haute-savoie? [R=301,L,NC]
+RewriteRule ^agences/assurance-paris/ http://agence.assu2000.fr/fr/ile-de-france/paris? [R=301,L,NC]
+RewriteRule ^agences/assurance-seine-maritime/ http://agence.assu2000.fr/fr/haute-normandie/seine-maritime? [R=301,L,NC]
+RewriteRule ^agences/assurance-seine-et-marne/ http://agence.assu2000.fr/fr/ile-de-france/seine-et-marne? [R=301,L,NC]
+RewriteRule ^agences/assurance-yvelines/ http://agence.assu2000.fr/fr/ile-de-france/yvelines? [R=301,L,NC]
+RewriteRule ^agences/assurance-deux-sevres/ http://agence.assu2000.fr/fr/poitou-charentes/deux-sevres? [R=301,L,NC]
+RewriteRule ^agences/assurance-somme/ http://agence.assu2000.fr/fr/picardie/somme? [R=301,L,NC]
+RewriteRule ^agences/assurance-tarn/ http://agence.assu2000.fr/fr/midi-pyrenees/tarn? [R=301,L,NC]
+RewriteRule ^agences/assurance-tarn-et-garonne/ http://agence.assu2000.fr/fr/midi-pyrenees/tarn-et-garonne? [R=301,L,NC]
+RewriteRule ^agences/assurance-var/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/var? [R=301,L,NC]
+RewriteRule ^agences/assurance-vaucluse/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/vaucluse? [R=301,L,NC]
+RewriteRule ^agences/assurance-vendee/ http://agence.assu2000.fr/fr/pays-de-la-loire/vendee? [R=301,L,NC]
+RewriteRule ^agences/assurance-vienne/ http://agence.assu2000.fr/fr/poitou-charentes/vienne? [R=301,L,NC]
+RewriteRule ^agences/assurance-haute-vienne/ http://agence.assu2000.fr/fr/limousin/haute-vienne? [R=301,L,NC]
+RewriteRule ^agences/assurance-vosges/ http://agence.assu2000.fr/fr/lorraine/vosges? [R=301,L,NC]
+RewriteRule ^agences/assurance-yonne/ http://agence.assu2000.fr/fr/bourgogne/yonne? [R=301,L,NC]
+RewriteRule ^agences/assurance-territoire-de-belfort/ http://agence.assu2000.fr/fr/franche-comte/territoire-de-belfort? [R=301,L,NC]
+RewriteRule ^agences/assurance-essonne/ http://agence.assu2000.fr/fr/ile-de-france/essonne? [R=301,L,NC]
+RewriteRule ^agences/assurance-hauts-de-seine/ http://agence.assu2000.fr/fr/ile-de-france/hauts-de-seine? [R=301,L,NC]
+RewriteRule ^agences/assurance-assurance-seine-saint-denis/ http://agence.assu2000.fr/fr/ile-de-france/seine-saint-denis? [R=301,L,NC]
+RewriteRule ^agences/assurance-seine-saint-denis/ http://agence.assu2000.fr/fr/ile-de-france/seine-saint-denis? [R=301,L,NC]
+RewriteRule ^agences/assurance-val-de-marne/ http://agence.assu2000.fr/fr/ile-de-france/val-de-marne? [R=301,L,NC]
+RewriteRule ^agences/assurance-val-d-oise/ http://agence.assu2000.fr/fr/ile-de-france/val-d-oise? [R=301,L,NC]
+
+RewriteRule ^agences/ain/ http://agence.assu2000.fr/fr/rhone-alpes/ain? [R=301,L,NC]
+RewriteRule ^agences/aisne/ http://agence.assu2000.fr/fr/picardie/aisne? [R=301,L,NC]
+RewriteRule ^agences/alpes-de-haute-provence/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/alpes-de-haute-provence? [R=301,L,NC]
+RewriteRule ^agences/alpes-maritimes/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/alpes-maritimes? [R=301,L,NC]
+RewriteRule ^agences/ardennes/ http://agence.assu2000.fr/fr/champagne-ardenne/ardennes? [R=301,L,NC]
+RewriteRule ^agences/ariege/ http://agence.assu2000.fr/fr/midi-pyrenees/ariege? [R=301,L,NC]
+RewriteRule ^agences/aube/ http://agence.assu2000.fr/fr/champagne-ardenne/aube? [R=301,L,NC]
+RewriteRule ^agences/aude/ http://agence.assu2000.fr/fr/languedoc-roussillon/aude? [R=301,L,NC]
+RewriteRule ^agences/aveyron/ http://agence.assu2000.fr/fr/midi-pyrenees/aveyron? [R=301,L,NC]
+RewriteRule ^agences/bouches-du-rhone/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/bouches-du-rhone? [R=301,L,NC]
+RewriteRule ^agences/calvados/ http://agence.assu2000.fr/fr/basse-normandie/calvados? [R=301,L,NC]
+RewriteRule ^agences/charente/ http://agence.assu2000.fr/fr/poitou-charentes/charente? [R=301,L,NC]
+RewriteRule ^agences/charente-maritime/ http://agence.assu2000.fr/fr/poitou-charentes/charente-maritime? [R=301,L,NC]
+RewriteRule ^agences/cher/ http://agence.assu2000.fr/fr/centre/loir-et-cher? [R=301,L,NC]
+RewriteRule ^agences/correze/ http://agence.assu2000.fr/fr/limousin/correze? [R=301,L,NC]
+RewriteRule ^agences/cote-d-or/ http://agence.assu2000.fr/fr/bourgogne/cote-d-or? [R=301,L,NC]
+RewriteRule ^agences/cotes-d-armor/ http://agence.assu2000.fr/fr/bretagne/cotes-d-armor? [R=301,L,NC]
+RewriteRule ^agences/dordogne/ http://agence.assu2000.fr/fr/aquitaine/dordogne? [R=301,L,NC]
+RewriteRule ^agences/doubs/ http://agence.assu2000.fr/fr/franche-comte/doubs? [R=301,L,NC]
+RewriteRule ^agences/drome/ http://agence.assu2000.fr/fr/rhone-alpes/drome? [R=301,L,NC]
+RewriteRule ^agences/eure/ http://agence.assu2000.fr/fr/haute-normandie/eure? [R=301,L,NC]
+RewriteRule ^agences/eure-et-loir/ http://agence.assu2000.fr/fr/centre/eure-et-loir? [R=301,L,NC]
+RewriteRule ^agences/finistere/ http://agence.assu2000.fr/fr/bretagne/finistere? [R=301,L,NC]
+RewriteRule ^agences/gard/ http://agence.assu2000.fr/fr/languedoc-roussillon/gard? [R=301,L,NC]
+RewriteRule ^agences/haute-garonne/ http://agence.assu2000.fr/fr/midi-pyrenees/haute-garonne? [R=301,L,NC]
+RewriteRule ^agences/gironde/ http://agence.assu2000.fr/fr/aquitaine/gironde? [R=301,L,NC]
+RewriteRule ^agences/herault/ http://agence.assu2000.fr/fr/languedoc-roussillon/herault? [R=301,L,NC]
+RewriteRule ^agences/ille-et-vilaine/ http://agence.assu2000.fr/fr/bretagne/ille-et-vilaine? [R=301,L,NC]
+RewriteRule ^agences/indre-et-loire/ http://agence.assu2000.fr/fr/centre/indre-et-loire? [R=301,L,NC]
+RewriteRule ^agences/isere/ http://agence.assu2000.fr/fr/rhone-alpes/isere? [R=301,L,NC]
+RewriteRule ^agences/jura/ http://agence.assu2000.fr/fr/franche-comte/jura? [R=301,L,NC]
+RewriteRule ^agences/landes/ http://agence.assu2000.fr/fr/aquitaine/landes? [R=301,L,NC]
+RewriteRule ^agences/loir-et-cher/ http://agence.assu2000.fr/fr/centre/loir-et-cher? [R=301,L,NC]
+RewriteRule ^agences/loire/ http://agence.assu2000.fr/fr/rhone-alpes/loire? [R=301,L,NC]
+RewriteRule ^agences/loire-atlantique/ http://agence.assu2000.fr/fr/pays-de-la-loire/loire-atlantique? [R=301,L,NC]
+RewriteRule ^agences/loiret/ http://agence.assu2000.fr/fr/centre/loiret? [R=301,L,NC]
+RewriteRule ^agences/lot/ http://agence.assu2000.fr/fr/midi-pyrenees/lot? [R=301,L,NC]
+RewriteRule ^agences/lot-et-garonne/ http://agence.assu2000.fr/fr/aquitaine/lot-et-garonne? [R=301,L,NC]
+RewriteRule ^agences/maine-et-loire/ http://agence.assu2000.fr/fr/pays-de-la-loire/maine-et-loire? [R=301,L,NC]
+RewriteRule ^agences/manche/ http://agence.assu2000.fr/fr/basse-normandie/manche? [R=301,L,NC]
+RewriteRule ^agences/marne/ http://agence.assu2000.fr/fr/champagne-ardenne/marne? [R=301,L,NC]
+RewriteRule ^agences/haute-marne/ http://agence.assu2000.fr/fr/champagne-ardenne/haute-marne? [R=301,L,NC]
+RewriteRule ^agences/mayenne/ http://agence.assu2000.fr/fr/pays-de-la-loire/mayenne? [R=301,L,NC]
+RewriteRule ^agences/meurthe-et-moselle/ http://agence.assu2000.fr/fr/lorraine/meurthe-et-moselle? [R=301,L,NC]
+RewriteRule ^agences/meuse/ http://agence.assu2000.fr/fr/lorraine/meuse? [R=301,L,NC]
+RewriteRule ^agences/morbihan/ http://agence.assu2000.fr/fr/bretagne/morbihan? [R=301,L,NC]
+RewriteRule ^agences/moselle/ http://agence.assu2000.fr/fr/lorraine/moselle? [R=301,L,NC]
+RewriteRule ^agences/nord/ http://agence.assu2000.fr/fr/nord-pas-de-calais/nord? [R=301,L,NC]
+RewriteRule ^agences/oise/ http://agence.assu2000.fr/fr/picardie/oise? [R=301,L,NC]
+RewriteRule ^agences/pas-de-calais/ http://agence.assu2000.fr/fr/nord-pas-de-calais? [R=301,L,NC]
+RewriteRule ^agences/puy-de-dome/ http://agence.assu2000.fr/fr/auvergne/puy-de-dome? [R=301,L,NC]
+RewriteRule ^agences/pyrenees-atlantiques/ http://agence.assu2000.fr/fr/aquitaine/pyrenees-atlantiques? [R=301,L,NC]
+RewriteRule ^agences/assurance-hautes-pyrenees/ http://agence.assu2000.fr/fr/midi-pyrenees/hautes-pyrenees? [R=301,L,NC]
+RewriteRule ^agences/pyrenees-orientales/ http://agence.assu2000.fr/fr/languedoc-roussillon/pyrenees-orientales? [R=301,L,NC]
+RewriteRule ^agences/bas-rhin/ http://agence.assu2000.fr/fr/alsace/bas-rhin? [R=301,L,NC]
+RewriteRule ^agences/haut-rhin/ http://agence.assu2000.fr/fr/alsace/haut-rhin? [R=301,L,NC]
+RewriteRule ^agences/rhone/ http://agence.assu2000.fr/fr/rhone-alpes/rhone? [R=301,L,NC]
+RewriteRule ^agences/haute-saone/ http://agence.assu2000.fr/fr/franche-comte/haute-saone? [R=301,L,NC]
+RewriteRule ^agences/saone-et-loire/ http://agence.assu2000.fr/fr/bourgogne/saone-et-loire? [R=301,L,NC]
+RewriteRule ^agences/sarthe/ http://agence.assu2000.fr/fr/pays-de-la-loire/sarthe? [R=301,L,NC]
+RewriteRule ^agences/savoie/ http://agence.assu2000.fr/fr/rhone-alpes/savoie? [R=301,L,NC]
+RewriteRule ^agences/haute-savoie/ http://agence.assu2000.fr/fr/rhone-alpes/haute-savoie? [R=301,L,NC]
+RewriteRule ^agences/paris/ http://agence.assu2000.fr/fr/ile-de-france/paris? [R=301,L,NC]
+RewriteRule ^agences/seine-maritime/ http://agence.assu2000.fr/fr/haute-normandie/seine-maritime? [R=301,L,NC]
+RewriteRule ^agences/seine-et-marne/ http://agence.assu2000.fr/fr/ile-de-france/seine-et-marne? [R=301,L,NC]
+RewriteRule ^agences/yvelines/ http://agence.assu2000.fr/fr/ile-de-france/yvelines? [R=301,L,NC]
+RewriteRule ^agences/deux-sevres/ http://agence.assu2000.fr/fr/poitou-charentes/deux-sevres? [R=301,L,NC]
+RewriteRule ^agences/somme/ http://agence.assu2000.fr/fr/picardie/somme? [R=301,L,NC]
+RewriteRule ^agences/tarn/ http://agence.assu2000.fr/fr/midi-pyrenees/tarn? [R=301,L,NC]
+RewriteRule ^agences/tarn-et-garonne/ http://agence.assu2000.fr/fr/midi-pyrenees/tarn-et-garonne? [R=301,L,NC]
+RewriteRule ^agences/var/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/var? [R=301,L,NC]
+RewriteRule ^agences/vaucluse/ http://agence.assu2000.fr/fr/provence-alpes-cote-d-azur/vaucluse? [R=301,L,NC]
+RewriteRule ^agences/vendee/ http://agence.assu2000.fr/fr/pays-de-la-loire/vendee? [R=301,L,NC]
+RewriteRule ^agences/vienne/ http://agence.assu2000.fr/fr/poitou-charentes/vienne? [R=301,L,NC]
+RewriteRule ^agences/haute-vienne/ http://agence.assu2000.fr/fr/limousin/haute-vienne? [R=301,L,NC]
+RewriteRule ^agences/vosges/ http://agence.assu2000.fr/fr/lorraine/vosges? [R=301,L,NC]
+RewriteRule ^agences/yonne/ http://agence.assu2000.fr/fr/bourgogne/yonne? [R=301,L,NC]
+RewriteRule ^agences/territoire-de-belfort/ http://agence.assu2000.fr/fr/franche-comte/territoire-de-belfort? [R=301,L,NC]
+RewriteRule ^agences/essonne/ http://agence.assu2000.fr/fr/ile-de-france/essonne? [R=301,L,NC]
+RewriteRule ^agences/hauts-de-seine/ http://agence.assu2000.fr/fr/ile-de-france/hauts-de-seine? [R=301,L,NC]
+RewriteRule ^agences/assurance-seine-saint-denis/ http://agence.assu2000.fr/fr/ile-de-france/seine-saint-denis? [R=301,L,NC]
+RewriteRule ^agences/seine-saint-denis/ http://agence.assu2000.fr/fr/ile-de-france/seine-saint-denis? [R=301,L,NC]
+RewriteRule ^agences/val-de-marne/ http://agence.assu2000.fr/fr/ile-de-france/val-de-marne? [R=301,L,NC]
+RewriteRule ^agences/val-d-oise/ http://agence.assu2000.fr/fr/ile-de-france/val-d-oise? [R=301,L,NC]
+
+######## Redirection Pages Agences
+#
+RewriteRule ^liste-pages-agences.html http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^agence-assu-2000-(.*)$ /assurance-$1-assu-2000.html? [R=301,L,NC]
+RewriteRule ^assurance-paris-14-losserand-assu-2000.html http://agence.assu2000.fr/253094-assu-2000-paris-14e-losserand? [R=301,L,NC]
+RewriteRule ^assurance-montreuil-assu-2000.html http://agence.assu2000.fr/253424-assu-2000-montreuil? [R=301,L,NC] 
+RewriteRule ^assurance-caen-assu-2000.html http://agence.assu2000.fr/253224-assu-2000-caen-saint-jean? [R=301,L,NC]
+RewriteRule ^assurance-cannes-assu-2000.html http://agence.assu2000.fr/253318-assu-2000-cannes? [R=301,L,NC]
+RewriteRule ^assurance-rennes-mauget-assu-2000.html http://agence.assu2000.fr/253269-assu-2000-rennes-puits-mauger? [R=301,L,NC]
+RewriteRule ^agence-assu-2000-rennes-la-motte-fablet http://agence.assu2000.fr/253269-assu-2000-rennes-puits-mauger? [R=301,L,NC]
+RewriteRule ^assurance-rennes-la-motte-fablet-assu-2000.html http://agence.assu2000.fr/253269-assu-2000-rennes-puits-mauger? [R=301,L,NC]
+RewriteRule ^assurance-rennes-motte-fablet-assu-2000.html http://agence.assu2000.fr/253269-assu-2000-rennes-puits-mauger? [R=301,L,NC]
+RewriteRule ^assurance-nancy-republique-assu-2000.html http://agence.assu2000.fr/253296-assu-2000-nancy-saint-dizier? [R=301,L,NC]
+RewriteRule ^assurance-nancy-republique-assu-2000 http://agence.assu2000.fr/253296-assu-2000-nancy-saint-dizier? [R=301,L,NC]
+RewriteRule ^assurance-cergy-assu-2000 http://agence.assu2000.fr/253161-assu-2000-cergy-prefecture? [R=301,L,NC]
+RewriteRule ^assurance-cergy-assu-2000.html http://agence.assu2000.fr/253161-assu-2000-cergy-prefecture? [R=301,L,NC]
+RewriteRule ^assurance-villeurbanne-tolstoi-assu-2000.html http://agence.assu2000.fr/253432-assu-2000-villeurbanne? [R=301,L,NC]
+RewriteRule ^assurance-villeurbanne-tolstoi-assu-2000 http://agence.assu2000.fr/253432-assu-2000-villeurbanne? [R=301,L,NC]
+RewriteRule ^assurance-cannes-assu-2000 http://agence.assu2000.fr/253318-assu-2000-cannes? [R=301,L,NC]
+RewriteRule ^assurance-saint-maur-assu-2000 http://agence.assu2000.fr/253427-assu-2000-saint-maur-des-fosses? [R=301,L,NC]
+RewriteRule ^assurance-draveil-assu-2000 http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-draveil-assu-2000.html http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-vanves-assu-2000 http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-vanves-assu-2000.html http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-halluin-assu-2000 http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-halluin-assu-2000.html http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-poitiers-magenta-assu-2000.html http://agence.assu2000.fr/253437-assu-2000-poitiers? [R=301,L,NC]
+RewriteRule ^assurance-lyon-1er-assu-2000.html http://agence.assu2000.fr/253215-assu-2000-lyon-1er? [R=301,L,NC]
+RewriteRule ^assurance-lyon-3eme-assu-2000.html http://agence.assu2000.fr/253199-assu-2000-lyon-3e? [R=301,L,NC]
+RewriteRule ^assurance-marseille-15e-quartiers-nord-assu-2000.html http://agence.assu2000.fr/253248-assu-2000-marseille-15e-saint-antoine? [R=301,L,NC]
+RewriteRule ^assurance-saint-michel-sur-orge-assu-2000.html http://agence.assu2000.fr/253340-assu-2000-sainte-genevieve-des-bois? [R=301,L,NC]
+RewriteRule ^assurance-strasbourg-neudorf-assu-2000.html http://agence.assu2000.fr/253262-assu-2000-strasbourg-etoile? [R=301,L,NC]
+RewriteRule ^assurance-la-ferte-sous-jouarre-assu-2000.html http://agence.assu2000.fr/253114-assu-2000-meaux? [R=301,L,NC]
+RewriteRule ^assurance-villeparisis-assu-2000.html http://agence.assu2000.fr/253187-assu-2000-livry-gargan? [R=301,L,NC]
+RewriteRule ^assurance-rambouillet-assu-2000.html http://agence.assu2000.fr/253418-assu-2000-elancourt? [R=301,L,NC]
+RewriteRule ^assurance-brie-comte-robert-assu-2000.html http://agence.assu2000.fr/253193-assu-2000-pontault-combault? [R=301,L,NC]
+RewriteRule ^assurance-rive-de-gier-assu-2000.html http://agence.assu2000.fr/253221-assu-2000-givors? [R=301,L,NC]
+RewriteRule ^assurance-vallauris-assu-2000.html http://agence.assu2000.fr/253278-assu-2000-antibes? [R=301,L,NC]
+RewriteRule ^assurance-gap-assu-2000.html http://agence.assu2000.fr/253394-assu-2000-manosque? [R=301,L,NC]
+RewriteRule ^assurance-orly-assu-2000.html http://agence.assu2000.fr/253162-assu-2000-athis-mons? [R=301,L,NC]
+RewriteRule ^assurance-metz-saulcy-assu-2000.html http://agence.assu2000.fr/253284-assu-2000-metz? [R=301,L,NC]
+RewriteRule ^assurance-nemours-assu-2000.html http://agence.assu2000.fr/253276-assu-2000-fontainebleau? [R=301,L,NC]
+RewriteRule ^assurance-aubenas-assu-2000.html http://agence.assu2000.fr/253338-assu-2000-montelimar? [R=301,L,NC]
+RewriteRule ^assurance-caluire-assu-2000.html http://agence.assu2000.fr/253215-assu-2000-lyon-1er? [R=301,L,NC]
+RewriteRule ^assurance-levallois-perret-assu-2000.html /assurance-courbevoie-assu-2000.html? [R=301,L,NC]
+RewriteRule ^assurance-lyon-9e-assu-2000.html http://agence.assu2000.fr/253215-assu-2000-lyon-1er? [R=301,L,NC]
+RewriteRule ^assurance-bonneuil-assu-2000.html http://agence.assu2000.fr/253098-assu-2000-creteil? [R=301,L,NC]
+RewriteRule ^assurance-montreuil-rue-paris-assu-2000.html http://agence.assu2000.fr/253424-assu-2000-montreuil? [R=301,L,NC]
+RewriteRule ^assurance-paris-12e-assu-2000.html http://agence.assu2000.fr/253103-assu-2000-paris-11e? [R=301,L,NC]
+RewriteRule ^assurance-saint-pol-sur-mer-assu-2000.html http://agence.assu2000.fr/253196-assu-2000-dunkerque? [R=301,L,NC]
+RewriteRule ^assurance-rillieux-la-rape-assu-2000.html http://agence.assu2000.fr/253213-assu-2000-rillieux-la-pape? [R=301,L,NC]
+RewriteRule ^assurance-echirolles-assu-2000.html http://agence.assu2000.fr/253219-assu-2000-grenoble-jaures? [R=301,L,NC]
+RewriteRule ^agences/assurance-hautes-pyrenees/ http://agence.assu2000.fr/253407-assu-2000-tarbes? [R=301,L,NC]
+RewriteRule ^assurance-rennes-puits-mauget-assu-2000.html http://agence.assu2000.fr/253269-assu-2000-rennes-puits-mauger? [R=301,L,NC]
+RewriteRule ^assurance-montbelliard-assu-2000.html http://agence.assu2000.fr/253287-assu-2000-montbeliard? [R=301,L,NC]
+RewriteRule ^assurance-paris-09e-assu-2000.html http://agence.assu2000.fr/253183-assu-2000-paris-18e-la-fourche? [R=301,L,NC]
+RewriteRule ^assurance-houilles-assu-2000.html http://agence.assu2000.fr/253148-assu-2000-sartrouville? [R=301,L,NC]
+RewriteRule ^assurance-saint-max-assu-2000.html http://agence.assu2000.fr/253296-assu-2000-nancy-saint-dizier? [R=301,L,NC]
+RewriteRule ^assurance-poitiers-assu-2000.html http://agence.assu2000.fr/253437-assu-2000-poitiers? [R=301,L,NC]
+RewriteRule ^assurance-marseille-11e-assu-2000.html http://agence.assu2000.fr/253258-assu-2000-marseille-10e? [R=301,L,NC]
+RewriteRule ^assurance-strasbourg-koenig-assu-2000.html http://agence.assu2000.fr/253279-assu-2000-strasbourg? [R=301,L,NC]
+RewriteRule ^assurance-chateau-thierry-assu-2000.html http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-sucy-en-brie-assu-2000.html http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-villeneuve-le-roi-assu-2000.html http://agence.assu2000.fr/? [R=301,L,NC]
+RewriteRule ^assurance-paris-14e-brune-assu-2000.html http://agence.assu2000.fr/253086-assu-2000-arcueil? [R=301,L,NC]
+RewriteRule ^assurance-marseille-1er-assu-2000.html http://agence.assu2000.fr/317065-assu-2000-marseille-6e? [R=301,L,NC]
+RewriteRule ^agences-assu-2000/assurance-cergy-saint-christophe-assu-2000.html http://agence.assu2000.fr/253398-assu-2000-cergy-saint-christophe? [R=301,L,NC]
+RewriteRule ^assurance-villiers-sur-marne-assu-200.html http://agence.assu2000.fr/253140-assu-2000-villiers-sur-marne? [R=301,L,NC]
+RewriteRule ^nos-offres$ /qui-sommes-nous.html [R=301,L,NC]
+
+######## Redirection Pages devis
+#
+RewriteRule ^auto/9-uncategorised/122-vous-souhaitez-effectuer-un-devis-auto-sur-le-site-de-notre-partenaire-euro-assurance /devis-auto/ [R=301,L]
+RewriteRule ^vsp/9-uncategorised/125-vous-souhaitez-effectuer-un-devis-voiture-sans-permis-sur-le-site-de-notre-partenaire-euro-assurance$ /devis-vsp/ [R=301,L]
+RewriteRule ^moto/9-uncategorised/123-vous-souhaitez-effectuer-un-devis-moto-sur-le-site-de-notre-partenaire-euro-assurance$ /devis-moto/ [R=301,L]
+RewriteRule ^scooter/9-uncategorised/124-vous-souhaitez-effectuer-un-devis-cyclo-sur-le-site-de-notre-partenaire-euro-assurance$ /devis-cyclo/ [R=301,L]
+RewriteRule ^assurance-scooter-50cm3/devis/ /devis-scooter/ [R=301,L]
+RewriteRule ^devis/assurance-scooter-50cm3/ /devis-scooter/ [R=301,L]
+
+RewriteRule ^devis-assurance-auto$ /devis-auto/ [R=301,L]
+RewriteRule ^devis-assurance-auto/$ /devis-auto/ [R=301,L]
+RewriteRule ^devis-assurance-moto$ /devis-moto/ [R=301,L]
+RewriteRule ^devis-assurance-moto/$ /devis-moto/ [R=301,L]
+RewriteRule ^devis-assurance-voiture-sans-permis$ /devis-vsp/ [R=301,L]
+RewriteRule ^devis-assurance-voiture-sans-permis/$ /devis-vsp/ [R=301,L]
+RewriteRule ^devis-assurance-cyclo$ /devis-cyclo/ [R=301,L]
+RewriteRule ^devis-assurance-cyclo/$ /devis-cyclo/ [R=301,L]
+RewriteRule ^devis-assurance-quad$ /devis-quad/ [R=301,L]
+RewriteRule ^devis-assurance-quad/$ /devis-quad/ [R=301,L]
+RewriteRule ^devis-assurance-scooter$ /devis-scooter/ [R=301,L]
+RewriteRule ^devis-assurance-scooter/$ /devis-scooter/ [R=301,L]
+RewriteRule ^devis-assurance-habitation$ /devis-mrh/ [R=301,L]
+RewriteRule ^devis-assurance-habitation/$ /devis-mrh/ [R=301,L]
+
+######## Redirection Pages Produits
+#
+RewriteRule ^protection-du-conducteur/synthese/ /assurance-auto/ [R=301,L]
+
+###redirection page produit auto anciens liens dans messages de forum
+RewriteCond %{QUERY_STRING} id=1$
+RewriteRule /WebAssu2000/jsp/FO/presentation/detail_produit.jsp /assurance-auto/? [R=301,L]
+
+## redirection page accueil - ancien lien
+RewriteRule /WebAssu2000/jsp/FO/index.jsp / [R=301,L]
+
+RewriteRule ^moto/ /assurance-moto/ [R=301,L]
+RewriteRule ^moto/9-uncategorised /assurance-moto/ [R=301,L]
+RewriteRule ^assurance-moto/details.html$ /assurance-moto/ [R=301,L]
+RewriteRule ^scooter/ /assurance-scooter/ [R=301,L]
+RewriteRule ^assurance-scooter-50cm3/ /assurance-scooter/ [R=301,L]
+RewriteRule ^vsp/ /assurance-voiture-sans-permis/ [R=301,L]
+RewriteRule ^habitation/ /assurance-habitation/ [R=301,L]
+RewriteRule ^prevoyance/ /assurance-prevoyance/ [R=301,L]
+RewriteRule ^assurance-vie /assurance-prevoyance/ [R=301,L]
+RewriteRule ^epargne-assurance-vie/ /assurance-prevoyance/ [R=301,L]
+RewriteRule ^assurance-professionnelle/assurance-vehicules-professionnels.html$ /assurance-professionnelle.html [R=301,L]
+
+#### unique page crédit
+RewriteRule ^rachat-credit-immobilier/ /credit-immobilier/ [R=301,L]
+RewriteRule ^credit-travaux/ /credit-immobilier/ [R=301,L]
+
+RewriteRule ^assurance-camping-car/details.html /assurance-camping-car/ [R=301,L]
+RewriteRule ^campingcar/details /assurance-camping-car/ [R=301,L]
+RewriteRule ^campingcar/details/$ /assurance-camping-car/ [R=301,L]
+RewriteRule ^chien-chat/ / [R=301,L]
+RewriteRule ^sante/ /mutuelle/ [R=301,L]
+RewriteRule ^mutuelle/details.html /mutuelle/ [R=301,L]
+
+######## Redirection 15/06/2015
+RewriteRule ^carte-interactive-facebook$ /? [R=301,L]
+RewriteRule ^carte-interactive$ /carte-interactive.html? [R=301,L]
+
+######## Redirection 14/09/2015
+RewriteRule ^carte-interactive/$ /carte-interactive.html? [R=301,L]
+RewriteRule ^images/sport/mom/reoncontre-florent-manaudou.pdf$ /images/sport/mom/rencontre-florent-manaudou.pdf? [R=301,L]
+RewriteRule ^blog/infographie-presentation-groupe-assu-2000.html$ /groupe/? [R=301,L]
+RewriteRule ^voeux2013/assu-grp.swf$ /images/voeuxgroupe-2015/ [L] 
+RewriteCond %{QUERY_STRING} (.*)&id=103&Itemid=585$
+RewriteRule ^(.*)$ /les-services/service-rh.html? [R=301,L]
+RewriteRule ^rss_definition.html$ /actualites/? [R=301,L]
+RewriteRule ^modules/mod_rmc/recupRMC.php /sport/? [R=301,L]
+RewriteRule ^les-services/service-marketing/79-nous-rejoindre/71-mot-president(\.html)?$ /les-services/service-marketing.html [R=301,L]
+RewriteRule ^assurance-au-quotidien.html$ /actualites/? [R=301,L]
+RewriteRule ^empty.htm$ /? [R=301,L]
+RewriteRule ^newsletter/zoom-sur/150-siege-social.html$ /newsletter/zoom-sur/150-siege-social-assu-2000.html [R=301,L]
+RewriteRule ^newsletter(.*)page-9.html$ /newsletter/ [R=301,L]
+RewriteRule ^assurance-moto.html$ /assurance-moto/ [R=301,L]
+RewriteRule ^assurance-moto-([-a-z]+).html$ /assurance-moto/ [R=301,L]
+RewriteRule ^devis-assurance.html$ /assurance-en-ligne/devis-assurance-en-ligne.html [R=301,L]
+
+######## Redirection 14/10/2015
+RewriteCond %{QUERY_STRING} (.*)&id=106&Itemid=581$
+RewriteRule ^(.*)$ /les-services/service-marketing.html? [R=301,L]
+RewriteCond %{QUERY_STRING} (.*)&Itemid=612$ [OR]
+RewriteCond %{REQUEST_URI} ^/frameFlash.html$ [OR]
+RewriteCond %{REQUEST_URI} ^/home/$ [OR]
+RewriteCond %{REQUEST_URI} ^/phpsqlsearchindep_genxml.php$
+RewriteRule ^(.*)$ /? [R=301,L]
+RewriteRule ^blog/nouvelles-agences-ab.html$ /blog/nouvelles-agences-ab-courtage.html [R=301,L]
+RewriteRule ^blog/rachat-abcourtage.html /blog/rachat-abcourtage-assu2000.html [R=301,L]
+RewriteRule ^blog/operation-assu-2000-vente$ /blog/operation-assu-2000-vente-privee-assurance-deux-roues.html [R=301,L]
+RewriteRule ^le-groupe-a$ /groupe/ [R=301,L]
+
+######## Redirection 26/10/2015
+RewriteRule ^newsletter/le-billet-du-mois/162-rentree-2012--les-chiffres(\.html)?$ /newsletter/le-billet-du-mois/162-rentree-2012-les-chiffres.html [R=301,L]
+
+######## Redirection 02/11/2015
+RewriteCond %{REQUEST_URI} ^/images/stories/animation-moto.swf$ [OR]
+RewriteCond %{REQUEST_URI} ^/frameNavigatorTop.html$
+RewriteRule ^(.*)$ /? [R=301,L]
+
+######## Redirection 13/08/2018
+RewriteRule ^copyright.html$ /mentions-legales.html [R=301,L]
+RewriteRule ^politique-confidentialite.html$ /donnees-personnelles.html [R=301,L]
+
+###### redirection page fidélité et reezocar
+RewriteRule ^my-assu$ /? [R=301,L]
+RewriteRule ^my-assu/$ /? [R=301,L]
+RewriteRule ^programme-fidelite-my-assu.html$ /? [R=301,L]
+RewriteRule ^loa-partenariat-reezocar.html$ /? [R=301,L]
+
+######## Redirection pour les pages avec pagination
+#
+RewriteCond %{QUERY_STRING} (.*)?start=5$
+RewriteRule ^(.*)$ /$1/page-2.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=10$
+RewriteRule ^(.*)$ /$1/page-3.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=15$
+RewriteRule ^(.*)$ /$1/page-4.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=20$
+RewriteRule ^(.*)$ /$1/page-5.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=25$
+RewriteRule ^(.*)$ /$1/page-6.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=30$
+RewriteRule ^(.*)$ /$1/page-7.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=35$
+RewriteRule ^(.*)$ /$1/page-8.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=40$
+RewriteRule ^(.*)$ /$1/page-9.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=45$
+RewriteRule ^(.*)$ /$1/page-10.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=50$
+RewriteRule ^(.*)$ /$1/page-11.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=55$
+RewriteRule ^(.*)$ /$1/page-12.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=60$
+RewriteRule ^(.*)$ /$1/page-13.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=65$
+RewriteRule ^(.*)$ /$1/page-14.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} (.*)?start=70$
+RewriteRule ^(.*)$ /$1/page-15.html? [R=301,L]
+
+######## Redirection vers la page en html
+#
+RewriteCond  %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_URI} !\.html$
+#RewriteCond %{REQUEST_URI} !\.php$
+#ne remplit pas la condition si le fichier a une extension
+RewriteCond %{REQUEST_URI} !\.(.*)$
+RewriteCond %{REQUEST_URI} !/$
+#RewriteCond %{REQUEST_URI} !^/carte-interactive-facebook$
+RewriteCond %{REQUEST_URI} !^/tplproximeo/(.*)$
+RewriteCond %{REQUEST_URI} !^/Proximeo/(.*)$
+RewriteCond %{REQUEST_URI} !^(.*)/dynaTraceMonitor(.*)$
+RewriteCond %{REQUEST_URI} ^/actualites/(.*)$ [OR]
+RewriteCond %{REQUEST_URI} ^/newsletter/(.*)$ [OR]
+RewriteCond %{REQUEST_URI} ^/plan-du-site(.*)$ [OR]
+RewriteCond %{REQUEST_URI} ^/les-services/service-client(.*)$ [OR]
+RewriteCond %{REQUEST_URI} ^/les-services/service-commercial(.*)$ [OR]
+RewriteCond %{REQUEST_URI} ^/les-services/service-rh(.*)$ [OR]
+RewriteCond %{REQUEST_URI} ^/garages-partenaires-agrees(.*)$ [OR]
+RewriteCond %{REQUEST_URI} ^/copyright(.*)$ [OR]
+RewriteCond %{REQUEST_URI} ^/mentions-legales(.*)$
+RewriteRule (.*)$ /$1.html [L,NC,R=301]
+
+RewriteRule ^nos-offres-emploi$ /nos-offres-emploi.html [L,NC,R=301]
+RewriteRule ^fiche-pratique/$ /fiches-pratiques.html [L,NC,R=301]
+RewriteRule ^assurance-(.*)-assu-2000$ /assurance-$1-assu-2000.html [R=301,L]
+
+######## Redirection index.html vers /
+#
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.html\ HTTP/
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+######## Redirection vers le dossier desktop ou mobile
+#
+
+# on detecte si c est un mobile
+RewriteCond %{HTTP_USER_AGENT} mobile|iphone [NC]
+RewriteCond %{HTTP_USER_AGENT} !ipad [NC] 
+RewriteRule .* - [E=device:smartphone]
+
+# SI devicetype n'est pas trouvé, on choisit DESKTOP par défaut
+RewriteCond %{ENV:device} ^$
+RewriteRule .* - [E=device:desktop]
+
+# si on est en desktop on vide le Cookie
+RewriteCond %{ENV:device} desktop
+RewriteRule .* - [CO=deviceview:;:;::]
+
+#on set le cookie si on est en mobile et si query string est renseigne
+RewriteCond %{ENV:device} smartphone
+RewriteCond %{QUERY_STRING} ^.*deviceview=(desktop|smartphone)$
+RewriteRule .* - [CO=deviceview:%1:;::]
+
+# si c est la 1re connexion en mobile
+RewriteCond %{ENV:device} smartphone
+RewriteCond %{HTTP_COOKIE} !deviceview=(desktop|smartphone)
+RewriteRule .* - [E=mobilefirst:1]
+
+RewriteCond %{ENV:device} smartphone
+RewriteCond %{HTTP_COOKIE} !deviceview=(desktop|smartphone)
+RewriteRule .* - [CO=deviceview:smartphone:;::]
+
+#si en cookie, on a smartphone 
+RewriteCond %{ENV:mobilefirst} 1 [OR]
+RewriteCond %{HTTP_COOKIE} deviceview=smartphone [OR]
+RewriteCond %{QUERY_STRING} ^.*deviceview=smartphone$ 
+RewriteRule .* - [E=deviceview:smartphone]
+
+#si en cookie, on a desktop ou query string desktop
+RewriteCond %{HTTP_COOKIE} deviceview=desktop [OR]
+RewriteCond %{QUERY_STRING} ^.*deviceview=desktop$ 
+RewriteRule .* - [E=deviceview:desktop]
+
+RewriteCond %{ENV:device} desktop
+RewriteCond %{HTTP_COOKIE} deviceview= 
+RewriteRule .* - [E=deviceview:desktop]
+
+#si on trouve query string smartphone
+RewriteCond %{QUERY_STRING} ^.*deviceview=smartphone$ 
+RewriteRule .* - [E=deviceview:smartphone]
+
+# on bascule vers la version mobile
+RewriteCond %{ENV:deviceview} smartphone
+Rewritecond %{REQUEST_URI} !^/mobile
+RewriteRule  ^(.*)$ /mobile/$1
+
+# on bascule vers la version desktop
+RewriteCond %{ENV:deviceview} !smartphone
+Rewritecond %{REQUEST_URI} !^/desktop
+RewriteRule ^(.*)$ /desktop/$1

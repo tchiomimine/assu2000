@@ -1,0 +1,4045 @@
+@charset "UTF-8";
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+label.error {
+  margin-bottom: 0;
+  top: 100%;
+  left: 0;
+  color: #DC6060;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 2rem;
+}
+
+input[type="radio"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+
+input[type="radio"]:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.form-control::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #999;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #999;
+}
+
+.form-control::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+
+.form-group {
+  margin-bottom: 3.5rem;
+}
+
+.form-group.highlighted {
+  padding: 1px 10px;
+  box-shadow: 0 0 0 5px #fff;
+}
+
+.form-group.highlighted.first {
+  margin-top: 50px;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  color: #292526;
+  font-family: "Asap", sans-serif;
+  font-size: 1.4rem;
+  min-height: 100%;
+  height: auto;
+  position: relative;
+  padding-top: 9rem;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    padding-top: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body.menu-show {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+}
+
+:focus {
+  outline: -webkit-focus-ring-color auto 0;
+}
+
+::-moz-selection {
+  background: #96c246;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #96c246;
+  color: #fff;
+  text-shadow: none
+}
+
+label {
+  font-size: 1.6rem;
+  color: #282425;
+  font-weight: normal;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+label.error {
+  margin-bottom: 0;
+  top: 100%;
+  left: 0;
+  color: #DC6060;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 2rem;
+}
+
+button, input, select {
+  border: .1rem #c0c0c0 solid;
+  padding: .5rem;
+  background: #fff;
+}
+
+input:focus, select:focus {
+  border-color: #e30155;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+.text-highlight {
+  color: #96c246 !important;
+}
+
+.text-highlight-bis {
+  color: #0C5194 !important;
+}
+
+.text-highlight-brand {
+  color: #96c246;
+}
+
+.text-highlight-grey {
+  color: #909090;
+}
+
+.text-valid {
+  color: #A3CC40;
+}
+
+.text-modified {
+  color: #896819;
+}
+
+.text-infos {
+  color: #A1917F;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-normal {
+  font-weight: normal;
+}
+
+.weight-normal {
+  font-weight: normal;
+}
+
+.xxs-txt {
+  font-size: 1rem;
+}
+
+.xs-txt {
+  font-size: 1.2rem;
+}
+
+.md-txt {
+  font-size: 1.4rem;
+}
+
+.lg-txt {
+  font-size: 1.6rem;
+}
+
+.xlg-txt {
+  font-size: 1.8rem;
+}
+
+.xxlg-txt {
+  font-size: 2rem;
+}
+
+.hd-txt {
+  font-size: 2.4rem;
+}
+
+.v-top {
+  vertical-align: top !important;
+}
+
+.v-mid {
+  vertical-align: middle !important;
+}
+
+.no-mgt {
+  margin-top: 0 !important;
+}
+
+.no-mgb {
+  margin-bottom: 0 !important;
+}
+
+.no-padding-lr {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.display-table {
+  display: table;
+  width: 100%;
+}
+
+.display-table.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.display-row {
+  display: table-row;
+}
+
+.display-cell {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+
+.display-block {
+  display: block;
+}
+
+.no-display {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .display-sm-table {
+    display: table;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .display-xs-table {
+    display: table;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .display-sm-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .display-xs-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .display-lg-table-row {
+    display: table-row;
+    vertical-align: middle;
+    float: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .display-md-table-row {
+    display: table-row;
+    vertical-align: middle;
+    float: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .display-sm-table-row {
+    display: table-row;
+    vertical-align: middle;
+    float: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .display-xs-table-row {
+    display: table-row;
+    vertical-align: middle;
+    float: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .txt-lg-center {
+    text-align: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .txt-md-center {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .txt-sm-center {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .txt-xs-center {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .txt-lg-left {
+    text-align: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .txt-md-left {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .txt-sm-left {
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+  .txt-xs-left {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .txt-lg-right {
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+  .txt-md-right {
+    text-align: right;
+  }
+}
+
+@media (min-width: 768px) {
+  .txt-sm-right {
+    text-align: right;
+  }
+}
+
+@media (max-width: 767px) {
+  .txt-xs-right {
+    text-align: right;
+  }
+}
+
+@media (min-width: 768px) {
+  .pull-right-sm {
+    float: right;
+  }
+}
+
+.box-as {
+  padding: 10px;
+  border: 1px solid #858583;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.box-as.light-simple {
+  background: #EFF1F0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.box-as.lk-grd {
+  border: 1px solid #D8D8D8;
+  padding: 0;
+}
+
+.box-as.lk-grd .thumb {
+  height: 218px;
+  padding: 40px;
+  border-bottom: 1px solid #D8D8D8;
+}
+
+.box-as.lk-grd .thumb h2 {
+  z-index: 2;
+  position: absolute;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  top: 50%;
+  left: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-left: 30px;
+  margin-top: 0;
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.box-as.lk-grd .thumb h2:before {
+  content: '';
+  background: #96c246;
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box-as.lk-grd .thumb h2.yellow:before {
+  background: #DEC176;
+}
+
+.box-as.lk-grd .thumb h2.purple:before {
+  background: #B86BD0;
+}
+
+.box-as.lk-grd .thumb h2.green:before {
+  background: #BFDCA2;
+}
+
+.box-as.lk-grd .content {
+  padding: 30px 60px;
+  color: #020202;
+}
+
+.box-as.lk-grd .content h3 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.box-as.lk-grd .content blockquote {
+  font-size: 28px;
+  line-height: 26px;
+  border-left: 0;
+  padding: 0;
+}
+
+.box-as.lk-grd .content blockquote:before, .box-as.lk-grd .content blockquote:after {
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  vertical-align: super;
+}
+
+.box-as.lk-grd .content blockquote:before {
+  content: '"';
+}
+
+.box-as.lk-grd .content blockquote:after {
+  content: '"';
+}
+
+.box-as.lg-mgb {
+  margin-bottom: 40px;
+}
+
+.box-as.lg-mgt {
+  margin-top: 40px;
+}
+
+.box-as.no-border-t {
+  border-top: 0;
+}
+
+.box-as.no-border-b {
+  border-bottom: 0;
+}
+
+.box-as.no-border-lr {
+  border-left: 0;
+  border-right: 0;
+}
+
+.box-as.no-border {
+  border: 0;
+}
+
+.box-as.lght-bdr {
+  border-color: #C0C0C0;
+}
+
+.box-as.bdr-rds {
+  border-radius: 6px;
+}
+
+.box-as.with-shdw, .form .stripe-section.form-section .formule.active {
+  box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.26);
+}
+
+.box-as.with-shdw-nst, .box-as .with-shdw-nst {
+  box-shadow: 0 10px 9px -10px rgba(0, 0, 0, 0.5) inset;
+}
+
+.box-as.transparent-black {
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.box-as.transparent-white {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.box-as.white {
+  background: #fff;
+}
+
+.box-as.grey {
+  background: #E2E2E2;
+}
+
+.box-as.dark-grey {
+  background: #353535;
+}
+
+.box-as.md-grey {
+  background: #E3E3E3;
+}
+
+.box-as.lg-grey {
+  background: #8A8985;
+}
+
+.box-as.light-grey {
+  background: #EEEEEE;
+}
+
+.box-as.highlighted {
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.box-as.simple {
+  background: #DBDAD5;
+  color: #353533;
+  border-color: #B7B7B7;
+}
+
+.box-as.simple h3 {
+  color: #353533;
+}
+
+.box-as.xs-padding {
+  padding: 5px;
+}
+
+.box-as.sm-padding {
+  padding: 20px;
+}
+
+.box-as.sm-md-padding {
+  padding: 30px;
+}
+
+.box-as.sm-md-padding.expanded {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.box-as.sm-md-padding.condensed {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.box-as.md-padding {
+  padding: 40px;
+}
+
+.box-as.md-padding.condensed {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media ( max-width: 991px) {
+  .box-as.md-padding {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.box-as.lg-padding {
+  padding: 60px;
+}
+
+@media ( max-width: 991px) {
+  .box-as.lg-padding {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+
+.box-as.lg-padding.condensed {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.box-as.xlg-padding {
+  padding: 100px;
+}
+
+.box-as.disabled .thumb {
+  color: #D5D5D5;
+}
+
+.box-as.lg-padding {
+  padding: 60px;
+}
+
+.box-as.lg-padding.condensed {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.box-as.lg-padding .sub-box-as {
+  margin-left: -60px;
+  margin-right: -60px;
+}
+
+.box-as.lg-padding .sub-box-as.last {
+  margin-bottom: -60px;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+}
+
+.box-as .thumb {
+  position: relative;
+}
+
+.box-as .content {
+  text-align: left;
+  padding: 0 20px;
+}
+
+.box-as .content.no-padding {
+  padding: 0;
+}
+
+.box-as .box-as-title {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.btn-as {
+  padding: 0 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  line-height: 1.8rem;
+  color: #353533;
+  -webkit-transition: background-color .2s ease, color .2s ease;
+  -o-transition: background-color .2s ease, color .2s ease;
+  transition: background-color .2s ease, color .2s ease;
+  height: 5rem;
+  font-size: 1.6rem;
+}
+
+.btn-as:hover {
+  background: #f2f2f2;
+}
+
+.btn-as sup {
+  font-size: 10px;
+}
+
+.btn-as.primary {
+  background: #96c246;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: #fff;
+  border: .1rem solid #DCEBC0;
+}
+
+a.btn-as.primary {
+  padding-top: .9rem;
+}
+
+.btn-as.primary:hover {
+  text-decoration: none;
+  background: #89ab1c;
+}
+
+.btn-as.secondary {
+  background: #342e2e;
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-as.secondary:hover {
+  text-decoration: none;
+  background: #262222;
+}
+
+.btn-as.grey {
+  background: #D6D6D6;
+  border: .1rem solid #858583;
+}
+
+.btn-as.grey:hover {
+  text-decoration: none;
+  background: #262222;
+}
+
+.btn-as.more-formules {
+  color: #808080;
+  box-shadow: 0 0.4rem 0.3rem 0 rgba(0, 0, 0, 0.65);
+  font-size: 1.4rem;
+  border: none;
+}
+
+.btn-as:disabled {
+  background: #e0e0e0;
+  color: gray;
+}
+
+.btn-as:disabled:hover {
+  background: #e0e0e0;
+  color: gray;
+  cursor: not-allowed;
+}
+
+.btn-as.with-shadow {
+  box-shadow: .4rem .4rem .4rem -0.4rem rgba(0, 0, 0, 0.65);
+}
+
+.btn-as.condensed {
+  height: 40px;
+}
+
+.btn-as.expanded {
+  height: 60px;
+}
+
+.btn-as.w-100p {
+  width: 100% !important;
+}
+
+.stripe-section {
+  padding: 50px 0;
+  position: relative;
+}
+
+.stripe-section .container {
+  position: relative;
+}
+
+.stripe-section.btn-section {
+  background: transparent;
+  padding: 50px 0;
+}
+
+.stripe-section.brand {
+  background: #96c246;
+}
+
+.stripe-section.light-grey {
+  background: #F0F0F0;
+}
+
+.stripe-section.lg-grey {
+  background: #8A8985;
+  color: #fff;
+}
+
+.stripe-section.grey {
+  background: #F7F7F7;
+}
+
+.stripe-section.dark-grey {
+  background: #353535;
+}
+
+.stripe-section.beige {
+  background: #D2CFC6;
+}
+
+.stripe-section.white {
+  background: #fff;
+}
+
+.stripe-section.xs-padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.stripe-section.sm-padding {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.stripe-section.lg-padding {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.stripe-section.no-padding-lr {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.stripe-section.no-padding-t {
+  padding-top: 0;
+}
+
+.stripe-section.no-padding-b {
+  padding-bottom: 0;
+}
+
+.stripe-section.no-padding {
+  padding: 0;
+}
+
+.stripe-section.with-shdw {
+  z-index: 2;
+  box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.26);
+}
+
+.stripe-section.with-shdw-nst {
+  box-shadow: 0 10px 9px -10px rgba(0, 0, 0, 0.5) inset;
+}
+
+.stripe-section .section-title {
+  margin-top: 0;
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.stripe-section .section-title .tiny {
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.stripe-section .section-title.lg {
+  font-size: 36px;
+}
+
+.stripe-section h1.main-title {
+  margin-bottom: 40px;
+  margin-top: 1px;
+}
+
+.stripe-section h2.main-title {
+  margin-bottom: 50px;
+}
+
+.stripe-section h3.section-title {
+  font-size: 18px;
+}
+
+.stripe-section .display-cell .section-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.row-select {
+  position: relative;
+}
+
+.row-select .group-input {
+  margin: 0 auto;
+  padding-left: 0;
+  display: table;
+  height: 4.5rem;
+}
+
+.row-select .group-input li input[type="radio"] {
+  display: none;
+}
+
+.row-select .group-input li input[type="radio"] + label {
+  background: #fff none repeat scroll 0 0;
+  border: 0.1rem solid #686868;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
+  color: #686868;
+  cursor: pointer;
+  display: table-cell;
+  font-size: 1.6rem;
+  font-weight: bold;
+  height: 4.5rem;
+  line-height: 1.6rem;
+  margin-bottom: 0;
+  padding: 0 2rem;
+  text-align: center;
+  transition: opacity 0.2s ease 0s;
+  vertical-align: middle;
+  width: 30rem;
+  z-index: 1;
+}
+
+.row-select .group-input li input[type="radio"] + label:hover {
+  background: #fff
+}
+
+.row-select .group-input li input[type="radio"]:checked + label {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+  color: #fff;
+  background: #686868;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-color: #686868;
+  z-index: 2;
+}
+
+.infos-tooltip {
+  position: absolute;
+  top: 1rem;
+  left: -2.5rem;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  z-index: 2;
+}
+
+.infos-tooltip:before {
+  content: "";
+  font-family: 'iconas', sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  color: #353533;
+  border-radius: 50%;
+}
+
+.infos-tooltip:focus {
+  outline: 0 auto -webkit-focus-ring-color;
+  outline-offset: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1199;
+  text-align: center;
+}
+
+.overlay.overlay-xs .overlay-inner {
+  width: 32rem;
+  padding: 3.5rem 2.5rem;
+}
+
+.overlay.overlay-call-back .thumb {
+  font-size: 6rem;
+}
+
+.overlay:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.overlay .close-overlay-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.overlay .overlay-inner {
+  color: #fff;
+  background: #353535;
+  text-align: initial;
+  display: inline-block;
+  vertical-align: middle;
+  width: 64rem;
+  padding: 8rem 6rem;
+  z-index: 2;
+  position: relative;
+  border-radius: 6px;
+}
+
+.overlay .overlay-inner form {
+  vertical-align: middle
+}
+
+.overlay .overlay-inner form .field-container {
+  position: relative
+}
+
+.overlay .overlay-inner form .field-container:after {
+  font-family: 'iconas', sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  font-size: 2.4rem;
+  right: 1rem;
+  top: .5rem;
+}
+
+.overlay .overlay-inner form input {
+  border-radius: 0;
+  width: 100%;
+  height: 4rem;
+  text-align: center;
+  color: #000;
+}
+
+.overlay .overlay-inner .close-overlay.icon-as {
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  height: auto;
+  width: auto;
+  left: auto;
+  font-size: 2rem;
+  color: gray;
+  background: 0;
+  border: 0;
+  -webkit-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+
+.overlay .overlay-inner .close-overlay.icon-as:hover {
+  color: #fff;
+}
+
+.or-hr {
+  text-align: center;
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: table;
+  width: 100%;
+}
+
+.or-hr span {
+  display: table-cell;
+  background: #353535;
+  position: relative;
+  z-index: 2;
+  line-height: 3rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background: url("../images/half-circle-hr-or.svg") no-repeat center center transparent;
+}
+
+.or-hr:before, .or-hr:after {
+  content: '';
+  display: table-cell;
+  background: url("../images/line-hr-or.svg") repeat-x center center transparent;
+  top: 50%;
+  z-index: 1;
+}
+
+.form-section .or-hr {
+  font-style: italic;
+}
+
+.field-container {
+  position: relative;
+}
+
+.field-container.datepicker {
+  display: table;
+}
+
+.field-container.datepicker .icon-as {
+  font-size: 2.6rem;
+}
+
+.field-container.datepicker .form-control {
+  border-right-width: 0;
+}
+
+.field-container.datepicker .input-group-addon {
+  color: #686868;
+  background-color: #eee;
+  border: .1rem solid #686868;
+  border-radius: 0;
+  box-shadow: .1rem .1rem .2rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.field-container.datepicker .input-group-addon:hover {
+  cursor: pointer;
+}
+
+.field-container.immatriculation {
+  padding-left: 2rem;
+  padding-right: 4.5rem;
+}
+
+.field-container.immatriculation .form-control {
+  border-left: 0
+}
+
+/* CSS Sprite */
+.sprite {
+  background-image: url(/sites/all/themes/custom/assu2000/images/spritesheet.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.sprite-bg-input-immatriculation {
+  width: 18px;
+  height: 40px;
+  background-position: -3px -3px;
+}
+
+.sprite-picto_mail {
+  width: 26px;
+  height: 15px;
+  background-position: -27px -3px;
+}
+
+.sprite-picto_telephone {
+  width: 18px;
+  height: 27px;
+  background-position: -59px -3px;
+}
+
+/* end sprite */
+
+.field-container.immatriculation .btn-plaque {
+  width: 2rem;
+  height: 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  border: .1rem #c0c0c0 solid;
+}
+
+.field-container.immatriculation .btn-as {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  right: 0;
+  top: 0;
+  margin-top: 0;
+}
+
+.form-control {
+  height: 4rem;
+  border: .1rem solid #686868;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 1.8rem;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  color: #232323;
+}
+
+.form-control option {
+  font-weight: normal;
+}
+
+.form-control:focus {
+  border-color: #686868;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#site-header-path {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1100;
+  width: 100%;
+}
+
+#site-header-path a {
+  border: none;
+}
+
+#site-header-path .display-table {
+  table-layout: fixed;
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path .display-table {
+    display: block;
+  }
+}
+
+#site-header-path .container {
+  background: #fff;
+  border-left: 1px solid #9A9A9A;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path .container {
+    border-left: none;
+    border-bottom: 5px solid #96c246;
+  }
+}
+
+#site-header-path .logo {
+  width: 130px;
+  padding: 0;
+  height: 80px;
+  border-bottom: 1px solid #9A9A9A;
+}
+
+@media screen and (max-width: 991px) {
+  #site-header-path .logo {
+    width: 110px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path .logo {
+    border-bottom: none;
+    width: 110px;
+    display: block;
+    float: left;
+    height: 55px;
+  }
+}
+
+#site-header-path .logo span {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  line-height: 65px;
+  border-bottom: 5px solid #96c246;
+}
+
+#site-header-path .logo span img {
+  width: auto;
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path .logo span {
+    border-bottom: none;
+    height: 55px;
+    line-height: 55px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+#site-header-path .cheminement {
+  border-bottom: 1px solid #9A9A9A;
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path .cheminement {
+    display: none;
+  }
+}
+
+#site-header-path .cheminement ul {
+  margin-bottom: 0;
+  display: table;
+  width: 100%;
+  height: 80px;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path .cheminement ul {
+    height: 55px;
+  }
+
+  .stripe-section .section-title {
+    margin-top: 0;
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 2.5rem;
+  }
+}
+
+#site-header-path .cheminement ul li {
+  list-style: none;
+  width: 20%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 5px solid rgba(150, 194, 70, 0.4);
+  -webkit-transition: border-color 0.2s ease, color 0.2s ease;
+  -o-transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+#site-header-path .cheminement ul li span, #site-header-path .cheminement ul li a {
+  display: block;
+  font-size: 14px;
+  color: #353535;
+  position: relative;
+  -webkit-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+@media screen and (max-width: 991px) {
+  #site-header-path .cheminement ul li span, #site-header-path .cheminement ul li a {
+    font-size: 12px;
+  }
+}
+
+#site-header-path .cheminement ul li span .icon-as, #site-header-path .cheminement ul li a .icon-as {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -22px;
+  margin-left: -10px;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 991px) {
+  #site-header-path .cheminement ul li span .icon-as, #site-header-path .cheminement ul li a .icon-as {
+    display: none;
+  }
+}
+
+#site-header-path .cheminement ul li.active {
+  transition: border-color .2s ease, color .2s ease;
+  border-bottom: 5px solid #96c246;
+}
+
+#site-header-path .cheminement ul li.active a:hover {
+  color: #a1917f;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#site-header-path .cheminement ul li.active span, #site-header-path .cheminement ul li.active a {
+  color: #000;
+}
+
+#site-header-path .cart {
+  text-align: left;
+  border-left: 1px solid #96c246;
+  border-bottom: 1px solid #96c246;
+  border-right: 1px solid #96c246;
+  line-height: 16px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path .cart {
+    border: none;
+    float: right;
+    width: 180px;
+  }
+}
+
+#site-header-path .cart .btn-as {
+  border: 0;
+  border-radius: 0;
+  font-size: 14px;
+  line-height: 14px;
+  height: 80px;
+  padding-left: 60px;
+  position: relative;
+  border-bottom: 5px solid transparent;
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path .cart .btn-as {
+    height: 55px;
+    background: #96c246;
+    color: #fff;
+  }
+
+  #site-header-path .cart .btn-as .text-highlight-bis {
+    color: #fff !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path .cart .btn-as .text-highlight-grey {
+    color: #0C5194;
+  }
+}
+
+#site-header-path .cart .btn-as .icon-as {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -22px;
+  font-size: 40px;
+}
+
+#site-header-path .cart .btn-as .price {
+  font-weight: bold;
+  position: relative;
+}
+
+#site-wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+#site-wrapper:after {
+  content: "";
+  display: block;
+  height: 62px;
+}
+
+.final-step #site-form-content {
+  margin-top: 0;
+}
+
+#site-form-sidebar {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  #site-form-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100% !important;
+    padding-top: 55px;
+    overflow-y: scroll;
+    display: none;
+    z-index: 1060;
+  }
+}
+
+#site-form-sidebar .sidebar-widget {
+  background: #EAEBEB;
+  padding: 15px 35px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #000;
+  position: relative;
+}
+
+#site-form-sidebar .sidebar-widget .widget-title {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 0;
+  padding: 0 20px 20px;
+  margin-bottom: 0;
+}
+
+#site-form-sidebar .sidebar-widget .step-edit {
+  margin-right: -15px;
+}
+
+#site-form-sidebar .sidebar-widget.call-back {
+  padding: 20px 0 0;
+}
+
+#site-form-sidebar .sidebar-widget.recap-widget {
+  padding-bottom: 35px;
+}
+
+#site-form-sidebar .sidebar-widget.recap-widget .expand-infos-content {
+  display: none;
+}
+
+#site-form-sidebar .sidebar-widget.recap-widget .expand-infos {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  color: #C4C4C6;
+  font-size: 12px;
+  background: none;
+  display: block;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 20px;
+}
+
+#site-form-sidebar .sidebar-widget.recap-widget .expand-infos .icon-as {
+  font-size: 14px;
+}
+
+#site-form-sidebar .sidebar-widget.recap-widget .expand-infos:before {
+  width: 100%;
+  content: '';
+  height: 1px;
+  background: #D1D2D4;
+  margin-bottom: 5px;
+  display: block;
+}
+
+#site-form-sidebar .sidebar-widget.recap-widget .expand-infos.active .icon-as:before {
+  color: #9d9da0;
+  content: "";
+}
+
+#site-form-sidebar .sidebar-widget.to-minify {
+  display: none;
+}
+
+#site-form-sidebar #expand-sidebar {
+  width: 100%;
+  color: #C4C4C6;
+  background: #EAEBEB;
+  border: 0;
+}
+
+#site-form-sidebar #expand-sidebar:hover {
+  color: #353535;
+}
+
+#site-form-sidebar #expand-sidebar.active {
+  color: #353535;
+}
+
+#site-form-sidebar #expand-sidebar.active .icon-as:before {
+  content: "";
+}
+
+#site-form-sidebar .see-more {
+  width: 100%;
+  color: #C4C4C6;
+  background: #EAEBEB;
+  margin-bottom: 10px;
+  border: 0;
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease;
+  -o-transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#site-form-sidebar .see-more:hover {
+  background: #d0d2d2;
+  color: #000;
+}
+
+.step-edit-condition {
+  position: absolute !important;
+  right: 10px;
+  bottom: 15px;
+}
+
+.step-edit-condition .validate-btn {
+  display: inline-block;
+}
+
+.form .stripe-section.form-section .validate-btn {
+  margin-top: 50px;
+}
+
+.form .stripe-section.form-section .validate-btn .btn-as.primary {
+  display: inline-block;
+  margin: 0 auto 20px;
+}
+
+.form .stripe-section.form-section .confirmation-souscription {
+  -webkit-transition: margin-top 0.6s ease;
+  -o-transition: margin-top 0.6s ease;
+  transition: margin-top 0.6s ease;
+  position: relative;
+}
+
+.form .stripe-section.form-section .confirmation-souscription .popover-confirmation-souscription {
+  width: 80%;
+  margin-top: -20px;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .confirmation-souscription .popover-confirmation-souscription {
+    width: 100%;
+  }
+}
+
+.form .stripe-section.form-section .confirmation-souscription .popover-confirmation-souscription .step-edit a {
+  color: #fff;
+}
+
+.form .stripe-section.form-section .confirmation-souscription .popover-confirmation-souscription .step-edit a:hover {
+  color: #96c246;
+}
+
+@media screen and (min-width: 768px) {
+  .form .stripe-section.form-section .confirmation-souscription .popover-confirmation-souscription .arrow {
+    border-top-color: #292526;
+    bottom: -10px;
+    margin-left: -148px;
+  }
+}
+
+.form .stripe-section.form-section .confirmation-souscription .popover-confirmation-souscription.fade.in {
+  opacity: 0;
+}
+
+.form .stripe-section.form-section .confirmation-souscription.done .popover-confirmation-souscription.fade.in {
+  opacity: 1;
+}
+
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] {
+  display: none;
+}
+
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label {
+  margin-bottom: 0;
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label {
+    padding-left: 0;
+    padding-top: 35px;
+  }
+}
+
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label:before,
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label:after,
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label span.ghost {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label:before,
+  .form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label:after,
+  .form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label span.ghost {
+    left: 50%;
+    margin-left: -12.5px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label:before,
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label span.ghost {
+  content: '';
+  z-index: 1;
+  border: 1px solid #818181;
+  background: #fff;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.5), 3px 3px 3px -3px rgba(0, 0, 0, 0.5) inset;
+}
+
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label span.ghost {
+  box-shadow: 0 0 0 3px #96c246;
+  z-index: 0;
+  border-radius: 3px;
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label:after {
+  font-family: 'iconas', sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  z-index: 2;
+  text-align: center;
+  line-height: 16px;
+  content: "";
+  color: #A1C936;
+  position: absolute;
+  font-size: 12px;
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .confirmation-souscription input[type="checkbox"] + label:after {
+    line-height: 25px;
+    font-size: 22px;
+  }
+}
+
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  display: block;
+}
+
+.form .stripe-section.form-section .confirmation-souscription input[type="checkbox"]:checked + label span.ghost {
+  opacity: 0;
+}
+
+.form .stripe-section.form-section .recap-card {
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .recap-card {
+    padding: 2rem;
+  }
+}
+
+.form .stripe-section.form-section .recap-card .recap-title {
+  font-size: 2.8rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #353533;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .recap-card .recap-title {
+    font-size: 2.2rem;
+  }
+}
+
+.form .stripe-section.form-section .recap-card .recap-formule {
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+
+.form .stripe-section.form-section .recap-card .recap-price {
+  font-size: 3.6rem;
+}
+
+.form .stripe-section.form-section .recap-card .recap-price sup {
+  font-weight: bold;
+  font-size: 1.4rem;
+  vertical-align: super;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .recap-card .recap-price {
+    font-size: 2.6rem;
+    text-align: left;
+    padding-left: 0;
+    display: block;
+    margin-top: 1rem;
+  }
+}
+
+.form .stripe-section.form-section .recap-card .recap-price .text-highlight {
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .recap-card .recap-price .text-highlight {
+    font-size: 2rem;
+  }
+}
+
+.form .stripe-section.form-section .recap-card .year-price {
+  line-height: 5.7rem;
+  color: #808080;
+  font-style: italic;
+  font-size: 2.6rem;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+  .form .stripe-section.form-section .recap-card .year-price {
+    line-height: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .recap-card .year-price {
+    font-size: 1.6rem;
+    margin-left: 0;
+    margin-top: 0;
+    display: block;
+  }
+}
+
+.form .stripe-section.form-section .recap-card .infos {
+  margin-bottom: 0;
+  margin-top: 2rem;
+}
+
+.form .stripe-section.form-section .recap-card .recap-price .text-highlight-brand {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .recap-card .recap-price .text-highlight-brand {
+    font-size: 30px;
+  }
+}
+
+.form .stripe-section.form-section .formule {
+  border: 1px solid transparent;
+  -webkit-transition: margin 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  -o-transition: margin 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: margin 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form .stripe-section.form-section .formule.active {
+  border-color: #96c246;
+  margin-left: 10px;
+  margin-right: -10px;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .formule.active {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.form .stripe-section.form-section .formule.active .formule-price {
+  background: #96c246;
+  border-color: #DCEBC0;
+}
+
+.form .stripe-section.form-section .formule .formule-title {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  -webkit-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .formule .formule-title {
+    text-align: center;
+  }
+}
+
+.form .stripe-section.form-section .formule .formule-price {
+  font-weight: bold;
+  margin-top: 0;
+  background: #E7E7E7;
+  color: #353535;
+  font-size: 18px;
+  -webkit-transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  -o-transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.form .stripe-section.form-section .formule .formule-price .price-value {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .formule .more-option {
+    border: 0;
+  }
+
+  .form .stripe-section.form-section .formule .more-option [class^="icon-"],
+  .form .stripe-section.form-section .formule .more-option [class*=" icon-"] {
+    text-align: left;
+  }
+}
+
+.form .stripe-section.form-section .formule .more-option .icon-as {
+  color: #96c246;
+}
+
+.form .stripe-section.form-section .formule .options-list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.form .stripe-section.form-section .formule .options-list li {
+  list-style: none;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 5px;
+  line-height: 18px;
+  font-size: 14px;
+  color: #353535;
+}
+
+.form .stripe-section.form-section .formule .options-list li:before {
+  display: inline-block;
+  font-family: 'iconas', sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  font-size: 14px;
+  color: #7E7E7E;
+}
+
+.form .stripe-section.form-section .formule .options-list li.included {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.form .stripe-section.form-section .formule .options-list li.included:before {
+  display: inline-block;
+  font-family: 'iconas', sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  font-size: 24px;
+  color: #A1C936;
+}
+
+.form .stripe-section.form-section .formule input[type="radio"] {
+  display: none;
+}
+
+.form .stripe-section.form-section .formule input[type="radio"] + label {
+  margin-bottom: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .formule input[type="radio"] + label {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.form .stripe-section.form-section .formule input[type="radio"] + label:before {
+  content: '';
+  display: block;
+  margin: auto;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #8B8B8B;
+  box-shadow: 3px 3px 3px -3px rgba(0, 0, 0, 0.5) inset;
+}
+
+.form .stripe-section.form-section .formule input[type="radio"] + label:after {
+  font-family: 'iconas', sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  color: #96c246;
+  position: absolute;
+  font-size: 60px;
+  text-shadow: 6px 3px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  top: -36px;
+  left: -13px;
+  opacity: 0;
+}
+
+.form .stripe-section.form-section .formule input[type="radio"]:checked + label:after {
+  opacity: 1;
+  display: block;
+}
+
+.form .stripe-section.form-section .formule .view-more-box {
+  display: none;
+  margin: 20px -15px 0;
+  background: #E7E7E7;
+  padding: 25px 15px;
+  border-top: #BFBFBF 1px solid;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .formule .view-more-box {
+    border-left: #BFBFBF 1px solid;
+    border-right: #BFBFBF 1px solid;
+  }
+}
+
+.form .stripe-section.form-section .formule .view-more {
+  margin: 0 -15px -20px;
+}
+
+.form .stripe-section.form-section .formule .view-more button {
+  color: #878787;
+  font-size: 12px;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #D7D7D7;
+  -webkit-transition: color 0.2s ease;
+  -o-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section .formule .view-more button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+  }
+}
+
+.form .stripe-section.form-section .formule .view-more button.active {
+  color: #353535;
+}
+
+.form .stripe-section.form-section .formule .view-more button.active .icon-as:before {
+  content: "";
+}
+
+.form .stripe-section.form-section .formule .view-more button:hover {
+  color: #353535;
+}
+
+.form .stripe-section.form-section .prelevement {
+  margin-bottom: 20px;
+}
+
+.form .stripe-section.form-section .prelevement .price {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.form .stripe-section.form-section .call-back p {
+  width: 13rem;
+  margin-top: 1rem;
+  float: left;
+  padding-left: 5.5rem;
+  font-size: 1.2rem;
+}
+
+.form .stripe-section.form-section .call-back p .icon-as {
+  position: absolute;
+  margin-top: 0;
+  top: 2rem;
+  left: .5rem;
+  font-size: 5rem;
+  color: #282425;
+}
+
+.form .stripe-section.form-section .call-back .btn-as.primary, #site-form-sidebar .btn-as.primary {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-right: .5em;
+  display: block;
+  margin-left: 14rem !important;
+  border: 0.1rem solid #858583;
+  border-radius: 6px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  line-height: 1.4rem;
+}
+
+.form .stripe-section.form-section label .infos-tooltip {
+  top: .4rem;
+}
+
+.form .stripe-section.form-section label span.mini {
+  font-size: 11px;
+  display: inline-block;
+}
+
+.form .stripe-section.form-section label.label-send-tarif {
+  margin-top: 3.5rem;
+}
+
+.form .stripe-section.form-section #iban_multipart {
+  padding-left: 0;
+  overflow: hidden;
+}
+
+.form .stripe-section.form-section #iban_multipart .form-control {
+  font-size: 1.5rem;
+}
+
+.form .stripe-section.form-section #iban_multipart .field-container.success:after {
+  display: none;
+}
+
+.form .stripe-section.form-section #iban_multipart li {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.auto.form .stripe-section.form-section #iban_multipart li {
+  padding-left: 5px;
+  padding-right: 5px;
+  width:14%;
+}
+
+@media ( max-width : 991px) {
+  .auto.form .stripe-section.form-section #iban_multipart li {
+    padding-left: 1px;
+    padding-right: 0;
+  }
+
+  .auto.form .stripe-section.form-section #iban_multipart li:first-child .field-container {
+    font-size: 1.2rem;
+  }
+
+  .auto.form .stripe-section.form-section #iban_multipart li input {
+    padding: 0 2px;
+  }
+
+  .form .stripe-section.form-section #iban_multipart {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  .auto.form .stripe-section.form-section #iban_multipart {
+    margin-left: -.30rem;
+    margin-right: -.30rem;
+  }
+
+  .form .stripe-section.form-section #iban_multipart .form-control {
+    height: 3.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+.form .stripe-section.form-section #iban_multipart li.clear {
+  clear: both;
+}
+
+.form .stripe-section.form-section #iban_multipart li .field-container {
+  border: 1px solid #686868;
+}
+
+.form .stripe-section.form-section #iban_multipart li .field-container.success input {
+  border-bottom: 4px solid #A1C936;
+}
+
+.form .stripe-section.form-section #iban_multipart li input {
+  border: 0;
+  border-bottom: 4px solid #fff;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-transform: uppercase;
+}
+
+#edit-auto-ibanp1, #edit-vsp-ibanp1 {
+  display: inline-block;
+  width: 54%;
+  padding-left: 0 !important;
+}
+
+.form .stripe-section.form-section #iban_multipart li input:read-only {
+  background-color: #EBEBEB;
+}
+
+.form .stripe-section.form-section #iban_multipart label {
+  display: none;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box {
+  margin-top: 50px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li {
+  list-style: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section#completeFile .sendfiles-box li {
+    padding-left: 0;
+  }
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-thumb {
+  text-align: center;
+  color: #96c246;
+  font-size: 56px;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-content {
+  font-size: 16px;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-content h3 {
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-content .btn-as {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  position: relative;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  height: 50px;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-content .btn-as.btn-store {
+  height: 64px;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-content .btn-as.transparent {
+  color: #6D6E71;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 7px 65px 7px 10px;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-content .btn-as.transparent.no-margin {
+  margin-bottom: 0;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-content .btn-as .icon-as {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55px;
+  font-size: 42px;
+  line-height: 58px;
+  padding: 0 7px;
+  border-radius: 6px;
+  height: 100%;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-content .btn-as .icon-as.icon-android {
+  background: #74BC24;
+  color: #F0F0F0;
+  border-left: 1px solid #5A9814;
+}
+
+.form .stripe-section.form-section#completeFile .sendfiles-box li .box-inner .box-content .btn-as .icon-as.icon-Picto_IOS {
+  background: #EDEDED;
+  color: #1E1E1E;
+  border-left: 1px solid #7D7C75;
+}
+
+.form .stripe-section.form-section .important-title {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: #96c246;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 100px;
+}
+
+.form .stripe-section.form-section .important-title strong {
+  position: relative;
+  font-weight: 300;
+}
+
+.form .stripe-section.form-section .important-title .icon-as {
+  position: absolute;
+  left: -70px;
+  top: -15px;
+  color: #fff;
+  font-size: 56px;
+}
+
+.form .stripe-section.form-section .kosecur-picto {
+  position: relative;
+  display: inline-block;
+}
+
+.form .stripe-section.form-section .kosecur-picto .icon-Menu_Cross {
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  top: 13px;
+  left: 10px;
+}
+
+.form .stripe-section.form-section .kosecur-picto .icon-Picto_carte {
+  color: #9D9C9B;
+}
+
+.form .stripe-section.form-section.final-step .section-title {
+  margin-bottom: 10px;
+}
+
+.form .stripe-section.form-section.final-step .left-side {
+  padding-left: 65px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .form .stripe-section.form-section.final-step .left-side {
+    padding-left: 15px;
+  }
+}
+
+.form .stripe-section.form-section.final-step .left-side .section-title-lg {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.form .stripe-section.form-section.final-step .right-side aside {
+  padding: 0 15px 15px;
+}
+
+.form .stripe-section.form-section.final-step .right-side aside .koclient {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 5px;
+  padding-left: 30px;
+}
+
+.form .stripe-section.form-section.final-step .right-side aside .koclient .icon-as {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form .stripe-section.form-section.final-step .right-side aside .aside-thumb {
+  text-align: center;
+  font-size: 120px;
+  line-height: 20px;
+}
+
+.form .stripe-section.form-section.final-step .right-side aside .check-list li:before {
+  font-size: 26px;
+}
+
+.form.error .stripe-section.final-step {
+  padding-bottom: 60px;
+}
+
+.form.error .stripe-section.final-step .right-side .aside-thumb .icon-as.icon-check {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  font-size: 38px;
+}
+
+.form.error .stripe-section.final-step .right-side .icon-as.icon-check {
+  font-size: 20px;
+}
+
+.form.error .stripe-section.final-step .right-side .icon-as.icon-Picto_Profil1 {
+  position: relative;
+  font-size: 130px;
+  padding-left: 15px;
+}
+
+.form.error .stripe-section.final-step .right-side .icon-as.icon-Menu_Cross {
+  font-size: 20px;
+}
+
+.form.error #site-footer {
+  padding-top: 46px;
+  background: #353533;
+  border-bottom: 16px solid #474843;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 62px;
+}
+
+.form.error #site-footer .display-table {
+  height: auto;
+}
+
+/****
+*****
+ ea tarif template
+***
+***/
+
+.form .stripe-section.form-section.formules {
+  padding: 0;
+}
+
+.form .stripe-section.form-section.formules .container-fluid {
+  padding-top: 30px;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .section-title {
+  font-size: 3.2rem;
+  margin-bottom: 30px;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box {
+  border-bottom: 0 none;
+  margin: 0 -20px;
+  padding-left: 0;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .formula.active .box-inner {
+  background: #dbdad5 none repeat scroll 0 0;
+  box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.26);
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .formula.active .box-inner h3 {
+  background: #686868 none repeat scroll 0 0;
+  border-color: #686868;
+  color: #e30155;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .formula.active .box-inner::after {
+  opacity: 1;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .formula.in-progress .overlay-formula {
+  display: table;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .formula.in-progress .box-inner:hover {
+  cursor: default;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .formula .loader-spinner {
+  border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) #000;
+  border-style: solid;
+  border-width: 0.4rem;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .box-inner {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #858583;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 25px 17px;
+  position: relative;
+  transition: background-color 0.2s ease 0s;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .box-inner::after {
+  background: #e30155 none repeat scroll 0 0;
+  bottom: 0;
+  content: "";
+  height: 5px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s ease 0s;
+  width: 100%;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .box-inner:hover {
+  background: #dbdad5 none repeat scroll 0 0;
+  box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .box-inner:hover h3 {
+  background: #686868 none repeat scroll 0 0;
+  border-color: #686868;
+  color: #e30155;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .box-inner:hover::after {
+  opacity: 1;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .overlay-formula {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  bottom: 0;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box .overlay-formula p {
+  color: #000;
+  display: table-cell;
+  font-size: 1.2rem;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box > li {
+  padding: 0 5px;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box > li h3 {
+  background: #dbdad5 none repeat scroll 0 0;
+  border: 1px solid #b7b7b7;
+  border-radius: 6px;
+  color: #353533;
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+  padding: 20px 10px;
+  transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box > li h3 span {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box > li ol > li {
+  color: #1a1924;
+  font-size: 1.2rem;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box > li ol > li.disabled {
+  color: #9c9c9c;
+}
+
+.form .stripe-section.form-section.formules .container-fluid .formulae-box > li.highlight::before {
+  background: transparent url("../images/form/formule-recommande.png") no-repeat scroll center center;
+  height: 68px;
+  right: 1px;
+  top: -3px;
+  width: 74px;
+}
+
+.form .stripe-section.form-section .protection-options .option {
+  border-bottom: 1px solid #c3c3c3;
+  margin-bottom: 10px;
+  padding-left: 60px;
+}
+
+.form .stripe-section.form-section .protection-options .option header {
+  padding-left: 40px;
+  padding-right: 15px;
+  position: relative;
+  text-align: right;
+}
+
+.form .stripe-section.form-section .protection-options .option header .icon-as {
+  left: 10px;
+  margin-top: -7px;
+  position: absolute;
+  top: 50%;
+}
+
+.form .stripe-section.form-section .protection-options .option header a {
+  display: block;
+  font-size: 1.6rem;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  transition: color 0.2s ease 0s;
+}
+
+.form .stripe-section.form-section .protection-options .option header a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.form .stripe-section.form-section .protection-options .option header.active a {
+  color: #000;
+}
+
+.form .stripe-section.form-section .protection-options .option header.active .icon-as:before {
+  content: "\f068";
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input {
+  margin: 0 auto 10px;
+  overflow: hidden;
+  width: auto;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input li {
+  list-style: outside none none;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input li:first-child input[type="radio"] + label {
+  border-bottom-left-radius: 4px;
+  border-left: 1px solid #b6b6b7;
+  border-top-left-radius: 4px;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input li:last-child input[type="radio"] + label {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input input[type="radio"] {
+  display: none;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input input[type="radio"] + label {
+  background: #fff none repeat scroll 0 0;
+  border-bottom: 1px solid #b6b6b7;
+  border-right: 1px solid #b6b6b7;
+  border-top: 1px solid #b6b6b7;
+  color: #686868;
+  cursor: pointer;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  height: 60px;
+  line-height: 36px;
+  margin-bottom: 0;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input input[type="radio"] + label span {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input input[type="radio"] + label.with-sub {
+  line-height: 22px;
+  padding: 8px 5px;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input input[type="radio"] + label.with-sub span {
+  font-weight: normal;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input input[type="radio"] + label.with-icon {
+  padding-left: 50px;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input input[type="radio"] + label:hover {
+  background: #686868 none repeat scroll 0 0;
+  color: #e30155;
+  z-index: 1;
+}
+
+.form .stripe-section.form-section .protection-options .option .group-input input[type="radio"]:checked + label {
+  background: #686868 none repeat scroll 0 0;
+  color: #e30155;
+  z-index: 1;
+}
+
+.form .stripe-section.form-section .protection-options .option .option-more {
+  background: #dbdad5 none repeat scroll 0 0;
+  color: #3a3a3a;
+  display: none;
+  font-size: 1.2rem;
+  padding: 10px 30px;
+}
+
+.form .stripe-section.form-section.toggle-section {
+  padding: 0;
+}
+
+.form .stripe-section.form-section.toggle-section .section-content {
+  display: none;
+  margin-top: 20px;
+}
+
+.form .stripe-section.form-section.toggle-section .section-title {
+  font-weight: normal;
+  margin-bottom: 0;
+  padding-left: 40px;
+  position: relative;
+}
+
+.form .stripe-section.form-section.toggle-section a.section-title {
+  color: #1a1924;
+  display: block;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.form .stripe-section.form-section.toggle-section a.section-title:hover {
+  text-decoration: none;
+}
+
+.form .stripe-section.form-section.btn-section {
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.form .stripe-section.form-section.personal-infos {
+  margin-bottom: 0;
+}
+
+.form .stripe-section.form-section.personal-infos .right {
+  padding-left: 15px;
+}
+
+.form .stripe-section.form-section.personal-infos .left {
+  padding-right: 15px;
+}
+
+.form .stripe-section.form-section.personal-infos .box-ea {
+  padding: 20px;
+  text-align: left;
+}
+
+.form .stripe-section.form-section.personal-infos .box-as .content {
+  font-size: 1.2rem;
+  padding-left: 100px;
+  position: relative;
+}
+
+.form .stripe-section.form-section.personal-infos .box-as .content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.form .stripe-section.form-section.personal-infos .box-as .content .bg-element {
+  border: 0 solid #353533;
+  color: #353533;
+  font-size: 7.2rem;
+  height: 70px;
+  left: 0;
+  line-height: 70px;
+  margin-top: -35px;
+  opacity: 1;
+  top: 50%;
+  width: 70px;
+}
+
+.form .stripe-section.form-section.personal-infos .box-as .bottom-link {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top: 1px solid #c3c3c3;
+  color: #595959;
+  display: block;
+  font-weight: bold;
+  margin: 20px -10px -10px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease 0s;
+}
+
+.form .stripe-section.form-section.personal-infos .box-as .bottom-link:hover {
+  background: #eaebeb none repeat scroll 0 0;
+  text-decoration: none;
+}
+
+.form .stripe-section.form-section.personal-infos .box-as.simple {
+  box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.26);
+}
+
+.form.mrh .stripe-section.form-section.prime-details {
+  background: #fff url("../images/form/mrh/form_hab2.jpg") no-repeat scroll center center/cover;
+}
+
+.form .stripe-section.form-section.prime-details .table-condensed > thead > tr > th,
+.form .stripe-section.form-section.prime-details .table-condensed > tbody > tr > th,
+.form .stripe-section.form-section.prime-details .table-condensed > tfoot > tr > th,
+.form .stripe-section.form-section.prime-details .table-condensed > thead > tr > td,
+.form .stripe-section.form-section.prime-details .table-condensed > tbody > tr > td,
+.form .stripe-section.form-section.prime-details .table-condensed > tfoot > tr > td {
+  padding: 2px 5px;
+}
+
+.form .stripe-section.form-section.prime-details .container-fluid {
+  background: transparent none repeat scroll 0 0;
+  padding-top: 0;
+}
+
+.form .stripe-section.form-section.prime-details .prime-details-table {
+  color: #1a1924;
+  font-size: 1.6rem;
+}
+
+.form .stripe-section.form-section.prime-details .prime-details-table .neg-value {
+  color: #e83100;
+}
+
+.form .stripe-section.form-section.prime-details .prime-details-table td {
+  border: 0 none;
+  text-align: right;
+}
+
+.form .stripe-section.form-section.prime-details .prime-details-table thead th {
+  border: 0 none;
+}
+
+.form .stripe-section.form-section.prime-details .prime-details-table tbody th {
+  border: 0 none;
+  font-weight: normal;
+  text-align: left;
+}
+
+.form .stripe-section.form-section.prime-details .prime-details-table tbody tr:last-child td,
+.form .stripe-section.form-section.prime-details .prime-details-table tbody tr:last-child th {
+  padding-bottom: 20px;
+}
+
+.form .stripe-section.form-section.prime-details .prime-details-table tfoot {
+  background: rgba(255, 255, 255, 0.65) none repeat scroll 0 0;
+  border: 1px solid #aeaead;
+}
+
+.form .stripe-section.form-section.prime-details .prime-details-table tfoot th {
+  border: 0 none;
+  font-weight: normal;
+  text-align: left;
+}
+
+.form .stripe-section.form-section.prime-details .prime-details-table tfoot td {
+  border: 0 none;
+}
+
+.form .stripe-section.form-section.prime-details .left-side {
+  padding-right: 10px;
+  padding-top: 70px;
+}
+
+.form .stripe-section.form-section.prime-details .left-side .legend-table {
+  font-size: 1.2rem;
+  margin-top: -15px;
+}
+
+.form .stripe-section.form-section.prime-details .right-side {
+  background: rgba(219, 218, 213, 0.65) none repeat scroll 0 0;
+  padding: 70px 40px 0;
+}
+
+.form .stripe-section.form-section .mentions {
+  color: #5b5b5b;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+#edit-marq-immat .form-type-radio input {
+  position: absolute;
+  visibility: hidden;
+}
+
+#edit-marq-immat #edit-marq-immat-auto1 + label {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  border-right-width: 0;
+}
+
+#edit-marq-immat #edit-marq-immat-auto2 + label {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+  border-left-width: 0;
+}
+
+#edit-marq-immat .form-type-radio input[type="radio"]:checked + label {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5) inset;
+  color: #fff;
+  background: #686868;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-color: #686868;
+  z-index: 2;
+}
+
+#edit-marq-immat .form-type-radio input[type="radio"] + label {
+  display: table-cell;
+  font-weight: bold;
+  vertical-align: middle;
+  background: #fff;
+  /* padding: 0 20px; */
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  cursor: pointer;
+  color: #686868;
+  z-index: 1;
+  border: 1px solid #686868;
+  /* height: 45px; */
+  width: 227px;
+  -webkit-transition: opacity .2s ease;
+  -o-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+#edit-marq-immat .form-type-radio input[type="radio"] + label {
+  height: 60px;
+  font-size: 18px;
+}
+
+.form-type-radio {
+  display: table-cell;
+  list-style: outside none none;
+  padding-left: 0;
+  padding-right: 0;
+  vertical-align: middle;
+  width: 50% !important;
+}
+
+/* css for webcallback region */
+
+#region_webcallback {
+  position: fixed;
+  z-index: 1100;
+  width: 100%;
+}
+
+#region_webcallback .container {
+  position: relative;
+  width: 970px;
+  margin: 0 auto;
+}
+
+@media ( min-width: 768px) {
+  #region_webcallback .container {
+    width: 750px;
+  }
+}
+
+@media ( min-width: 992px) {
+  #region_webcallback .container {
+    width: 970px;
+  }
+}
+
+#region_webcallback p {
+  width: 13rem;
+  margin-top: 1rem;
+  float: left;
+  padding-left: 5.5rem;
+  font-size: 1.2rem;
+}
+
+#region_webcallback p .icon-as {
+  position: absolute;
+  margin-top: 0;
+  top: 2rem;
+  left: .5rem;
+  font-size: 5rem;
+  color: #282425;
+}
+
+#region_webcallback .sidebar-widget.call-back {
+  padding: 2rem 0 0;
+}
+
+#region_webcallback .sidebar-widget {
+  position: absolute;
+  width: 242px;
+  right: 0;
+  background: #eaebeb;
+  padding: 1.5rem 3.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+#region_webcallback .call-back .btn-as.primary {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  width: auto !important;
+  display: block;
+  margin: 0 1rem 0 14rem !important;
+  padding: .5rem .8rem 0 .8rem;
+  border: .1rem solid #858583;
+  border-radius: 6px;
+  line-height: 1.4rem;
+}
+
+.form-toValidate .form-group.row-select.form-radios {
+  padding-left: 20px;
+}
+
+#site-header-path .cheminement li.active a {
+  text-decoration: underline;
+}
+
+.activeTab {
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+#colorbox, #cboxContent {
+  height: 370px !important;
+  width: 320px !important;
+}
+
+#cboxWrapper {
+  border-radius: 0 !important;
+}
+
+#cboxContent {
+  margin-top: 0 !important;
+}
+
+.cboxIframe {
+  background: url(/sites/all/modules/contrib/colorbox/images/loading_animation.gif) no-repeat center center;
+  margin-bottom: 0;
+}
+
+#cboxLoadedContent {
+  border: none !important;
+}
+
+#cboxTopLeft, #cboxTopCenter, #cboxTopRight, #cboxMiddleLeft, #cboxMiddleRight, #cboxBottomLeft, #cboxBottomCenter, #cboxBottomRight {
+  display: none;
+}
+
+#cboxClose {
+  top: 8px !important;
+  right: 0px !important;
+  background: url('/sites/default/files/close.png') no-repeat 0 0 !important;
+}
+
+#cboxClose:hover {
+  background: url('/sites/default/files/close-hover.png') no-repeat 0 0 !important;
+}
+
+@media (max-width: 480px) {
+  .step-edit-condition {
+    bottom: 45px;
+  }
+}
+
+@media (max-width: 767px) {
+  #region_webcallback {
+    display: none;
+  }
+}
+
+/* Payement pages */
+.voucher-form-item {
+  margin-bottom: 15px;
+}
+
+div.hr.xtnd {
+  height: .4rem;
+  margin-bottom: 1rem;
+  background: #96c246;
+}
+
+.ps-second-text {
+  padding-top: 50px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10.form.mrh, .page-devis-assurance-habitation-fastquote-mrhcomp10.form.mrh,
+.page-devis-assurance-habitation-assure-mrhcomp20.form.mrh, .page-devis-assurance-habitation-assure-mrhcompmail.form.mrh {
+  background: #e7e7e7;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 .form-group .error, .page-devis-assurance-habitation-fastquote-mrhcomp10 .form-group .error,
+.page-devis-assurance-habitation-assure-mrhcomp20 .form-group .error, .page-devis-assurance-habitation-assure-mrhcompmail .form-group .error {
+  font-size: 1.4rem !important;
+  font-weight: normal !important;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 input[type="text"], .page-devis-assurance-habitation-fastquote-mrhcomp10 input[type="text"],
+.page-devis-assurance-habitation-assure-mrhcomp20 input[type="text"], .page-devis-assurance-habitation-assure-mrhcompmail input[type="text"] {
+  border-color: #ccc !important;
+  border-radius: 3px !important;
+}
+
+.page-devis-assurance-habitation #site-header-path .container, .page-devis-assurance-habitation-fastquote-mrhcomp10 #site-header-path .container {
+  width: 100%;
+  border-bottom: 1px solid #858583;
+  height: 70px;
+  position: relative;
+}
+
+.page-devis-assurance-habitation #site-header-path .container .row {
+  width: 719px;
+  margin: 0 auto;
+}
+
+.page-devis-assurance-habitation #site-header-path .logo, .page-devis-assurance-habitation #site-header-path .logo > span {
+  border-bottom: none;
+  max-width: 60px;
+  padding: 3px 0 0;
+}
+
+.page-devis-assurance-habitation #site-header-path .cheminement li.active:not(li.active+.active) {
+  background: #96c246;
+  position: relative;
+}
+
+#site-header-path.comparator-context .cheminement .active + .active,
+.page-devis-assurance-habitation-tarif-conditionnel #site-header-path .cheminement .active + .active,
+.page-devis-assurance-habitation-tarif #site-header-path .cheminement .active + .active {
+  background: #96c246;
+  position: relative;
+  z-index: 1;
+}
+
+#site-header-path.comparator-context .cheminement .current:before,
+.page-devis-assurance-habitation-tarif-conditionnel #site-header-path .cheminement .active + .active:before,
+.page-devis-assurance-habitation-tarif #site-header-path .cheminement .active + .active:before {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(227, 1, 85, 0);
+  border-right-color: #96c246;
+  border-width: 7px;
+  margin-top: -7px;
+}
+
+.page-devis-assurance-habitation-tarif-conditionnel #site-header-path .cheminement .active + .active:after,
+.page-devis-assurance-habitation-tarif #site-header-path .cheminement .active + .active:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(227, 1, 85, 0);
+  border-left-color: #96c246;
+  border-width: 7px;
+  margin-top: -7px;
+}
+
+#site-header-path.comparator-context .cheminement li.active:first-of-type:before {
+  content: none;
+}
+
+#site-header-path.comparator-context .cheminement li:last-child:after {
+  content: none;
+}
+
+#site-header-path.comparator-context .cheminement ul li.active:first-child,
+.page-devis-assurance-habitation-tarif-conditionnel #site-header-path .cheminement ul li.active:first-child,
+.page-devis-assurance-habitation-tarif #site-header-path .cheminement ul li.active:first-child {
+  background: #DCEBC0;
+  z-index: 1;
+}
+
+.page-devis-assurance-habitation-tarif-conditionnel #site-form-sidebar,
+.page-devis-assurance-habitation-tarif #site-form-sidebar {
+  z-index: 20;
+}
+
+#site-header-path.comparator-context .cheminement ul li.active:first-child, #site-header-path.comparator-context .cheminement ul li.active:nth-child(2),
+.page-devis-assurance-habitation-complementaire-mrhqapt10 #site-header-path .cheminement ul li.active:first-child,
+.page-devis-assurance-habitation-complementaire-mrhqapt20 #site-header-path .cheminement ul li.active:first-child,
+.page-devis-assurance-habitation-complementaire-mrhqapt30 #site-header-path .cheminement ul li.active:first-child,
+.page-devis-assurance-habitation-complementaire-mrhqapt40 #site-header-path .cheminement ul li.active:first-child,
+.page-devis-assurance-habitation-assure-mrhcomp20 #site-header-path .cheminement ul li.active:first-child,
+.page-devis-assurance-habitation-assure-mrhcompmail #site-header-path .cheminement ul li.active:first-child,
+.page-devis-assurance-habitation-complementaire-mrhqapt10 #site-header-path .cheminement ul li.active:nth-child(2),
+.page-devis-assurance-habitation-complementaire-mrhqapt20 #site-header-path .cheminement ul li.active:nth-child(2),
+.page-devis-assurance-habitation-complementaire-mrhqapt30 #site-header-path .cheminement ul li.active:nth-child(2),
+.page-devis-assurance-habitation-complementaire-mrhqapt40 #site-header-path .cheminement ul li.active:nth-child(2),
+.page-devis-assurance-habitation-assure-mrhcomp20 #site-header-path .cheminement ul li.active:nth-child(2),
+.page-devis-assurance-habitation-assure-mrhcompmail #site-header-path .cheminement ul li.active:nth-child(2) {
+  background: #DCEBC0;
+  z-index: 1;
+}
+
+#site-header-path.comparator-context .cheminement ul li.active:last-child,
+.page-devis-assurance-habitation-complementaire-mrhqapt10 #site-header-path .cheminement ul li.active:last-child,
+.page-devis-assurance-habitation-complementaire-mrhqapt20 #site-header-path .cheminement ul li.active:last-child,
+.page-devis-assurance-habitation-complementaire-mrhqapt30 #site-header-path .cheminement ul li.active:last-child,
+.page-devis-assurance-habitation-complementaire-mrhqapt40 #site-header-path .cheminement ul li.active:last-child,
+.page-devis-assurance-habitation-assure-mrhcomp20 #site-header-path .cheminement ul li.active:last-child,
+.page-devis-assurance-habitation-assure-mrhcompmail #site-header-path .cheminement ul li.active:last-child {
+  position: relative;
+  background: #96c246;
+  z-index: 1;
+}
+
+#site-header-path.comparator-context .cheminement ul li.active:last-child:before,
+.page-devis-assurance-habitation-complementaire-mrhqapt10 #site-header-path .cheminement ul li.active:last-child:before,
+.page-devis-assurance-habitation-complementaire-mrhqapt20 #site-header-path .cheminement ul li.active:last-child:before,
+.page-devis-assurance-habitation-complementaire-mrhqapt30 #site-header-path .cheminement ul li.active:last-child:before,
+.page-devis-assurance-habitation-complementaire-mrhqapt40 #site-header-path .cheminement ul li.active:last-child:before,
+.page-devis-assurance-habitation-assure-mrhcomp20 #site-header-path .cheminement ul li.active:last-child:before,
+.page-devis-assurance-habitation-assure-mrhcompmail #site-header-path .cheminement ul li.active:last-child:before {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(227, 1, 85, 0);
+  border-right-color: #96c246;
+  border-width: 7px;
+  margin-top: -7px;
+}
+
+#site-header-path.comparator-context .cheminement ul li.active:last-child span,
+.page-devis-assurance-habitation-assure-mrhcomp20 #site-header-path .cheminement ul li.active:last-child span,
+.page-devis-assurance-habitation-assure-mrhcompmail #site-header-path .cheminement ul li.active:last-child span,
+.page-devis-assurance-habitation-complementaire-mrhqapt10 #site-header-path .cheminement ul li.active:last-child span {
+  color: #fff;
+}
+
+.page-devis-assurance-habitation .checkout-progression {
+  position: absolute;
+  top: 66px;
+  right: 0;
+  width: 61.8%;
+  height: 4px;
+  background: #d5d2d2;
+  z-index: 0;
+}
+
+.page-devis-assurance-habitation #site-header-path .cheminement ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.page-devis-assurance-habitation #site-header-path .cheminement ul li a span {
+  color: #fff;
+}
+
+#site-header-path.comparator-context .cheminement li span,
+.page-devis-assurance-habitation #site-header-path .cheminement li span {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #d5d2d2;
+}
+
+#site-header-path.comparator-context .cheminement .state-num, #site-header-path.comparator-context .cheminement a > span > span,
+.page-devis-assurance-habitation #site-header-path .cheminement .state-num, .page-devis-assurance-habitation #site-header-path .cheminement a > span > span {
+  font-size: 14px;
+  border: 1px solid;
+  width: 23px;
+  margin: 15px auto 4px;
+  border-radius: 15px;
+}
+
+.page-devis-assurance-habitation #site-header-path .container .row > div > a.logo, .page-devis-assurance-habitation #site-header-path .container .cheminement {
+  float: left;
+}
+
+.page-devis-assurance-habitation #site-header-path .container .row > div > a.logo {
+  display: inline-block;
+  margin-top: -7px;
+  margin-right: 85px;
+}
+
+.page-devis-assurance-habitation #site-header-path .container .cheminement {
+  display: block;
+  border: none;
+  width: 500px;
+}
+
+.page-devis-assurance-habitation #site-header-path .cheminement ul {
+  display: flex;
+  height: 70px;
+}
+
+#site-header-path.comparator-context ul li.current,
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-header-path .cheminement ul li:first-child,
+.page-devis-assurance-habitation-reserve-mrhrsv11 #site-header-path .cheminement ul li:first-child,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-header-path .cheminement ul li:first-child {
+  background: #96c246 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.page-devis-assurance-habitation #site-header-path .cheminement ul li {
+  min-width: 135px;
+  border: none;
+}
+
+#site-header-path.comparator-context ul li.current:after,
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-header-path .cheminement ul li:first-child:after,
+.page-devis-assurance-habitation-reserve-mrhrsv11 #site-header-path .cheminement ul li:first-child:after,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-header-path .cheminement ul li:first-child:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(227, 1, 85, 0);
+  border-left-color: #96c246;
+  border-width: 7px;
+  margin-top: -7px;
+}
+
+#site-header-path.comparator-context .cheminement ul li:first-child span,
+.page-devis-assurance-habitation #site-header-path .cheminement ul li:first-child span {
+  color: #fff;
+}
+
+#site-header-path.comparator-context .cheminement .activeTab,
+.page-devis-assurance-habitation #site-header-path .cheminement .activeTab {
+  font-weight: normal;
+}
+
+#site-header-path.comparator-context header,
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content header,
+.page-devis-assurance-habitation-assure-mrhcomp20 #site-form-content header,
+.page-devis-assurance-habitation-assure-mrhcompmail #site-form-content header,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content header {
+  padding-bottom: 100px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 .stripe-section .section-title,
+.page-devis-assurance-habitation-assure-mrhcomp20 .stripe-section .section-title,
+.page-devis-assurance-habitation-assure-mrhcompmail .stripe-section .section-title,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 .stripe-section .section-title {
+  width: 380px;
+  margin: 0 auto;
+  font-size: 2.8rem;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content header .header-separator,
+.page-devis-assurance-habitation-assure-mrhcomp20 #site-form-content header .header-separator,
+.page-devis-assurance-habitation-assure-mrhcompmail #site-form-content header .header-separator,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content header .header-separator {
+  border-bottom: 1px solid #ccc;
+  width: 110px;
+  margin: -20px auto -40px;
+  padding-top: 80px;
+}
+
+.page-devis-assurance-habitation #site-wrapper > section {
+  position: initial;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-wrapper > .stripe-section > .container,
+.page-devis-assurance-habitation-assure-mrhcomp20 #site-wrapper > .stripe-section > .container,
+.page-devis-assurance-habitation-assure-mrhcompmail #site-wrapper > .stripe-section > .container,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-wrapper > .stripe-section > .container {
+  width: 100%;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-wrapper > .stripe-section > .container > .row,
+.page-devis-assurance-habitation-assure-mrhcomp20 #site-wrapper > .stripe-section > .container > .row,
+.page-devis-assurance-habitation-assure-mrhcompmail #site-wrapper > .stripe-section > .container > .row,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-wrapper > .stripe-section > .container > .row {
+  width: 719px;
+  margin: 0 auto;
+}
+
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content .form-group,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-assure-mrhcomp20 #site-form-content .form-group,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-assure-mrhcompmail #site-form-content .form-group,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content .form-group {
+  padding: inherit;
+  padding-left: inherit;
+}
+
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li:first-child label,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li:first-child label,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li:nth-child(2) label,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li:nth-child(2) label {
+  margin-bottom: 10px;
+}
+
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content > .form-group:not(:nth-child(9)):not(:last-child),
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content > .form-group:not(:nth-child(8)):not(:last-child),
+.page-devis-assurance-habitation.page-devis-assurance-habitation-assure-mrhcomp20 #site-form-content > .form-group:not(:nth-child(9)):not(:last-child),
+.page-devis-assurance-habitation.page-devis-assurance-habitation-assure-mrhcompmail #site-form-content > .form-group.form-radios,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content > #edit-postal-city-wrapper,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content > #edit-postal-city-wrapper {
+  margin-bottom: 7rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content > .form-group:nth-child(9) > .form-group > label,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content > .form-group:nth-child(9) > .form-group > label {
+  padding-bottom: 15px;
+}
+
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content > .form-group:nth-child(9) > .form-group > label + p,
+.page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content > .form-group:nth-child(9) > .form-group > label + p {
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-postal-city-wrapper,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-postal-city-wrapper {
+  max-height: 231px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 .form-group > label,
+.page-devis-assurance-habitation-assure-mrhcomp20 .form-group > label,
+.page-devis-assurance-habitation-assure-mrhcompmail .form-group > label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 .form-group > label {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+  padding-bottom: 20px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 .container > .row > div,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 .container > .row > div {
+  padding: inherit;
+}
+
+.page-devis-assurance-habitation #edit-mrh-typelogement {
+  margin: 0;
+  width: 100%;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li {
+  width: 48.97% !important;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li:nth-child(odd),
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li:nth-child(odd) {
+  margin-right: 14px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li label {
+  width: 100%;
+  height: inherit;
+  display: block;
+  padding: 20px 80px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #000;
+  font-size: 19.5px;
+  box-shadow: none;
+}
+
+.page-devis-assurance-habitation #edit-mrh-piece li input[type="radio"]:checked + label, .piece-active {
+  background: #fff !important;
+  box-shadow: none !important;
+  border-right-width: 1px !important;
+  border-bottom-width: 5px !important;
+  border-bottom-color: #96c246 !important;
+}
+
+.page-devis-assurance-habitation #edit-mrh-piece li input[type="radio"]:disabled + label {
+  color: #888;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-m + label, .page-devis-assurance-habitation #edit-mrh-typelogement #edit-mrh-typelogement-m:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-a + label, .page-devis-assurance-habitation #edit-mrh-typelogement #edit-mrh-typelogement-a:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-s + label, .page-devis-assurance-habitation #edit-mrh-typelogement #edit-mrh-typelogement-s:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-c + label, .page-devis-assurance-habitation #edit-mrh-typelogement #edit-mrh-typelogement-c:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-m + label, .page-devis-assurance-habitation #edit-mrh-typelogement #edit-mrh-typelogement-m:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-a + label, .page-devis-assurance-habitation #edit-mrh-typelogement #edit-mrh-typelogement-a:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-s + label, .page-devis-assurance-habitation #edit-mrh-typelogement #edit-mrh-typelogement-s:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content #edit-mrh-typelogement #edit-mrh-typelogement-c + label, .page-devis-assurance-habitation #edit-mrh-typelogement #edit-mrh-typelogement-c:checked + label {
+  text-indent: 20px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement label,
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement input:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement input:checked + label {
+  line-height: 35px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement #edit-mrh-typelogement-m + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement #edit-mrh-typelogement-m + label {
+  background: url(../images/Pictos_maison.svg) 75px 16px no-repeat #fff;
+  background-size: 40px 40px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement #edit-mrh-typelogement-m:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement #edit-mrh-typelogement-m:checked + label {
+  background: url(../images/Pictos_maison-active.svg) 75px 17px no-repeat #fff;
+  background-size: 40px 40px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement #edit-mrh-typelogement-a + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement #edit-mrh-typelogement-a + label {
+  background: url(../images/Pictos_appartement.svg) 60px 13px no-repeat #fff;
+  background-size: 45px 45px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement #edit-mrh-typelogement-a:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement #edit-mrh-typelogement-a:checked + label {
+  background: url(../images/Pictos_appartement_active.svg) 60px 13px no-repeat #fff;
+  background-size: 45px 45px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement #edit-mrh-typelogement-s + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement #edit-mrh-typelogement-s + label {
+  background: url(../images/Pictos_studio.svg) 75px 10px no-repeat #fff;
+  background-size: 50px 50px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement #edit-mrh-typelogement-s:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement #edit-mrh-typelogement-s:checked + label {
+  background: url(../images/Pictos_studio_active.svg) 75px 10px no-repeat #fff;
+  background-size: 50px 50px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement #edit-mrh-typelogement-c + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement #edit-mrh-typelogement-c + label {
+  background: url(../images/Pictos_chambre.svg) 57px 8px no-repeat #fff;
+  background-size: 55px 55px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement #edit-mrh-typelogement-c:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement #edit-mrh-typelogement-c:checked + label {
+  background: url(../images/Pictos_chambre_active.svg) 57px 8px no-repeat #fff;
+  background-size: 55px 55px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li input[type="radio"]:checked + label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li input[type="radio"]:checked + label {
+  height: 77.7px;
+  background: #fff;
+  box-shadow: none;
+  border-right-width: 1px;
+  border-bottom-width: 5px;
+  border-bottom-color: #96c246 !important;
+  border-color: #89898b;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-piece {
+  display: flex;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-piece li {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li:last-child,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-piece li:last-child {
+  margin-right: 0;
+  min-width: 20%;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li label,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-piece li label {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #000;
+}
+
+#site-header-path.comparator-context .sidebar-widget,
+.page-devis-assurance-habitation #site-form-sidebar .sidebar-widget {
+  padding: 0;
+  position: fixed;
+  top: 160px;
+  right: 0;
+  border-radius: 6px 0 0 6px;
+}
+
+#site-header-path.comparator-context .sidebar-widget,
+.page-devis-assurance-habitation #site-form-sidebar .sidebar-widget a {
+  margin: 0 !important;
+  line-height: 30px;
+  border-radius: 6px 0 0 6px;
+  padding: 40px 25px 30px 25px;
+  background: url(../images/Picto_rappel.svg) center 10px no-repeat #fff;
+  background-size: 75px 30px;
+  outline: none;
+  color: #000;
+  font-weight: bold;
+  border-right: none;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 .form-group > .form-group > label.error,
+.page-devis-assurance-habitation-assure-mrhcomp20 .form-group > .form-group > label.error,
+.page-devis-assurance-habitation-assure-mrhcompmail .form-group > .form-group > label.error,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 .form-group > .form-group > label.error {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 .form-group > .form-group > label.error:before,
+.page-devis-assurance-habitation-assure-mrhcomp20 .form-group > .form-group > label.error:before,
+.page-devis-assurance-habitation-assure-mrhcompmail .form-group > .form-group > label.error:before,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 .form-group > .form-group > label.error:before {
+  content: '❌';
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.page-devis-assurance-habitation-fastquote-mrhfq10 .validate-btn button,
+.page-devis-assurance-habitation-assure-mrhcomp20 .validate-btn button,
+.page-devis-assurance-habitation-assure-mrhcompmail .validate-btn button,
+.page-devis-assurance-habitation-fastquote-mrhcomp10 .validate-btn button {
+  width: 50% !important;
+  font-family: "Asap", sans-serif;
+  font-size: 18px;
+  height: 50px;
+  background: #96c246;
+  box-shadow: none;
+  border: none;
+  font-weight: bold;
+}
+
+body.form footer:not(#dydu-textbox) {
+  background: #454641;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 9px 0 5px 0;
+}
+
+.page-devis-assurance-habitation-complementaire-mrhqapt20 #site-wrapper, .page-devis-assurance-habitation-complementaire-mrhqapt30 #site-wrapper {
+  position: initial;
+}
+
+body.form .footer-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+body.form footer i, body.form footer ul {
+  float: left;
+}
+
+body.form footer i {
+  width: 16px;
+  text-align: center;
+  height: 16px;
+  line-height: 16px;
+  background: #fff;
+  color: #454641;
+  border-radius: 50%;
+  margin: 4px 5px 0 0;
+  font-weight: bold;
+}
+
+body.form footer ul {
+  padding: 0;
+}
+
+body.form footer ul li {
+  list-style: none none;
+}
+
+body.form footer ul li a {
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  #site-header-path.comparator-context .container .row > div > a.logo,
+  .page-devis-assurance-habitation #site-header-path .container .row > div > a.logo {
+    width: 60px;
+    margin-right: 5%;
+    margin-left: 10%;
+  }
+
+  #site-header-path.comparator-context .cheminement ul li:first-child:after,
+  #site-header-path.comparator-context .cheminement .active + .active:after,
+  #site-header-path.comparator-context .cheminement .active + .active:before,
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #site-header-path .cheminement ul li:first-child:after,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #site-header-path .cheminement ul li:first-child:after,
+  .page-devis-assurance-habitation-reserve-mrhrsv11 #site-header-path .cheminement ul li:first-child,
+  .page-devis-assurance-habitation-tarif-conditionnel #site-header-path .cheminement .active + .active:after,
+  .page-devis-assurance-habitation-tarif-conditionnel #site-header-path .cheminement .active + .active:before,
+  .page-devis-assurance-habitation-tarif #site-header-path .cheminement .active + .active:after,
+  .page-devis-assurance-habitation-tarif #site-header-path .cheminement .active + .active:before,
+  .page-devis-assurance-habitation-complementaire-mrhqapt10 #site-header-path .cheminement ul li.active:last-child:before,
+  .page-devis-assurance-habitation-complementaire-mrhqapt20 #site-header-path .cheminement ul li.active:last-child:before,
+  .page-devis-assurance-habitation-complementaire-mrhqapt30 #site-header-path .cheminement ul li.active:last-child:before,
+  .page-devis-assurance-habitation-complementaire-mrhqapt40 #site-header-path .cheminement ul li.active:last-child:before,
+  .page-devis-assurance-habitation-assure-mrhcomp20 #site-header-path .cheminement ul li.active:last-child:before,
+  .page-devis-assurance-habitation-assure-mrhcompmail #site-header-path .cheminement ul li.active:last-child:before {
+    border-width: 5px;
+    margin-top: -5px;
+  }
+
+  .page-devis-assurance-habitation .checkout-progression {
+    width: 75%;
+    left: 0;
+  }
+
+  .page-devis-assurance-habitation #site-form-sidebar {
+    display: block;
+    position: initial !important;
+    background: transparent;
+    overflow-y: initial;
+  }
+
+  .page-devis-assurance-habitation #site-form-sidebar aside {
+    position: initial !important;
+    background: #999;
+    padding: 9px !important;
+    border-radius: 0 !important;
+    margin-bottom: 0;
+  }
+
+  .page-devis-assurance-habitation #site-form-sidebar aside a {
+    background: url(../images/Picto_rappel.svg) center 15px no-repeat #494345;
+    background-size: 75px 30px;
+    width: 50% !important;
+    border: none !important;
+    border-radius: 3px !important;
+    font-weight: bold;
+    text-transform: none !important;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #site-wrapper > .stripe-section > .container > .row, .page-devis-assurance-habitation #site-header-path .container .row,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #site-wrapper > .stripe-section > .container > .row, .page-devis-assurance-habitation #site-header-path .container .row {
+    width: 100%;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement label,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement label,
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement input:checked + label,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement input:checked + label {
+    text-indent: 0 !important;
+    padding: 67px 0 0 !important;
+    height: inherit !important;
+    min-height: 108px;
+    background-position: center 20px !important;
+    background-size: 55px !important;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement #edit-mrh-typelogement-m:checked + label,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement #edit-mrh-typelogement-m:checked + label {
+    background-position: center 21px !important;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-piece {
+    flex-wrap: wrap;
+    height: 105px;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-piece li {
+    width: 30% !important;
+    margin-right: 15px;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li:nth-child(3),
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-piece li:nth-child(3) {
+    margin-right: 0;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li:first-child,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-piece li:first-child {
+    margin-bottom: 15px;
+  }
+
+  #site-header-path.comparator-context .container .row > div,
+  .page-devis-assurance-habitation #site-header-path .container .row > div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  #site-header-path.comparator-context .cheminement,
+  .page-devis-assurance-habitation #site-header-path .cheminement {
+    display: table-cell;
+    float: left;
+    width: 100%;
+  }
+
+  #site-header-path.comparator-context .cheminement ul,
+  .page-devis-assurance-habitation #site-header-path .cheminement ul {
+    display: flex;
+  }
+
+  #site-header-path.comparator-context .cheminement ul li,
+  .page-devis-assurance-habitation #site-header-path .cheminement ul li {
+    width: 33%;
+    min-width: inherit;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #site-form-content,
+  .page-devis-assurance-habitation-assure-mrhcomp20 #site-form-content,
+  .page-devis-assurance-habitation-assure-mrhcompmail #site-form-content,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #site-form-content {
+    margin-top: 0;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li {
+    width: 48.5% !important;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li label,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li label {
+    font-size: 13px;
+  }
+
+  .page-devis-assurance-habitation footer, .page-devis-assurance-auto footer {
+    padding: 9px 0 5px 30px !important;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 footer,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 footer {
+    bottom: -55px !important;
+  }
+
+  .page-devis-assurance-habitation-complementaire-mrhqapt20 .bottom-part,
+  .page-devis-assurance-habitation-complementaire-mrhqapt30 .bottom-part,
+  .page-devis-assurance-habitation-complementaire-mrhqapt40 .bottom-part {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-devis-assurance-habitation-complementaire-mrhqapt20 footer, .page-devis-assurance-habitation-complementaire-mrhqapt30 footer {
+    position: initial !important;
+    min-height: 52px;
+  }
+
+  .page-devis-assurance-habitation-complementaire-mrhqapt20 #site-form-sidebar, .page-devis-assurance-habitation-complementaire-mrhqapt30 #site-form-sidebar {
+    padding-top: 0;
+  }
+
+  .page-devis-assurance-habitation #site-header-path .container, .page-devis-assurance-habitation-fastquote-mrhcomp10 #site-header-path .container {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #edit-mrh-ibanp1 {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 547px) {
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li:nth-child(odd),
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li:nth-child(odd) {
+    margin-right: 2%;
+  }
+
+  .page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li:first-child label,
+  .page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li:first-child label,
+  .page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-typelogement li:nth-child(2) label,
+  .page-devis-assurance-habitation.page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-typelogement li:nth-child(2) label {
+    margin-bottom: 5%;
+  }
+
+  #site-header-path .cheminement ul li span, #site-header-path .cheminement ul li a {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  #site-header-path.comparator-context .cheminement ul,
+  .page-devis-assurance-habitation #site-header-path .cheminement ul {
+    max-width: 350px;
+  }
+
+  .page-devis-assurance-habitation-fastquote-mrhfq10 .stripe-section .section-title,
+  .page-devis-assurance-habitation-assure-mrhcomp20 .stripe-section .section-title,
+  .page-devis-assurance-habitation-assure-mrhcompmail .stripe-section .section-title,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 .stripe-section .section-title {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .page-devis-assurance-habitation-fastquote-mrhfq10 #edit-mrh-piece li,
+  .page-devis-assurance-habitation-fastquote-mrhcomp10 #edit-mrh-piece li {
+    width: 29% !important;
+  }
+}
+
+.page-devis-assurance-habitation footer {
+  z-index: 999999;
+}
+
+.error-cond.text-highlight,
+.error-cond.text-highlight button {
+  color: #DC6060 !important;
+}
+
+.stripe-section.form-section .form-text[aria-invalid="true"], .stripe-section.form-section .form-select[aria-invalid="true"] {
+  border-bottom: 3px solid #DC6060;
+}
+
+.stripe-section.form-section .form-text[aria-invalid="false"], .stripe-section.form-section .form-select[aria-invalid="false"] {
+  border-bottom: 3px solid #A9C153;
+}
+
+.mgb-10{
+  margin-bottom: 10px;
+}
+
+.link-d{
+  display: flex;
+}
+
+i.icon-angle-right.icon-ea.icon-margin-f{
+  margin: 2px 5px 0px 10px;
+}
+
+.required-field{
+  float: left;
+  font-weight: bold;
+}
+
+.mail-label {
+  text-align: center;
+}
+
+.mail-label label {
+  font-weight: bold;
+}

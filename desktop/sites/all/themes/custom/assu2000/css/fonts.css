@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'Asap';
+    src: url("../fonts/ASAP/Asap-Regular.eot");
+    src: url("../fonts/ASAP/Asap-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ASAP/Asap-Regular.woff") format("woff"), url("../fonts/ASAP/Asap-Regular.ttf") format("truetype"), url("../fonts/ASAP/Asap-Regular.svg#Asap-Regular") format("svg");
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Asap';
+    src: url("../fonts/ASAP/Asap-Italic.eot");
+    src: url("../fonts/ASAP/Asap-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/ASAP/Asap-Italic.woff") format("woff"), url("../fonts/ASAP/Asap-Italic.ttf") format("truetype"), url("../fonts/ASAP/Asap-Italic.svg#Asap-Italic") format("svg");
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Asap';
+    src: url("../fonts/ASAP/Asap-Bold.eot");
+    src: url("../fonts/ASAP/Asap-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/ASAP/Asap-Bold.woff") format("woff"), url("../fonts/ASAP/Asap-Bold.ttf") format("truetype"), url("../fonts/ASAP/Asap-Bold.svg#Asap-Bold") format("svg");
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Asap';
+    src: url("../fonts/ASAP/Asap-BoldItalic.eot");
+    src: url("../fonts/ASAP/Asap-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/ASAP/Asap-BoldItalic.woff") format("woff"), url("../fonts/ASAP/Asap-BoldItalic.ttf") format("truetype"), url("../fonts/ASAP/Asap-BoldItalic.svg#Asap-BoldItalic") format("svg");
+    font-style: italic;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'iconas';
+    src: url("../fonts/iconas/iconas.eot");
+    src: url("../fonts/iconas/iconas.eot") format("embedded-opentype"), url("../fonts/iconas/iconas.ttf") format("truetype"), url("../fonts/iconas/iconas.woff") format("woff"), url("../fonts/iconas/iconas.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url("../fonts/icomoon/icomoon.eot?lc32gq");
+  src:  url("../fonts/icomoon/icomoon.eot?lc32gq#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon/icomoon.ttf?lc32gq") format("truetype"),
+    url("../fonts/icomoon/icomoon.woff?lc32gq") format("woff"),
+    url("../fonts/icomoon/icomoon.svg?lc32gq#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'picto';
+  src:  url('../fonts/picto/picto.eot?6hrdf1');
+  src:  url('../fonts/picto/picto.eot?6hrdf1#iefix') format('embedded-opentype'),
+    url('../fonts/picto/picto.ttf?6hrdf1') format('truetype'),
+    url('../fonts/picto/picto.woff?6hrdf1') format('woff'),
+    url('../fonts/picto/picto.svg?6hrdf1#picto') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'iconfp';
+    src: url("../fonts/iconfp/iconfp.eot");
+    src: url("../fonts/iconfp/iconfp.eot") format("embedded-opentype"), url("../fonts/iconfp/iconfp.ttf") format("truetype"), url("../fonts/iconfp/iconfp.woff") format("woff"), url("../fonts/iconfp/iconfp.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}

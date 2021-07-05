@@ -1,0 +1,175 @@
+#ekomi {
+    min-height: 263px;
+    background: #f5f4f3;
+}
+
+#divekomititre h2{
+	font-weight: normal;
+	margin-top: 0px;
+}
+
+#ekomi .container img {
+    margin-top: -74px;
+}
+
+#ekomi .container {
+    background: #f5f4f3;
+    max-width: 800px;
+    margin: 0px auto;
+}
+
+#divekomititre {
+    text-align: left;
+    padding-top: 27px;
+    padding-left: 160px;
+    margin-top: 0px;
+    text-transform: uppercase;
+    font-size: 3.2rem;
+    line-height: 3rem;
+    font-family: "Asap", sans-serif;
+    margin-bottom: 3rem;
+}
+
+#divekomititre h2 br {
+	display: none;
+}
+
+#ekomi p {
+	margin-bottom: 0px;
+}
+
+#divekomiscore {
+    position: relative;
+    display: block;
+    margin-top: -51px;
+    left: 34%;
+}
+
+#ekomitexte {
+    display: block;
+    margin-top: 10px;
+    padding-left: 14%;
+}
+
+#ekomi .ekomi_text {
+
+    color: #323639;
+}
+
+.evaluation_stars_ekomi {
+    position: absolute;
+    top: -4px;
+    float: right;
+    left: 22%;
+}
+
+.evaluation_stars_ekomi li {
+    width: 1px;
+    height: 1px;
+    float: left;
+    padding: 15px 10px 18px 10px;
+    color: transparent;
+    background-size: 30px 30px;
+    margin-left: 14px;
+}
+
+.evaluation_stars_ekomi li.star_actif {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_demi_actif_1 {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_demi_1.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_demi_actif_2 {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_demi_2.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_demi_actif_3 {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_demi_3.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_demi_actif_4 {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_demi_4.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_demi_actif_5 {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_demi_5.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_demi_actif_6 {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_demi_6.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_demi_actif_7 {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_demi_7.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_demi_actif_8 {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_demi_8.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_demi_actif_9 {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_demi_9.svg) center center no-repeat;
+}
+
+.evaluation_stars_ekomi li.star_non_actif {
+    background: url(/sites/all/modules/custom/amae_ekomi/images/etoile_gris.svg) center center no-repeat;
+} 
+
+@media screen and (max-width:767px) {
+	
+	#ekomi .container {
+	    max-width: 315px;
+	    background: #f5f4f3;
+	}
+
+	#divekomititre {
+	    text-align: center;
+    	padding-top: 53px;
+    	padding-left: 0px;
+	}
+	#divekomititre h2 br {
+		display: inline;
+	}
+	#divekomiscore {
+	    text-align: center;
+	    left: 0%;
+	    margin-top: 283px;
+	}
+	.evaluation_stars_ekomi {
+		position: static;
+    	display: table;
+		margin: 0 auto;
+		padding-left: 0px;
+		float: none;
+		padding-top: 5px;
+	}
+	#ekomitexte {
+	    display: block;
+	    margin-top: 10px;
+	    padding-left: 2%;
+		padding-bottom: 35px;
+	}
+	#divekomiscore span {
+		font-size: 18px;
+	}
+	#divekomiscore p {
+		font-size: 13px;
+	}
+	#ekomitexte span {
+		font-size: 13px;
+	}
+	#ekomi .container img {
+		position: static;
+		display: block;
+		margin: -193px auto;
+		width: 83px;
+		height: 83px;
+	}
+	#ekomi h2 {
+    	font-weight: normal;
+    	text-transform: uppercase;
+    	font-size: 20px;
+	}
+}

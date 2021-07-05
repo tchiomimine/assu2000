@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <CustomerLogin xmlns="http://webservices.ci.ccmm.applications.nortel.com">
+            <!--Optional:-->
+            <username>!__username__!</username>
+            <!--Optional:-->
+            <password>!__password__!</password>
+        </CustomerLogin>
+    </soapenv:Body>
+</soapenv:Envelope>

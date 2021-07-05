@@ -1,0 +1,335 @@
+
+
+.widget {
+    position: relative;
+    height: 100%;
+}
+
+.search-form {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    height: 20px;
+    margin: 1px 1px 0;
+}
+
+.search-form:hover {
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.search-form-input {
+    height:20px;float:left; width: 204px; padding-left: 2px;border:none;color:#666;margin:0;border-radius:0;-webkit-appearance:none;
+}
+
+.search-form-submit {
+    border: none;
+    background: #fff url(/templates/accueil/images/icon.png) 0px -75px no-repeat;
+    width: 22px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    height: 20px;
+}
+
+.search-suggestions {
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+    position: absolute;
+    background: #fff;
+    z-index: 1;
+    left: 1px;
+    right: 1px;
+    overflow-y: auto;
+    max-height: 230px;
+}
+
+.search-suggestion {
+    padding: 8px;
+}
+
+.search-suggestion:hover {
+    background: rgba(150, 150, 150, .1);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-results {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.map, .search-geolocation-button {
+    display: none;
+}
+
+.map-marker-label {
+    width: 38px;
+    position: absolute;
+    left: -19px;
+    top: -40px;
+    font-weight: bold;
+    font-size: 14px;
+    height: 50px;
+    text-align: center;
+}
+
+.search-result {
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    padding: 8px 0 36px;
+    background: #fff;
+    font-weight: 300;
+}
+
+.search-result:first-child {
+    border-top: 0;
+}
+
+.location-marker, .location-times,
+.location-offer-ranges {
+    display: none;
+}
+
+.location-name {
+    color: #00529e;
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.location-name-label {
+    padding-left: 3px;
+}
+
+.location-address {
+    position: relative;
+    padding: 6px 4px;
+}
+
+.location-address-address1 {
+    display: block;
+}
+
+.location-address-city:before {
+    content: ' ';
+}
+
+.location-phone-link,
+.location-email-link {
+    display: block;
+    position: relative;
+    padding: 6px 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.location-phone-link:hover,
+.location-email-link:hover {
+    background: rgba(150, 150, 150, .1);
+}
+
+.location-page,
+.location-custom-page {
+    position: absolute;
+    bottom: 0;
+    height: 36px;
+    background: rgba(150, 150, 150, 0);
+    transition: background .32s, border .32s;
+    border-bottom: 2px solid #fff;
+}
+
+.location-page {
+    left: 0;
+    right: 50%;
+}
+
+.location-custom-page {
+    left: 50%;
+    right: 0;
+}
+
+.location-page:before,
+.location-custom-page:before {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 36px;
+    height: 36px;
+    z-index: -1;
+}
+
+.location-page:before {
+    content: 'Voir la fiche';
+}
+
+.location-custom-page:before {
+    content: 'Choisir ce magasin';
+}
+.location-page:hover,
+.location-custom-page:hover {
+    background: rgba(150, 150, 150, .1);
+    border-bottom: 2px solid #333;
+}
+
+.location-page-link,
+.location-custom-page-link {
+    display: block;
+    text-indent: -9999px;
+    padding: 10px 8px;
+    height: 36px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.opening-status {
+    font-weight: bold;
+}
+
+.opening-status.open-soon,
+.opening-status.close-soon {
+    color: #e4a300;
+}
+
+.opening-status.open {
+    color: #1fb12b;
+}
+
+.opening-status.closed {
+    color: #b71313;
+}
+
+.opening-hours {
+    margin-top: 6px;
+}
+
+.opening-hours-day.today {
+    font-weight: bold;
+}
+
+.opening-hours-day-label {
+    flex: 1;
+}
+
+.opening-hours-day {
+    display: flex;
+    padding: 3px 0;
+}
+
+.time-bands {
+    flex: 2;
+    text-align: right;
+}
+
+.time-band:nth-child(2):before {
+    content: ' / ';
+}
+
+.time-band-closed {
+    color: #c10300;
+}
+
+.opening-hours-day:first-child {
+    padding-top: 0;
+}
+
+.opening-hours-day:last-child {
+    padding-bottom: 0;
+}
+
+.route {
+    display: none;
+}
+
+.route .loading {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.route .loading:before {
+    box-shadow: inset 0 0 0 3em #fff;
+}
+
+.route .loading:after {
+    border-width: 5px;
+}
+
+@media (min-width: 768px) {
+    .search-results {
+        width: 50%;
+        float: left;
+        max-height: 500px;
+        overflow-y: auto;
+        margin-top: 10px;
+    }
+
+    .map {
+        display: block;
+        height: 500px;
+        float: left;
+        width: 50%;
+        margin-top: 10px;
+    }
+}
+
+.search-error {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.search-empty-result {
+    font-size: 16px;
+}
+
+.loading {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+    background-color: #f1f1f1;
+}
+
+.loading:before,
+.loading:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.loading:before {
+    border: 3px solid rgba(8, 30, 63, 0);
+    box-shadow: inset 0 0 0 3em #f1f1f1
+}
+
+.loading:after {
+    z-index: 0;
+    border: solid 10px;
+    border-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+    border-image-slice: 0 0 0 20;
+    animation: loadingSpin 1s infinite linear;
+}
+
+@keyframes loadingSpin {
+    to {
+        transform: rotate(359deg);
+    }
+}

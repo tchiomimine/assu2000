@@ -1,0 +1,44 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <RegisterNewCustomer xmlns="http://webservices.ci.ccmm.applications.nortel.com">
+            <custID>!__cust_id__!</custID>
+            <!--Optional:-->
+            <newCustomer>
+                <title xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></title>
+                <firstName xmlns="http://datatypes.ci.ccmm.applications.nortel.com">Anonymous</firstName>
+                <lastName xmlns="http://datatypes.ci.ccmm.applications.nortel.com">Web Call-Back</lastName>
+                <username xmlns="http://datatypes.ci.ccmm.applications.nortel.com">!__username__!</username>
+                <password xmlns="http://datatypes.ci.ccmm.applications.nortel.com">!__password__!</password>
+            </newCustomer>
+            <!--Optional:-->
+            <newPhoneNumber>
+                <internationalCode xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></internationalCode>
+                <areaCode xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></areaCode>
+                <number xmlns="http://datatypes.ci.ccmm.applications.nortel.com">!__number__!</number>
+                <phoneNumberType xmlns="http://datatypes.ci.ccmm.applications.nortel.com">Unspecified</phoneNumberType>
+                <doNotCall xmlns="http://datatypes.ci.ccmm.applications.nortel.com">false</doNotCall>
+                <doNotCallSpecified xmlns="http://datatypes.ci.ccmm.applications.nortel.com">false</doNotCallSpecified>
+                <defaultPhoneNumber xmlns="http://datatypes.ci.ccmm.applications.nortel.com">false</defaultPhoneNumber>
+                <defaultPhoneNumberSpecified xmlns="http://datatypes.ci.ccmm.applications.nortel.com">false</defaultPhoneNumberSpecified>
+            </newPhoneNumber>
+            <!--Optional:-->
+            <newAddress>
+                 <line1 xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></line1>
+                 <line2 xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></line2>
+                 <line3 xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></line3>
+                 <line4 xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></line4>
+                 <line5 xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></line5>
+                 <zipcode xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></zipcode>
+                 <country xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></country>
+                 <defaultAddress xmlns="http://datatypes.ci.ccmm.applications.nortel.com">false</defaultAddress>
+                 <defaultAddressSpecified xmlns="http://datatypes.ci.ccmm.applications.nortel.com">false</defaultAddressSpecified>
+            </newAddress>
+            <!--Optional:-->
+            <newEmailAddress>
+                 <emailAddress xmlns="http://datatypes.ci.ccmm.applications.nortel.com">!__email__!</emailAddress>
+                 <defaultEmailAddress xmlns="http://datatypes.ci.ccmm.applications.nortel.com">false</defaultEmailAddress>
+                 <defaultEmailAddressSpecified xmlns="http://datatypes.ci.ccmm.applications.nortel.com">false</defaultEmailAddressSpecified>
+            </newEmailAddress>
+        </RegisterNewCustomer>
+    </soapenv:Body>
+</soapenv:Envelope>

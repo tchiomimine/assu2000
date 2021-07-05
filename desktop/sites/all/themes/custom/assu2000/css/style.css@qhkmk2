@@ -1,0 +1,158 @@
+html body.admin-menu{
+  margin-top: 0 !important;
+}
+
+body.admin-menu{
+  margin-top: 0 !important;
+}
+
+#user-login{
+  margin: 0 auto;
+  width: 40%;
+  padding-top:100px;
+  padding-bottom: 100px;
+}
+
+#site-prefooter .site-footer-nav li a {
+  line-height: 1.4rem;
+  display: block;
+  font-size: 1.4rem;
+  color: #000 !important;
+  font-family: "Asap", sans-serif !important;
+  font-weight: 500 !important;
+}
+
+#site-prefooter .lg-txt a{
+  font-size: 1.6rem !important;
+  font-family: "Asap", sans-serif !important;
+  color: #000 !important;
+}
+
+#site-proposition ul{
+  padding-left: 0px;
+}
+
+#site-proposition ul li{
+  list-style: none;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.8rem;
+}
+
+#site-proposition ul li:before{
+  font-family: 'iconas',sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: .2rem;
+  left: 0;
+  font-size: 2rem;
+  width: 1.6rem;
+  text-align: center;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  margin-right: .5rem;
+  color: #342e2e;
+}
+
+.table.table-formules .line td .formule-title.active:before {
+  content: "";
+}
+
+/* CSS Sprite */
+.sprite {
+  background-image: url(/sites/all/themes/custom/assu2000/images/spritesheet.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.sprite-bg-input-immatriculation {
+  width: 18px;
+  height: 40px;
+  background-position: -3px -3px;
+}
+
+.sprite-picto_mail {
+  width: 26px;
+  height: 15px;
+  background-position: -27px -3px;
+  display: inline-block;
+}
+
+.sprite-picto_telephone {
+  width: 18px;
+  height: 27px;
+  background-position: -59px -3px;
+  display: inline-block;
+}
+
+body.overlay-loader-show .loader-page {
+  display: block;
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.loader-page {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  overflow: hidden;
+}
+
+.loader-spinner {
+  border-top: 0.4rem solid rgba(255, 255, 255, 0.2);
+  border-right: 0.4rem solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.4rem solid rgba(255, 255, 255, 0.2);
+  border-left: .4rem solid #ffffff;
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -2.5rem;
+  margin-left: -2.5rem;
+}
+.loader-spinner,
+.loader-spinner:after {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}

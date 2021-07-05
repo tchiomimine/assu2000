@@ -1,0 +1,8 @@
+.form-control{
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border-style: solid;
+    border-color: #686868;
+	
+}

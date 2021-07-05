@@ -1,0 +1,70 @@
+/**
+ * @file
+ *   ASSU2000 custom progress.
+ */
+(function($) {
+  var beforeSend = Drupal.ajax.prototype.beforeSend;
+  var success = Drupal.ajax.prototype.success;
+  var error = Drupal.ajax.prototype.error;
+
+  /**
+   * Prepare the Ajax request before it is sent.
+   */
+  Drupal.ajax.prototype.beforeSend = function(xmlhttprequest, options) {
+    beforeSend.call(this, xmlhttprequest, options);
+
+    if (this.progress.type == "assu2000_formula_progress") {
+      var progress_markup = '<div class="overlay-formula"> <div class="loader-spinner"></div> </div>';
+      var progress_class = 'in-progress';
+      var parent_element = $(this.element).parent('li.form-item.formula');
+      parent_element.addClass(progress_class);
+      var inner = parent_element.children('.box-inner');
+      inner.prepend(progress_markup);
+    }
+    if (this.progress.type == "assu2000_loader_page") {
+        var progress_markup = '<div class="loader-page"><div class="loader-spinner"></div></div>';
+        var progress_class = 'overlay-loader-show';
+        var parent_element = $('body');
+        parent_element.addClass(progress_class);
+        var inner = parent_element;
+        inner.prepend(progress_markup);
+      }
+  };
+
+  /**
+   * Handler for the form redirection completion.
+   */
+  Drupal.ajax.prototype.success = function(xmlhttprequest, options) {
+    success.call(this, xmlhttprequest, options);
+
+    if (this.progress.type == "assu2000_formula_progress") {
+      var overlay_selector = '.overlay-formula';
+      var progress_class = 'in-progress';
+      var parent_element = $(this.element).parent('li.form-item.formula');
+      parent_element.removeClass(progress_class);
+      parent_element.children(overlay_selector).remove();
+    }
+    if (this.progress.type == "assu2000_loader_page") {
+        var overlay_selector = '.loader-page';
+        var progress_class = 'overlay-loader-show';
+        var parent_element = $('body');
+        parent_element.removeClass(progress_class);
+        parent_element.children(overlay_selector).remove();
+      }
+  };
+
+  /**
+   * Handler for the form redirection error.
+   */
+  Drupal.ajax.prototype.error = function (response, uri) {
+    error.call(this, response, uri);
+
+    if (this.progress.type == "assu2000_formula_progress") {
+      var overlay_selector = '.overlay-formula';
+      var progress_class = 'in-progress';
+      var parent_element = $(this.element).parent('li.form-item.formula');
+      parent_element.removeClass(progress_class);
+      parent_element.children(overlay_selector).remove();
+    }
+  };
+})(jQuery);
