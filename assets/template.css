@@ -881,10 +881,11 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .footer .menu_offre_2_home{padding-left: 0; margin-top: 14px;}
 /*page espace client message*/
 #rassure{
-	margin: auto;
-	padding: 30px 20px;
-	width: 600px;
-	background-color: #f8ffd6;
+	margin: 20px 85px 20px 0;
+    padding: 30px 20px;
+    width: 420px;
+    background-color: #f8ffd6;
+    float: right;
 }
 
 #rassure strong{
@@ -917,6 +918,16 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
     text-decoration: none;
 }
 
+.espaceclient li {
+    padding: 7px 0;
+    list-style-type: none;
+}
+.espaceclient li p {
+    margin: 5px 0;
+}
+.espaceclient ul {
+    padding: 0 30px;
+}
 .questionFinal {
     font-weight: 200;
     font-size: 20px;
