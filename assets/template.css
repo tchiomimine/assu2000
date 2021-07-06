@@ -437,7 +437,7 @@ sup{font-size:12px}
 
 /* le groupe c'est */
 .landing.instit h1,.cest h1{background-image:url(/assets/h1.png) !important}
-.item-page.cest{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_groupe.jpg) no-repeat; padding-top: 318px; width: 720px}
+.item-page.cest{background:url(/assets/visuel_groupe.jpg) no-repeat; padding-top: 318px; width: 720px}
 .cest .multicanal tr{display: block; margin-bottom: 45px}
 .cest .multicanal td{vertical-align:middle}
 .cest .multicanal td.logocol{width:195px}
@@ -780,22 +780,22 @@ select{border-radius:0; -webkit-appearance:menulist}
 
 /*page home */
 .home{background: #f2f2f2;}
-.home .headerbis{height: 115px;}
-.home .headerbis #logosite{top: 15px; left: 35px;}
-.home h1{padding: 0}
-.home .headerbis #liens_header_v2{position: absolute; right: 0; top: 44px;}
-.home .headerbis #liens_header_v2 ul li{float: left; position: relative;padding:2px 10px 2px 30px;border-right: 1px solid #bbb;}
-.home .headerbis #liens_header_v2 ul li:last-child{border: 1px solid #BBBBBB;margin-right: 22px;border-radius: 5px;padding: 10px 12px 10px 30px;margin-top: -10px;margin-left: -1px;}
-.home .headerbis #liens_header_v2 ul li a{color: #333; font-weight: 600; font-size: 12px;}
-.home .headerbis #liens_header_v2 ul li a:hover{text-decoration: underline;color:#025092;}
-.home .headerbis #liens_header_v2 ul li #localisation_picto {background-color:#000; -webkit-mask-image: url(/assets/picto_agence.svg);mask-image: url(/assets/picto_agence.svg); width: 12px;}
-.home .headerbis #liens_header_v2 ul li #tel_picto {background-color:#000; -webkit-mask-image: url(/assets/icon_rappel.svg);mask-image: url(/assets/icon_rappel.svg); width: 15px;}
-.home .headerbis #liens_header_v2 ul li #contact_picto {background-color:#000; -webkit-mask-image: url(/assets/icon_espace-client.svg);mask-image: url(/assets/icon_espace-client.svg);width: 16px;}
-.home .headerbis #liens_header_v2 ul li #assist_picto {background-color:#000; -webkit-mask-image: url(/assets/icon_assistance.svg);mask-image: url(/assets/icon_assistance.svg); width: 18px;}
-.home .headerbis #liens_header_v2 ul li a span{height: 16px; left: 8px; position: absolute;}
-.home .headerbis #liens_header_v2 ul li a:hover span{background-color:#025092 !important;}
+ .headerbis{height: 115px;}
+ .headerbis #logosite{top: 15px; left: 35px;}
+ h1{padding: 0}
+.headerbis #liens_header_v2{position: absolute; right: 0; top: 44px;}
+.headerbis #liens_header_v2 ul li{float: left; position: relative;padding:2px 10px 2px 30px;border-right: 1px solid #bbb;}
+.headerbis #liens_header_v2 ul li:last-child{border: 1px solid #BBBBBB;margin-right: 22px;border-radius: 5px;padding: 10px 12px 10px 30px;margin-top: -10px;margin-left: -1px;}
+.headerbis #liens_header_v2 ul li a{color: #333; font-weight: 600; font-size: 12px;}
+.headerbis #liens_header_v2 ul li a:hover{text-decoration: underline;color:#025092;}
+.headerbis #liens_header_v2 ul li #localisation_picto {background-color:#000; -webkit-mask-image: url(/assets/picto_agence.svg);mask-image: url(/assets/picto_agence.svg); width: 12px;}
+.headerbis #liens_header_v2 ul li #tel_picto {background-color:#000; -webkit-mask-image: url(/assets/icon_rappel.svg);mask-image: url(/assets/icon_rappel.svg); width: 15px;}
+.headerbis #liens_header_v2 ul li #contact_picto {background-color:#000; -webkit-mask-image: url(/assets/icon_espace-client.svg);mask-image: url(/assets/icon_espace-client.svg);width: 16px;}
+.headerbis #liens_header_v2 ul li #assist_picto {background-color:#000; -webkit-mask-image: url(/assets/icon_assistance.svg);mask-image: url(/assets/icon_assistance.svg); width: 18px;}
+.headerbis #liens_header_v2 ul li a span{height: 16px; left: 8px; position: absolute;}
+.headerbis #liens_header_v2 ul li a:hover span{background-color:#025092 !important;}
 
-.home .headerbis, .home .content, .home .content, .home .zone-bloc-1, .home .zone-bloc-2{background: #fff;}
+.headerbis, .home .content, .home .content, .home .zone-bloc-1, .home .zone-bloc-2{background: #fff;}
 .home .zone-bloc-3{background: #f3f7fa; padding: 30px; height: 100px;}
 .home .slide{width: 988px;}
 .home .slide img{width: 100%; display: block; margin: 0 auto;}
@@ -881,7 +881,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .footer .menu_offre_2_home{padding-left: 0; margin-top: 14px;}
 /*page contact*/
 .client-connecte{display:none}
-.item-page.contact{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_contact.jpg) no-repeat; padding-top: 318px;}
+.item-page.contact{background:url(/assets/visuel_contact.jpg) no-repeat; padding-top: 318px;}
 .contact h1, .label h1, .garages h1{background-image:url(/assets/h1.png) !important; padding-top:130px !important}
 .contact h2, .cest h2{margin-top:10px}
 .contact #zone-devis{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/accueil/images/contact/fd_tel.png") repeat scroll 0 0 transparent; color: #FFFFFF; font-size: 21px; font-weight: bold; height: 70px; left: 360px;   padding: 18px 28px; text-align: center; top: 100px; font-family:'Open Sans Condensed'}
@@ -905,7 +905,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .item-page.contact .callback #resultat {top: 163px; font-size:12px;}
 
 /* page five star */
-.item-page.garages {background: url("/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_five-star.jpg") no-repeat;    padding-top: 326px; width: 720px}
+.item-page.garages {background: url("/assets/visuel_five-star.jpg") no-repeat;    padding-top: 326px; width: 720px}
 .item-page.garages .btgarage{clear:left; margin: 10px;}
 .item-page.garages .btgarage a{background:url(/assets/garage-five-star-btn.png) no-repeat 5px #0a295f; padding-left:70px; padding-right:15px; margin:0 auto; width:150px; display:block}
 .item-page.garages ul{display: inline-block; margin: 10px 30px;}
@@ -917,7 +917,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .item-page.garages ul li.controle{background-position: 0 -348px; padding-top: 0; height: 54px;}
 
 /* page open to dialog */ 
-.item-page.label {background: url("/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_label.jpg") no-repeat;    padding-top: 326px; width: 720px}
+.item-page.label {background: url("/assets/visuel_label.jpg") no-repeat;    padding-top: 326px; width: 720px}
 .label #telephone, .label #perso, .label #fb{background:url(/assets/pictos_label.png) no-repeat 12px 18px;}
 .label #perso{background-position: 12px -98px;}
 .label #fb{background-position: 12px -188px;}
@@ -934,7 +934,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .label #ouverture{background-position: left -68px; margin-top:initial;padding: 10px 0 10px 90px; margin: 20px 60px 20px 80px;}
 
 /* page landing pages jaunes */
-.item-page.pagejaune {background: url("/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel-landing-pagejaune.jpg") no-repeat; padding-top:270px;}
+.item-page.pagejaune {background: url("/assets/visuel-landing-pagejaune.jpg") no-repeat; padding-top:270px;}
 
 .item-page.pagejaune #etapedevis, .item-page.pagejaune .devisagence{margin: 10px 10%;}
 .item-page.pagejaune #etapedevis li{float:left; width:190px; padding-top:130px; background:url(/assets/landing-etapes-devis.png) no-repeat; margin:10px 20px; font-size:1em}
@@ -948,27 +948,46 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 *********/
 .offre .right{margin-left:0}
 
+.offre h1, .landing.sante h1 {
+    background: none;
+    color: #000;
+    text-transform: none;
+    left: auto;
+    padding: 12px;
+    margin-left: 300px;
+    width: auto;
+    line-height: 1.3em;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    height: 200px;
+    font-size: 30px;
+}
+
 .item-page.offre{padding-top:318px;background:no-repeat 0 0;margin-bottom:0}
 .item-page.offre.deuxroues, .item-page.offre.auto{padding-top:220px}
-.item-page.offre.mrhhome{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mrh_principale_new.jpg)}
-.item-page.offre.sante{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_sante_new.jpg)}
-.item-page.offre.mutuelle{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mutuelle_new.jpg)}
-.item-page.offre.assupro.rcd{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/rc-d.jpg)}
-.item-page.offre.assupro.mrp{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/mrp.jpg)}
-.item-page.offre.assupro.flotte{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/flotte-auto.jpg)}
-.item-page.offre.assupro.rcpro{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/rc-pro.jpg)}
-.item-page.offre.prevoyance{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_prevoyance_new.jpg)}
-.item-page.offre.chienchat{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_animaux_new.jpg)}
-.item-page.offre.fit{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_fitchallenge.jpg)}
-.item-page.offre.defi{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_defirun.jpg);  padding-top: 335px;}
-.item-page.landing.cdd{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_cdd_et_apprentis.jpg)}
-.item-page.landing.etudiants{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mutuelle_etudiants.jpg)}
-.item-page.landing.ijh{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mutuelle_ijh.jpg)}
-.item-page.landing.chomage{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mut_sans_emploi.jpg)}
-.item-page.landing.seniors{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_mutuelle_senior.jpg)}
-.item-page.landing.tns{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_travailleur_non_salarie.jpg)}
-.item-page.landing.scolaire.jeu{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_jeu_scolaire.jpg); padding-top:370px}
-.item-page.offre.auto.moustache{background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/assurance-moustache.png); background-position-x: -10px; padding-top: 280px;}
+.item-page.offre.auto {
+    background: url(/assets/offre/assurance-auto.jpg) no-repeat;
+}
+.item-page.offre.mrhhome{background-image:url(/assets/visuel_mrh_principale_new.jpg)}
+.item-page.offre.sante{background-image:url(/assets/visuel_sante_new.jpg)}
+.item-page.offre.mutuelle{background-image:url(/assets/visuel_mutuelle_new.jpg)}
+.item-page.offre.assupro.rcd{background-image:url(/assets/rc-d.jpg)}
+.item-page.offre.assupro.mrp{background-image:url(/assets/mrp.jpg)}
+.item-page.offre.assupro.flotte{background-image:url(/assets/flotte-auto.jpg)}
+.item-page.offre.assupro.rcpro{background-image:url(/assets/rc-pro.jpg)}
+.item-page.offre.prevoyance{background-image:url(/assets/visuel_prevoyance_new.jpg)}
+.item-page.offre.chienchat{background-image:url(/assets/visuel_animaux_new.jpg)}
+.item-page.offre.fit{background-image:url(/assets/visuel_fitchallenge.jpg)}
+.item-page.offre.defi{background-image:url(/assets/visuel_defirun.jpg);  padding-top: 335px;}
+.item-page.landing.cdd{background-image:url(/assets/visuel_cdd_et_apprentis.jpg)}
+.item-page.landing.etudiants{background-image:url(/assets/visuel_mutuelle_etudiants.jpg)}
+.item-page.landing.ijh{background-image:url(/assets/visuel_mutuelle_ijh.jpg)}
+.item-page.landing.chomage{background-image:url(/assets/visuel_mut_sans_emploi.jpg)}
+.item-page.landing.seniors{background-image:url(/assets/visuel_mutuelle_senior.jpg)}
+.item-page.landing.tns{background-image:url(/assets/visuel_travailleur_non_salarie.jpg)}
+.item-page.landing.scolaire.jeu{background-image:url(/assets/visuel_jeu_scolaire.jpg); padding-top:370px}
+.item-page.offre.auto.moustache{background-image:url(/assets/assurance-moustache.png); background-position-x: -10px; padding-top: 280px;}
 
 .offre h1, .contact h1, .cest h1, .landing.label h1, .garages h1, .pagejaune h1,.landing.instit h1, .landing.sante h1{color:#FFF;line-height:1.3em;padding:115px 0 0 0;position:absolute;top:0;left:30px;text-align:center;text-transform:uppercase;background:no-repeat 0 50px;height:200px;width:217px;font-size:30px}
 .landing.label h1{padding-top: 114px !important;}
@@ -2090,7 +2109,7 @@ and (max-device-width :1024px){.submit{height:23px;background-position:0 -74px}}
 * application mobile
 **/
 .item-page.instit{padding-top:340px}
-.item-page.application{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/page-appli.jpg) 0 0 no-repeat; }
+.item-page.application{background:url(/assets/page-appli.jpg) 0 0 no-repeat; }
 .appli-encadre{margin-left:50px;text-align:center;background:#e8e8e8;-webkit-border-radius: 12px;
 -moz-border-radius: 12px;border-radius: 12px;padding:10px}
 .appli-encadre p{text-align:center}
@@ -2119,7 +2138,7 @@ and (max-device-width :1024px){.submit{height:23px;background-position:0 -74px}}
 /* page newsletter */
 
 .item-page.newsletter {
-    background: transparent url("/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/visuel_entete_inscription_news.jpg") no-repeat scroll 0 0;
+    background: transparent url("/assets/visuel_entete_inscription_news.jpg") no-repeat scroll 0 0;
     padding-top: 318px;
 }
 .landing.instit.newsletter h1 {padding-left: 5px; padding-top: 90px; width: 210px;}
@@ -2171,7 +2190,7 @@ and (max-device-width :1024px){.submit{height:23px;background-position:0 -74px}}
 .item1586 > div{background:#025092; display: block; text-align: center;}
 .promo2roues .legende, .landing.assupro .legende{color: #999999;font-size: 11px; margin-top: 15px; text-align: center}
 .right .moduletable.promo.assupro{box-shadow: none !important;cursor: default;font-size: 15px;font-weight: normal;height: 116px;line-height: 1.2em;margin: -2px 0 0;padding: 0 4px 0 16px !important; width: 238px;}
-.item-page.offre.assupro{width:710px;background-image:url(/web/20210304064631im_/https://www.assu2000.fr/images/visuel_prod/assurance-pro.png)}
+.item-page.offre.assupro{width:710px;background-image:url(/assets/assurance-pro.png)}
 .landing.assupro h1{color:#FFF;line-height:1.3em;padding:115px 0 0 0;position:absolute;top:0;left:30px;text-align:center;text-transform:uppercase;background:no-repeat 0 50px;height:200px;width:216px;font-size:32px}
 .offre.assupro h1, .landing.assupro h1{background-image:url(/assets/offre/h1-assupro.png)}
 .item-page.offre.assupro.rcpro h1{font-size: 28px;padding: 96px 0 0 0;}
