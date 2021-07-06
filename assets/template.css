@@ -1635,6 +1635,12 @@ th.formule5 strong{border-top:45px solid}
 #tableau2 .service .avance{ background-position: -8px -10px}
 #tableau2 .service .conseiller {background-position: -85px -12px}
 
+/*tableau v3 */
+#tableau3 th {background:#71ba50; padding: 8px 14px; color:#fff; border: 1px solid #71ba50; font-size: 18px;}
+#tableau3 tbody td{border:1px solid #71ba50; padding: 5px;}
+#tableau3 td.col-description {text-align: center; vertical-align: middle;}
+#tableau3 {background:#fff;}
+
 em{font-style:italic}
 
 .malus{background-position:-480px 0}
