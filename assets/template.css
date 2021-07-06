@@ -802,7 +802,7 @@ select{border-radius:0; -webkit-appearance:menulist}
 .home .zone-bloc-1{padding: 35px;}
 .home .zone-bloc-2{padding: 50px 30px 30px 30px;}
 .home .content{padding-top: 0px;}
-.footer{background: #fff; border-top: 0px;}
+.footer{background: #fff; border-top: 0px; text-align: center;}
 .item-pagehome{padding: 30px;}
 .zone-bloc-1 .bloc.first{margin-left: 28px;padding:0; width: auto;height:310px;border:none}
 .zone-bloc-1 .bloc{color:#fff; width: 18%;padding: 15px 20px 10px 20px;float:left; background:#69AFCC no-repeat; border:15px solid #E7F4F6; height: 110px; line-height:1.5em; font-size:14px; margin: 0 0 0 12px; font-size: 16px}
@@ -825,7 +825,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .zone-bloc-2 .bouton{border: 2px solid #025092; font-size: 16px; width: 220px; margin: 10px auto 0; font-weight: bold; text-align: center;}
 .zone-bloc-2 .bouton a {color: #025092;padding: 15px; display: block;}
 
-.home .footer .menu_assu2000 {margin: 0px 50px 0 90px; padding: 0;}
+.home .footer .menu_assu2000 {margin: 0px 50px 0 0px; padding: 0;}
 .home .footer div.menu_infoprat {padding: 0px; margin: 0px 50px 0 0px;}
 .home .footer div.menu_apropos {padding: 0px; margin: 0px 50px 0 0px;}
 .img_actualite{position: relative;}
