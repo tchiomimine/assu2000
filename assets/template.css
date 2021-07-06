@@ -880,29 +880,169 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .footer .menu_offre_home{padding-right: 0;}
 .footer .menu_offre_2_home{padding-left: 0; margin-top: 14px;}
 /*page contact*/
+/*page contact*/
 .client-connecte{display:none}
-.item-page.contact{background:url(/assets/visuel_contact.jpg) no-repeat; padding-top: 318px;}
-.contact h1, .label h1, .garages h1{background-image:url(/assets/h1.png) !important; padding-top:130px !important}
-.contact h2, .cest h2{margin-top:10px}
-.contact #zone-devis{background: url("/web/20210304064631im_/https://www.assu2000.fr/templates/accueil/images/contact/fd_tel.png") repeat scroll 0 0 transparent; color: #FFFFFF; font-size: 21px; font-weight: bold; height: 70px; left: 360px;   padding: 18px 28px; text-align: center; top: 100px; font-family:'Open Sans Condensed'}
+.item-page.contact{background:url(/web/20210308163120im_/https://www.assu2000.fr/images/visuel_prod/header_contact.jpg) no-repeat; padding-top: 218px;}
+.label h1{background-image:url(/web/20210308163120im_/https://www.assu2000.fr/templates/accueil/images/h1.png) !important; padding-top:130px !important}
+.contact h1, .cest h2{margin-top:10px}
+.contact #zone-devis{background: url("/assets/fd_tel.png") repeat scroll 0 0 transparent; color: #FFFFFF; font-size: 21px; font-weight: bold; height: 70px; left: 360px;   padding: 18px 28px; text-align: center; top: 100px; font-family:'Open Sans Condensed'}
 .contact #zone-devis .tel{color:#FFF; font-size:28px}
 .contact .moduletable.lf_storeLocatorWidget {height: 288px;}
 .contact .moduletable.lf_storeLocatorWidget #introsearch {margin-bottom: 45px;}
-.item-page.contact > div{background:#e3e3e3}
-.item-page.contact .bloc{width: 23%;padding: 0 20px; margin: 10px 0 20px 30px; background:#FFF; height: 276px; line-height:1.1em; font-size:14px}
+
+.item-page.contact .bloc{width: 23%;padding: 0 20px; margin: 10px 0 20px 30px; background:#FFF; height: 296px; line-height:1.1em; font-size:14px; box-shadow: #02509226 0 0 10px; position:relative;}
 .item-page.contact .bloc.first{margin-left: 49px;}
-.item-page.contact .btoffre{font-size: 16px; font-weight: normal; padding: 6px 18px;}
-.item-page.contact p, .item-page.contact .callback h3{background: url("/assets/contact/pictos_contact.png") no-repeat top center; text-align:center; padding: 90px 0px 0px 0px !important}
-.item-page.contact p strong, .item-page.contact .callback h3{font-size:19px;}
-.item-page.contact p#tel {background-position: -620px -25px; padding-top: 112px !important;}
+.item-page.contact .bloc.recla{width: 83%;box-shadow: 0 0;background: #D7EFF3;text-align: left;height: auto;padding: 25px 20px;}
+.item-page.contact .bloc a.tel{font-weight: bold; color: #025092; font-size: 21px}
+.item-page.contact .bloc .btoffre{font-size: 14px; font-family: Helvetica; padding: 12px 5px; display: block; width: 200px; margin: 0 10px; position:absolute; bottom:25px}
+.item-page.contact .bloc p{text-align: center; font-weight: bold; color: #025092;}
+.item-page.contact p.titre, .item-page.contact .callback .titre_sidebar{position:relative; padding: 25px 0px 5px 0px}
+.item-page.contact p.titre:after{content: ''; display: block; position: relative; background: url(/assets/pictos_contact_blue.png) no-repeat; width: 70px; height: 60px; top: 15px; margin: 0 auto; text-align: center;}
+.item-page.contact p strong, body.contact .callback .titre_sidebar strong, body.mrhpno .callback .titre_sidebar strong, body.mrh2 .callback .titre_sidebar strong{font-size:19px;display:inline}
+.item-page.contact p#tel:after {background-position: -180px 0;}
 .item-page.contact p#email{background-position: -245px 20px; display: inline-block; padding-top: 130px !important;}
-.item-page.contact p#courrier{background-position: -152px 10px; display: inline-block; padding-top: 130px !important; margin-bottom: 10px !important;}
-.item-page.contact p#ouverture{background-position: 45px -25px; padding-top: 120px !important;}
-.item-page.contact p#reclamation{background-position: -490px 12px; display: inline-block; padding-top: 150px !important;}
-.item-page.contact a.client-non-connecte, .item-page.contact a.client-connecte{text-decoration:underline}
-.item-page.contact .callback h3 {background-position: -370px -25px !important; color: #333; margin-bottom: 10px !important;}
-.item-page.contact .callback h3 strong {color: #333; display: inline;}
-.item-page.contact .callback #resultat {top: 163px; font-size:12px;}
+.item-page.contact p#courrier:after{background-position: -75px 0;}
+.item-page.contact p#ouverture:after{background-position: 5px 0;}
+.item-page.contact p#reclamation{float: left; position:relative; padding-left: 100px !important; line-height: 3em;}
+.item-page.contact p#reclamation:after {top:-12%; left:5px; content: ''; display: block;position: absolute;background: url(/assets/pictos_contact_blue.png) no-repeat -285px 0;
+    width: 70px; height: 60px;}
+.item-page.contact a.client-non-connecte, .item-page.contact a.client-connecte{background: #025092; font-size: 14px; font-weight:bold; font-family:Helvetica; box-shadow: none; padding: 15px 65px; text-decoration: none; float: right; color: white;}
+.item-page.contact .callback .titre_sidebar {background-position: -370px -25px !important; color: #333; margin-bottom: 10px !important;}
+body.contact .callback .titre_sidebar, body.mrhpno .callback .titre_sidebar, body.mrh2 .callback .titre_sidebar {background-repeat: no-repeat;text-align: center;font-size: 18px;}
+body.contact .white-popup, body.mrhpno .white-popup, body.mrh2 .white-popup {max-width: 280px; box-shadow: 0 0 5px #999;background:#D7EFF3}
+body.contact .white-popup #callback fieldset.row1, body.mrhpno .white-popup #callback fieldset.row1, body.mrh2 .white-popup #callback fieldset.row1 {  width: 168px;}
+body.contact .white-popup #callback fieldset, body.mrhpno .white-popup #callback fieldset, body.mrh2 .white-popup #callback fieldset{margin-top:38px}
+.item-page.contact .callback #resultat, .item-page.mrhpno .callback #resultat, .item-page.mrh2 .callback #resultat {top: 163px; font-size:12px;}
+.infocontact {margin: 10px 50px;}
+.infocontact h3 {border:1px solid #69AFCC; padding: 20px 20px 20px 56px; position: relative; color: #025092; font-size: 16px;}
+.infocontact h3:hover{cursor: pointer}
+.infocontact h3:before {width: 21px; height: 22px; left: 15px; position: absolute; content: " "; top: 16px;}
+.infocontact.assistance h3:before {background: url("/assets/assistance-close.png");width: 24px; height: 21px;}
+.infocontact.assistance.open h3:before {background: url("/assets/assistance-open.png");}
+.infocontact.sinistre h3:before {background: url("/assets/sinistre-close.png");width: 17px;}
+.infocontact.sinistre.open h3:before {background: url("/assets/sinistre-open.png");}
+.infocontact.garage h3:before {background: url("/assets/garage-close.png"); width: 22px;}
+.infocontact.garage.open h3:before {background: url("/assets/garage-open.png");}
+.item-page.contact > .bloc > .content{width: auto; font-size: 14px;height:190px}
+.infocontact .content{
+    transition: opacity .7s;
+    display: none;
+    opacity: 0;
+    background: #E7F4F6;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: auto;
+}
+
+.infocontact.open .content{
+    display: block;
+    opacity: 1;
+}
+
+.infocontact.open h3{
+background: #69AFCC; color:#fff;
+}
+
+.infocontact .arrow {
+    border: solid #025092;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    right: 1.5rem;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.infocontact.open .arrow {
+    border-color: #fff;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.item-page.contact .infocontact .bloc {
+    background: transparent;
+    border:1px solid #025092;
+    padding:15px 25px;
+    width: auto;
+    height:auto;
+}
+
+.item-page.contact .infocontact p.titre{
+    padding: 0 0 42px 0;
+    font-size: 16px;
+}
+
+.item-page.contact .infocontact .content > p{
+    margin-left: 20px;
+}
+
+
+.item-page.contact p.titre#auto:after {
+    background: url("/assets/auto.png");
+    width: 30px;
+    height: 23px;
+}
+.item-page.contact p.titre#moto:after {
+    background: url("/assets/moto.png");
+    width: 45px;
+    height: 25px;
+}
+.item-page.contact p.titre#mrh:after {
+    background: url("/assets/habitation.png");
+    width: 30px;
+    height: 28px;
+}
+.item-page.contact p.titre#sante:after {
+    background: url("assets/sante.png");
+    width: 33px;
+    height: 30px;
+}
+
+.item-page.contact .bloc.astuce{padding-left: 85px; padding-bottom: 35px; margin-right: 30px}
+.item-page.contact .bloc.astuce p {text-align:left;}
+.item-page.contact p.titre#astuce:after {display:none;}
+.item-page.contact p.titre#astuce:before {
+    content:"";
+    background: url("/assets/icone_astuce.png") no-repeat;
+    background-size: 76%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -10px;
+    left: -85px;
+}
+.item-page.contact p.titre#astuce{
+    padding-bottom:6px;}
+
+.item-page.contact .infocontact.assistance .bloc.first {
+    margin-left: 12%;
+}
+
+.item-page.contact .infocontact.sinistre .bloc {
+    width: 20%;
+}
+.item-page.contact .infocontact.sinistre p.titre {
+    padding: 0;
+}
+
+.item-page.contact .infocontact ul {
+    list-style: disc;
+    padding:10px;
+    margin-left: 30px;
+}
+
+.item-page.contact .infocontact ul li {
+    margin: 15px;
+    font-size: 14px;
+}
+
+.item-page.contact .infocontact.garage .btoffre {
+    margin: 15px 20px;
+    display: inline-block;
+    font-size: 18px;
+}
 
 /* page five star */
 .item-page.garages {background: url("/assets/visuel_five-star.jpg") no-repeat;    padding-top: 326px; width: 720px}
