@@ -879,7 +879,54 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 }
 .footer .menu_offre_home{padding-right: 0;}
 .footer .menu_offre_2_home{padding-left: 0; margin-top: 14px;}
-/*page contact*/
+/*page espace client message*/
+#rassure{
+	margin: auto;
+	padding: 30px 20px;
+	width: 600px;
+	background-color: #f8ffd6;
+}
+
+#rassure strong{
+	color:#83A600 ;
+}
+
+.question {
+    font-weight: bold;
+    color: #83A600;
+    font-size: 14px;
+}
+.reponse {
+    font-size: 14px;
+}
+.precision {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.espaceclient .tel {
+    margin: auto;
+    color: #000;
+    display: block;
+    border: solid 1px #aaa;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 25px;
+    width: 200px;
+    text-decoration: none;
+}
+
+.questionFinal {
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 22px;
+}
+.signature {
+    padding: 20px 0 60px 0;
+    color: #83A600;
+}
+
 /*page contact*/
 .client-connecte{display:none}
 .item-page.contact{background:url(/assets/offre/header_contact.jpg) no-repeat; padding-top: 218px;}
