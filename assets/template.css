@@ -882,8 +882,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 /*page contact*/
 /*page contact*/
 .client-connecte{display:none}
-.item-page.contact{background:url(/web/20210308163120im_/https://www.assu2000.fr/images/visuel_prod/header_contact.jpg) no-repeat; padding-top: 218px;}
-.label h1{background-image:url(/web/20210308163120im_/https://www.assu2000.fr/templates/accueil/images/h1.png) !important; padding-top:130px !important}
+.item-page.contact{background:url(/assets/offre/header_contact.jpg) no-repeat; padding-top: 218px;}
 .contact h1, .cest h2{margin-top:10px}
 .contact #zone-devis{background: url("/assets/fd_tel.png") repeat scroll 0 0 transparent; color: #FFFFFF; font-size: 21px; font-weight: bold; height: 70px; left: 360px;   padding: 18px 28px; text-align: center; top: 100px; font-family:'Open Sans Condensed'}
 .contact #zone-devis .tel{color:#FFF; font-size:28px}
