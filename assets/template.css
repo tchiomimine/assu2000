@@ -886,6 +886,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
     width: 420px;
     background-color: #f8ffd6;
     float: right;
+    font-size: 14px;
 }
 
 #rassure strong{
@@ -932,10 +933,13 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
     font-weight: 200;
     font-size: 20px;
     line-height: 22px;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 .signature {
     padding: 20px 0 60px 0;
     color: #83A600;
+    font-size: 14px;
 }
 
 /*page contact*/
