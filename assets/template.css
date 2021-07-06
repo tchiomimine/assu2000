@@ -968,10 +968,14 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .item-page.offre.deuxroues, .item-page.offre.auto{padding-top:220px}
 .item-page.offre.auto {
     background: url(/assets/offre/assurance-auto.jpg) no-repeat;
+}.item-page.offre.moto, .item-page.offre.deuxroues {
+    background: url(/assets/offre/assurance-moto.jpg) no-repeat;
+}.item-page.offre.mrh {
+    background: url(/assets/offre/assurance-habitation.jpg) no-repeat;
+}.item-page.offre.sante, .item-page.offre.mutuelle {
+    background: url(/assets/offre/assurance-sante.jpg) no-repeat;
 }
 .item-page.offre.mrhhome{background-image:url(/assets/visuel_mrh_principale_new.jpg)}
-.item-page.offre.sante{background-image:url(/assets/visuel_sante_new.jpg)}
-.item-page.offre.mutuelle{background-image:url(/assets/visuel_mutuelle_new.jpg)}
 .item-page.offre.assupro.rcd{background-image:url(/assets/rc-d.jpg)}
 .item-page.offre.assupro.mrp{background-image:url(/assets/mrp.jpg)}
 .item-page.offre.assupro.flotte{background-image:url(/assets/flotte-auto.jpg)}
@@ -989,28 +993,8 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .item-page.landing.scolaire.jeu{background-image:url(/assets/visuel_jeu_scolaire.jpg); padding-top:370px}
 .item-page.offre.auto.moustache{background-image:url(/assets/assurance-moustache.png); background-position-x: -10px; padding-top: 280px;}
 
-.offre h1, .contact h1, .cest h1, .landing.label h1, .garages h1, .pagejaune h1,.landing.instit h1, .landing.sante h1{color:#FFF;line-height:1.3em;padding:115px 0 0 0;position:absolute;top:0;left:30px;text-align:center;text-transform:uppercase;background:no-repeat 0 50px;height:200px;width:217px;font-size:30px}
 .landing.label h1{padding-top: 114px !important;}
-.offre.auto h1{background:url(/assets/offre/h1-auto.png) no-repeat 0 5px; padding-top: 78px; top: 5px; height:160px; width:198px; left:3px}
-.offre.auto.forfaitkm h1{height: 175px; line-height: 0.8em; padding-top: 30px; text-transform: none}
-.offre.auto.tempo h1{padding-top: 46px;}
-.offre.auto.forfaitkm h1 span{font-size:1.5em; line-height:1.1em; display:block}
-.offre.vsp h1{padding-top:45px}
-.offre.campingcar h1 {padding-top:56px}
-.offre.mrh h1{padding-top:100px !important}
-.offre.deuxroues h1{background:url(/assets/offre/h1-deuxroues.png) no-repeat scroll 0 5px ; padding-top: 74px; top: 5px; height:160px; left:3px; width:197px}
-.offre.mrh h1{background-image:url(/assets/offre/h1-mrh.png)}
-.offre.mrhpno h1{font-size:28px}
-.offre.sante h1, .landing.sante h1{background-image:url(/assets/offre/h1-sante.png)}
-.offre.mutuelle h1{padding-top:130px}
-.offre.credit h1{background-image:url(/assets/offre/h1-credit.png)}
-.offre.fit h1 {background-image: url("/assets/offre/h1-fit.png")}
-.offre.defi h1{text-indent:-1999px;}
-.offre.auto.moustache h1{ background: #415b8d none repeat scroll 0 0; border-radius: 130px; height: 160px; line-height: 1.5; margin-top: 25px; padding: 55px 43px 0; width: 130px;left:15px}
 
-
-.old-contenu h1,.old h1,.contentpane h1, .espaceclient h1,.prospect h1, .offre h2, .contact h2, .cest > h2, .item-page.agences h2, .agences .col h2, .landingpromomoto h2,.landing h2 ,.timeline h1, .agencedep h1, .garages h2, .pagejaune h2, .fichesprat h2.titre{font-size:30px;background:url(/assets/icon.png) no-repeat 0 -95px #E3E3E3; margin-bottom: 49px;min-height:40px;padding:18px 15px 10px 50px}
-.contentpane h1{margin-top:10px}
 .fichesprat h2.titre{font-weight:bold; margin:0 0 15px}
 
 .engagements h2{
