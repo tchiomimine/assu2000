@@ -663,7 +663,7 @@ filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#35a054', endC
 	margin:1250px 0 0 0 !important;
 }
 
-.home .footer div{/*float:left;*/display:inline-block;vertical-align:top;padding:0;}
+.footer div{/*float:left;*/display:inline-block;vertical-align:top;padding:0;}
 .footer div.menu_offre2{margin-top:16px;padding:0;margin-right:100px;}
 .footer span{text-transform:uppercase;font-weight:700;font-size:14px}
 .footer a{text-decoration:none !important;font-weight:700 !important;font-size:12px !important;padding:0 4px 0 0;line-height:20px;color:#777 !important;font-family:'Open Sans Condensed' !important}
@@ -825,9 +825,9 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .zone-bloc-2 .bouton{border: 2px solid #025092; font-size: 16px; width: 220px; margin: 10px auto 0; font-weight: bold; text-align: center;}
 .zone-bloc-2 .bouton a {color: #025092;padding: 15px; display: block;}
 
-.home .footer .menu_assu2000 {margin: 0px 50px 0 0px; padding: 0;}
-.home .footer div.menu_infoprat {padding: 0px; margin: 0px 50px 0 0px;}
-.home .footer div.menu_apropos {padding: 0px; margin: 0px 50px 0 0px;}
+.footer .menu_assu2000 {margin: 0px 50px 0 0px; padding: 0;}
+.footer div.menu_infoprat {padding: 0px; margin: 0px 50px 0 0px;}
+.footer div.menu_apropos {padding: 0px; margin: 0px 50px 0 0px;}
 .img_actualite{position: relative;}
 .categ_actualite{position: absolute; right: 4px; bottom: 0; background: #6cb336; padding: 5px; color: #fff !important; width: 33%; font-size: 15px !important; text-align: center !important;}
 
@@ -964,8 +964,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
     font-size: 30px;
 }
 
-.item-page.offre{padding-top:318px;background:no-repeat 0 0;margin-bottom:0}
-.item-page.offre.deuxroues, .item-page.offre.auto{padding-top:220px}
+.item-page.offre{padding-top:370px;background:no-repeat 0 0;margin-bottom:0}
 .item-page.offre.auto {
     background: url(/assets/offre/assurance-auto.jpg) no-repeat;
 }.item-page.offre.moto, .item-page.offre.deuxroues {
@@ -975,7 +974,6 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 }.item-page.offre.sante, .item-page.offre.mutuelle {
     background: url(/assets/offre/assurance-sante.jpg) no-repeat;
 }
-.item-page.offre.mrhhome{background-image:url(/assets/visuel_mrh_principale_new.jpg)}
 .item-page.offre.assupro.rcd{background-image:url(/assets/rc-d.jpg)}
 .item-page.offre.assupro.mrp{background-image:url(/assets/mrp.jpg)}
 .item-page.offre.assupro.flotte{background-image:url(/assets/flotte-auto.jpg)}
@@ -1112,10 +1110,29 @@ margin-bottom: 20px;
     line-height: 35px;
     margin-left: 90px;
 }
-#zone-devis{left:445px;position:absolute;top:145px;width:250px}
-.offre.auto #zone-devis, .offre.deuxroues #zone-devis,.offre.mrh #zone-devis{left:365px; top:115px}
-.offre.mrh #zone-devis{top:145px}
-#zone-devis .btoffre{font-size:28px}
+#zone-devis {
+    position: absolute;
+    left: 650px;
+    top: 270px;
+    width: 220px;
+}
+.offre #zone-devis .btoffre, .landing.sante #zone-devis .btoffre {
+    font-size: 23px;
+    box-shadow: 0px 3px 6px #00000029;
+    background: #fff;
+    color: #333;
+    border-radius: 5px;
+}
+
+#zone-devis .btoffre {
+    font-size: 28px;
+}
+.btoffre.tarif:hover {
+    background-position: left bottom;
+}
+.btoffre.xl {
+    font-size: 20px;
+}
 .offre.assupro #zone-devis{top: 135px;width: 231px;left: 390px;}
 .puce{background:transparent url(/assets/puces.png) no-repeat}
 .reco{background:transparent url(/assets/reco.png) no-repeat}
