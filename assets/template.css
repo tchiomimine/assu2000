@@ -887,6 +887,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
     background-color: #f8ffd6;
     float: right;
     font-size: 14px;
+    text-align: center;
 }
 
 #rassure strong{
@@ -895,7 +896,6 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 
 .question {
     font-weight: bold;
-    color: #83A600;
     font-size: 14px;
 }
 .reponse {
@@ -917,6 +917,7 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
     border-radius: 25px;
     width: 200px;
     text-decoration: none;
+    text-align: center;
 }
 
 .espaceclient li {
@@ -938,8 +939,9 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 }
 .signature {
     padding: 20px 0 60px 0;
-    color: #83A600;
-    font-size: 14px;
+    text-align: right;
+    font-size: 15px;
+    margin-right: 15%;
 }
 
 /*page contact*/
@@ -951,14 +953,15 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
 .contact .moduletable.lf_storeLocatorWidget {height: 288px;}
 .contact .moduletable.lf_storeLocatorWidget #introsearch {margin-bottom: 45px;}
 
-.item-page.contact .bloc{width: 23%;padding: 0 20px; margin: 10px 0 20px 30px; background:#FFF; height: 296px; line-height:1.1em; font-size:14px; box-shadow: #02509226 0 0 10px; position:relative;}
+.item-page.contact .bloc{width: 23%;padding: 0 20px; margin: 10px 0 20px 30px; background:#FFF; height: 240px; line-height:1.1em; font-size:14px; box-shadow: #02509226 0 0 10px; position:relative;}
 .item-page.contact .bloc.first{margin-left: 49px;}
 .item-page.contact .bloc.recla{width: 83%;box-shadow: 0 0;background: #D7EFF3;text-align: left;height: auto;padding: 25px 20px;}
 .item-page.contact .bloc a.tel{font-weight: bold; color: #025092; font-size: 21px}
 .item-page.contact .bloc .btoffre{font-size: 14px; font-family: Helvetica; padding: 12px 5px; display: block; width: 200px; margin: 0 10px; position:absolute; bottom:25px}
 .item-page.contact .bloc p{text-align: center; font-weight: bold; color: #025092;}
 .item-page.contact p.titre, .item-page.contact .callback .titre_sidebar{position:relative; padding: 25px 0px 5px 0px}
-.item-page.contact p.titre:after{content: ''; display: block; position: relative; background: url(/assets/pictos_contact_blue.png) no-repeat; width: 70px; height: 60px; top: 15px; margin: 0 auto; text-align: center;}
+.item-page.contact p.titre:after{content: ''; display: block; position: relative; height: 10px}
+/*.item-page.contact p.titre:after{content: ''; display: block; position: relative; background: url(/assets/pictos_contact_blue.png) no-repeat; width: 70px; height: 60px; top: 15px; margin: 0 auto; text-align: center;}*/
 .item-page.contact p strong, body.contact .callback .titre_sidebar strong, body.mrhpno .callback .titre_sidebar strong, body.mrh2 .callback .titre_sidebar strong{font-size:19px;display:inline}
 .item-page.contact p#tel:after {background-position: -180px 0;}
 .item-page.contact p#email{background-position: -245px 20px; display: inline-block; padding-top: 130px !important;}
@@ -1031,7 +1034,6 @@ background: #69AFCC; color:#fff;
 }
 
 .item-page.contact .infocontact p.titre{
-    padding: 0 0 42px 0;
     font-size: 16px;
 }
 
