@@ -1876,7 +1876,7 @@ em{font-style:italic}
     min-height: 40px;
     padding: 18px 15px 10px 50px;
 }
-.item-page p, .agencedep .category-desc p, .old .item-page li, .datecle li, .modnewsletter {
+.item-page p, .agencedep .category-desc p, .old .item-page li, .datecle li {
     margin: 0 30px 15px 68px;
     font-size: 14px;
     line-height: 1.5em;
