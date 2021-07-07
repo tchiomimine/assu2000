@@ -936,12 +936,12 @@ h2{font-size: 30px; background: url(/assets/liseret.png) no-repeat; margin-botto
     line-height: 22px;
     margin-top: 50px;
     margin-bottom: 10px;
+    text-align: center;
 }
 .signature {
     padding: 20px 0 60px 0;
-    text-align: right;
+    text-align: center;
     font-size: 15px;
-    margin-right: 15%;
 }
 
 /*page contact*/
