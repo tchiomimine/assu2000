@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <RequestImmediateCallback xmlns="http://webservices.ci.ccmm.applications.nortel.com">
+            <custID>!__custId__!</custID>
+            <!--Optional:-->
+            <newContact>
+                <skillsetID xmlns="http://datatypes.ci.ccmm.applications.nortel.com">!__skillsetId__!</skillsetID>
+                <priority xmlns="http://datatypes.ci.ccmm.applications.nortel.com">Priority_3_Medium_High</priority>
+                <timezone xmlns="http://datatypes.ci.ccmm.applications.nortel.com">-999</timezone>
+                <!--Optional:-->
+                <text xmlns="http://datatypes.ci.ccmm.applications.nortel.com">Site web Assu2000</text>
+                <!--Optional:-->
+                <subject xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></subject>
+                <callbackTime xmlns="http://datatypes.ci.ccmm.applications.nortel.com"></callbackTime>
+                <customFields xmlns="http://datatypes.ci.ccmm.applications.nortel.com">
+                    <!--Optional:-->
+                    <name>CallbackType</name>
+                    <!--Optional:-->
+                    <text>CLICK_TO_CALL</text>
+                    <isTextVisible>true</isTextVisible>
+                </customFields>
+            </newContact>
+            <!--Optional:-->
+            <sessionKey>!__sessionkey__!</sessionKey>
+        </RequestImmediateCallback>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -146,8 +146,8 @@ jQuery(document).ready(function($){
 		$('#menu663').show();
 		$('#menu1092').hide();
 		$('#menu689').hide();
-		$('#espace a').attr('href','/espace-personnel');
-		$('a.espaceperso').attr('href','/espace-personnel');
+		$('#espace a').attr('href','/Proximeo/connexionClient.do');
+		$('a.espaceperso').attr('href','/Proximeo/connexionClient.do');
 	}*/
 	if (readCookie('utilisateurConnecte') == 'yes') {
 		var loc = window.location.pathname;
@@ -160,8 +160,8 @@ jQuery(document).ready(function($){
 			$('li.item1279 a').attr("href", "/Proximeo/accueil.do");
 		}
 	}else{
-		$('#Espace_personnel').html('<a class="espaceperso" href="/espace-personnel"><span id="contact_picto"></span>Espace client </a>');
-		$('li.item1279 a').attr("href", "/espace-personnel");
+		$('#Espace_personnel').html('<a class="espaceperso" href="/Proximeo/connexionClient.do"><span id="contact_picto"></span>Espace client </a>');
+		$('li.item1279 a').attr("href", "/Proximeo/connexionClient.do");
 	}
 	// pour le template client-login
 	if (document.location.href.indexOf('connexionProspect') > -1 ) {

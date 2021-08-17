@@ -1,0 +1,16 @@
+/** styles du module **/
+
+#listagence, .lf_storeLocatorWidget_poslist{max-height:215px; border:1px solid #ccc;overflow: auto; margin-bottom:-12px; display:none; position: relative;background-color: #FFF;}
+.offre .contact #listagence, .offre .contact .lf_storeLocatorWidget_poslist{margin-bottom: 0 !important; max-height: 193px;}
+#listagence a:hover, .lf_storeLocatorWidget_poslist a:hover{text-decoration:underline;}
+#listagence p, .lf_storeLocatorWidget_poslist p{margin-right:0 !important; margin-bottom:0}
+#listagence div{border-top:1px solid #ccc}
+#listagence .first, .lf_storeLocatorWidget_poslist .first{border-top:none !important;}
+.lf_storeLocatorWidget_poslist address a { color: #00529e; font-size: 10pt; font-weight: 700; text-decoration: none;text-transform: uppercase;}
+.agencesearch #listagence div:hover, .lf_storeLocatorWidget .lf_storeLocatorWidget_poslist address a:hover{background:#eee;background:-moz-linear-gradient(top, #FFFFFF 47%, #EEEEEE 96%);/* FF3.6+ */
+background:-webkit-gradient(linear, left top, left bottom, color-stop(47%,#FFFFFF), color-stop(96%,#EEEEEE));/* Chrome,Safari4+ */
+background:-webkit-linear-gradient(top, #FFFFFF 47%, #EEEEEE 96%);/* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(top, #FFFFFF 47%, #EEEEEE 96%);/* Opera 11.10+ */
+background:-ms-linear-gradient(top, #FFFFFF 47%, #EEEEEE 96%);/* IE10+ */
+background:linear-gradient(to bottom, #FFFFFF 47%, #EEEEEE 96%) repeat 0 0 transparent;
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#EEEEEE',GradientType=0 );/* IE6-9 */}

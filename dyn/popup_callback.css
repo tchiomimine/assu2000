@@ -1,0 +1,71 @@
+body{margin:0; padding:0}
+#integre {width: 275px;	height: 185px;	top: 0px;	left: 0px;
+	background: url(images/header_callback.gif) no-repeat top left;
+	margin-bottom:3px;padding-top: 35px;}
+
+
+#questionclient {
+	z-index:1;
+	padding-left: 180px;
+	padding-bottom:30px;
+	margin:0px;
+	font-size:11px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	vertical-align:middle;
+	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+*+html #questionclient {padding-bottom:20px;}
+
+.texte {
+	z-index:1;
+	padding: 70px 5px 15px 15px;
+	margin:0px;
+	font-size:11px;
+	font-weight: normal;
+	letter-spacing: -1px;
+	color: #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+
+.texte p{
+	margin: 5px 0;
+	}
+
+
+
+#bloc {float:left;	padding: 5px 0 5px 15px;	background: url(images/fd_num_callback.gif) repeat-x; height:57px; width: 182px; border-top:1px solid #ccc;}
+
+* html #bloc {width: 181px;}
+
+.btradio{  margin: 4px 3px; padding:0;
+    vertical-align: middle;}
+
+* html .btradio { margin: 4px 0px;}
+*+html .btradio { margin: 4px 0px;}
+
+/** html .texte {width: 178px;}*/
+
+#TELEPHONE{height:15px;}
+
+#btValider {float:right;border-top:1px solid #ccc;}
+
+input.ok {width: 78px;
+	height: 67px;
+	border: 0px solid #7F9DB9;
+	padding:0;
+	background:url(images/valider_callback.gif) no-repeat top left;
+	cursor:pointer
+	}
+label {display: inline; float: left; width: 110px; text-align: right; color: #000; font-weight: bold; font-size:11px; }
+.titre	{ font-size: 1.2em; font-weight: bold; }
+.right	{ float: right; color: #000; }
+.txt{font-style: normal;
+	height: 18px;
+	width: 153px;
+	border: 1px solid #ccc;
+	font-size: 11px;	
+	letter-spacing:normal;
+	color:#666;
+	padding:1px 0 0 1px;}
