@@ -21,7 +21,7 @@
 }
 
 [id^="section"]:nth-child(even) {
-    background: url(../images/bg-edito.jpg);
+    background: url(bg-edito.jpg);
 }
 
 [id^="section"] h2 {
@@ -30,6 +30,7 @@
     text-transform: uppercase;
     margin: 0;
     padding-top: 50px;
+    background: none;
 }
 
 .old .item-page [id^="section"] h3 {

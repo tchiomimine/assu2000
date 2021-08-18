@@ -487,10 +487,10 @@ sup{font-size:12px}
 
 
 /* pages métier */
-.old .item-page.metiers{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/bg_page.gif") no-repeat 390px bottom #FFFFFF;height:700px;width:725px !important}
+.old .item-page.metiers{background:url("https://www.assu2000.fr/images/nos-metiers/bg_page.gif") no-repeat 390px bottom #FFFFFF;height:700px;width:725px !important}
 .metiers .gauche{float:left;width:380px;margin-left:-20px}
-.metiers .droite{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/encart.png") no-repeat left top transparent;float:left;height:630px;position:relative;width:344px;margin-top:-50px}
-.retour{background:url("/web/20210304064631im_/https://www.assu2000.fr/images/nos-metiers/croix.gif") no-repeat center top transparent;display:block;height:25px;position:absolute;right:30px;text-indent:-5000em;top:22px;width:24px}
+.metiers .droite{background:url("https://www.assu2000.fr/images/nos-metiers/encart.png") no-repeat left top transparent;float:left;height:630px;position:relative;width:344px;margin-top:-50px}
+.retour{background:url("https://www.assu2000.fr/images/nos-metiers/croix.gif") no-repeat center top transparent;display:block;height:25px;position:absolute;right:30px;text-indent:-5000em;top:22px;width:24px}
 .commercial h3, .commercial h4, .commercial h5{color:#A8272D}
 .mkt h3, .mkt h4, .mkt h5{color:#009DDF}
 .compta h3, .compta h4, .compta h5{color:#FAD500}
@@ -515,6 +515,32 @@ sup{font-size:12px}
 .blog .pagination .pagenav{padding:0 5px;position:relative}
 .blog .pagination span{color:#000000}
 .blog .pagination a{color:#666}
+
+/*** css ancien site ****/
+.old .right{margin:0px 0px 10px 0px}
+.old h2, .h2, .item-page > h3, .agencedep h2{color:#222;font-weight:normal;margin:0.5em 30px 0.2em 50px;padding:5px 0;position:relative;overflow:hidden;font-size:24px;line-height:1.2em}
+.old h4{font-size:14px;margin:1em 15px 1em 55px;font-weight:bold;margin-bottom:1em}
+.item-page.old ul ul{list-style-type:disc;margin-left:15px}
+.item-page ul, .item-page .liste, .blog ul{line-height:1.3em}
+.blog .items-row .h2, .blog .items-row h2{margin:0}
+.old .item-page h3{font-weight:bold;line-height:1.3em;font-size:16px;margin:1em 30px .5em  50px}
+.item-page p, .agencedep .category-desc p, .old .item-page li, .datecle li, .modnewsletter{margin:0 30px 15px 68px;font-size:14px;line-height:1.5em;text-align:justify}
+.old .item-page p a, .offre .item-page p a{text-decoration:underline}
+.old .item-page .notes, .old .item-page.mode-iframe p{font-size:0.85em}
+.old .item-page li{list-style-type:disc}
+.old .item-page li li{margin-left:0}
+
+#fdmenu li a:hover, #fdmenu li.selected > a{color:#010101}
+#fdmenu li a{background:url(../images/fd_menu.gif) no-repeat left center transparent;display:block;font-size:11px;margin-left:5px;padding:6px 10px 6px 20px}
+#fdmenu li a + ul li a{margin-left:25px;width:136px}
+.old-contenu .item-page{width:700px}
+.txt_cont h3{background:url(../images/page_prod/puce_verte.png) no-repeat left top transparent;color:#003870;display:block;font-size:15px;margin-bottom:5px !important;margin-left:-42px !important;min-height:36px;padding-left:42px;padding-top:3px}
+.item-page .txt_cont ul{list-style:square outside none;margin:0 0 15px 15px}
+.item-page.old ul, .item-page.old ol, .item-page.old .liste{line-height:1.3em;margin:0 30px 15px 50px}
+.item-page.old img{max-width: 617px;}
+.old .txt_cont li{background:none;margin:0 0 5px}
+.liste li, .contact .txt_cont li{background:url(../images/picto.gif) no-repeat left 5px transparent !important;padding-left:20px}
+.round{padding-left:15px}
 
 /* Shareable quote */
 .twitter-shareable-quote {background: none repeat scroll 0 0 #DDEEFF !important}
@@ -1547,7 +1573,7 @@ margin-bottom: 20px;
 .offre.mutuelle #garanties #tarifconseil{padding: 10px;text-align: center;width: 680px;}
 .offre.mutuelle #garanties #tarifconseil a {margin:15px}
 
-.offre.auto .intro, .offre.credit .intro, .offre.deuxroues > p, .offre.mrh > p, .offre.scolaire .intro{margin-left: 260px; position: absolute; top: 25px; width: 420px; font-size:14px; margin-top:0; line-height:1.5em}
+.offre.auto .intro, .offre.credit .intro, .offre.deuxroues > p, .offre.mrh > p, .offre.scolaire .intro{font-size:14px; margin-top:0; line-height:1.5em}
 
 #wording{width:245px}
 #tarifconseil{width:176px;padding:20px}
@@ -1932,7 +1958,7 @@ em{font-style:italic}
 .landing.deuxroues.devis h1{background:#fff url(/assets/landingpage/devis-assurance-moto.jpg) no-repeat 0 0 }
 .landing.deuxroues.centvingtcinqcc h1{background:#fff url(/assets/landingpage/assurance-scooter-125cc.jpg) no-repeat 0 0 }
 .landing.deuxroues.cinquantecc h1{background:#fff url(/assets/landingpage/assurance-scooter-50cc.jpg) no-repeat 0 0 }
-.landing.auto.malus h1{background:#fff url(/assets/landingpage/assurance-auto-malus.jpg) no-repeat 0 0 }
+.landing.auto.malus h1{background:#fff url(/assets/assurance-auto-malus.jpg) no-repeat 0 0 }
 .landing.malus.paiement h1{background:#fff url(/assets/landingpage/assurance-non-paiement.jpg) no-repeat 0 0 }
 .landing.malus.permis h1{background:#fff url(/assets/landingpage/assurance-retrait-de-permis.jpg) no-repeat 0 0 }
 .landing .lf_storeLocatorWidget{padding-bottom:17px}
