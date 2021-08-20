@@ -18,7 +18,7 @@ ol,ul{list-style:none}
 ****************/
 #menu135{display:none !important}
 #header .menu{padding:0;left:auto !important;bottom:0}
-.espaceclient .menu{border:none;width:auto}
+.espaceclient .menu{width:auto}
 .espaceclient #header #menu-top{width:auto !important}
 #header a, #header a:hover{color:#3B3A3C;}
 #header .telephone a, #header .telephone a.contacter{font-size:12px; font-weight:normal}
