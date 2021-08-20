@@ -1,11 +1,443 @@
-<?php header('Content-type: text/css'); ?>
 
-<?php
+.espaceclient #main{background:#fff;font-family:Verdana, Geneva, sans-serif;font-size:.92em;padding-top:10px}
+.espaceclient #main,.espaceclient #main .inner{height:auto}
+.espaceclient #main .inner{width:1110px;padding-left:100px;margin: 5px auto 0}
+.espaceclient #main .col-wide{border-left:13px solid #D6D3CB;margin:0 auto}
+#main h1 {padding-left:46px;margin:-3px 0 10px -33px; display:block;}
+.espaceclient #main, #header, #footer, #footer-etendu, #bottom {min-width:1200px}
+#main {background:#fff}
 
-$cssfile = '../css/espaceclient-ea.css';
+/*raz*/
+body{line-height:1;margin:0 auto}
+ul,li{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
+ol,ul{list-style:none}
+#corps table{border-collapse:separate}
 
-echo file_get_contents($cssfile);
-?>
+/****************
+* SURCHARGE HEADER + FOOTER 
+****************/
+#menu135{display:none !important}
+#header .menu{padding:0;left:auto !important;bottom:0}
+.espaceclient .menu{border:none;width:auto}
+.espaceclient #header #menu-top{width:auto !important}
+#header a, #header a:hover{color:#3B3A3C;}
+#header .telephone a, #header .telephone a.contacter{font-size:12px; font-weight:normal}
+.espaceclient #principal.menu{width:985px;background:none}
+
+#footer-etendu a,#footer-etendu a:hover,#bottom a,#bottom:hover,#footer a,#footer a:hover{color:#3B3A3C;font-weight:400;font-size:12px}
+#footer-etendu a,#footer a,#bottom a{text-decoration:none}
+#footer-etendu a:hover,#footer a:hover,#bottom a:hover{text-decoration:underline}
+#bottom .menu li{display:inline}
+.espaceclient div#footer,.espaceclient div#footer .menu{background:#F7EFEF}
+.espaceclient div#footer{border-top:13px solid #D6D3CB;clear:both;overflow:hidden;height:52px}
+.espaceclient div#footer img{border:0}
+.espaceclient #footer-etendu #espace-partenaire:hover{text-decoration:none}
+
+/****************
+* SURCHARGE DANS PROXIMEO
+****************/
+#pied{clear:both;height:1px}
+.espaceclient .col-wide > div{position:relative}
+.col-wide > div{float:none;position:relative !important}
+#corps{padding:0 0 20px !important;float:left;position:relative;background #fff;min-width:510px; *margin-left:10px;}
+.client-login #corps {width:510px;#left:0;#margin-left:0;}
+
+
+/*bouton*/
+table.buttonContainer td, td.buttonLeft, td.buttonRight {padding:0 !important; vertical-align:middle;}
+div.buttonMiddle{ /*bug ie7*/ *position:static !important; }
+
+td.buttonLeft, div.buttonMiddle, td.buttonRight {height:35px; line-height:35px;}
+td.buttonLeft, td.buttonRight{width:3px;}
+
+td.buttonLeft{ background-image:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/page/btn_souscription-left.png);}
+div.buttonMiddle{ background-image:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/page/btn_souscription-mid.png);font-weight:bold; color:#fff;padding:0 10px;}
+td.buttonRight{ background-image:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/page/btn_souscription-right.png);}
+
+.buttonContainer:hover td.buttonLeft,
+.buttonContainer:hover td.buttonRight, 
+.buttonContainer:hover div.buttonMiddle{background-position: center bottom;}
+
+#corps #rechercheDevis .buttonLeft {background-image:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/btn_jaune-left.png); }
+#corps #rechercheDevis .buttonMiddle {background-image:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/btn_jaune-mid.png); }
+#corps #rechercheDevis .buttonRight {background-image:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/btn_jaune-right.png); width:3px; }
+
+#corps p, #corps li, #corps td {line-height: 1.3em;}
+#corps ul { list-style-type: disc; *zoom:1; }
+
+/*page connexion*/
+#corps #ctr { margin:0 15px; width:auto; *width:490px;}
+#corps .login-form {margin: 0;}
+#corps .login {margin-left:0;}
+#corps .login INPUT.field ,#corps .login .fieldError , #corps .login .inputbox {width:200px; border-width:1px;}
+#corps .form-block, #corps #espaceClientContenuHome{padding:0;}
+#corps #espaceClientContenuHome li {margin: 0 15px 5px 45px !important;}
+#corps .espaceClientHabillageHome {margin-left:15px; padding-left:0; *margin-left:0;}
+#explication { float:left; *margin:0;}
+#corps #espaceClientContenuHome { margin-left:15px; *margin:0; width:350px; padding-right:5px; }
+#corps #espaceClientContenuHome .titre { text-align:left; line-height:1.4em; margin:0 0 15px;  font-size: 15px; }
+#corps #espaceClientContenuHome h2 { background-position:0 4px; line-height:1.5em; text-align:left; }
+#corps #espaceClientContenuHome p{color: #555555; }
+
+#corps #tabs0head1 p{color:#FEC214;}
+.inputlabel {margin-top:10px;}
+
+/*couleur titre*/
+#corps .ongletTextEna p, 
+#corps #espaceClientContenuHome .titre, 
+#corps DIV#workWindow h1, 
+#corps DIV#workWindow H3{color: #9C0F00;}
+
+body #info h1,
+#corps DIV#workWindow h1, 
+#corps DIV#workWindow H3{
+	width: auto;
+	padding: 10px !important;
+	height: auto;
+	margin: 0 0 5px !important;
+	display: block !important;
+	background:#E6E3E1;
+	font-weight: bold;
+}
+
+.espaceclient DIV#corps .table {border-color:#E6E3E1; border:none; padding-left:0 !important; padding-right:0 !important;}
+
+/*#corps DIV#workWindow {
+	margin: 0 !important;
+	float: left;
+	padding: 0 0 10px 10px !important;
+	height: auto !important;
+	clear:none !important;
+	border-left:5px solid #9C0F00;
+	min-height:430px;
+}*/
+#corps DIV#workWindow { margin: 0 !important; padding: 0 0 10px 10px !important; height: auto !important; clear: none !important; border-left: 5px solid #9C0F00; min-height: 430px; position: relative; }
+
+#navigationTree { /*width:98% !important;*/}
+#navigationTree ul.dynatree-container { 	
+	overflow:auto;
+	webkit-overflow-x:auto;
+	-ms-overflow-x: auto;
+	overflow-x : auto;
+	
+	webkit-overflow-y:hidden;
+	-ms-overflow-y: hidden;
+	overflow-y: hidden;
+	
+	overflow-style-x:scrollbar ;
+	padding: 0 0 10px 0;
+	width: auto !important;
+	/*max-width:1200px !important;*/
+}
+
+#navigationTree ul.dynatree-container ul { padding-left:0px; width:1100px;  }
+#navigationTree ul.dynatree-container ul li div { float:none !important; }
+table.treeLineLite{ width:auto !important;}
+.treeLineLite td { padding:3px !important; white-space:normal; }
+#navigationTree .treeLineLite { border-spacing: 0px; border-collapse:collapse; }
+
+.mes-documents #navigationTree ul.dynatree-container {overflow:hidden !important;webkit-overflow-x:hidden !important;	-ms-overflow-x: hidden !important;overflow-x : hidden !important;width:auto !important;}
+/*
+#navigationTree .AUTO tbody tr:hover td.contrat {  background:#E6E3E1;  } 
+*/
+#navigationSouscripteurTree { clear: both; margin: 0 0 0 180px !important;}
+#navigationSouscripteurTree td { padding: 0 5px 0 0; vertical-align: top; }
+#navigationSouscripteurTree.table { width: auto !important; }
+/*
+#navigationTree li { display: block; width: auto !important; }
+*/
+
+/*menu de gauche*/
+DIV.menuTemplate {
+	position: relative !important;
+	float: left !important;
+	left: 0 !important;
+	width: auto !important;
+	z-index:299 !important;
+	margin: 0  0 0 15px !important; #left:15px !important;
+}
+/*
+#menu, #menu0, #menu1 { margin: 0  0 0 15px !important; #left:15px !important; }
+*/
+.espaceclient .menuTemplate .menu, 
+.espaceclient .menuTemplate .menu:hover, 
+.espaceclient .menuTemplate .menu_over, 
+.espaceclient .menuTemplate .menu_over:hover, 
+.espaceclient .menuTemplate .menu_onclick, 
+.espaceclient .menuTemplate .menu_onclick:hover {
+	width: auto !important;
+	position: relative !important;
+	top: 0 !important;
+	left: 0 !important;
+	padding: 8px 2px !important;
+	height: auto !important;
+	float: none !important;
+	width: 150px !important;
+	background:#E6E3E1;
+	color:#3B3B3D;
+	margin-bottom:5px !important;
+	border:none !important;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.menuTemplate .menu_onclick { background: #9C0F00 !important; color:#fff !important;   }
+/*
+.espaceclient .menuTemplate .menu { border: 1px solid #EFEDEA;  }
+.menuTemplate .menu:hover, .menuTemplate .menu_over { color: #9C0F00 !important;   }
+*/
+
+/*en gris*/
+#workWindow a:active, #workWindow a:link, #workWindow a:visited, #workWindow a:hover {color: #3B3A3C !important;}
+#corps DIV#workWindow { border-color:#3B3B3D; }
+.menuTemplate .menu_onclick { background: #3B3B3D !important; border-color :#3B3B3D; }
+#corps .ongletTextEna p, 
+#corps #espaceClientContenuHome .titre , 
+#corps DIV#workWindow h1, 
+#corps DIV#workWindow H3, tr.titreGarantie { color:#3B3B3D;}
+.menuTemplate .menu:hover, .menuTemplate .menu_over { border-color: #3B3B3D !important; color:#fff !important; background: #3B3B3D !important; }
+
+/*ma fiche client*/
+#corps fieldset { border:1px solid #D6D3CB; padding:5px 2px; min-height: 100%;  }
+.formTemplate fieldset  { min-height:165px; }
+#telephoneFielSet input { width:75px;}
+legend { padding:0 5px; font-weight:bold;  }
+#telephoneFielSet .contact td { padding-right:3px !important; }
+
+/*souscription*/
+#main DIV#menuHorizontal {
+	position: relative !important;
+	left: 0 !important; 
+	margin-top:0 !important;
+	padding-left:10px !important; 
+	border-left:5px solid #3B3B3D;
+}
+
+#corps DIV#workWindow, #main DIV#menuHorizontal { width: 810px; }
+.client-droite #corps DIV#workWindow ,.client-droite #main DIV#menuHorizontal {width:650px}
+
+DIV#menuHorizontal .menu, DIV#menuHorizontal .menu:hover, DIV#menuHorizontal .menu_over, DIV#menuHorizontal .menu_over:hover, DIV#menuHorizontal .menu_onclick, DIV#menuHorizontal .menu_onclick:hover {
+	float: left !important;
+	height:38px !important; line-height:38px; 
+	width:115px !important;
+	text-align:left !important;
+	border:none !important;
+	padding:0 0 0 50px !important;
+	font-size:12px;
+}
+
+#main #menuHorizontal_0.menu, #main #menuHorizontal_0.menu_over { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape1_red.png)  no-repeat 0 0 !important; color:#3B3B3D !important;  }
+#main #menuHorizontal_0.menu_onclick { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape1.png) no-repeat bottom left !important; }
+#main #menuHorizontal_1.menu, #main #menuHorizontal_1.menu_over { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape2_red.png)  no-repeat 0 0 !important; color:#3B3B3D !important;  }
+#main #menuHorizontal_1.menu_onclick { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape2.png) no-repeat bottom left !important; }
+#main #menuHorizontal_2.menu, #main #menuHorizontal_2.menu_over { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape3.png)  no-repeat 0 0 !important; color:#3B3B3D !important;  }
+#main #menuHorizontal_2.menu_onclick { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape3.png) no-repeat bottom left !important; }
+#main #menuHorizontal_3.menu, #main #menuHorizontal_3.menu_over { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape4.png)  no-repeat 0 0 !important; color:#3B3B3D !important;  }
+#main #menuHorizontal_3.menu_onclick { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape4.png) no-repeat bottom left !important; }
+#main #menuHorizontal_4.menu, #main #menuHorizontal_4.menu_over { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape5.png)  no-repeat 0 0 !important; color:#3B3B3D !important;  }
+#main #menuHorizontal_4.menu_onclick { background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/etape5.png) no-repeat bottom left !important; }
+
+#codeAppEtPromo{z-index:999;position:relative}
+/*bug ie7*/
+/*
+.darkFrame, .darkFrame * { *position:relative; }
+*/
+#codeAppEtPromo * {/*bug ie7*/}
+#codeAppEtPromo table{   }
+.autosuggest-body {}
+#codeAppEtPromo td {
+	padding: 0 8px 5px 0;
+	position: relative !important;
+	display: inline-block;
+	vertical-align:middle;
+}
+
+#suggest_table_codePromoAutocomplete, #suggest_table_nomApporteurAutocomplete {
+	position: absolute !important;
+	left: 0 !important;
+	top: 26px !important;	
+}
+
+.darkFrame td{ #width:auto !important; #vertical-align: top !important;  }
+
+.table td img {	vertical-align: middle !important;}
+#calcontainer table {width: auto !important;}
+#calcontainer td {padding: 0 !important;}
+#calcontainer a {text-decoration: none !important;}
+
+/*etape2 conducteur*/
+#risqueAlcoolemie { width:30%; padding-right:0 !important;}
+#corps DIV#workWindow #risqueAlcoolemie h1 { background:#3B3B3D; text-align:left; padding: 5px 10px !important;}
+/*etape 3 garanties*/
+/* #containerGarantie td { border:1px solid red; } */
+
+#containerGarantie td { padding:3px 0; }
+
+#cadreEffetContrat table { }
+tr.titreGarantie {background-color:#E6E3E1;font-weight:bold;}
+#list-formule ,#cadreGarantieAdd , #cadreFractionnement {width:99% !important;}
+#cadreGarantieAdd{ }
+#cadreFractionnement{ }
+
+/*gerer mot de passe*/
+DIV#workWindow div.table {padding: 10px !important; width: auto !important; margin: 5px 0 15px !important; }
+/*demander des documents*/
+#corps DIV#workWindow H3 {margin: -5px 0 -10px -5px; font-size:13px !important; }
+
+/*envoyer des documents*/
+/*#wordingUpload{line-height: 1.3em; padding: 15px 0 !important; }*/
+#wordingUpload { line-height: 1.3em; padding: 15px 0 !important; position: relative; }
+#workWindow .table {border-collapse: collapse;}
+#workWindow .table td, #workWindow .table th { padding: 0 8px 5px 0; line-height: 1.3em; }
+#workWindow .table .table #boutonAjoutFichier table { margin: 5px auto; }
+
+/*encaissement*/
+#quittanceSaisieReglementList {padding: 5px !important;}
+#quittanceSaisieReglementList td{padding:3px !important;}
+
+#encaissementSaisie{margin:0 5px;}
+#encaissementSaisie td{text-align:left !important;}
+
+#Documents { line-height: 1.3em;}
+#Documents table { margin: 10px 0;}
+#workWindow td#wordingUpload {width:auto; margin-left:5px;}
+
+INPUT.field, input.inputbox { border:1px solid #D6D3CB !important; }
+.fieldError {background-color: #FFF !important; margin: 5px 0 2px !important; border:1px solid #C00 !important;}
+
+#window_alert {top:220px !important;}
+
+/*mot de passe oublié*/
+DIV#corps .login-form .form-block h3 { margin:20px 20px;  font-size:13px; font-weight:bold;}
+DIV#corps .ongletMain .login-form .form-block h3 { padding:0; margin:0; }
+
+DIV#corps .login-form .form-block > div.table{border:1px solid #D6D3CB;}
+DIV#corps .login-form .form-block > div.table, DIV#corps .login-form .form-block > center { margin:0 20px !important; width:420px !important;  padding:10px 20px !important;  }
+
+DIV#corps .login-form .form-block > div.table td { height:35px; padding: 0 5px; }
+
+/***********
+DEMANDE DE CONTACT
+************/
+body.formulaire_contact{margin:0;}
+.libelle{width:210px;text-align:left;padding-left:15px;}
+#fieldSetAdresse .libelle,#telephoneFielSet .libelle,#emailFielSet .libelle{padding-left:0;}
+#fieldSetAdresse td{padding-left:0;}
+.mentionsLegales{font-size:11px;color:#666;text-align:justify;font-family:Arial, Helvetica, sans-serif;width:635px;margin:30px 0 10px 18px;border-top:1px dotted #D6D3CB;padding-top:10px;}
+.formulaire_contact #corps DIV#workWindow{border:none;}
+#workWindow textarea{border:1px solid #D6D3CB; resize: vertical;}
+.formulaire_contact fieldset{border:none;padding:0 11px; width:660px}
+
+/***********
+CLIENT-LOGIN
+************/
+.espaceclient .col-1,.espaceclient .col-2{float:left; clear:none; }
+.client-login .col-1, .client-login .col-2{margin-bottom:30px;}
+.espaceclient .col-1{width:510px;}
+.espaceclient .col-2{width:575px;}
+
+.espaceclient #footer .col-1, .espaceclient #footer .col-2{width:auto;}
+
+.client-login #menuHorizontal,.client-login #menu{display:none;}
+
+/*.col-2 .espaceClientContenuHome{width:350px;float:left;}*/
+.col-2 .espaceClientContenuHome{ width: 352px; float: left; position: relative; left: 475px; }
+.col-2 .espaceClientContenuHome h2{width:auto;text-transform:uppercase;color:#3B3B3D;font-size:13px;line-height:1.4em;margin:0 0 15px;text-align:left;font-weight:700;}
+.col-2 .espaceClientContenuHome h3{font-size:12px;margin:10px 0;padding:0 0 0 15px;line-height:1.5em;text-align:left;text-transform:uppercase;background:url(/web/20210316175022im_/https://www.assu2000.fr/templates/iframe/images/espaceclient/ec_puce_fleche.gif) no-repeat 0 4px;font-weight:700;}
+.col-2 .espaceClientContenuHome p,.col-2 .espaceClientContenuHome li{color:#555;line-height:1.3em;}
+.col-2 .espaceClientContenuHome ul{list-style-type:disc;margin:0 0 15px;}
+.col-2 .espaceClientContenuHome li{margin:0 15px 5px 45px;}
+/*.col-2 .espaceClientHabillageHome{float:left;margin:0 0 0 10px;text-align:center;padding:0;}*/
+.col-2 .espaceClientHabillageHome{float: left; margin: 0 0 0 10px; text-align: center; padding: 0; position: relative; left: 485px; }
+
+.basculemobile #btn_bascule, .basculemobile #btn_bascule:hover{color:#fff; font-weight:700; text-decoration:none;}
+
+/*afficher les caractères*/
+span#aideIdentifiant{ display:inline-block;vertical-align:middle; margin:0;  }
+
+/*coordonnees bancaires + couleurs tableaux ***/
+.listLineLite,tr.listLineLite { background:#E6E3E1;}
+.listLineDark td, .listLineLite td  {color: #3B3B3D !important; }
+.listLineDark td, .listLineLite td,.listLineSelected td{padding:0 5px !important}
+
+.listLineDark,tr.listLineDark {background:#FBFAFA;}
+.listHeader{color: #fff ;}
+
+.listLineLite td { vertical-align:middle !important}
+.listHeader td { font-weight:bold;}
+/*
+tr.listHeader td, tr.listLineLite td,tr.listLineDark td, tr.ligneSelected td{ padding:5px 3px !important;  }
+*/
+.listLineLite table td, .listLineLite table table td { padding:0 !important; }
+.listLineLite .iconeDeblocage { margin-top:5px;}
+input#ibanPart0, input#ibanPart1, input#ibanPart2, input#ibanPart3,input#ibanPart4, input#ibanPart5, input#ibanPart6,
+input#ibanPartV0, input#ibanPartV1, input#ibanPartV2, input#ibanPartV3, input#ibanPartV4, input#ibanPartV5, input#ibanPartV6  { width:30px !important; }
+.listLineLite .bic{width:80px;}
+
+/*envoyer des documents*/
+#main DIV#corps #JustificatifBlock .table{ border-bottom: 5px solid #D6D3CB; }
+
+/*detail contrat */
+#corps DIV#workWindow.detailContrat table td{ padding:3px!important; border:1px solid #D6D3CB;  }
+table.fieldset{margin:10px 0; width:100% !important;border-spacing:10px 30px !important; }
+
+.listHeader .listHeader .listHeader{text-align:left;}
+
+/**************************
+*TABLEAU DANS LES FIELDSET*
+***************************/
+fieldset.infoContrat { /*height:250px;*/ border:none; min-height:100%; height:auto }
+fieldset.infoContrat legend{ /*margin-top:-15px;*/ background:#fff;}
+table.fieldset fieldset{position:relative;}
+table.fieldset fieldset legend{position:absolute;top:-11px;margin-top:0}
+body table.fieldset fieldset.infoContrat{padding:10px 0 5px !important;}
+
+fieldset.infoContrat table{border-spacing:2px !important; /*border-spacing:0 !important; border-collapse:collapse !important;*/  }
+fieldset.infoContrat table td{padding:3px 5px!important;border:none !important;}
+
+/*légende*/
+/*
+ DIV#workWindow.detailContrat.AUTO  legend{color:#249AFF;}
+ DIV#workWindow.detailContrat.MOTO  legend{color:#FA6000;}
+ DIV#workWindow.detailContrat.MRH   legend{color:#6D20C4;}
+ DIV#workWindow.detailContrat.SANTE legend{color:#28A700;}
+ DIV#workWindow.detailContrat.ANIM  legend{color:#706050;}
+*/
+
+#corps DIV#workWindow.detailContrat table.fieldset {margin:-10px 0 0 !important;  }
+#corps DIV#workWindow.detailContrat #garantieTable table {margin:10px 0 !important;}
+#corps DIV#workWindow.detailContrat table table { margin:0px !important;}
+#corps DIV#workWindow.detailContrat table table td{}
+.ListLineLite{background-color:#E6E3E1;}
+
+#corps DIV#workWindow.detailContrat .listHeader {background:#F3F3F3;color:#3B3B3D;}
+
+
+/*lignes de couleurs */
+.AUTO .ListLineLite, .AUTO  .listLineLite{background-color:#e8f4ff;}
+.MOTO .ListLineLite, .MOTO  .listLineLite{background-color:#f2ebe7;}
+.MRH .ListLineLite,  .MRH   .listLineLite{background-color:#F4EDFF;}
+.SANTE .ListLineLite,.SANTE .listLineLite{background-color:#e6f2d9;}
+
+.SANTE table.listHeader tr.listLineLiteMenu,
+.SANTE table.listHeader tr.ligneSelectedLight{background:#fff;}
+.SANTE table.listHeader tr.listLineDarkMenu  {background:#E6F2D9}
+
+
+/***********
+CLIENT-DROITE
+************/
+.col-grise{border-left: 13px solid #D6D3CB;}
+/*.client-droite .col-1{width:905px;min-height:1px;}*/
+.client-droite .col-1 { width: 820px; min-height: 1px; }
+/*.client-droite .col-2{width:180px; margin:0 0 10px 10px;}*/
+.client-droite .col-2 { width: 149px; margin: 0 0 10px 10px; position: relative; }
+.client-droite .col-2 img { width: 135px; }
+
+#corps DIV#workWindow.detailContrat table.fieldset table.buttonContainer, .iconeInfoGen { display:none !important;}
 
 .header .menu > li > a {font-size:14px; font-weight:normal}
 #espace a{color:#333333; font-size:14px; font-weight:normal}
@@ -134,3 +566,25 @@ table.buttonContainer{margin:10px}
 		float:left;
 	}
 }
+
+/*
+     FILE ARCHIVED ON 17:50:22 Mar 16, 2021 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:30:29 Aug 20, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  PetaboxLoader3.resolve: 147.954 (2)
+  CDXLines.iter: 24.995 (3)
+  exclusion.robots: 0.326
+  LoadShardBlock: 171.165 (3)
+  exclusion.robots.policy: 0.31
+  load_resource: 130.979
+  RedisCDXSource: 4.015
+  esindex: 0.013
+  PetaboxLoader3.datanode: 61.408 (4)
+  captures_list: 204.893
+*/
