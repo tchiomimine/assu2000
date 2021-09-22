@@ -568,18 +568,10 @@ sup{font-size:12px}
 
 /********** pages agences *********/
 .agences .content{margin-bottom:3px}
-.agences .item-page, .landingpromomoto .item-page,.landing .item-page{padding: 265px 10px 2px 0px; width:720px; margin-bottom: 15px}
+.agences .item-page, .landingpromomoto .item-page {padding: 265px 10px 2px 0px; width:720px; margin-bottom: 15px}
 .agences .item-page{padding-top:0;}
 .landingpromomoto .span-7, .landing .span-7{ left: 245px; position: absolute; top: 1px; width: 455px; z-index:2}
 
-.landingpromomoto h1,.landing h1{padding-top:20px;padding-left:30px; padding-right:480px; line-height: 1.1em; width: 210px;position: absolute; left: 0px; top: 0px; font-size:32px; border:1px solid #ddd; height:210px;
-background:-moz-linear-gradient(left, #FFF 0%, #e4e4e4 35%);/* FF3.6+ */
-background:-webkit-gradient(linear, left top, right top, color-stop(0%,#FFF), color-stop(35%,#e4e4e4));/* Chrome,Safari4+ */
-background:-webkit-linear-gradient(left, #FFF 0%, #e4e4e4 35%);/* Chrome10+,Safari5.1+ */
-background:-o-linear-gradient(left, #FFF 0%, #e4e4e4 35%);/* Opera 11.10+ */
-background:-ms-linear-gradient(left, #FFF 0%, #e4e4e4 35%);/* IE10+ */
-background:linear-gradient(to right, #FFF 0%, #e4e4e4 35%) repeat 0 0 transparent;
-filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#e4e4e4',GradientType=1 );/* IE6-9 */}
 .agences h1{font-size:32px; padding-left: 38px;}
 
 .agences h2, .landingpromomoto h2{background-color:transparent !important; font-size: 21px; font-weight: 700; padding-bottom:15px}
@@ -2173,6 +2165,15 @@ p.attention{background:#fff url(/assets/landingpage/attention.png) no-repeat 0 0
     font-weight: bold;
 }
 
+.contenuCartaplac {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 .btnpromopartenaire {
     background: none repeat 0 0 #025092;
     font-weight: bold;
@@ -2230,6 +2231,10 @@ p.attention{background:#fff url(/assets/landingpage/attention.png) no-repeat 0 0
     border: 0;
     height: 212px;
     width: 320px;
+}
+
+.landing.brogniart .item-page {
+    background: url(/assets/offre/denis-brogniart.png) no-repeat 0 0;
 }
 
 .landing .item-page.brogniart h1 {
