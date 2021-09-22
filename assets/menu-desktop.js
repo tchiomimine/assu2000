@@ -51,5 +51,3 @@ jQuery(document).ready(function($){
 
 
 });
-
-}
