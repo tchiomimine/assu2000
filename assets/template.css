@@ -233,32 +233,32 @@ background:linear-gradient(to bottom, #C0C0C0 0%,#ffffff 8%,#ffffff 92%,#C0C0C0 
 .header .menu > li > ul > li.first > ul, .header .menu > li > ul > li.selected > ul{left:29%;width:71%;top:0;height:100%;opacity:1}
 
 .header .menu > li > ul > li.last span, .header .menu > li > ul > li.last a, .header .menu > li > ul > li.last a:hover{transition:none;margin-top:0px !important}
-.header .item141{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_mrh.jpg) no-repeat right top !important}
-.item200{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_mrh2.jpg) no-repeat right top !important}
-.item201{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_mrh-etudiant.jpg) no-repeat right top !important}
-.item1242{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_mrh-pno.jpg) no-repeat right top !important}
-.header .item142{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_vsp.jpg) no-repeat right top !important}
-.header .item143{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_moto.jpg) no-repeat right top !important}
-.header .item144{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_chien.jpg) no-repeat right top !important}
-.item195{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_auto.jpg) no-repeat right top !important}
-.item196{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_cc.jpg) no-repeat right top !important}
-.item197{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_scooter.jpg) no-repeat right top !important}
-.item198{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_cyclo.jpg) no-repeat right top !important}
-.item199{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_quad.jpg) no-repeat right top !important}
-.item1660{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_speedbike.jpg) no-repeat right top !important}
-.item202{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_sante.jpg) no-repeat right top !important}
-.item203{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_prevoyance.jpg) no-repeat right top !important}
-.item204{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_scolaire.png) no-repeat right top !important}
-.item1230{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_credit.jpg) no-repeat right top  !important}
-.item1652{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_emprunteur.jpg) no-repeat right top  !important}
-.item1364{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_rachat.jpg) no-repeat right top  !important}
-.item1440{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_travaux.jpg) no-repeat right top  !important}
-.item1474{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo_auto-tempo.jpg) no-repeat right top  !important}
-.item1605{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-RC-D.png) no-repeat right top  !important}
-.item1606{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-MRP.png) no-repeat right top  !important}
-.item1607{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-RC-PRO.jpg) no-repeat right top  !important}
-.item1608{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-flotte-auto.png) no-repeat right top  !important}
-.item1689, .item1696{background:url(/web/20210304064631im_/https://www.assu2000.fr/images/accroches/promo-auto-pro.jpg) no-repeat 43px 8px !important}
+.header .item141{background:url(/assets/promo_mrh.jpg) no-repeat right top !important}
+.item200{background:url(/assets/promo_mrh2.jpg) no-repeat right top !important}
+.item201{background:url(/assets/promo_mrh-etudiant.jpg) no-repeat right top !important}
+.item1242{background:url(/assets/promo_mrh-pno.jpg) no-repeat right top !important}
+.header .item142{background:url(/assets/promo_vsp.jpg) no-repeat right top !important}
+.header .item143{background:url(/assets/promo_moto.jpg) no-repeat right top !important}
+.header .item144{background:url(/assets/promo_chien.jpg) no-repeat right top !important}
+.item195{background:url(/assets/promo_auto.jpg) no-repeat right top !important}
+.item196{background:url(/assets/promo_cc.jpg) no-repeat right top !important}
+.item197{background:url(/assets/promo_scooter.jpg) no-repeat right top !important}
+.item198{background:url(/assets/promo_cyclo.jpg) no-repeat right top !important}
+.item199{background:url(/assets/promo_quad.jpg) no-repeat right top !important}
+.item1660{background:url(/assets/promo_speedbike.jpg) no-repeat right top !important}
+.item202{background:url(/assets/promo_sante.jpg) no-repeat right top !important}
+.item203{background:url(/assets/promo_prevoyance.jpg) no-repeat right top !important}
+.item204{background:url(/assets/promo_scolaire.png) no-repeat right top !important}
+.item1230{background:url(/assets/promo_credit.jpg) no-repeat right top  !important}
+.item1652{background:url(/assets/promo_emprunteur.jpg) no-repeat right top  !important}
+.item1364{background:url(/assets/promo_rachat.jpg) no-repeat right top  !important}
+.item1440{background:url(/assets/promo_travaux.jpg) no-repeat right top  !important}
+.item1474{background:url(/assets/promo_auto-tempo.jpg) no-repeat right top  !important}
+.item1605{background:url(/assets/promo-RC-D.png) no-repeat right top  !important}
+.item1606{background:url(/assets/promo-MRP.png) no-repeat right top  !important}
+.item1607{background:url(/assets/promo-RC-PRO.jpg) no-repeat right top  !important}
+.item1608{background:url(/assets/promo-flotte-auto.png) no-repeat right top  !important}
+.item1689, .item1696{background:url(/assets/promo-auto-pro.jpg) no-repeat 43px 8px !important}
 
 
 .header .menu ul li ul{background:#FFF}
